@@ -1,5 +1,5 @@
 # KATrackingAd SDK Repository
-Welcome To AppicAd SDK Portal
+Welcome To KATrackingSDK Portal
 
 # Quick Link
 * **iOS Native SDK** [LINK](https://github.com/KATracking/KATrackingAd/tree/master/KATrackingAd_iOS)
