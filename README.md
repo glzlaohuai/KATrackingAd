@@ -1,5 +1,5 @@
 # AppidAd
-Welcome To AppidAd SDK Portal
+Welcome To AppicAd SDK Portal
 
 # Quick Link
 * **iOS Native SDK** [LINK](https://github.com/AppicPlay/AppidAd/tree/master/AppidAdSDK_iOS)
