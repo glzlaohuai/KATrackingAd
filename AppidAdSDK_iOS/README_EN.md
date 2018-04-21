@@ -30,10 +30,10 @@
 * libz.tbd
 
 ### Setup deployment target to: iOS 8.0
-![deployment target](https://github.com/AppicPlay/KATrackingAd/blob/master/README_Res/ios_deployment_target.png)
+![deployment target](https://github.com/AppicPlay/AppidAd/blob/master/README_Res/ios_deployment_target.png)
 
 ### Add the -ObjC linker flag
-![linker flag](https://github.com/AppicPlay/KATrackingAd/blob/master/README_Res/linker_flag.png)
+![linker flag](https://github.com/AppicPlay/AppidAd/blob/master/README_Res/linker_flag.png)
 
 ## Let's code!
 
