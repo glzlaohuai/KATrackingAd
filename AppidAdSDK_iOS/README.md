@@ -1,4 +1,4 @@
-> [English Doc](https://github.com/AppicPlay/AppidAd/blob/master/AppidAdSDK_iOS/README.md)
+> [English Doc](https://github.com/AppicPlay/AppidAd/blob/master/AppidAdSDK_iOS/README_EN.md)
 # 下载链接
 1. iOS 当前版本 3.2: [SDK download](https://github.com/AppicPlay/AppidAd/blob/master/AppidAdSDK_iOS/KATracking-v3.2.zip)
 2. 聚合平台 SDK: [Mediation SDK download](https://github.com/AppicPlay/AppidAd/blob/master/AppidAdSDK_iOS/MediationSDK.zip)
