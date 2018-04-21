@@ -1,17 +1,18 @@
-> [中文文档](https://github.com/AppicPlay/KATrackingAd/blob/master/README_CN.md)
-# Download Links
-1. iOS Current Version: [SDK download Ver.3.2](https://github.com/AppicPlay/AppidAd/blob/master/AppidAdSDK_iOS/KATracking-v3.2.zip)
-2. Mediation Platform SDK: [Mediation SDK download](https://github.com/AppicPlay/AppidAd/blob/master/AppidAdSDK_iOS/MediationSDK.zip)
-3. iOS SDK integration Demo: 
+> [English Doc](https://github.com/AppicPlay/KATrackingAd/blob/master/README.md)
+# 下载链接
+1. iOS 当前版本 3.2: [SDK download](https://github.com/AppicPlay/KATrackingAd/tree/master/iOS)
+2. Unity Plugin 版本 3.2:  
+3. 聚合平台 SDK: [Mediation SDK download](https://github.com/AppicPlay/KATrackingAd/blob/master/iOS/MediationSDK.zip)
+4. iOS SDK接入 Demo: 
 
-# Integration Guide
+# 接入说明
 
-## Before you start
-### Adding KATracking
+## 准备工作
+### 加入KATracking依赖库
 * KATracking.framework
 * Resources.bundle
 
-### Adding dependency Frameworks
+### 加入其它依赖库
 * SystemConfiguration.framework
 * CoreTelephony.framework
 * QuartzCode.framework
@@ -29,16 +30,16 @@
 * libxml2.2.tbd
 * libz.tbd
 
-### Setup deployment target to: iOS 8.0
+### 设置Deployment Target : iOS 8.0
 ![deployment target](https://github.com/AppicPlay/KATrackingAd/blob/master/README_Res/ios_deployment_target.png)
 
-### Add the -ObjC linker flag
+### 添加 -ObjC linker flag
 ![linker flag](https://github.com/AppicPlay/KATrackingAd/blob/master/README_Res/linker_flag.png)
 
-## Let's code!
+## 开始接入
 
-### SDK initialization
-Please initialize SDK as early into app lifecycle as possible, as once SDK initilized it will automatically pre-cashe ads.
+### SDK 初始化
+请在应用生命周期尽可能早的步骤中启动SDK初始化，这样SDK可以尽快开始预加载广告。
 
 `AppDelegate`
 ```Objective-c
@@ -48,77 +49,77 @@ Please initialize SDK as early into app lifecycle as possible, as once SDK initi
 ```Objective-c
 [[KATracking sharedInstance] initWithAppId:@"<AppId>" channel:@"<AppChannel>"];
 ```
-Provided by operator
-* **AppId** - Application ID
-* **AppChannel** - Application distribution channel
+请向运营人员索取
+* **AppId** - 应用标识
+* **AppChannel** - 应用渠道号
 
-# Native Ad
+# 原生广告
 
-### Create a Native Ad
-To create a Native ad instance
+### 构建广告
+创建一个原生广告的实例
 
 `KAAdNative`
 ```Objective-c
 KAAdNative *ad = [[KAAdNative alloc] initWithSlot:<AdSlot> delegate:<Delegate>];
 ```
-* **AdSlot** - Slot ID to request ad with
-* **Delegate** - id<KAAdNativeDelegate> object to receive delegate calls
+* **AdSlot** - 广告位SlotId，用于请求广告
+* **Delegate** - id<KAAdNativeDelegate> 实例，用于接收请求广告的回调
 
-To load the Ad
+请求并加载广告
 
 `KAAdNative`
 ```Objective-c
 [ad load];
 ```
 
-Test availability of the Ad
+检测广告是否已经可以使用
 
 `KAAdNative`
 ```Objective-c
 BOOL ready = [ad isReady];
 ```
 
-### Report an impression
-Once the ad has been displayed
+### 上报广告展示
+当广告被展示后，调用此方法上报展示事件
 
 `KAAdNative`
 ```Objective-c
 [ad nativeAdRenderedWithView:adView];
 ```
 
-* **adView** - the UIView containing ad content
+* **adView** - 装在广告素材的容器UIView
 
-### Report a click
-Once user did click on Ad, use one of the following two methods to report click event
+### 上报广告点击
+当用户点击了广告，调用此方法上报点击事件
 
 `KAAdNative`
 ```Objective-c
 [ad nativeAdClickedAtPointAndOpenLandingPage:touchPoint];
 ```
-This is <span style="color:red">HIGHLY RECOMMANDED</span> to let SDK handle showing landing page
+**强烈建议** 使用此方法让SDK来处理展示广告落地页
 
-**OR**
+**或者使用**
 
 `KAAdNative`
 ```Objective-c
 NSString *landingpage = [ad nativeAdClickedAtPoint:touchPoint];
 ```
 
-* **touchPoint** - CGPoint of click coordinates within UIView containing ad content
-* **landingPage** - URL string for showing ad landing page
+* **touchPoint** - 点击在容器UIView中的CGPoint
+* **landingPage** - 广告落地页的地址字符串
 
-### Properties of Native Ad
-Once received request complete delegate call, the ad is ready to use, see following properties and their description
+### 广告素材信息
+当成功加载一个原生广告后，下列参数包含了广告相关的素材信息
 
-* **ka_slot** - The slot id used to request the Ad
-* **ka_requestId** - An string uniquely identified this request of Ad
-* **ka_adTitle** - Ad title text
-* **ka_adDescription** - Ad text description
-* **ka_adIconImageView** - UIImageView containing the icon image of Ad
-* **ka_adImageView** - UIImageView containing the screenshot image of Ad
+* **ka_slot** - 广告为的SlotId
+* **ka_requestId** - 请求ID
+* **ka_adTitle** - 广告文字标题
+* **ka_adDescription** - 广告文字说明
+* **ka_adIconImageView** - 广告图标图片的UIImageView
+* **ka_adImageView** - 广告大图素材的UIImageView
 
-### Delegates of Native Ad
-Use these delegates to receive events of request native ad complete or fail
+### 广告回调
+使用以下回调接收加载广告成功和失败的事件
 
 `KAAdNativeDelegate`
 ```Objective-c
@@ -130,30 +131,31 @@ Use these delegates to receive events of request native ad complete or fail
                            withStatus:(nonnull NSError *)nativeAdStatus;
 ```
 
-# Splash Ad
+# 开屏广告
 
-### Create a Splash Ad
-To create a Splash ad instance
+### 构建广告
+创建一个开屏广告的实例
 
 `KAAdSplash`
 ```Objective-c
 KAAdSplash *splash = [[KAAdSplash alloc] initWithSlot:<AdSlot> delegate:<Delegate>];
 ```
-* **AdSlot** - Slot ID to request ad with
-* **Delegate** - id<KAAdSplashDelegate> object to receive delegate calls
 
-### Present a Splash Ad
-To load and present Splash Ad
+* **AdSlot** - 广告位SlotId，用于请求广告
+* **Delegate** - id<KAAdSplashDelegate> 实例，用于接收广告事件回调
+
+### 展示广告
+调用下面方法加载并展示开屏广告
 
 `KAAdSplash`
 ```Objective-c
 [splash loadAndPresentWithViewController:<Controller>];
 ```
 
-* **Controller** - UIViewController for which the splash is presented from
+* **Controller** - 用于展示开屏广告的UIViewController
 
-### Delegates of Splash Ad
-Use these delegates to receive events of splash Ad
+### 广告回调
+使用以下回调接收加载广告的事件
 
 `KAAdSplashDelegate`
 ```Objective-c
@@ -171,44 +173,45 @@ Use these delegates to receive events of splash Ad
 - (void) splashAdDidDismiss:(KAAdSplash *)splashAd;
 ```
 
-# Interstitial Ad
+# 插屏广告
 
-### Create a Interstitial Ad
-To create a Interstitial ad instance
+### 构建广告
+创建一个插屏广告的实例
 
 `KAAdInterstitial`
 ```Objective-c
 KAAdInterstitial *interstitial = [[KAAdInterstitial alloc] initWithSlot:<AdSlot> delegate:<Delegate>];
 ```
-* **AdSlot** - Slot ID to request ad with
-* **Delegate** - id<KAAdInterstitialDelegate> object to receive delegate calls
 
-To load an interstitial Ad
+* **AdSlot** - 广告位SlotId，用于请求广告
+* **Delegate** - id<KAAdInterstitialDelegate> 实例，用于接收广告事件回调
+
+请求并加载广告
 
 `KAAdInterstitial`
 ```Objective-c
 [interstitial load];
 ```
 
-Test availability of the Ad
+检测广告是否已经可以使用
 
 `KAAdInterstitial`
 ```Objective-c
 BOOL ready = [interstitial isReady];
 ```
 
-### Present a Interstitial Ad
-To load and present Interstitial Ad
+### 展示广告
+调用下面方法加载并展示开屏广告
 
 `KAAdInterstitial`
 ```Objective-c
 [interstitial presentFromRootViewController:<Controller>];
 ```
 
-* **Controller** - UIViewController for which the Interstitial is presented from
+* **Controller** - 用于展示插屏广告的UIViewController
 
-### Delegates of Interstitial Ad
-Use these delegates to receive events of Interstitial Ad
+### 广告回调
+使用以下回调接收加载广告的事件
 
 `KAAdInterstitialDelegate`
 ```Objective-c
@@ -229,37 +232,40 @@ Use these delegates to receive events of Interstitial Ad
 // Interstitial Ad has been dismissed from screen
 ```
 
-# Incentivized Video Ad
+# 激励视频广告
 
-### How does it work
-Incentivized video ads are automatically fetched and preparing as soon as SDK is initialized, `KAAdIncentivized` is a singleton object, there is no need to create any instance of it.
+### 如何使用
+激励视频广告在SDK中为单例，因此无需在创建新的实例，可以直接使用类方法展示广告，视频广告在SDK初始化成功后立即开始自动加载。
 
-Test availability of the Ad
+检测广告是否已经可以使用
 
 `KAAdIncentivized`
 ```Objective-c
 BOOL ready = [KAAdIncentivized isReady];
 ```
 
-### Present a Incentivized video Ad
+### 展示广告
+调用下面方法加载并展示极力视频广告
 
 `KAAdInterstitial`
 ```Objective-c
 [KAAdIncentivized presentFromRootViewController:<Controller>];
 ```
 
-* **Controller** - UIViewController for which the Incentivized video Ad is presented from
+* **Controller** - 用于展示激励视频广告的UIViewController
 
-### Delegates of Incentivized video Ad
-To set a delegate to receive events
+### 广告回调
+设置一个激励视频的回调实例
 
 `KAAdIncentivized`
 ```Objective-c
 [KAAdIncentivized setDelegate:<Delegate>];
 ```
 
-* **Delegate** - The id<KAAdIncentivizedDelegate> object
-Use these delegates to receive events of Incentivized video Ad
+* **Delegate** - id<KAAdIncentivizedDelegate> 实例，用于接收广告事件回调
+
+### 广告回调
+使用以下回调接收加载广告的事件
   
 `KAAdSplashDelegate`
 ```Objective-c
