@@ -1,4 +1,4 @@
-# AppidAd
+# AppidAd SDK Repository
 Welcome To AppicAd SDK Portal
 
 # Quick Link
