@@ -2,7 +2,7 @@
 # Download Links
 1. iOS SDK: [Download Ver.3.2](https://github.com/AppicPlay/AppidAd/blob/master/AppidAdSDK_iOS/KATracking-v3.2.zip)
 2. Mediation Platform SDK: [Mediation SDK download](https://github.com/AppicPlay/AppidAd/blob/master/AppidAdSDK_iOS/MediationSDK.zip)
-3. iOS SDK integration Demo: 
+3. iOS SDK integration Demo: [Demo Project](https://github.com/AppicPlay/AppidAd/tree/master/AppicAdDemo/iOS_Native)
 
 # Integration Guide
 
