@@ -1,6 +1,6 @@
-> [中文文档](https://github.com/AppicPlay/KATrackingAd/blob/master/README_CN.md)
+> [中文文档](https://github.com/AppicPlay/AppidAd/blob/master/AppidAdSDK_iOS/README.md)
 # Download Links
-1. iOS Current Version: [SDK download Ver.3.2](https://github.com/AppicPlay/AppidAd/blob/master/AppidAdSDK_iOS/KATracking-v3.2.zip)
+1. iOS SDK: [Download Ver.3.2](https://github.com/AppicPlay/AppidAd/blob/master/AppidAdSDK_iOS/KATracking-v3.2.zip)
 2. Mediation Platform SDK: [Mediation SDK download](https://github.com/AppicPlay/AppidAd/blob/master/AppidAdSDK_iOS/MediationSDK.zip)
 3. iOS SDK integration Demo: 
 
