@@ -30,10 +30,10 @@
 * libz.tbd
 
 ### 设置Deployment Target : iOS 8.0
-![deployment target](https://github.com/AppicPlay/KATrackingAd/blob/master/README_Res/ios_deployment_target.png)
+![deployment target](https://github.com/AppicPlay/AppidAd/blob/master/README_Res/ios_deployment_target.png)
 
 ### 添加 -ObjC linker flag
-![linker flag](https://github.com/AppicPlay/KATrackingAd/blob/master/README_Res/linker_flag.png)
+![linker flag](https://github.com/AppicPlay/AppidAd/blob/master/README_Res/linker_flag.png)
 
 ## 开始接入
 
