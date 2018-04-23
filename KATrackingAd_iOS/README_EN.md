@@ -14,7 +14,8 @@
 ### Adding dependency Frameworks
 * SystemConfiguration.framework
 * CoreTelephony.framework
-* QuartzCode.framework
+* QuartzCore.framework
+* GLKit.framework
 * AdSupport.framework
 * UIKit.framework
 * StoreKit.framework
@@ -127,7 +128,7 @@ Use these delegates to receive events of request native ad complete or fail
 
 // Request has failed
 - (void) nativeAdRequestFailedForSlot:(nonnull NSString *)nativeAdSlot
-                           withStatus:(nonnull NSError *)nativeAdStatus;
+withStatus:(nonnull NSError *)nativeAdStatus;
 ```
 
 # Splash Ad
@@ -162,7 +163,7 @@ Use these delegates to receive events of splash Ad
 
 // Ad present has failed
 - (void) splashAdPresentDidFail:(nonnull NSString *)splashAdSlot
-                      withError:(nonnull NSError *)error;
+withError:(nonnull NSError *)error;
 
 // Ad has been clicked
 - (void) splashAdDidClick:(KAAdSplash *)splashAd;
@@ -217,7 +218,7 @@ Use these delegates to receive events of Interstitial Ad
 
 // Interstitial Ad load fail
 - (void) interstitialAdLoadDidFailForSlot:(nonnull NSString *) interstitialAdSlot
-                                withError:(nonnull NSError *) interstitialAdStatus;
+withError:(nonnull NSError *) interstitialAdStatus;
 
 // Interstitial Ad presented successful
 - (void) interstitialAdDidPresent:(nonnull KAAdInterstitial *) interstitial;
@@ -243,7 +244,7 @@ BOOL ready = [KAAdIncentivized isReady];
 
 ### Present a Incentivized video Ad
 
-`KAAdInterstitial`
+`KAAdIncentivized`
 ```Objective-c
 [KAAdIncentivized presentFromRootViewController:<Controller>];
 ```
@@ -260,8 +261,8 @@ To set a delegate to receive events
 
 * **Delegate** - The id<KAAdIncentivizedDelegate> object
 Use these delegates to receive events of Incentivized video Ad
-  
-`KAAdSplashDelegate`
+
+`KAAdIncentivizedDelegate`
 ```Objective-c
 // Incentvized video Ad has failed to present
 - (void) incentivizedAdPresentDidFailWithError:(NSError *)error;
@@ -275,3 +276,4 @@ Use these delegates to receive events of Incentivized video Ad
 // Incentivized video Ad has complete with skip 
 - (void) incentivizedAdPresentDidSkip;
 ```
+

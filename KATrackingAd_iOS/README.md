@@ -14,7 +14,8 @@
 ### 加入其它依赖库
 * SystemConfiguration.framework
 * CoreTelephony.framework
-* QuartzCode.framework
+* QuartzCore.framework
+* GLKit.framework
 * AdSupport.framework
 * UIKit.framework
 * StoreKit.framework
@@ -127,7 +128,7 @@ NSString *landingpage = [ad nativeAdClickedAtPoint:touchPoint];
 
 // Request has failed
 - (void) nativeAdRequestFailedForSlot:(nonnull NSString *)nativeAdSlot
-                           withStatus:(nonnull NSError *)nativeAdStatus;
+withStatus:(nonnull NSError *)nativeAdStatus;
 ```
 
 # 开屏广告
@@ -163,7 +164,7 @@ KAAdSplash *splash = [[KAAdSplash alloc] initWithSlot:<AdSlot> delegate:<Delegat
 
 // Ad present has failed
 - (void) splashAdPresentDidFail:(nonnull NSString *)splashAdSlot
-                      withError:(nonnull NSError *)error;
+withError:(nonnull NSError *)error;
 
 // Ad has been clicked
 - (void) splashAdDidClick:(KAAdSplash *)splashAd;
@@ -219,7 +220,7 @@ BOOL ready = [interstitial isReady];
 
 // Interstitial Ad load fail
 - (void) interstitialAdLoadDidFailForSlot:(nonnull NSString *) interstitialAdSlot
-                                withError:(nonnull NSError *) interstitialAdStatus;
+withError:(nonnull NSError *) interstitialAdStatus;
 
 // Interstitial Ad presented successful
 - (void) interstitialAdDidPresent:(nonnull KAAdInterstitial *) interstitial;
@@ -246,7 +247,7 @@ BOOL ready = [KAAdIncentivized isReady];
 ### 展示广告
 调用下面方法加载并展示极力视频广告
 
-`KAAdInterstitial`
+`KAAdIncentivized`
 ```Objective-c
 [KAAdIncentivized presentFromRootViewController:<Controller>];
 ```
@@ -265,8 +266,8 @@ BOOL ready = [KAAdIncentivized isReady];
 
 ### 广告回调
 使用以下回调接收加载广告的事件
-  
-`KAAdSplashDelegate`
+
+`KAAdIncentivizedDelegate`
 ```Objective-c
 // Incentvized video Ad has failed to present
 - (void) incentivizedAdPresentDidFailWithError:(NSError *)error;
@@ -280,3 +281,4 @@ BOOL ready = [KAAdIncentivized isReady];
 // Incentivized video Ad has complete with skip 
 - (void) incentivizedAdPresentDidSkip;
 ```
+
