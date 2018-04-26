@@ -1,6 +1,6 @@
 > [中文文档](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README.md)
 # Download Links
-1. iOS SDK: [Download Ver.3.2](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/KATracking-v3.2.zip)
+1. iOS SDK: [Download Ver.3.2.1](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/KATracking.zip)
 2. Mediation Platform SDK: [Mediation SDK download](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/MediationSDK.zip)
 3. iOS SDK integration Demo: [Demo Project](https://github.com/KATracking/KATrackingAd/tree/master/KATrackingAdDemo/iOS_Native)
 

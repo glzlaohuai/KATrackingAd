@@ -1,6 +1,6 @@
 > [English Doc](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README_EN.md)
 # 下载链接
-1. iOS 当前版本 3.2: [SDK download](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/KATracking-v3.2.zip)
+1. iOS 当前版本 3.2.1: [SDK download](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/KATracking.zip)
 2. 聚合平台 SDK: [Mediation SDK download](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/MediationSDK.zip)
 3. iOS SDK接入 Demo: [Demo Project](https://github.com/KATracking/KATrackingAd/tree/master/KATrackingAdDemo/iOS_Native)
 

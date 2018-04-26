@@ -24,11 +24,11 @@
     self.slot_dic = [NSDictionary dictionaryWithObjectsAndKeys:
                      @"Video",
                      @"Incentivized",
-                     @"geyzoWGx",
+                     @"DlGdpoGq",
                      @"Interstitial",
-                     @"bPmPrQGq",
+                     @"naArbAbz",
                      @"Native",
-                     @"XqmJPMGw",
+                     @"bPmPrQGq",
                      @"Splash",
                      nil];
     

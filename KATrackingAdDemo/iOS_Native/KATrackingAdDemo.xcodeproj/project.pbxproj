@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30068954208F486800F8DE2B /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30068953208F486800F8DE2B /* GLKit.framework */; };
 		30CE5CBF2089D0DC0045D345 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30CE5CBE2089D0DC0045D345 /* StoreKit.framework */; };
 		30CE5CC12089D0E10045D345 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30CE5CC02089D0E10045D345 /* CoreTelephony.framework */; };
 		30CE5CC32089D0E80045D345 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30CE5CC22089D0E80045D345 /* AdSupport.framework */; };
@@ -34,18 +35,12 @@
 		30CE5CFF2089D2D70045D345 /* NativeAdController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30CE5CEE2089D2D70045D345 /* NativeAdController.m */; };
 		30CE5D002089D2D70045D345 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 30CE5CEF2089D2D70045D345 /* AppDelegate.m */; };
 		30CE5D012089D2D70045D345 /* KATracking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30CE5CF12089D2D70045D345 /* KATracking.framework */; };
-		30CE5D022089D2D70045D345 /* KATracking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30CE5CF32089D2D70045D345 /* KATracking.framework */; };
 		30CE5D032089D2D70045D345 /* AdCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30CE5CF42089D2D70045D345 /* AdCell.m */; };
 		30CE5D042089D2D70045D345 /* AdCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30CE5CF52089D2D70045D345 /* AdCellView.xib */; };
-		30CE5D0A2089D2EA0045D345 /* KATracking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30CE5D072089D2EA0045D345 /* KATracking.framework */; };
-		30CE5D46208A05B50045D345 /* InMobiSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30CE5D38208A05B50045D345 /* InMobiSDK.framework */; };
-		30CE5D47208A05B50045D345 /* UnityAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30CE5D39208A05B50045D345 /* UnityAds.framework */; };
-		30CE5D48208A05B50045D345 /* libGDTMobSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30CE5D43208A05B50045D345 /* libGDTMobSDK.a */; };
-		30CE5D49208A05B50045D345 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30CE5D44208A05B50045D345 /* GoogleMobileAds.framework */; };
-		30CE5D4A208A05B50045D345 /* VungleSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30CE5D45208A05B50045D345 /* VungleSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		30068953208F486800F8DE2B /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		30CE5C792089CF920045D345 /* KATrackingAdDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KATrackingAdDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30CE5CBE2089D0DC0045D345 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		30CE5CC02089D0E10045D345 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -84,19 +79,6 @@
 		30CE5CF62089D2D70045D345 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30CE5CF72089D2D70045D345 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		30CE5D072089D2EA0045D345 /* KATracking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KATracking.framework; sourceTree = "<group>"; };
-		30CE5D38208A05B50045D345 /* InMobiSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = InMobiSDK.framework; sourceTree = "<group>"; };
-		30CE5D39208A05B50045D345 /* UnityAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnityAds.framework; sourceTree = "<group>"; };
-		30CE5D3B208A05B50045D345 /* GDTNativeExpressAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTNativeExpressAdView.h; sourceTree = "<group>"; };
-		30CE5D3C208A05B50045D345 /* GDTMobBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTMobBannerView.h; sourceTree = "<group>"; };
-		30CE5D3D208A05B50045D345 /* GDTTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTTrack.h; sourceTree = "<group>"; };
-		30CE5D3E208A05B50045D345 /* GDTNativeAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTNativeAd.h; sourceTree = "<group>"; };
-		30CE5D3F208A05B50045D345 /* GDTSDKConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTSDKConfig.h; sourceTree = "<group>"; };
-		30CE5D40208A05B50045D345 /* GDTMobInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTMobInterstitial.h; sourceTree = "<group>"; };
-		30CE5D41208A05B50045D345 /* GDTSplashAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTSplashAd.h; sourceTree = "<group>"; };
-		30CE5D42208A05B50045D345 /* GDTNativeExpressAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTNativeExpressAd.h; sourceTree = "<group>"; };
-		30CE5D43208A05B50045D345 /* libGDTMobSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGDTMobSDK.a; sourceTree = "<group>"; };
-		30CE5D44208A05B50045D345 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
-		30CE5D45208A05B50045D345 /* VungleSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VungleSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,31 +86,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30068954208F486800F8DE2B /* GLKit.framework in Frameworks */,
 				30CE5CDF2089D20D0045D345 /* libz.tbd in Frameworks */,
 				30CE5CDD2089D2080045D345 /* libxml2.2.tbd in Frameworks */,
 				30CE5CDB2089D2020045D345 /* SystemConfiguration.framework in Frameworks */,
 				30CE5CD92089D1F90045D345 /* UIKit.framework in Frameworks */,
 				30CE5CD72089D1F30045D345 /* Security.framework in Frameworks */,
-				30CE5D47208A05B50045D345 /* UnityAds.framework in Frameworks */,
 				30CE5CD52089D1EB0045D345 /* CoreLocation.framework in Frameworks */,
 				30CE5CD32089D1E20045D345 /* CFNetwork.framework in Frameworks */,
 				30CE5D012089D2D70045D345 /* KATracking.framework in Frameworks */,
 				30CE5CD12089D1DD0045D345 /* CoreMotion.framework in Frameworks */,
 				30CE5CCF2089D1D30045D345 /* AVFoundation.framework in Frameworks */,
 				30CE5CCD2089D1CE0045D345 /* CoreData.framework in Frameworks */,
-				30CE5D0A2089D2EA0045D345 /* KATracking.framework in Frameworks */,
 				30CE5CCB2089D1C90045D345 /* CoreText.framework in Frameworks */,
 				30CE5CC92089D1C20045D345 /* WebKit.framework in Frameworks */,
 				30CE5CC72089D1BD0045D345 /* libsqlite3.0.tbd in Frameworks */,
 				30CE5CC52089D1B00045D345 /* QuartzCore.framework in Frameworks */,
-				30CE5D022089D2D70045D345 /* KATracking.framework in Frameworks */,
-				30CE5D49208A05B50045D345 /* GoogleMobileAds.framework in Frameworks */,
 				30CE5CC32089D0E80045D345 /* AdSupport.framework in Frameworks */,
 				30CE5CC12089D0E10045D345 /* CoreTelephony.framework in Frameworks */,
 				30CE5CBF2089D0DC0045D345 /* StoreKit.framework in Frameworks */,
-				30CE5D46208A05B50045D345 /* InMobiSDK.framework in Frameworks */,
-				30CE5D4A208A05B50045D345 /* VungleSDK.framework in Frameworks */,
-				30CE5D48208A05B50045D345 /* libGDTMobSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +114,6 @@
 		30CE5C702089CF920045D345 = {
 			isa = PBXGroup;
 			children = (
-				30CE5D37208A05B50045D345 /* SDK */,
 				30CE5D062089D2EA0045D345 /* KATracking */,
 				30CE5CE02089D2D70045D345 /* KATrackingAdDemo */,
 				30CE5C7A2089CF920045D345 /* Products */,
@@ -157,6 +132,7 @@
 		30CE5CBD2089D0DC0045D345 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				30068953208F486800F8DE2B /* GLKit.framework */,
 				30CE5CDE2089D20D0045D345 /* libz.tbd */,
 				30CE5CDC2089D2080045D345 /* libxml2.2.tbd */,
 				30CE5CDA2089D2020045D345 /* SystemConfiguration.framework */,
@@ -227,35 +203,6 @@
 			);
 			name = KATracking;
 			path = KATrackingAdDemo/KATracking;
-			sourceTree = "<group>";
-		};
-		30CE5D37208A05B50045D345 /* SDK */ = {
-			isa = PBXGroup;
-			children = (
-				30CE5D38208A05B50045D345 /* InMobiSDK.framework */,
-				30CE5D39208A05B50045D345 /* UnityAds.framework */,
-				30CE5D3A208A05B50045D345 /* GDT */,
-				30CE5D44208A05B50045D345 /* GoogleMobileAds.framework */,
-				30CE5D45208A05B50045D345 /* VungleSDK.framework */,
-			);
-			name = SDK;
-			path = ../SDK;
-			sourceTree = "<group>";
-		};
-		30CE5D3A208A05B50045D345 /* GDT */ = {
-			isa = PBXGroup;
-			children = (
-				30CE5D3B208A05B50045D345 /* GDTNativeExpressAdView.h */,
-				30CE5D3C208A05B50045D345 /* GDTMobBannerView.h */,
-				30CE5D3D208A05B50045D345 /* GDTTrack.h */,
-				30CE5D3E208A05B50045D345 /* GDTNativeAd.h */,
-				30CE5D3F208A05B50045D345 /* GDTSDKConfig.h */,
-				30CE5D40208A05B50045D345 /* GDTMobInterstitial.h */,
-				30CE5D41208A05B50045D345 /* GDTSplashAd.h */,
-				30CE5D42208A05B50045D345 /* GDTNativeExpressAd.h */,
-				30CE5D43208A05B50045D345 /* libGDTMobSDK.a */,
-			);
-			path = GDT;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -479,7 +426,6 @@
 				DEVELOPMENT_TEAM = 8JEAL74THQ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/../SDK",
 					"$(PROJECT_DIR)/KATrackingAdDemo/KATracking",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/KATrackingAdDemo/Prefix.pch";
@@ -489,10 +435,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/../SDK/GDT",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.appicplay.failybrakes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -510,7 +453,6 @@
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/../SDK",
 					"$(PROJECT_DIR)/KATrackingAdDemo/KATracking",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/KATrackingAdDemo/Prefix.pch";
@@ -520,10 +462,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/../SDK/GDT",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.appicplay.failybrakes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
