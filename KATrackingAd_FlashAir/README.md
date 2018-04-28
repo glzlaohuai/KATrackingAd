@@ -86,7 +86,6 @@ KATracking.instance.showRewardVideo();
 4. build a `fat` library and rename it to `libKATracking.a`
 5. extract the zip file downloaded in step 2 to directory **KABuildDir**(or any other name if you like), move `libKATracking.a` file you just build in step 4 to directory:`KABuildDir/ios/` to replace the original `libKATracking.a` file.
 6. open `terminal`，`cd` to directory **KABuildDir**, run command:
-
 `adt -package -target ane KATracking.ane extension.xml -swc KATracking.swc -platform iPhone-ARM -C ios . -platformoptions platformoptions.xml -platform default -C default . `
 7. if everything go well, the ane file will generated at **KABuildDir** root directory and named as: `KATracking.ane`.
 
