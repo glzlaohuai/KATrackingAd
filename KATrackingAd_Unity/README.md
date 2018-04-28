@@ -1,4 +1,4 @@
->[中文文档](http://https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_Unity/README_zh_CN.md)
+>[中文文档](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_Unity/README_zh_CN.md)
 
 
 # Getting Started with the KATracking Unity Plugin
