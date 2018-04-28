@@ -1,3 +1,6 @@
+>[中文文档](http://https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_Unity/README_zh_CN.md)
+
+
 # Getting Started with the KATracking Unity Plugin
 
 * [Before You Start](#start)
@@ -146,3 +149,4 @@ KATracking.showRewardVideoAD ();
 * Add all the third party ad sdks into the xcode project
 * Follow the above step([Additional Settings for iOS](#step2)) to set your project
 * All done. Now you can build and run on your iphone or a simulator to see how it works, and also you can modify the `appID`、`appChannel`、`slotID`, and the sample project's bundleID and version to the same as your project's to see if everything works correctly.
+
