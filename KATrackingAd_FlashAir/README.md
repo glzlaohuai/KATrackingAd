@@ -8,7 +8,7 @@
 
 * 支持**插屏**、**开屏**、**激励视频广告**
 * 支持**IOS 8.0+**（不支持android）
-* ANE下载地址：[KATracking ANE](https://github.com/KATracking/KATracking_FlashAir/blob/master/KATracking.ane)
+* ANE下载地址：[KATracking ANE](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_FlashAir/KATracking.ane)
 * 提供的ANE内集成了一下几家广告平台：**广点通**、**admob**、**vungle**、**inmobi**、**unityad**。如果您不想将上面列举的广告平台sdk全部都集成到自己的工程中，那么可以按照[此处步骤说明](#step2)编译适合您自己需求的版本。
 
 
@@ -81,8 +81,8 @@ KATracking.instance.showRewardVideo();
 
 ## <a name="step2">编译适合自己需求的ANE</a>
 
-1. 下载[IOS工程](https://github.com/KATracking/KATracking_FlashAir/tree/master/KATrackingAdobeLib)
-2. 下载[编译配置](https://github.com/KATracking/KATracking_FlashAir/tree/master/build)
+1. 下载[IOS工程](https://github.com/KATracking/KATrackingAd/tree/master/KATrackingAd_FlashAir/KATrackingAdobeLib)
+2. 下载[编译配置](https://github.com/KATracking/KATrackingAd/tree/master/KATrackingAd_FlashAir/build)
 3. 在xcode中打开ios工程，根据自己需求从工程中移除不需要的第三方sdk（第三方sdk在**ThirdPartyLibs**目录下）
 4. 编译生成`simulator`适用的`.a`库文件和真机适用的`.a`库文件。然后使用`lipo`命令创建一个`fat`库文件，将该文件重命名为：`libKATracking.a`
 5. 解压在`步骤2`中下载的编译配置文件（假设其目录为：**KABuildDir**），将`步骤4`中生成的`libKATracking.a`库文件覆盖掉`<KABuilderDir>/ios/`目录下的同名文件
