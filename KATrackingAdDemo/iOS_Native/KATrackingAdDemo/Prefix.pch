@@ -17,6 +17,7 @@
 #import <StoreKit/StoreKit.h>
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
-#import <KATracking/KASDK.h>
+
+#import <KASDK/KASDK.h>
 
 #endif /* Prefix_pch */
