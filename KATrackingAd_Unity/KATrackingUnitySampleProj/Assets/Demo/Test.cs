@@ -17,7 +17,7 @@ public class Test : MonoBehaviour
 		logText = logObj.transform.GetComponent<Text> ();
 		KATracking.init ("test_test_test", "test_ad");
 	}
-	
+
 	// Update is called once per frame
 	void Update ()
 	{
@@ -25,8 +25,47 @@ public class Test : MonoBehaviour
 
 	void OnEnable ()
 	{
+		KATracking.init ("test_test_test", "test_ad");
 		setupDelegates ();
 	}
+
+	void OnDisable ()
+	{
+		KATracking.interstitialADLoadSuccess -= interstitialLoadSuccess;
+		KATracking.interstitialADClick -= interstitialADClick;
+		KATracking.interstitialADLoadFail -= interstitialLoadFailed;
+		KATracking.interstitialADPresent -= interstitialADPresent;
+
+		KATracking.splashADClick -= splashADClick;
+		KATracking.splashADDismiss -= splashDismiss;
+		KATracking.splashPresentFail -= splashPresentFail;
+		KATracking.splashPresentSuccess -= splashPresentSuccess;
+
+		KATracking.rewardVideoADPresentComplete -= rewardVideoPresentComplete;
+		KATracking.rewardVideoADPresentFail -= rewardVideoADPresentFail;
+		KATracking.rewardVideoADPresentSkip -= rewardVideoADPresentSkip;
+		KATracking.rewardVideoADPresentSuccess -= rewardVideoADPresentSuccess;
+	}
+
+
+	void setupDelegates ()
+	{
+		KATracking.interstitialADLoadSuccess += interstitialLoadSuccess;
+		KATracking.interstitialADClick += interstitialADClick;
+		KATracking.interstitialADLoadFail += interstitialLoadFailed;
+		KATracking.interstitialADPresent += interstitialADPresent;
+
+		KATracking.splashADClick += splashADClick;
+		KATracking.splashADDismiss += splashDismiss;
+		KATracking.splashPresentFail += splashPresentFail;
+		KATracking.splashPresentSuccess += splashPresentSuccess;
+
+		KATracking.rewardVideoADPresentComplete += rewardVideoPresentComplete;
+		KATracking.rewardVideoADPresentFail += rewardVideoADPresentFail;
+		KATracking.rewardVideoADPresentSkip += rewardVideoADPresentSkip;
+		KATracking.rewardVideoADPresentSuccess += rewardVideoADPresentSuccess;
+	}
+
 
 	//interstitial 回调
 	void interstitialLoadSuccess (string slotID)
@@ -141,8 +180,5 @@ public class Test : MonoBehaviour
 	{
 		logText.text = "";
 	}
-
-
-
 
 }
