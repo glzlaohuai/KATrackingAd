@@ -1,7 +1,7 @@
 > [English Doc](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README_EN.md)
 # 下载链接
 1. iOS 当前版本 3.2.1: [SDK download](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/KATracking.zip)
-2. 聚合平台 SDK: [Mediation SDK download](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/MediationSDK.zip)
+2. 聚合平台 SDK: [Mediation SDK download](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/MediationSDK.zip) 包含TalkingData统计SDK，如果不需要使用KATracking对TD进行集成，可忽略不加入成。
 3. iOS SDK接入 Demo: [Demo Project](https://github.com/KATracking/KATrackingAd/tree/master/KATrackingAdDemo/iOS_Native)
 
 # 接入说明
