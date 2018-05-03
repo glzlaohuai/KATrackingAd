@@ -5,8 +5,9 @@
 //  Created by KA on 5/11/16.
 //  Copyright © 2016 KA. All rights reserved.
 //
-@interface KATracking : NSObject
 
+@interface KATracking : NSObject
+    
 + (KATracking *) sharedInstance;
 
 - (void) initWithAppId:(NSString *)appid

@@ -17,6 +17,7 @@ static NSMutableDictionary *adDictionary;
 static NSMutableDictionary *delegateDictionary;
 
 static KAAdobeRewardVideoDelegate *rewardDelegate;
+
 static FREContext eventContext;
 
 NSString * getStringFromFREObject(FREObject obj) {

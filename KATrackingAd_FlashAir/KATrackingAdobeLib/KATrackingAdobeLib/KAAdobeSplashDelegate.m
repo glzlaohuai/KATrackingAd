@@ -15,6 +15,7 @@
 
 #import "KAAdSplash.h"
 
+
 @implementation KAAdobeSplashDelegate
 
 - (void)splashAdDidClick:(KAAdSplash *)splashAd{

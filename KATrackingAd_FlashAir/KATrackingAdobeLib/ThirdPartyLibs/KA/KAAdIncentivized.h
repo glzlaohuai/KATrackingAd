@@ -5,8 +5,7 @@
 //  Created by KA on 03/07/2017.
 //  Copyright © KA. All rights reserved.
 //
-
-#import <UIKit/UIKit.h>
+#import <UIKit/UIViewController.h>
 @class KAAdIncentivized;
 
 @protocol KAAdIncentivizedDelegate <NSObject>
@@ -21,6 +20,7 @@
 - (void) incentivizedAdPresentDidSkip;
 
 @end
+
 
 
 @interface KAAdIncentivized : NSObject
