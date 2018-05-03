@@ -10,7 +10,7 @@
 * 支持**插屏**、**开屏**、**激励视频广告**
 * 支持**IOS 8.0+**（不支持android）
 * ANE下载地址：[KATracking ANE](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_FlashAir/KATracking.ane)
-* 提供的ANE内集成了一下几家广告平台：**广点通**、**admob**、**vungle**、**inmobi**、**unityad**。如果您不想将上面列举的广告平台sdk全部都集成到自己的工程中，那么可以按照[此处步骤说明](#step2)编译适合您自己需求的版本。
+* 提供的ANE内集成了一下几家广告平台：**广点通**、**admob**、**vungle**、**inmobi**、**unityad**、**cloudmobi**。如果您不想将上面列举的广告平台sdk全部都集成到自己的工程中，那么可以按照[此处步骤说明](#step2)编译适合您自己需求的版本。
 
 
 ## <a name="step1">SDK接入</a>
