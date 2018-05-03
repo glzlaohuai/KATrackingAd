@@ -10,7 +10,7 @@
 * Support **interstitial**、**splash**、**rewardVideo**
 * support **IOS 8.0+**（android not supported）
 * ANE download：[KATracking ANE](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_FlashAir/KATracking.ane)
-* the `ane` we provide default contains these listed third party ad sdk：**广点通**、**admob**、**vungle**、**inmobi**、**unityad**。If you do not want to add them all，you can follow [build you own ane file](#step2) to build ane file fit your needs
+* the `ane` we provide default contains these listed third party ad sdk：**广点通**、**admob**、**vungle**、**inmobi**、**unityad**、**cloudmobi**。If you do not want to add them all，you can follow [build you own ane file](#step2) to build ane file fit your needs
 
 
 ## <a name="step1">sdk integerate</a>
@@ -48,9 +48,12 @@ trace("ad callback："+msg);
 KATracking.instance.loadInterstitial("slotID");
 ```
 `slotID` is provided by our operation manager.
+
+* check if interstitial ready to be presented：
 ```
 KATracking.instance.isInterstitialReady("slotID");
 ```
+
 * show interstitial：
 ```
 if(KATracking.instance.isInterstitialReady("slotID")){
