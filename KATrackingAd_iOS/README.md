@@ -4,7 +4,7 @@
 
 ## 准备工作
 ### 获取KASDK+Demo.zip
-[下载链接](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/KASDK_Demo.zip)
+[下载链接](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/KASDK%2BDemo.zip)
 请将Mediation.zip中所有广告平台依赖库添加到Demo测试工程中，位置：KATrackingAdDemo/SDK/Mediation/，从而在Demo中测试所有广告位
 ### 获取广告平台依赖库
 [下载链接](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/Mediation.zip)
