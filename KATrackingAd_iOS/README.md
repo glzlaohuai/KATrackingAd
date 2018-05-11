@@ -10,19 +10,19 @@
 ### 广告SDK依赖库
 请将以下依赖库全部添加到接入工程中
 * KASDK+Demo.zip - 其中包含：
-** KASDK.framework
-** KAResources.bundle
+  * KASDK.framework
+  * KAResources.bundle
 ### 广告平台依赖库
 * Mediation.zip
-** InMobi.framework
-** GoogleMobileAds.framework
-** CTSDK.framework
-** UnityAds.framework
-** VungleSDK.framework
-** GDT
-*** libGDTMobSDK.a
-** TalkingData
-*** libTalkingData.a
+  * InMobi.framework
+  * GoogleMobileAds.framework
+  * CTSDK.framework
+  * UnityAds.framework
+  * VungleSDK.framework
+  * GDT
+    * libGDTMobSDK.a
+  * TalkingData
+    * libTalkingData.a
 
 ### 加入其它依赖库
 * SystemConfiguration.framework
