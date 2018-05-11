@@ -97,7 +97,7 @@ KAAdNative *ad = [[KAAdNative alloc] initWithSlot:<AdSlot> delegate:<Delegate>];
 通过调用一下方法，获取包含原生广告大图素材的UIView，返回值有可能为空，为空时请使用adIcon作为素材展示图文广告
 `KAAdNative`
 ```Objective-c
-UIView *primaryView = [ad primiaryViewOfSize:(CGSize)size];
+UIView *primaryView = [ad primiaryViewOfSize:<size>];
 ```
 * **size** - 广告素材指定尺寸
 
