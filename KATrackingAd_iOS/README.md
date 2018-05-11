@@ -94,7 +94,7 @@ KAAdNative *ad = [[KAAdNative alloc] initWithSlot:<AdSlot> delegate:<Delegate>];
 * **ka_adIcon** - 广告图标图片的UIImage
 
 ### 获取广告大图素材
-通过调用一下方法，获取包含原生广告大图素材的UIView，返回值有可能为空，为空时请使用adIcon作为素材展示图文广告
+通过调用以下方法，获取包含原生广告大图素材的UIView，返回值有可能为空，为空时请使用adIcon作为素材展示图文广告
 `KAAdNative`
 ```Objective-c
 UIView *primaryView = [ad primiaryViewOfSize:<size>];
@@ -107,7 +107,7 @@ UIView *primaryView = [ad primiaryViewOfSize:<size>];
 ```Objective-c
 [ad nativeAdRenderedWithView:adView];
 ```
-* **adView** - 装在广告素材的容器UIView
+* **adView** - 装载广告素材的容器UIView
 
 ### 上报广告点击
 当用户点击了广告，调用此方法上报点击事件
@@ -115,19 +115,10 @@ UIView *primaryView = [ad primiaryViewOfSize:<size>];
 ```Objective-c
 [ad nativeAdClickedAtPointAndOpenLandingPage:touchPoint];
 ```
-**强烈建议** 使用此方法让SDK来处理展示广告落地页
-
-**或者使用**
-
-`KAAdNative`
-```Objective-c
-NSURL *landingpage = [ad nativeAdClickedAtPoint:touchPoint];
-```
 * **touchPoint** - 点击在容器UIView中的CGPoint
-* **landingPage** - 广告落地页的地址字符串
 
 ### 回收素材
-在广告从展示界面中移除后，请调用以下方法来回收素材
+当广告素材被从展示界面中移除后，请调用以下方法来回收素材
 `KAAdNative`
 ```Objective-c
 [ad recyclePrimaryView];
@@ -135,7 +126,6 @@ NSURL *landingpage = [ad nativeAdClickedAtPoint:touchPoint];
 
 ### 广告回调
 使用以下回调接收加载广告成功和失败的事件
-
 `KAAdNativeDelegate`
 ```Objective-c
 
@@ -151,23 +141,19 @@ withStatus:(nonnull NSError *)nativeAdStatus;
 
 ### 构建广告
 创建一个开屏广告的实例
-
 `KAAdSplash`
 ```Objective-c
 KAAdSplash *splash = [[KAAdSplash alloc] initWithSlot:<AdSlot> delegate:<Delegate>];
 ```
-
 * **AdSlot** - 广告位SlotId，用于请求广告
 * **Delegate** - id<KAAdSplashDelegate> 实例，用于接收广告事件回调
 
 ### 展示广告
 调用下面方法加载并展示开屏广告
-
 `KAAdSplash`
 ```Objective-c
 [splash loadAndPresentWithViewController:<Controller>];
 ```
-
 * **Controller** - 用于展示开屏广告的UIViewController
 
 ### 广告回调
@@ -193,24 +179,20 @@ withError:(nonnull NSError *)error;
 
 ### 构建广告
 创建一个插屏广告的实例
-
 `KAAdInterstitial`
 ```Objective-c
 KAAdInterstitial *interstitial = [[KAAdInterstitial alloc] initWithSlot:<AdSlot> delegate:<Delegate>];
 ```
-
 * **AdSlot** - 广告位SlotId，用于请求广告
 * **Delegate** - id<KAAdInterstitialDelegate> 实例，用于接收广告事件回调
 
 请求并加载广告
-
 `KAAdInterstitial`
 ```Objective-c
 [interstitial load];
 ```
 
 检测广告是否已经可以使用
-
 `KAAdInterstitial`
 ```Objective-c
 BOOL ready = [interstitial isReady];
@@ -218,12 +200,10 @@ BOOL ready = [interstitial isReady];
 
 ### 展示广告
 调用下面方法加载并展示开屏广告
-
 `KAAdInterstitial`
 ```Objective-c
 [interstitial presentFromRootViewController:<Controller>];
 ```
-
 * **Controller** - 用于展示插屏广告的UIViewController
 
 ### 广告回调
@@ -254,7 +234,6 @@ withError:(nonnull NSError *) interstitialAdStatus;
 激励视频广告在SDK中为单例，因此无需在创建新的实例，可以直接使用类方法展示广告，视频广告在SDK初始化成功后立即开始自动加载。
 
 检测广告是否已经可以使用
-
 `KAAdIncentivized`
 ```Objective-c
 BOOL ready = [KAAdIncentivized isReady];
@@ -262,22 +241,18 @@ BOOL ready = [KAAdIncentivized isReady];
 
 ### 展示广告
 调用下面方法加载并展示极力视频广告
-
 `KAAdIncentivized`
 ```Objective-c
 [KAAdIncentivized presentFromRootViewController:<Controller>];
 ```
-
 * **Controller** - 用于展示激励视频广告的UIViewController
 
 ### 广告回调
 设置一个激励视频的回调实例
-
 `KAAdIncentivized`
 ```Objective-c
 [KAAdIncentivized setDelegate:<Delegate>];
 ```
-
 * **Delegate** - id<KAAdIncentivizedDelegate> 实例，用于接收广告事件回调
 
 ### 广告回调
