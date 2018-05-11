@@ -1,17 +1,30 @@
 > [中文文档](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README.md)
-# Download Links
-1. iOS SDK: [Download Ver.3.2.1](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/KATracking.zip)
-2. Mediation Platform SDK: [Mediation SDK download](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/MediationSDK.zip)
-3. iOS SDK integration Demo: [Demo Project](https://github.com/KATracking/KATrackingAd/tree/master/KATrackingAdDemo/iOS_Native)
+# Current Ver.3.3
+# Integration Guideline
 
-# Integration Guide
+## Preparation
+### Download KASDK+Demo.zip [LINK](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/KASDK%2BDemo.zip)
+In order to test all ad slots from mediated platforms, please download mediation.zip below, and unzip all frameworks to demo project at location: KATrackingAdDemo/SDK/Mediation/.
+### Download Mediation.zip [LINK](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/Mediation.zip)
 
-## Before you start
-### Adding KATracking
-* KATracking.framework
-* Resources.bundle
+Please add all following framework to your projects
+### KASDK framework
+* KASDK+Demo.zip - 其中包含：
+  * KASDK.framework
+  * KAResources.bundle
+### Mediation platform frameworks
+* Mediation.zip
+  * InMobi.framework
+  * GoogleMobileAds.framework
+  * CTSDK.framework
+  * UnityAds.framework
+  * VungleSDK.framework
+  * GDT
+    * libGDTMobSDK.a
+  * TalkingData
+    * libTalkingData.a
 
-### Adding dependency Frameworks
+### Dependencies
 * SystemConfiguration.framework
 * CoreTelephony.framework
 * QuartzCore.framework
@@ -57,7 +70,6 @@ Provided by operator
 
 ### Create a Native Ad
 To create a Native ad instance
-
 `KAAdNative`
 ```Objective-c
 KAAdNative *ad = [[KAAdNative alloc] initWithSlot:<AdSlot> delegate:<Delegate>];
@@ -65,48 +77,12 @@ KAAdNative *ad = [[KAAdNative alloc] initWithSlot:<AdSlot> delegate:<Delegate>];
 * **AdSlot** - Slot ID to request ad with
 * **Delegate** - id<KAAdNativeDelegate> object to receive delegate calls
 
-To load the Ad
-
+### Load Native ad
+Simple call this method to load an ad, then wait for delegates to be tricked for load succes or fail
 `KAAdNative`
 ```Objective-c
 [ad load];
 ```
-
-Test availability of the Ad
-
-`KAAdNative`
-```Objective-c
-BOOL ready = [ad isReady];
-```
-
-### Report an impression
-Once the ad has been displayed
-
-`KAAdNative`
-```Objective-c
-[ad nativeAdRenderedWithView:adView];
-```
-
-* **adView** - the UIView containing ad content
-
-### Report a click
-Once user did click on Ad, use one of the following two methods to report click event
-
-`KAAdNative`
-```Objective-c
-[ad nativeAdClickedAtPointAndOpenLandingPage:touchPoint];
-```
-This is <span style="color:red">HIGHLY RECOMMANDED</span> to let SDK handle showing landing page
-
-**OR**
-
-`KAAdNative`
-```Objective-c
-NSString *landingpage = [ad nativeAdClickedAtPoint:touchPoint];
-```
-
-* **touchPoint** - CGPoint of click coordinates within UIView containing ad content
-* **landingPage** - URL string for showing ad landing page
 
 ### Properties of Native Ad
 Once received request complete delegate call, the ad is ready to use, see following properties and their description
@@ -115,8 +91,31 @@ Once received request complete delegate call, the ad is ready to use, see follow
 * **ka_requestId** - An string uniquely identified this request of Ad
 * **ka_adTitle** - Ad title text
 * **ka_adDescription** - Ad text description
-* **ka_adIconImageView** - UIImageView containing the icon image of Ad
-* **ka_adImageView** - UIImageView containing the screenshot image of Ad
+* **ka_adIcon** - UIImageView containing the icon image of Ad
+
+### Acquire primary ad view
+This method returns a UIView specified by size, which contains the main content of NativeAd.
+`KAAdNative`
+```Objective-c
+UIView *primaryView = [ad primiaryViewOfSize:<size>];
+```
+* **size** - size of main ad content
+
+### Report an impression
+Once the ad has been displayed
+`KAAdNative`
+```Objective-c
+[ad nativeAdRenderedWithView:adView];
+```
+* **adView** - the UIView containing ad content
+
+### Report a click
+Once user did click on Ad, use one of the following two methods to report click event
+`KAAdNative`
+```Objective-c
+[ad nativeAdClickedAtPointAndOpenLandingPage:touchPoint];
+```
+* **touchPoint** - CGPoint of click coordinates within UIView containing ad content
 
 ### Delegates of Native Ad
 Use these delegates to receive events of request native ad complete or fail
@@ -135,7 +134,6 @@ withStatus:(nonnull NSError *)nativeAdStatus;
 
 ### Create a Splash Ad
 To create a Splash ad instance
-
 `KAAdSplash`
 ```Objective-c
 KAAdSplash *splash = [[KAAdSplash alloc] initWithSlot:<AdSlot> delegate:<Delegate>];
@@ -145,12 +143,10 @@ KAAdSplash *splash = [[KAAdSplash alloc] initWithSlot:<AdSlot> delegate:<Delegat
 
 ### Present a Splash Ad
 To load and present Splash Ad
-
 `KAAdSplash`
 ```Objective-c
 [splash loadAndPresentWithViewController:<Controller>];
 ```
-
 * **Controller** - UIViewController for which the splash is presented from
 
 ### Delegates of Splash Ad
@@ -176,7 +172,6 @@ withError:(nonnull NSError *)error;
 
 ### Create a Interstitial Ad
 To create a Interstitial ad instance
-
 `KAAdInterstitial`
 ```Objective-c
 KAAdInterstitial *interstitial = [[KAAdInterstitial alloc] initWithSlot:<AdSlot> delegate:<Delegate>];
@@ -185,14 +180,11 @@ KAAdInterstitial *interstitial = [[KAAdInterstitial alloc] initWithSlot:<AdSlot>
 * **Delegate** - id<KAAdInterstitialDelegate> object to receive delegate calls
 
 To load an interstitial Ad
-
 `KAAdInterstitial`
 ```Objective-c
 [interstitial load];
 ```
-
 Test availability of the Ad
-
 `KAAdInterstitial`
 ```Objective-c
 BOOL ready = [interstitial isReady];
@@ -200,12 +192,10 @@ BOOL ready = [interstitial isReady];
 
 ### Present a Interstitial Ad
 To load and present Interstitial Ad
-
 `KAAdInterstitial`
 ```Objective-c
 [interstitial presentFromRootViewController:<Controller>];
 ```
-
 * **Controller** - UIViewController for which the Interstitial is presented from
 
 ### Delegates of Interstitial Ad
