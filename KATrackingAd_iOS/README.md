@@ -1,15 +1,30 @@
 > [English Doc](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README_EN.md)
-# 下载链接
-1. iOS 当前版本 3.2.1: [SDK download](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/KATracking.zip)
-2. 聚合平台 SDK: [Mediation SDK download](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/MediationSDK.zip) 包含TalkingData统计SDK，如果不需要使用KATracking对TD进行集成，可忽略不加入成。
-3. iOS SDK接入 Demo: [Demo Project](https://github.com/KATracking/KATrackingAd/tree/master/KATrackingAdDemo/iOS_Native)
-
+# 当前版本 Ver.3.3
 # 接入说明
 
 ## 准备工作
-### 加入KATracking依赖库
-* KATracking.framework
-* Resources.bundle
+### 获取KASDK+Demo.zip
+[下载链接](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/KASDK_Demo.zip)
+请将Mediation.zip中所有广告平台依赖库添加到Demo测试工程中，位置：KATrackingAdDemo/SDK/Mediation/，从而在Demo中测试所有广告位
+### 获取广告平台依赖库
+[下载链接](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/Mediation.zip)
+
+### 广告SDK依赖库
+请将以下依赖库全部添加到接入工程中
+* KASDK+Demo.zip - 其中包含：
+** KASDK.framework
+** KAResources.bundle
+### 广告平台依赖库
+* Mediation.zip
+** InMobi.framework
+** GoogleMobileAds.framework
+** CTSDK.framework
+** UnityAds.framework
+** VungleSDK.framework
+** GDT
+*** libGDTMobSDK.a
+** TalkingData
+*** libTalkingData.a
 
 ### 加入其它依赖库
 * SystemConfiguration.framework
@@ -43,7 +58,7 @@
 
 `AppDelegate`
 ```Objective-c
-#import <KATracking/KASDK.h>
+#import <KASDK/KASDK.h>
 ```
 `AppDelegate : application:didFinishLaunchingWithOptions:`
 ```Objective-c
@@ -72,12 +87,23 @@ KAAdNative *ad = [[KAAdNative alloc] initWithSlot:<AdSlot> delegate:<Delegate>];
 [ad load];
 ```
 
-检测广告是否已经可以使用
+### 广告素材信息
+当成功加载一个原生广告后，下列参数包含了广告相关的素材信息
+
+* **ka_slot** - 广告为的SlotId
+* **ka_requestId** - 请求ID
+* **ka_adTitle** - 广告文字标题
+* **ka_adDescription** - 广告文字说明
+* **ka_adIcon** - 广告图标图片的UIImage
+
+### 获取广告主素材
 
 `KAAdNative`
 ```Objective-c
-BOOL ready = [ad isReady];
+UIView *primaryView = [ad primiaryViewOfSize:(CGSize)size];
 ```
+
+* **size** - 广告素材指定尺寸
 
 ### 上报广告展示
 当广告被展示后，调用此方法上报展示事件
@@ -102,36 +128,27 @@ BOOL ready = [ad isReady];
 
 `KAAdNative`
 ```Objective-c
-NSString *landingpage = [ad nativeAdClickedAtPoint:touchPoint];
+NSURL *landingpage = [ad nativeAdClickedAtPoint:touchPoint];
 ```
 
 * **touchPoint** - 点击在容器UIView中的CGPoint
 * **landingPage** - 广告落地页的地址字符串
-
-### 广告素材信息
-当成功加载一个原生广告后，下列参数包含了广告相关的素材信息
-
-* **ka_slot** - 广告为的SlotId
-* **ka_requestId** - 请求ID
-* **ka_adTitle** - 广告文字标题
-* **ka_adDescription** - 广告文字说明
-* **ka_adIconImageView** - 广告图标图片的UIImageView
-* **ka_adImageView** - 广告大图素材的UIImageView
 
 ### 广告回调
 使用以下回调接收加载广告成功和失败的事件
 
 `KAAdNativeDelegate`
 ```Objective-c
-// Request has completed with nativeAd
+
+广告请求成功
 - (void) nativeAdRequestCompletedWithAd:(nonnull KAAdNative *)nativeAd;
 
-// Request has failed
+广告请求失败
 - (void) nativeAdRequestFailedForSlot:(nonnull NSString *)nativeAdSlot
 withStatus:(nonnull NSError *)nativeAdStatus;
 ```
 
-# 开屏广告
+# 开屏广告 - Splash
 
 ### 构建广告
 创建一个开屏广告的实例
@@ -173,7 +190,7 @@ withError:(nonnull NSError *)error;
 - (void) splashAdDidDismiss:(KAAdSplash *)splashAd;
 ```
 
-# 插屏广告
+# 插屏广告 - Interstitial
 
 ### 构建广告
 创建一个插屏广告的实例
@@ -232,7 +249,7 @@ withError:(nonnull NSError *) interstitialAdStatus;
 // Interstitial Ad has been dismissed from screen
 ```
 
-# 激励视频广告
+# 激励视频广告 - Incentivized
 
 ### 如何使用
 激励视频广告在SDK中为单例，因此无需在创建新的实例，可以直接使用类方法展示广告，视频广告在SDK初始化成功后立即开始自动加载。
