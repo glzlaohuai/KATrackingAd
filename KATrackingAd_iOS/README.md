@@ -7,8 +7,8 @@
 请将Mediation.zip中所有广告平台依赖库添加到Demo测试工程中，位置：KATrackingAdDemo/SDK/Mediation/，从而在Demo中测试所有广告位
 ### 获取广告平台依赖库 [下载链接](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/Mediation.zip)
 
-### 广告SDK依赖库
 请将以下依赖库全部添加到接入工程中
+### 广告SDK依赖库
 * KASDK+Demo.zip - 其中包含：
   * KASDK.framework
   * KAResources.bundle
