@@ -70,7 +70,6 @@
 
 ### 构建广告
 创建一个原生广告的实例
-
 `KAAdNative`
 ```Objective-c
 KAAdNative *ad = [[KAAdNative alloc] initWithSlot:<AdSlot> delegate:<Delegate>];
@@ -78,8 +77,8 @@ KAAdNative *ad = [[KAAdNative alloc] initWithSlot:<AdSlot> delegate:<Delegate>];
 * **AdSlot** - 广告位SlotId，用于请求广告
 * **Delegate** - id<KAAdNativeDelegate> 实例，用于接收请求广告的回调
 
-请求并加载广告
-
+### 加载广告
+调用load方法来获取广告，并通过回调来判断广告是否请求成功
 `KAAdNative`
 ```Objective-c
 [ad load];
@@ -94,28 +93,24 @@ KAAdNative *ad = [[KAAdNative alloc] initWithSlot:<AdSlot> delegate:<Delegate>];
 * **ka_adDescription** - 广告文字说明
 * **ka_adIcon** - 广告图标图片的UIImage
 
-### 获取广告主素材
-
+### 获取广告大图素材
+通过调用一下方法，获取包含原生广告大图素材的UIView，返回值有可能为空，为空时请使用adIcon作为素材展示图文广告
 `KAAdNative`
 ```Objective-c
 UIView *primaryView = [ad primiaryViewOfSize:(CGSize)size];
 ```
-
 * **size** - 广告素材指定尺寸
 
 ### 上报广告展示
 当广告被展示后，调用此方法上报展示事件
-
 `KAAdNative`
 ```Objective-c
 [ad nativeAdRenderedWithView:adView];
 ```
-
 * **adView** - 装在广告素材的容器UIView
 
 ### 上报广告点击
 当用户点击了广告，调用此方法上报点击事件
-
 `KAAdNative`
 ```Objective-c
 [ad nativeAdClickedAtPointAndOpenLandingPage:touchPoint];
@@ -128,9 +123,15 @@ UIView *primaryView = [ad primiaryViewOfSize:(CGSize)size];
 ```Objective-c
 NSURL *landingpage = [ad nativeAdClickedAtPoint:touchPoint];
 ```
-
 * **touchPoint** - 点击在容器UIView中的CGPoint
 * **landingPage** - 广告落地页的地址字符串
+
+### 回收素材
+在广告从展示界面中移除后，请调用以下方法来回收素材
+`KAAdNative`
+```Objective-c
+[ad recyclePrimaryView];
+```
 
 ### 广告回调
 使用以下回调接收加载广告成功和失败的事件
