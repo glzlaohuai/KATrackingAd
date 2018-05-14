@@ -19,8 +19,8 @@
 		FA98D514209AB8400068088C /* InMobiSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9E254D209329220018F168 /* InMobiSDK.a */; };
 		FA98D515209AB8460068088C /* GoogleMobileAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9E2528209329070018F168 /* GoogleMobileAds.a */; };
 		FA98D516209AB8490068088C /* libGDTMobSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9E24F4209328F10018F168 /* libGDTMobSDK.a */; };
-		FA98D518209ABB280068088C /* KATracking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA98D517209ABB280068088C /* KATracking.a */; };
 		FA98D51A209ABBB80068088C /* libTalkingData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA98D519209ABBB80068088C /* libTalkingData.a */; };
+		FAA6C19A20A94C2700F58198 /* KASDK in Frameworks */ = {isa = PBXBuildFile; fileRef = FAA6C19920A94C2700F58198 /* KASDK */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -36,13 +36,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		FA5D964F209A0CA2006F613B /* KATracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KATracking.h; sourceTree = "<group>"; };
-		FA5D9650209A0CA2006F613B /* KASDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KASDK.h; sourceTree = "<group>"; };
-		FA5D9651209A0CA2006F613B /* KAAdInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KAAdInterstitial.h; sourceTree = "<group>"; };
-		FA5D9652209A0CA2006F613B /* KAAdNative.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KAAdNative.h; sourceTree = "<group>"; };
-		FA5D9653209A0CA2006F613B /* KAAdIncentivized.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KAAdIncentivized.h; sourceTree = "<group>"; };
-		FA5D9654209A0CA2006F613B /* KAAdSplash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KAAdSplash.h; sourceTree = "<group>"; };
-		FA5D9655209A0CA2006F613B /* KAAdStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KAAdStatus.h; sourceTree = "<group>"; };
 		FA853F1D2091B209003EF45D /* libKATrackingAdobeLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libKATrackingAdobeLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA853F4F2091B38F003EF45D /* KAAdobeConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KAAdobeConstants.h; sourceTree = "<group>"; };
 		FA853F592091B411003EF45D /* FlashRuntimeExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlashRuntimeExtensions.h; sourceTree = "<group>"; };
@@ -55,7 +48,6 @@
 		FA853F682091B80B003EF45D /* KAAdobeInterstitialDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KAAdobeInterstitialDelegate.m; sourceTree = "<group>"; };
 		FA853F692091B80B003EF45D /* KAAdobeRewardVideoDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KAAdobeRewardVideoDelegate.m; sourceTree = "<group>"; };
 		FA98D510209AB8270068088C /* CTSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = CTSDK.a; sourceTree = "<group>"; };
-		FA98D517209ABB280068088C /* KATracking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = KATracking.a; sourceTree = "<group>"; };
 		FA98D519209ABBB80068088C /* libTalkingData.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTalkingData.a; sourceTree = "<group>"; };
 		FA9E24F4209328F10018F168 /* libGDTMobSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGDTMobSDK.a; sourceTree = "<group>"; };
 		FA9E2528209329070018F168 /* GoogleMobileAds.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = GoogleMobileAds.a; sourceTree = "<group>"; };
@@ -73,6 +65,14 @@
 		FA9E255E209329400018F168 /* VungleSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VungleSDK.h; sourceTree = "<group>"; };
 		FA9E255F209329400018F168 /* VungleSDKCreativeTracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VungleSDKCreativeTracking.h; sourceTree = "<group>"; };
 		FA9E2560209329400018F168 /* VungleSDKHeaderBidding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VungleSDKHeaderBidding.h; sourceTree = "<group>"; };
+		FAA6C19920A94C2700F58198 /* KASDK */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = KASDK; sourceTree = "<group>"; };
+		FAA6C1A220A94C6D00F58198 /* KAAdSplash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KAAdSplash.h; sourceTree = "<group>"; };
+		FAA6C1A320A94C6D00F58198 /* KATracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KATracking.h; sourceTree = "<group>"; };
+		FAA6C1A420A94C6D00F58198 /* KAAdNative.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KAAdNative.h; sourceTree = "<group>"; };
+		FAA6C1A520A94C6D00F58198 /* KASDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KASDK.h; sourceTree = "<group>"; };
+		FAA6C1A620A94C6D00F58198 /* KAAdIncentivized.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KAAdIncentivized.h; sourceTree = "<group>"; };
+		FAA6C1A720A94C6E00F58198 /* KAAdInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KAAdInterstitial.h; sourceTree = "<group>"; };
+		FAA6C1A820A94C6E00F58198 /* KAAdStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KAAdStatus.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,11 +83,11 @@
 				FA98D514209AB8400068088C /* InMobiSDK.a in Frameworks */,
 				FA98D515209AB8460068088C /* GoogleMobileAds.a in Frameworks */,
 				FA98D51A209ABBB80068088C /* libTalkingData.a in Frameworks */,
+				FAA6C19A20A94C2700F58198 /* KASDK in Frameworks */,
 				FA98D516209AB8490068088C /* libGDTMobSDK.a in Frameworks */,
 				FA98D512209AB8370068088C /* VungleSDK.a in Frameworks */,
 				FA98D513209AB83B0068088C /* UnityAds.a in Frameworks */,
 				FA98D511209AB8270068088C /* CTSDK.a in Frameworks */,
-				FA98D518209ABB280068088C /* KATracking.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,15 +153,15 @@
 		FA9E24DB209328AB0018F168 /* KA */ = {
 			isa = PBXGroup;
 			children = (
+				FAA6C1A620A94C6D00F58198 /* KAAdIncentivized.h */,
+				FAA6C1A720A94C6E00F58198 /* KAAdInterstitial.h */,
+				FAA6C1A420A94C6D00F58198 /* KAAdNative.h */,
+				FAA6C1A220A94C6D00F58198 /* KAAdSplash.h */,
+				FAA6C1A820A94C6E00F58198 /* KAAdStatus.h */,
+				FAA6C1A520A94C6D00F58198 /* KASDK.h */,
+				FAA6C1A320A94C6D00F58198 /* KATracking.h */,
+				FAA6C19920A94C2700F58198 /* KASDK */,
 				FA98D519209ABBB80068088C /* libTalkingData.a */,
-				FA98D517209ABB280068088C /* KATracking.a */,
-				FA5D9653209A0CA2006F613B /* KAAdIncentivized.h */,
-				FA5D9651209A0CA2006F613B /* KAAdInterstitial.h */,
-				FA5D9652209A0CA2006F613B /* KAAdNative.h */,
-				FA5D9654209A0CA2006F613B /* KAAdSplash.h */,
-				FA5D9655209A0CA2006F613B /* KAAdStatus.h */,
-				FA5D9650209A0CA2006F613B /* KASDK.h */,
-				FA5D964F209A0CA2006F613B /* KATracking.h */,
 			);
 			path = KA;
 			sourceTree = "<group>";

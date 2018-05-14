@@ -5,7 +5,8 @@
 //  Created by KA on 03/07/2017.
 //  Copyright © KA. All rights reserved.
 //
-#import <UIKit/UIViewController.h>
+#import <UIKit/UIKit.h>
+
 @class KAAdIncentivized;
 
 @protocol KAAdIncentivizedDelegate <NSObject>

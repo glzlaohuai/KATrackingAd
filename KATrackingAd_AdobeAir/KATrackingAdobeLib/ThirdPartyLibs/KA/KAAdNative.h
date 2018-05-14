@@ -16,11 +16,6 @@
 - (void) nativeAdRequestFailedForSlot:(nonnull NSString *)nativeAdSlot
                            withStatus:(nonnull NSError *)nativeAdStatus;
 
-@optional
-
-- (void) nativeAdLandingPageDidOpen;
-
-- (void) nativeAdLandingPageDidDismiss;
 
 @end
 
@@ -46,11 +41,7 @@
 /**
  * The icon UIImageView.
  */
-@property (nonatomic, strong, readonly, nullable) UIImageView *ka_adIconImageView;
-/**
- * The image UIImageView.
- */
-@property (nonatomic, strong, readonly, nullable) UIImageView *ka_adImageView;
+@property (nonatomic, strong, readonly, nullable) UIImage *ka_adIcon;
 
 /**
  * Initialize a Native ad with the given SlotId
@@ -58,7 +49,7 @@
  * @param delegate The delegate to receive callbacks from KAAdNative
  */
 - (nonnull instancetype) initWithSlot:(nonnull NSString *)nativeSlot
-                     delegate:(nonnull id<KAAdNativeDelegate>)delegate;
+                             delegate:(nonnull id<KAAdNativeDelegate>)delegate;
 
 /**
  * Loads a Native ad
@@ -66,9 +57,14 @@
 - (void) load;
 
 /**
- * Check if ad is ready to show
+ * Use this method to get main ad view, for which will handle ad impression
  */
-- (BOOL) isReady;
+- (UIView *) primiaryViewOfSize:(CGSize)size;
+
+/**
+ * Once ad is close and view is remove from screen, use this method to recycle ad assets
+ */
+- (void) recyclePrimaryView;
 
 /**
  * Report when Native ad is displayed
@@ -78,7 +74,7 @@
 /**
  * Report when Native ad is clicked, return landing page url
  */
-- (nonnull NSString *) nativeAdLandingPageAtPoint:(CGPoint)nativeClickPoint;
+- (nonnull NSURL *) nativeAdLandingPageAtPoint:(CGPoint)nativeClickPoint;
 
 /**
  * Report and open landing page when Native ad is clicked

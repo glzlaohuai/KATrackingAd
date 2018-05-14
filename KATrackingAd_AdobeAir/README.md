@@ -1,4 +1,4 @@
-> [中文文档](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_FlashAir/README_zh_CN.md)
+> [中文文档](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_AdobeAir/README_zh_CN.md)
 # Get Start With KATracking Flash AIR SDK
 
 * [About](#start)
@@ -9,7 +9,7 @@
 
 * Support **interstitial**、**splash**、**rewardVideo**
 * support **IOS 8.0+**（android not supported）
-* ANE download：[KATracking ANE](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_FlashAir/KATracking.ane)
+* ANE download：[KATracking ANE](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_AdobeAir/KATracking.ane)
 * the `ane` we provide default contains these listed third party ad sdk：**广点通**、**admob**、**vungle**、**inmobi**、**unityad**、**cloudmobi**。If you do not want to add them all，you can follow [build you own ane file](#step2) to build ane file fit your needs
 
 
@@ -83,8 +83,8 @@ KATracking.instance.showRewardVideo();
 
 ## <a name="step2">build your own ANE</a>
 
-1. download [xcode project](https://github.com/KATracking/KATrackingAd/tree/master/KATrackingAd_FlashAir/KATrackingAdobeLib)
-2. download [build config](https://github.com/KATracking/KATrackingAd/tree/master/KATrackingAd_FlashAir/build)
+1. download [xcode project](https://github.com/KATracking/KATrackingAd/tree/master/KATrackingAd_AdobeAir/KATrackingAdobeLib)
+2. download [build config](https://github.com/KATracking/KATrackingAd/tree/master/KATrackingAd_AdobeAir/build)
 3. open xcode project, remove third party ad sdks that you do not need（in directory **ThirdPartyLibs**）
 4. build a `fat` library and rename it to `libKATracking.a`
 5. extract the zip file downloaded in step 2 to directory **KABuildDir**(or any other name if you like), move `libKATracking.a` file you just build in step 4 to directory:`KABuildDir/ios/` to replace the original `libKATracking.a` file.
