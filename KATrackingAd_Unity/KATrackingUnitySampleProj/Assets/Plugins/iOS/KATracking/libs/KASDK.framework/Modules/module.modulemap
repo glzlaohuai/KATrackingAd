@@ -1,0 +1,6 @@
+framework module KASDK {
+  umbrella header "KASDK.h"
+
+  export *
+  module * { export * }
+}
