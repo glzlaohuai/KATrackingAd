@@ -84,15 +84,6 @@ KAAdNative *ad = [[KAAdNative alloc] initWithSlot:<AdSlot> delegate:<Delegate>];
 [ad load];
 ```
 
-### 广告素材信息
-当成功加载一个原生广告后，下列参数包含了广告相关的素材信息
-
-* **ka_slot** - 广告为的SlotId
-* **ka_requestId** - 请求ID
-* **ka_adTitle** - 广告文字标题
-* **ka_adDescription** - 广告文字说明
-* **ka_adIcon** - 广告图标图片的UIImage
-
 ### 获取广告大图素材
 通过调用以下方法，获取包含原生广告大图素材的UIView，返回值有可能为空，为空时请使用adIcon作为素材展示图文广告
 `KAAdNative`
@@ -100,6 +91,16 @@ KAAdNative *ad = [[KAAdNative alloc] initWithSlot:<AdSlot> delegate:<Delegate>];
 UIView *primaryView = [ad primiaryViewOfSize:<size>];
 ```
 * **size** - 广告素材指定尺寸
+
+### 广告素材信息
+当成功加载一个原生广告后，请先调用primaryView方法，获取对应的广告素材后，在对以下参数进行访问，下列参数包含了广告相关的素材信息
+
+* **ka_slot** - 广告为的SlotId
+* **ka_requestId** - 请求ID
+* **ka_adTitle** - 广告文字标题
+* **ka_adDescription** - 广告文字说明
+* **ka_adIcon** - 广告图标图片的UIImage
+
 
 ### 上报广告展示
 当广告被展示后，调用此方法上报展示事件

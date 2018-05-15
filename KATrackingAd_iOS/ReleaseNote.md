@@ -8,6 +8,7 @@
 ## Ver3.3
 ## Release Date: 2018-5-11
 
+* 相较于3.3之前的版本，KAAdNative添加了以下修改以及结构变化
 * KAAdNative 增加聚合功能
 * isReady方法删除，仅供根据广告请求成功回调判断广告获取成功
 * ka_adIconImageView 修改成 ka_adIcon, UIImage
