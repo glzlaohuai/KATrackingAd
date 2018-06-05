@@ -99,3 +99,5 @@ image地址   | `getImageUrl`
 * `onResume`回调方法中执行：`apNative.onResume();`
 * `onDestroy`回调方法中执行：`apNative.onDestroy();`
 4. 当不再需要展示该原生广告时执行方法：`apNative.destroy();`
+
+**注**：如果在实例化`APNative`时候传入的`adContainer`或`showDetailView`参数为`null`，请一定在执行`show`方法之前通过`setContainerView`或`setShowDetailView`方法来进行实际view的设置。
