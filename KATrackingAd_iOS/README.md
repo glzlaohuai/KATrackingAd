@@ -135,7 +135,7 @@ UIView *primaryView = [ad primiaryViewOfSize:<size>];
 
 广告请求失败
 - (void) nativeAdRequestFailedForSlot:(nonnull NSString *)nativeAdSlot
-withStatus:(nonnull NSError *)nativeAdStatus;
+                           withStatus:(nonnull NSError *)nativeAdStatus;
 
 @optional
 - (void) nativeAdRequestFailedWithAd:(nonnull KAAdNative *)nativeAd
