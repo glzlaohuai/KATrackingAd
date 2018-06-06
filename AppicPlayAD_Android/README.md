@@ -37,28 +37,28 @@ android:resource="@xml/appicplay_file_path" />
 ```
 
 * 接入工程的`application`的回调方法中分别添加以下方法：
-* `onCreate`回调方法:
-```
-@Override
-public void onCreate() {
-super.onCreate();
-APLifeCycleInvoker.onApplicationCreate(this);
-}
-```
-* `attachBaseContext`回调方法：
-```
-@Override
-protected void attachBaseContext(Context base) {
-super.attachBaseContext(base);
-APLifeCycleInvoker.onApplicationAttachBaseContext(base);
-}
-```
+    * `onCreate`回调方法:
+        ```
+        @Override
+        public void onCreate() {
+        super.onCreate();
+        APLifeCycleInvoker.onApplicationCreate(this);
+        }
+        ```
+    * `attachBaseContext`回调方法：
+        ```
+        @Override
+        protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        APLifeCycleInvoker.onApplicationAttachBaseContext(base);
+        }
+        ```
 
 * 在应用的主activity（主activity指除非退出应用，否则一般不会被销毁的activity）的`onCreate`回调方法中加入以下代码：
-```
-APAD.init(this, "appID", "channelID");
-```
-**注**:`appID`和`channelID`的值将在您接入sdk时由跟您对接的我方相关人员提供。
+    ```
+    APAD.init(this, "appID", "channelID");
+    ```
+    **注**:`appID`和`channelID`的值将在您接入sdk时由跟您对接的我方相关人员提供。
 
 ## <a name="step2">加入第三方平台SDK</a>
 
