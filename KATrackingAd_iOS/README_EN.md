@@ -1,5 +1,5 @@
 > [中文文档](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README.md)
-# Current Ver.3.3.1
+# Current Ver.3.3.2
 # Integration Guideline
 
 ## Preparation
@@ -127,7 +127,11 @@ Use these delegates to receive events of request native ad complete or fail
 
 // Request has failed
 - (void) nativeAdRequestFailedForSlot:(nonnull NSString *)nativeAdSlot
-withStatus:(nonnull NSError *)nativeAdStatus;
+                           withStatus:(nonnull NSError *)nativeAdStatus;
+
+@optional
+- (void) nativeAdRequestFailedWithAd:(nonnull KAAdNative *)nativeAd
+                          withStatus:(nonnull NSError *)nativeAdStatus;
 ```
 
 # Splash Ad

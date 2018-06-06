@@ -1,5 +1,12 @@
 # 版本发布记录
 
+## Ver3.3.2
+## Release Date: 2018-6-5
+
+* KAAdNative增加返回广告类为参数的失败回调
+* KAAdNative增加渲染模式控制
+* 修复落地页渲染Bug
+
 ## Ver3.3.1
 ## Release Date: 2018-5-15
 

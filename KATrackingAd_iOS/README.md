@@ -1,5 +1,5 @@
 > [English Doc](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README_EN.md)
-# 当前版本 Ver.3.3.1 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/ReleaseNote.md)
+# 当前版本 Ver.3.3.2 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/ReleaseNote.md)
 # 接入说明
 
 ## 准备工作
@@ -135,7 +135,11 @@ UIView *primaryView = [ad primiaryViewOfSize:<size>];
 
 广告请求失败
 - (void) nativeAdRequestFailedForSlot:(nonnull NSString *)nativeAdSlot
-withStatus:(nonnull NSError *)nativeAdStatus;
+                           withStatus:(nonnull NSError *)nativeAdStatus;
+
+@optional
+- (void) nativeAdRequestFailedWithAd:(nonnull KAAdNative *)nativeAd
+                          withStatus:(nonnull NSError *)nativeAdStatus;
 ```
 
 # 开屏广告 - Splash
