@@ -67,7 +67,7 @@ KATracking.instance.showSplash("slotID");
 ```
 * load reward video：
 ```
-KATracking.instance.loadRewardVideo();
+sdk will take care of the reward video load stuff for you, no extra function needed.
 ```
 
 * check if reward video ready to present：

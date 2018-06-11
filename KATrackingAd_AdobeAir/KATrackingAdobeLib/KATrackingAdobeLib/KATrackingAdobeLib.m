@@ -81,20 +81,6 @@ id makeADInstanceWithADType(NSString *adType, NSString *slotID){
         KAAdSplash *splash = [[KAAdSplash alloc]initWithSlot:slotID delegate:delegate];
         return splash;
     }
-    
-    if ([adType isEqualToString:AD_REWARDVIDEO]) {
-        if ([KAAdIncentivized isReady]) {
-            return nil;
-        }
-        else{
-            if (rewardDelegate == nil) {
-                rewardDelegate = [[KAAdobeRewardVideoDelegate alloc]init];
-                [KAAdIncentivized setDelegate:rewardDelegate];
-            }
-            [KAAdIncentivized load];
-            return nil;
-        }
-    }
     return nil;
 }
 
@@ -132,6 +118,12 @@ FREObject init(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[])
     NSString *appID = getStringFromFREObject(argv[0]);
     NSString *channelID = getStringFromFREObject(argv[1]);
     [[KATracking sharedInstance]initWithAppId:appID channel:channelID];
+    
+    if (rewardDelegate == nil) {
+        rewardDelegate = [[KAAdobeRewardVideoDelegate alloc]init];
+        [KAAdIncentivized setDelegate:rewardDelegate];
+    }
+    
     return NULL;
 }
 
@@ -162,10 +154,7 @@ FREObject presentSplash(FREContext ctx, void* funcData, uint32_t argc, FREObject
 FREObject loadRewardVideo(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[])
 {
     eventContext = ctx;
-    adobeLog(@"oc端执行loadRewardVideo...");
-    
-    NSString *adType = AD_REWARDVIDEO;
-    mapSlotWithADInstance(adType,@"");
+    adobeLog(@"sdk will auto load reward video for you, this method has no function yet.");
     
     return NULL;
 }
