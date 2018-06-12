@@ -97,6 +97,7 @@ nativeADListener    |   原生广告加载回调
 3. **广告load：**
 
 `apNative.load();`
+
 4. **加载成功后（收到加载成功的回调），从`APNative`实例中获取广告相关内容：**
 
 说明 | 获取方法 
@@ -107,6 +108,7 @@ image地址   | `getImageUrl`
 标题文字    |   `getTitle`
 响应按钮的文字（可能包含的值：“查看详情”、“下载”等）  |   `getActionText`
 获取包含广告内容的view    |   `getExposureView`
+
 5.  **将广告内容添加到容器中：**
 
 使用方法：`getExposureView(viewContainer,viewWidth)`来获得待添加到广告容器中的view
@@ -118,11 +120,13 @@ viewWidth   | 返回待展示view的宽度，如果传值`APNative.MATCH_PARENT`
 6.  **当原生广告由`adContainer`展示出来之后（可以被用户看到）：**
 
 调用方法：`apNative.show();`
+
 7. **在创建广告实例的`activity`的以下回调方法中分别执行`APNative`实例的相应方法：**
 * `onPause`回调方法中执行：`apNative.onPause();`
 * `onResume`回调方法中执行：`apNative.onResume();`
 * `onDestroy`回调方法中执行：`apNative.onDestroy();`
-8. **当不再需要`ApNative`示例时候执行：**
+
+8. **当不再需要`ApNative`实例时候执行：**
 
 `apNative.destroy();`
 
