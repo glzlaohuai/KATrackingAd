@@ -14,7 +14,13 @@
 ## <a name="step1">基础SDK接入</a>
 
 * 下载[sdk](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/AppicPlaySDK.zip)并解压，将解压后的`AppicPlay_AD_xxx.aar`和`AppicPlay_Core_xxx.aar`文件加入工程依赖
-* 接入工程的`app module`的`build.gradle`中添加依赖：`implementation 'com.android.volley:volley:1.1.0'`
+* 接入工程的`app module`的`build.gradle`中添加依赖：
+    ```
+    //如果工程中已经加入volley、v4、v7依赖库，请忽略该配置
+    implementation 'com.android.volley:volley:1.1.0'
+    implementation 'com.android.support:support-v4:26.1.0'
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    ```
 * `AndroidManifest.xml`的`application`节点下加入：  
 ```
 <provider
