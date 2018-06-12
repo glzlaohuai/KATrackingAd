@@ -34,13 +34,13 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-
     implementation 'com.android.support:multidex:1.0.0'
-
     //必须的配置
     implementation(name: 'AppicPlay_AD_v3.0', ext: 'aar')
     implementation(name: 'AppicPlay_Core_v3.0', ext: 'aar')
     implementation 'com.android.volley:volley:1.1.0'
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support:support-v4:26.1.0'
     //    gdt
     implementation files('libs/GDTUnionSDK.4.16.564.min.jar')
     //    inmobi
@@ -51,9 +51,7 @@ dependencies {
     //    掌酷
     implementation files('libs/org.apache.http.legacy.jar')
     implementation(name: 'rqsdk', ext: 'aar')
-
     //头条
     implementation files('libs/android-query-full.0.26.7.jar')
     implementation(name: 'open_ad_sdk', ext: 'aar')
-
 }

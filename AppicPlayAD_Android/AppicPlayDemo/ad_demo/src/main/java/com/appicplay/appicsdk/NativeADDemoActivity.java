@@ -24,6 +24,8 @@ public class NativeADDemoActivity extends Activity {
 
     private APNative loadedAD;
 
+    private boolean isLoading = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +50,10 @@ public class NativeADDemoActivity extends Activity {
 
     private void doLoadStuff() {
 
+        if (isLoading) return;
+
+        isLoading = true;
+
         Log.i(TAG, "doLoadStuff: ");
 
         if (this.loadedAD != null) {
@@ -61,11 +67,13 @@ public class NativeADDemoActivity extends Activity {
                 Toast.makeText(NativeADDemoActivity.this, "success", Toast.LENGTH_SHORT).show();
                 NativeADDemoActivity.this.loadedAD = (APNative) ad;
                 doShow();
+                isLoading = false;
             }
 
             @Override
             public void fail(APBaseAD ad, String slotID, String errorMsg) {
                 Toast.makeText(getApplicationContext(), "原生广告加载失败：" + errorMsg, Toast.LENGTH_SHORT).show();
+                isLoading = false;
             }
 
             @Override
