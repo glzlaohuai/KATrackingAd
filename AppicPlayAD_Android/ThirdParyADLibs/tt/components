@@ -1,0 +1,5 @@
+ <!--头条-->
+        <provider
+            android:name="com.bytedance.sdk.openadsdk.service.TTDownloadProvider"
+            android:authorities="${applicationId}.union_adsdk_tt"
+            android:exported="false" />

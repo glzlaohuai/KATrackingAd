@@ -51,7 +51,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".NativeADDemoActivity"/>
+        <activity android:name=".NativeADDemoActivity" />
+        <activity android:name=".NativeADDemoActivity2" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"

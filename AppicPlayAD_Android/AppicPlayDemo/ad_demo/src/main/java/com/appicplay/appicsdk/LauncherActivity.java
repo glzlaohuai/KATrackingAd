@@ -27,5 +27,13 @@ public class LauncherActivity extends Activity {
                 startActivity(intent);
             }
         });
+
+        findViewById(R.id.nativeAD2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LauncherActivity.this, NativeADDemoActivity2.class);
+                startActivity(intent);
+            }
+        });
     }
 }

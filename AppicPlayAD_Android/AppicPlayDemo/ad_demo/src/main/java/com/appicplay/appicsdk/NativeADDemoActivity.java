@@ -1,22 +1,13 @@
 package com.appicplay.appicsdk;
 
 import android.app.Activity;
-import android.graphics.Bitmap;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.ImageRequest;
-import com.android.volley.toolbox.Volley;
 import com.appicplay.sdk.ad.APBaseAD;
 import com.appicplay.sdk.ad.listener.APNativeADListener;
 import com.appicplay.sdk.ad.nativ.APNative;
@@ -64,11 +55,12 @@ public class NativeADDemoActivity extends Activity {
             adContainer.removeAllViews();
         }
 
-        APNative apNative = new APNative(this, "XrGovLye", adContainer, adContainer, new APNativeADListener() {
+        APNative apNative = new APNative(this, "XrGovLye", new APNativeADListener() {
             @Override
             public void success(APBaseAD ad, String slotID) {
+                Toast.makeText(NativeADDemoActivity.this, "success", Toast.LENGTH_SHORT).show();
                 NativeADDemoActivity.this.loadedAD = (APNative) ad;
-                handleLoadSuccess();
+                doShow();
             }
 
             @Override
@@ -86,51 +78,13 @@ public class NativeADDemoActivity extends Activity {
                 Toast.makeText(getApplicationContext(), "原生广告被点击：" + slotID, Toast.LENGTH_SHORT).show();
             }
         });
+        apNative.setPreferImageSize(1080, 320);
         apNative.load();
     }
 
-    private void handleLoadSuccess() {
 
-        Log.i(TAG, "handleLoadSuccess: 原生广告加载成功，加载物料...");
-
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        requestQueue.add(new ImageRequest(loadedAD.getImageUrl(), new Response.Listener<Bitmap>() {
-            @Override
-            public void onResponse(Bitmap response) {
-                Log.i(TAG, "onResponse: 原生广告物料加载成功，进行展示...");
-                doShow(response);
-            }
-        }, 0, 0, ImageView.ScaleType.CENTER, Bitmap.Config.ARGB_8888, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-
-            }
-        }));
-    }
-
-    private void doShow(Bitmap bitmap) {
-
-        ViewGroup viewContainer = adContainer;
-
-        ImageView imageView = new ImageView(this);
-        imageView.setImageBitmap(bitmap);
-        imageView.setScaleType(ImageView.ScaleType.FIT_XY);
-
-        int containerWidth = viewContainer.getWidth();
-
-        float imageRatio = bitmap.getWidth() * 1.0f / bitmap.getHeight();
-
-        int imageHeight = (int) (containerWidth / imageRatio);
-
-        TextView textView = new TextView(this);
-        textView.setText(this.loadedAD.getDesc());
-        textView.setTextSize(15);
-        textView.setPadding(10, 5, 5, 5);
-        textView.setTextColor(Color.BLACK);
-
-        viewContainer.addView(imageView, containerWidth, imageHeight);
-        viewContainer.addView(textView, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-
+    private void doShow() {
+        adContainer.addView(loadedAD.getExposureView(adContainer, APNative.MATCH_PARENT));
         this.loadedAD.show();
     }
 

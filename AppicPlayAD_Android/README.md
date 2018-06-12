@@ -8,13 +8,14 @@
 ## <a name="start">关于</a>
 
 * 只支持**原生广告**
-* 点击下载[AppicPlay AD SDK](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/AppicPlaySDK.zip)
-* 支持的广告平台：**广点通**、**inmobi**、**掌酷**
+* 下载[AppicPlay AD SDK](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/AppicPlaySDK.zip)
+* 支持广告平台：**广点通**、**inmobi**、**头条**、**掌酷**
 
 ## <a name="step1">基础SDK接入</a>
 
-* 下载[sdk](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/AppicPlaySDK.zip)并解压，将解压后的`core.aar`和`ad.aar`文件加入到工程中
-* 在接入工程的`AndroidManifest.xml`文件的`application`节点下加入以下内容：  
+* 下载[sdk](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/AppicPlaySDK.zip)并解压，将解压后的`AppicPlay_AD_xxx.aar`和`AppicPlay_Core_xxx.aar`文件加入工程依赖
+* 接入工程的`app module`的`build.gradle`中添加依赖：`implementation 'com.android.volley:volley:1.1.0'`
+* `AndroidManifest.xml`的`application`节点下加入：  
 ```
 <provider
 android:name="android.support.v4.content.FileProvider"
@@ -26,8 +27,8 @@ android:name="android.support.FILE_PROVIDER_PATHS"
 android:resource="@xml/appicplay_file_path" />
 </provider>
 ```
-* 在接入工程的`AndroidManifest.xml`文件的`application`节点中加入配置：`android:hardwareAccelerated="true"`
-* 在接入工程的`AndroidManifest.xml`文件中加入以下权限：
+* `AndroidManifest.xml`的`application`节点加入配置：`android:hardwareAccelerated="true"`
+* `AndroidManifest.xml`中加入权限：
 ```
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.READ_PHONE_STATE" />
@@ -36,7 +37,7 @@ android:resource="@xml/appicplay_file_path" />
 <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 ```
 
-* 接入工程的`application`的回调方法中分别添加以下方法：
+* `Application`的回调方法中分别做如下修改（工程如果没有自定义`Application`请自行加入）：
     * `onCreate`回调方法:
         ```
         @Override
@@ -54,7 +55,7 @@ android:resource="@xml/appicplay_file_path" />
         }
         ```
 
-* 在应用的主activity（主activity指除非退出应用，否则一般不会被销毁的activity）的`onCreate`回调方法中加入以下代码：
+* main activity的`onCreate`回调方法中执行初始化（不建议在splash activity中执行初始化，因为初始化过程中会申请权限，而splash activity一般停留时间很短，会影响体验）：
     ```
     APAD.init(this, "appID", "channelID");
     ```
@@ -62,42 +63,61 @@ android:resource="@xml/appicplay_file_path" />
 
 ## <a name="step2">加入第三方平台SDK</a>
 
-* 所有受支持的第三方平台sdk可在[这里](https://github.com/KATracking/KATrackingAd/tree/master/AppicPlayAD_Android/ThirdParyADLibs)查看
-* 其中`zk`文件夹内包含要接入`掌酷`广告平台所需要的所有配置，`inmobi`对应`inmobi`广告平台、`gdt`对应`广点通`广告平台
-* 广告平台所需要的配置可能包含有：`jar、aar依赖项`（在`libs`文件夹内）、`build.gradle`文件中的自动依赖项（在`dependencies`文件内）、`AndroidManifest.xml`中需配置的权限（在`permissions`文件内）、`AndroidManifest.xml`中需要配置的组件（`activity`、`service`、`receiver`、`provider`等内容）（在`components`文件内）、混淆配置项（在`proguard`文件内）
-* 将所需要的特定广告平台的特定内容加入到待接入工程中即可
+* 受支持的第三方平台sdk在[这里](https://github.com/KATracking/KATrackingAd/tree/master/AppicPlayAD_Android/ThirdParyADLibs)查看
+* `zk`文件夹内包含接入`掌酷`平台需要的所有配置，相应的，`inmobi`对应`inmobi`广告平台、`gdt`对应`广点通`广告平台、`tt`对应`头条`广告平台
+* 第三方广告平台所需的配置可能包含有：`jar、aar依赖项`（在`libs`文件夹内）、`build.gradle`文件中的自动依赖项（在`dependencies`文件内）、需要配置的权限（在`permissions`文件内）、`AndroidManifest.xml`中需要添加的组件（`activity`、`service`、`receiver`、`provider`等内容）（在`components`文件内）、混淆配置项（在`proguard`文件内）
+* 将需要支持的广告平台的所有内容加入到待接入工程中即可
 
-**注**：如果您的工程要加入`掌酷`广告平台，我们将为您提供该平台的依赖文件（`aar格式的依赖文件`）
+**注**：如果要加入`掌酷`广告平台，请联系我们索要`libs`文件夹下的依赖文件（`aar格式的依赖文件`）
 
 ## <a name="step3">接入原生广告</a>
 
-1. 创建原生广告实例：`APNative apNative = new APNative(activity, "slotID", adContainer, showDetailView, nativeADListener);`参数说明如下： 
+1. **创建原生广告实例：**
+
+`APNative apNative = new APNative(activity, "slotID", nativeADListener);`
 
 参数    |   说明
 --- |   ---
-activity    |   创建该原生广告示例所处activity
+activity    |   创建该实例所处activity
 slotID  |   广告位id
-adContainer |   在广告加载完毕之后，将展示该广告的容器view（不能为空）
-showDetailView  |   在广告展示时候，响应点击的组件（例如：“查看详情”按钮，不能为空，可与adContainer参数相同）
 nativeADListener    |   原生广告加载回调
 
-2. 加载广告：`apNative.load();`
-3. 加载完毕之后，从`APNative`实例中获取相应物料下载地址，其中原生广告中包含的内容以及获取方法：
+2.  **设置期望返回广告大图尺寸：**
 
-内容 | 获取方法 
+`apNative.setPreferImageSize(int,int)`
+
+**注**：实际返回图片尺寸可能与期望尺寸不同。
+
+3. **广告load：**
+
+`apNative.load();`
+4. **加载成功后（收到加载成功的回调），从`APNative`实例中获取广告相关内容：**
+
+说明 | 获取方法 
 ---|--- | ---
 icon地址    | `getIconUrl`
 image地址   | `getImageUrl`
-描述    |   `getDesc`
-标题    |   `getTitle`
-响应按钮的文字  |   `getActionText`
+描述文字    |   `getDesc`
+标题文字    |   `getTitle`
+响应按钮的文字（可能包含的值：“查看详情”、“下载”等）  |   `getActionText`
+获取包含广告内容的view    |   `getExposureView`
+5.  **将广告内容添加到容器中：**
 
-4. 当原生广告由`adContainer`展示出来之后，调用方法：`apNative.show();`
+使用方法：`getExposureView(viewContainer,viewWidth)`来获得待添加到广告容器中的view
+参数 | 说明 
+------|-------
+viewContainer    | 广告容器
+viewWidth   | 返回待展示view的宽度，如果传值`APNative.MATCH_PARENT`，那么宽将与`viewContainer`相同，否则将按实际传的值来设置view的宽(单位px)，返回view的宽度将按照广告物料宽高比自行设置
 
-3. 在创建该实例的`activity`的以下回调方法中分别执行`APNative`实例的相应方法：
+6.  **当原生广告由`adContainer`展示出来之后（可以被用户看到）：**
+
+调用方法：`apNative.show();`
+7. **在创建广告实例的`activity`的以下回调方法中分别执行`APNative`实例的相应方法：**
 * `onPause`回调方法中执行：`apNative.onPause();`
 * `onResume`回调方法中执行：`apNative.onResume();`
 * `onDestroy`回调方法中执行：`apNative.onDestroy();`
-4. 当不再需要展示该原生广告时执行方法：`apNative.destroy();`
+8. **当不再需要`ApNative`示例时候执行：**
 
-**注**：如果在实例化`APNative`时候传入的`adContainer`或`showDetailView`参数为`null`，请一定在执行`show`方法之前通过`setContainerView`或`setShowDetailView`方法来进行实际view的设置。
+`apNative.destroy();`
+
+**注**：广告展示时必须将`getExposureView`返回的view加到容器中，其他内容（如`adTitle`、`adDesc`、`adIcon`，返回内容可能为null）由开发者自行决定是否展示以及如何展示
