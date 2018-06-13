@@ -10,11 +10,20 @@
         android:id="@+id/load"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="load and show native ad" />
+        android:text="load" />
+
+    <Button
+        android:id="@+id/show"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:text="show" />
 
     <LinearLayout
+        android:layout_gravity="center"
+        android:background="#cc6600"
         android:id="@+id/adContainer"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:gravity="center"

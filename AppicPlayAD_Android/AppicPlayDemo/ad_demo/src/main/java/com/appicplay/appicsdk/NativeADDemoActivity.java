@@ -20,11 +20,10 @@ public class NativeADDemoActivity extends Activity {
     private static final String TAG = "NativeADDemoActivity";
 
     Button loadBtn;
+    Button showBtn;
     ViewGroup adContainer;
 
     private APNative loadedAD;
-
-    private boolean isLoading = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,22 +36,27 @@ public class NativeADDemoActivity extends Activity {
 
     private void initComponents() {
         loadBtn = findViewById(R.id.load);
+        showBtn = findViewById(R.id.show);
         adContainer = findViewById(R.id.adContainer);
 
         loadBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                loadBtn.setEnabled(false);
+                showBtn.setEnabled(false);
                 doLoadStuff();
             }
         });
 
+        showBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                doShow();
+            }
+        });
     }
 
     private void doLoadStuff() {
-
-        if (isLoading) return;
-
-        isLoading = true;
 
         Log.i(TAG, "doLoadStuff: ");
 
@@ -64,25 +68,29 @@ public class NativeADDemoActivity extends Activity {
         APNative apNative = new APNative(this, "XrGovLye", new APNativeADListener() {
             @Override
             public void success(APBaseAD ad, String slotID) {
+                Log.i(TAG, "success: ");
                 Toast.makeText(NativeADDemoActivity.this, "success", Toast.LENGTH_SHORT).show();
                 NativeADDemoActivity.this.loadedAD = (APNative) ad;
-                doShow();
-                isLoading = false;
+                enableShow();
+                loadBtn.setEnabled(true);
             }
 
             @Override
             public void fail(APBaseAD ad, String slotID, String errorMsg) {
+                Log.i(TAG, "fail: ");
                 Toast.makeText(getApplicationContext(), "原生广告加载失败：" + errorMsg, Toast.LENGTH_SHORT).show();
-                isLoading = false;
+                loadBtn.setEnabled(true);
             }
 
             @Override
             public void close(APBaseAD ad, String slotID) {
+                Log.i(TAG, "close: ");
                 Toast.makeText(getApplicationContext(), "原生广告被关闭：", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void click(APBaseAD ad, String slotID) {
+                Log.i(TAG, "click: ");
                 Toast.makeText(getApplicationContext(), "原生广告被点击：" + slotID, Toast.LENGTH_SHORT).show();
             }
         });
@@ -90,6 +98,10 @@ public class NativeADDemoActivity extends Activity {
         apNative.load();
     }
 
+
+    private void enableShow() {
+        showBtn.setEnabled(true);
+    }
 
     private void doShow() {
         adContainer.addView(loadedAD.getExposureView(adContainer, APNative.MATCH_PARENT));
