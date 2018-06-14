@@ -48,9 +48,6 @@ dependencies {
     implementation 'com.android.support:recyclerview-v7:24.0.0'
     implementation files('libs/InMobi-7.1.1.jar')
     implementation 'com.google.android.gms:play-services:8.4.0'
-    //    掌酷
-    implementation files('libs/org.apache.http.legacy.jar')
-    implementation(name: 'rqsdk', ext: 'aar')
     //头条
     implementation files('libs/android-query-full.0.26.7.jar')
     implementation(name: 'open_ad_sdk', ext: 'aar')

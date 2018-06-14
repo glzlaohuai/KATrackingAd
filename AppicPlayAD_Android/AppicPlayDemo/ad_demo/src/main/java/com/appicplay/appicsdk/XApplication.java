@@ -11,6 +11,7 @@ public class XApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
         APLifeCycleInvoker.onApplicationCreate(this);
     }
 

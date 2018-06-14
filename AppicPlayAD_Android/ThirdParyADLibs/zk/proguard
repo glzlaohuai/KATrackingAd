@@ -1,3 +1,0 @@
--keep class org.apache.** {*;}
--keep class **.RqSdk {*;}
--keep class com.main.** {*;}

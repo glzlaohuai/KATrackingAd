@@ -4,13 +4,12 @@
 * [基础SDK接入](#step1)
 * [加入第三方平台SDK](#step2)
 * [接入原生广告](#step3)
-* 
 
 ## <a name="start">关于</a>
 
 * 只支持**原生广告**
 * 下载[AppicPlay AD SDK](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/AppicPlaySDK.zip)
-* 支持广告平台：**广点通**、**inmobi**、**头条**、**掌酷**
+* 支持广告平台：**广点通**、**inmobi**、**头条**
 
 ## <a name="step1">基础SDK接入</a>
 
@@ -73,12 +72,10 @@
 
 ## <a name="step2">加入第三方平台SDK</a>
 * 受支持的第三方平台sdk在[这里](https://github.com/KATracking/KATrackingAd/tree/master/AppicPlayAD_Android/ThirdParyADLibs)查看
-* `zk`文件夹内包含接入`掌酷`平台需要的所有配置，相应的：`inmobi`对应`inmobi`广告平台、`gdt`对应`广点通`广告平台、`tt`对应`头条`广告平台
-* 第三方广告平台所需要的配置可能包含有：`jar、aar依赖项`（在`libs`文件夹内）、`build.gradle`文件中的自动依赖项（在`dependicies`文件夹内）、需要配置的权限（在`permissions`文件内）、`AndroidMnifest.xml`中需要添加的组件（`activity`、`service`、`receiver`、`provider`等内容）（在`components`文件内）、混淆配置项（在`proguard`文件内）
+* `inmobi `文件夹内包含接入`inmobi`平台需要的所有配置，相应的：`gdt`对应`广点通`广告平台、`tt`对应`头条`广告平台
+* 第三方广告平台所需要的配置可能包含有：`jar、aar`依赖项（在`libs`文件夹内）、`build.gradle`文件中的自动依赖项（在`dependicies`文件夹内）、需要配置的权限（在`permissions`文件内）、`AndroidMnifest.xml`中需要添加的组件（`activity`、`service`、`receiver`、`provider`等内容）（在`components`文件内）、混淆配置项（在`proguard`文件内）
 * 将需要支持的广告平台的所有内容加入到待接入工程中即可
 
-
-	**注**：如果要加入`掌酷`广告平台，请联系我们索要`libs`文件夹下的依赖文件（`aar`格式的依赖文件）
 
 ## <a name="step3">接入原生广告</a>
 

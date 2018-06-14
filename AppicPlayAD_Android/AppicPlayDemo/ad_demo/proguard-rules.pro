@@ -119,8 +119,3 @@ public *;  } 
 -keep class com.qq.e.** {
     public protected *;
 }
-
-#掌酷
--keep class org.apache.** {*;}
--keep class **.RqSdk {*;}
--keep class com.main.** {*;}
