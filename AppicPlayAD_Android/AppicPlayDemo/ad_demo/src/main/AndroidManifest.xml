@@ -30,9 +30,17 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
 
-    <!--掌酷需要权限-->
+    <!--头条-->
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
 
     <application
         android:name=".XApplication"
@@ -51,7 +59,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".NativeADDemoActivity"/>
+        <activity android:name=".NativeADDemoActivity" />
+        <activity android:name=".NativeADDemoActivity2" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -102,6 +111,13 @@ smallestScreenSize|screenSize|screenLayout"
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+
+        <!--头条-->
+        <provider
+            android:name="com.bytedance.sdk.openadsdk.service.TTDownloadProvider"
+            android:authorities="${applicationId}.union_adsdk_tt"
+            android:exported="false" />
+
 
 
     </application>

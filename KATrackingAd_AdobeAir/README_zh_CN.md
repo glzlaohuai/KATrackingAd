@@ -66,7 +66,7 @@ KATracking.instance.showSplash("slotID");
 ```
 * 加载激励视频广告：
 ```
-KATracking.instance.loadRewardVideo();
+sdk在初始化之后内部会处理激励视频广告的加载逻辑，不需要执行其他额外方法
 ```
 **注**：激励视频广告不需要指定slotID
 * 检查激励视频广告是否加载完毕：
