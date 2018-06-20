@@ -1,5 +1,5 @@
 > [中文文档](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README.md)
-# Current Ver.3.3.3
+# Current Ver.3.4
 # Integration Guideline
 
 ## Preparation
@@ -85,7 +85,7 @@ Simple call this method to load an ad, then wait for delegates to be tricked for
 ```
 
 ### Properties of Native Ad
-Once received request complete delegate call, the ad is ready to use, see following properties and their description
+Each native ad also have the following properties 
 
 * **ka_slot** - The slot id used to request the Ad
 * **ka_requestId** - An string uniquely identified this request of Ad
@@ -152,6 +152,26 @@ To load and present Splash Ad
 [splash loadAndPresentWithViewController:<Controller>];
 ```
 * **Controller** - UIViewController for which the splash is presented from
+
+### 展示广告并添加产品标识
+调用下面方法加载并展示开屏广告，同时可以添加产品自定的标识View，用于填充当由于素材尺寸不足填充全屏情况下的空白位置
+`KAAdSplash`
+```Objective-c
+[splash loadAndPresentWithViewController:<Controller> andBackgroundColor:<Color> andBottomView:<View> andBottomViewAutoFitDisplay:<Auto>];
+```
+
+* **Controller** - 用于展示开屏广告的UIViewController
+* **Color** - 标识填充区的背景颜色
+* **View** - 用于展示在标识填充区的UIView
+* **Auto** - 当希望SDK自动根据尺寸适应是否展示标识View的时候传入Yes, 否则传入No将始终显示标识View
+
+### 标识区可用尺寸
+调用下面方法来根据不同设备计算可以用于标识区的View大小
+`KAAdSplash`
+```Objective-c
+CGSize size = [KAAdSplash getBottomViewSize];
+```
+
 
 ### Delegates of Splash Ad
 Use these delegates to receive events of splash Ad
@@ -271,3 +291,54 @@ Use these delegates to receive events of Incentivized video Ad
 - (void) incentivizedAdPresentDidSkip;
 ```
 
+# 横幅广告 - Banner
+
+### 构建广告
+创建一个横幅广告的实例并将广告加到视图上
+`KAAdBanner`
+```Objective-c
+KAAdBanner * banner = [[KAAdBanner alloc] initWithSlot:<adSlot> withSize:<size> delegate:<delegate> currentController:<controller>];
+[self.view addSubview:banner];
+```
+* **adSlot** - 广告位SlotId，用于请求广告
+* **Size** - 广告尺寸<KAAdBannerSize>枚举
+* **Delegate** - id<KAAdBannerDelegate> 实例，用于接受广告事件回调
+* **controller** - 用于点击横幅广告后展示广告页的UIViewController
+
+请求并加载广告
+`KAAdBanner`
+```Objective-c
+[banner load];
+```
+
+设置广告的位置
+`KAAdBanner`
+```Objective-c
+[banner setPosition:<point>];
+```
+* **point** - 设置广告的中心点坐标
+
+### 广告回调
+使用以下回调接收加载广告的事件
+
+`KAAdBannerDelegate`
+```Objective-c
+/**
+* Notifies the delegate that the banner has finished loading
+*/
+- (void) bannerAdCompleteLoadingWithAd:(nonnull KAAdBanner *)bannerAd;
+/**
+* Notifies the delegate that the banner has failed to load with some error.
+*/
+- (void) bannerAdFailedLoadingForSlot:(nonnull NSString *)adSlot
+withStatus:(nonnull NSError *)nativeAdStatus
+andBanner:(nonnull KAAdBanner *)bannerAd;
+/**
+* Notifies the delegate that the banner has finished presenting screen.
+*/
+- (void) bannerDidPresentScreen:(nonnull KAAdBanner *)bannerAd;
+
+/**
+* Notifies the delegate that the banner has dismissed the presented screen.
+*/
+- (void) bannerDidDismissScreen:(nonnull KAAdBanner *)bannerAd;
