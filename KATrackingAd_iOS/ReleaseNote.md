@@ -1,5 +1,10 @@
 # 版本发布记录
 
+## Ver3.4.1
+## Release Date: 2018-6-26
+
+* 修复对VungleSDK的一个字段依赖
+
 ## Ver3.4
 ## Release Date: 2018-6-20
 
