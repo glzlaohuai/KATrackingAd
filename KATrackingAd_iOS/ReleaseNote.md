@@ -1,5 +1,10 @@
 # 版本发布记录
 
+## Ver3.4.2
+## Release Date: 2018-6-28
+
+* 获取用户Country_code不正确修复
+
 ## Ver3.4.1
 ## Release Date: 2018-6-26
 
