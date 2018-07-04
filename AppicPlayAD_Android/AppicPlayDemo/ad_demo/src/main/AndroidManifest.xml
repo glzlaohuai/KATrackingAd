@@ -72,6 +72,9 @@
                 android:resource="@xml/appicplay_file_path" />
         </provider>
 
+        <service
+            android:name="com.appicplay.sdk.ad.service.DownloadService"
+            android:exported="false" />
 
         <!--gdt-->
 

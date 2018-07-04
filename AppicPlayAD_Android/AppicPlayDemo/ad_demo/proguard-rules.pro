@@ -99,15 +99,20 @@
 
 #############################基本配置#############################
 
+#appicsdk
+-keep class * implements com.appicplay.sdk.core.APApplicationInvoker
+
 #inmobi混淆配置
--keepattributes SourceFile,LineNumberTable -keep class com.inmobi.** { *; } 
--keep public class com.google.android.gms.**  -dontwarn com.google.android.gms.**  -dontwarn com.squareup.picasso.** 
--keep class com.google.android.gms.ads.identifier.AdvertisingIdClient{  public *; 
-} 
--keep class com.google.android.gms.ads.identifier.AdvertisingIdClient$Info{ 
-public *;  } 
+-keepattributes SourceFile,LineNumberTable
+-keep class com.inmobi.** {*;} 
+-keep public class com.google.android.gms.** 
+-dontwarn com.google.android.gms.** 
+-dontwarn com.squareup.picasso.** 
+-keep class com.google.android.gms.ads.identifier.AdvertisingIdClient { public *; } 
+-keep class com.google.android.gms.ads.identifier.AdvertisingIdClient$Info { public *; } 
 # skip the Picasso library classes 
--keep class com.squareup.picasso.** {*;}  -dontwarn com.squareup.picasso.** 
+-keep class com.squareup.picasso.** {*;} 
+-dontwarn com.squareup.picasso.** 
 -dontwarn com.squareup.okhttp.** 
 # skip Moat classes 
 -keep class com.moat.** {*;} 
@@ -115,7 +120,9 @@ public *;  } 
 # skip AVID classes
 -keep class com.integralads.avid.library.* {*;}
 
+
 #gdt 混淆配置
 -keep class com.qq.e.** {
     public protected *;
 }
+

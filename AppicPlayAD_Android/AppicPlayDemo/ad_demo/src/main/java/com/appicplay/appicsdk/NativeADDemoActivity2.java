@@ -77,7 +77,7 @@ public class NativeADDemoActivity2 extends Activity {
                 }
             });
             apNative.setPreferImageSize(1080, 320);
-            apNative.load();
+            apNative.loadNative();
         }
     }
 

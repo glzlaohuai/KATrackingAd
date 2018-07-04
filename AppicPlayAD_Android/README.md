@@ -1,3 +1,4 @@
+# 当前版本Ver.3.1[ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/ReleaseNote.md)
 # AppicPlay AD SDK接入说明
 
 * [关于](#start)
@@ -13,13 +14,15 @@
 
 ## <a name="step1">基础SDK接入</a>
 
-* 下载[sdk](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/AppicPlaySDK.zip)并解压，将解压后的`AppicPlay_AD_xxx.aar`和`AppicPlay_Core_xxx.aar`文件加入工程依赖
+* 下载[sdk](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/AppicPlaySDK.zip)并解压，将解压后的`AppicPlay_AD_xxx.aar`、`AppicPlay_Core_xxx.aar`和`AppicPlay_Track_xxx.aar`文件加入工程依赖
 * 接入工程的`app module`的`build.gradle`中添加依赖：
 
 	```
 	implementation 'com.android.volley:volley:1.1.0'
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support:support-v4:26.1.0'
+    implementation 'android.arch.persistence.room:runtime:1.0.0'
+    implementation 'com.liulishuo.filedownloader:library:1.7.4'
 	```
 * `AndroidManifest.xml`的`application`节点下加入：
 
@@ -33,6 +36,11 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/appicplay_file_path" />
         </provider>
+        
+        <service
+            android:name="com.appicplay.sdk.ad.service.DownloadService"
+            android:exported="false" />
+        
 	```
 * `AndroidManiest.xml`的`application`节点加入配置：`android:hardwareAccelerated="true"`
 * `AndroidManifest.xml`中加入权限：
@@ -51,7 +59,7 @@
 		@Override
     	public void onCreate() {
         super.onCreate();
-        APLifeCycleInvoker.onApplicationCreate(this);
+        APApplication.onApplicationCreate(this);
     	}
 		```
 	*	`attachBaseContext`回调方法：
@@ -60,7 +68,7 @@
 		@Override
     	protected void attachBaseContext(Context base) {
        	super.attachBaseContext(base);
-       	APLifeCycleInvoker.onApplicationAttachBaseContext(base);
+       	APApplication.onApplicationAttachBaseContext(base);
     	}
 		```
 * main activity 的`onCreate`回调方法中执行初始化（不建议在splash activity中执行初始化，因为初始化过程中会申请权限，而splash activity一般停留时间很短，会影响体验）：
@@ -98,7 +106,7 @@
 1. **广告load：**
 
 	```
-	apNative.load();
+	apNative.loadNative();
 	```
 1. **加载成功后（收到加载成功的回调），从APNative实例中获取广告相关内容：**
 

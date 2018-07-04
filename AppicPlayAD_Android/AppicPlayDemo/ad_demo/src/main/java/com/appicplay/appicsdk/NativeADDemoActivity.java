@@ -65,7 +65,7 @@ public class NativeADDemoActivity extends Activity {
             adContainer.removeAllViews();
         }
 
-        APNative apNative = new APNative(this, "XrGovLye", new APNativeADListener() {
+        APNative apNative = new APNative(this, "DlGdpoGq", new APNativeADListener() {
             @Override
             public void success(APBaseAD ad, String slotID) {
                 Log.i(TAG, "success: ");
@@ -95,7 +95,7 @@ public class NativeADDemoActivity extends Activity {
             }
         });
         apNative.setPreferImageSize(1080, 320);
-        apNative.load();
+        apNative.loadNative();
     }
 
 
@@ -104,6 +104,7 @@ public class NativeADDemoActivity extends Activity {
     }
 
     private void doShow() {
+        adContainer.removeAllViews();
         adContainer.addView(loadedAD.getExposureView(adContainer, APNative.MATCH_PARENT));
         this.loadedAD.show();
     }

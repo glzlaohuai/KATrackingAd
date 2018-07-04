@@ -4,22 +4,21 @@ import android.app.Application;
 import android.content.Context;
 import android.support.multidex.MultiDex;
 
-import com.appicplay.sdk.ad.APLifeCycleInvoker;
+import com.appicplay.sdk.core.APApplication;
+
 
 public class XApplication extends Application {
 
     @Override
     public void onCreate() {
         super.onCreate();
-
-        APLifeCycleInvoker.onApplicationCreate(this);
+        APApplication.onApplicationCreate(this);
     }
 
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
-        APLifeCycleInvoker.onApplicationAttachBaseContext(base);
-
+        APApplication.onApplicationAttachBaseContext(base);
         MultiDex.install(this);
     }
 }
