@@ -1,4 +1,4 @@
-# 当前版本Ver.3.1[ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/ReleaseNote.md)
+# 当前版本Ver.3.1.1 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/ReleaseNote.md)
 # AppicPlay AD SDK接入说明
 
 * [关于](#start)
@@ -8,7 +8,7 @@
 
 ## <a name="start">关于</a>
 
-* 只支持**原生广告**
+* 支持广告类型：**原生**、**开屏**
 * 下载[AppicPlay AD SDK](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/AppicPlaySDK.zip)
 * 支持广告平台：**广点通**、**inmobi**、**头条**
 
@@ -140,3 +140,26 @@
 	apNative.destroy();
 	```
 	**注**：广告展示时必须将`getExposureView `返回的view添加到容器中，其他内容（如`adTitle`、`adDesc`、`adIcon`，返回内容可能为`null`）由开发者自行决定是否展示以及如何展示。
+	
+## <a name="step4">接入开屏广告</a>
+1. **创建开屏广告实例**：
+
+	```
+	APSplash splash = new APSplash(activity,slotID,listener);
+	```
+
+	参数	|	说明
+	--- | ---
+	activity	|	所处activity实例
+	slotID	|	广告位id
+	listener	|	开屏广告加载、展示、关闭等的结果回调
+2. **加载&展示**
+
+	```
+	splash.loadAndPresent(splashViewContainer,bottomViewLayoutID);
+	```
+	
+	参数	|	说明
+	---	|	---
+	splashViewContainer	|	承载广告内容的容器（容器类型为LinearLayout，要保证其`orientation`属性为`portrait`）
+	bottomViewLayoutID	|	布局文件的id，如果广告平台返回的物料内容不足以填充全部广告容器，那么将由该布局填充，由于剩余空间高度不确定，请确保该布局能按高度自适应
