@@ -1,10 +1,12 @@
-# 当前版本Ver.3.1.2 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/ReleaseNote.md)
+# 当前版本Ver.3.1.3 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/ReleaseNote.md)
 # AppicPlay AD SDK接入说明
 
 * [关于](#start)
 * [基础SDK接入](#step1)
 * [加入第三方平台SDK](#step2)
 * [接入原生广告](#step3)
+* [接入开屏广告](#step4)
+* [关于权限申请](#step5)
 
 ## <a name="start">关于</a>
 
@@ -163,3 +165,13 @@
 	---	|	---
 	splashViewContainer	|	承载广告内容的容器（容器类型为LinearLayout，要保证其`orientation`属性为`portrait`）
 	bottomViewLayoutID	|	布局文件的id，如果广告平台返回的物料内容不足以填充全部广告容器，那么将由该布局填充，由于剩余空间高度不确定，请确保该布局能按高度自适应
+
+## <a name="step5">关于权限申请</a>
+
+* sdk需要动态申请的权限：`android.permission.READ_PHONE_STATE`、`android.permission.WRITE_EXTERNAL_STORAGE`、`android.permission.ACCESS_FINE_LOCATION`
+
+* sdk在初始化（执行方法：`APAD.init(activity,appID,channelID)`）时默认会申请所需要的权限
+
+* 调用方法：`APCore.setAutoRequestPermission(false)`可以让sdk在初始化时候不自动申请所需权限
+
+* 如果sdk初始化代码写在`splash activity`中或者其他只停留很短时间就跳到其他界面的activity中，建议为了有更好的用户体验关闭sdk自动申请权限的行为，在接入应用内处理权限申请，在未收到权限申请结果之前不进行activity的跳转和sdk的初始化。
