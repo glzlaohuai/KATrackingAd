@@ -1,4 +1,4 @@
-# 当前版本Ver.3.1.3 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/ReleaseNote.md)
+# 当前版本Ver.3.1.4 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/ReleaseNote.md)
 # AppicPlay AD SDK接入说明
 
 * [关于](#start)
@@ -165,6 +165,10 @@
 	---	|	---
 	splashViewContainer	|	承载广告内容的容器（容器类型为LinearLayout，要保证其`orientation`属性为`portrait`）
 	bottomViewLayoutID	|	布局文件的id，如果广告平台返回的物料内容不足以填充全部广告容器，那么将由该布局填充，由于剩余空间高度不确定，请确保该布局能按高度自适应
+
+3. **释放占用资源**
+	
+	开屏广告展示完毕之后，在合适的时机（绝对大多数情况应该是在展示开屏广告的activity的onDestroy回调方法中）调用方法：`splash.onDestroy()`
 
 ## <a name="step5">关于权限申请</a>
 

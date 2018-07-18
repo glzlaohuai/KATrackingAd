@@ -1,4 +1,9 @@
 # 版本发布记录
+## Ver.3.1.4
+## Release Date: 2018-07-18
+
+* `APSplash`增加实例方法：`onDestroy`来由接入应用决定何时释放sdk所占用资源（之前该方法由sdk内部在onDismiss回调之前调用，如果当前展示的是inmobi的开屏，会导致adContainer移除广告内容，用户体验不好）
+
 ## Ver.3.1.3
 ## Release Date: 2018-07-13
 
