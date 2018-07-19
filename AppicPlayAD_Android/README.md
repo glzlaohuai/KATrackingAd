@@ -1,4 +1,4 @@
-# 当前版本Ver.3.1.4 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/ReleaseNote.md)
+# 当前版本Ver.3.1.5 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/ReleaseNote.md)
 # AppicPlay AD SDK接入说明
 
 * [关于](#start)
@@ -174,8 +174,8 @@
 
 * sdk需要动态申请的权限：`android.permission.READ_PHONE_STATE`、`android.permission.WRITE_EXTERNAL_STORAGE`、`android.permission.ACCESS_FINE_LOCATION`
 
-* sdk在初始化（执行方法：`APAD.init(activity,appID,channelID)`）时默认会申请所需要的权限
+* sdk在初始化（执行方法：`APAD.init(context,appID,channelID)`）时默认会申请所需要的权限（要保证传递的`context`参数为`Activity`类型）
 
-* 调用方法：`APCore.setAutoRequestPermission(false)`可以让sdk在初始化时候不自动申请所需权限
+* 调用方法：`APCore.setAutoRequestPermission(false)`可以让sdk在初始化时候不自动申请所需权限。
 
 * 如果sdk初始化代码写在`splash activity`中或者其他只停留很短时间就跳到其他界面的activity中，建议为了有更好的用户体验关闭sdk自动申请权限的行为，在接入应用内处理权限申请，在未收到权限申请结果之前不进行activity的跳转和sdk的初始化。

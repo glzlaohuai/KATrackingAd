@@ -1,4 +1,10 @@
 # 版本发布记录
+## Ver.3.1.5
+## Release Date: 2018-07-19
+
+* `APAD`的初始化方法`init（activity,appID,channelID）`中的`activity`参数修改为`Context`类型（注：如果要sdk在初始化时自动请求所需要的权限，那么`context`参数必须要为`activity`的实例）
+* `APSplash`支持`api`类型广告
+
 ## Ver.3.1.4
 ## Release Date: 2018-07-18
 
