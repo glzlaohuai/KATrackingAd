@@ -1,4 +1,9 @@
 # 版本发布记录
+## Ver.3.1.6
+## Release Date: 2018-07-20
+
+* 修复了APAD初始化方法导致的BroadcastReceiver泄露
+
 ## Ver.3.1.5
 ## Release Date: 2018-07-19
 
