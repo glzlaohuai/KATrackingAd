@@ -1,5 +1,12 @@
 # 版本发布记录
 
+## Ver3.5
+## Release Date: 2018-8-1
+
+* 聚合新增平台 AppLovin, IronSource, Toutiao
+* 广告展示形式优化
+* 修复Bug
+
 ## Ver3.4.4
 ## Release Date: 2018-7-3
 
