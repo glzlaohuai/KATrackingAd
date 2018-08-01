@@ -1,5 +1,5 @@
 > [English Doc](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README_EN.md)
-# 当前版本 Ver.3.4.4 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/ReleaseNote.md)
+# 当前版本 Ver.3.5 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/ReleaseNote.md)
 # 接入说明
 
 ## 准备工作
@@ -19,10 +19,18 @@
   * CTSDK.framework
   * UnityAds.framework
   * VungleSDK.framework
+  * AppLovinSDK.framework
+  * IronSource.framework
+  * Toutiao
+    * WMAdSDK.framework
+    * WMAdSDK.bundle
   * GDT
     * libGDTMobSDK.a
-  * TalkingData
+  * TalkingData (选加，如果需要KASDK对接TD作为统计框架）
     * libTalkingData.a
+  * UM (选加，如果需要KASDK对接UM作为统计框架）   
+    * UMAnalytics.framework
+    * UMCommon.framework
 
 ### 加入其它依赖库
 * SystemConfiguration.framework
@@ -39,6 +47,7 @@
 * CoreData.framework
 * CoreText.framework
 * WebKit.framework
+* JavaScriptCore.framework
 * libsqlite3.0.tbd
 * libxml2.2.tbd
 * libz.tbd
