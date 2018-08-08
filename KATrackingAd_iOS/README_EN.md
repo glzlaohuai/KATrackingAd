@@ -5,7 +5,8 @@
 ## Preparation
 ### Download KASDK+Demo.zip [LINK](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/KASDK%2BDemo.zip)
 In order to test all ad slots from mediated platforms, please download mediation.zip below, and unzip all frameworks to demo project at location: KATrackingAdDemo/SDK/Mediation/.
-### Download Mediation.zip [LINK](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/Mediation.zip)
+### Download Mediation-1.zip [LINK](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/Mediation_1.zip)
+### Download Mediation-2.zip [LINK](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/Mediation_2.zip)
 
 Please add all following framework to your projects
 ### KASDK framework
@@ -19,10 +20,18 @@ Please add all following framework to your projects
   * CTSDK.framework
   * UnityAds.framework
   * VungleSDK.framework
+  * AppLovinSDK.framework
+  * IronSource.framework
+  * Toutiao
+    * WMAdSDK.framework
+    * WMAdSDK.bundle
   * GDT
     * libGDTMobSDK.a
   * TalkingData
     * libTalkingData.a
+  * UM   
+    * UMAnalytics.framework
+    * UMCommon.framework
 
 ### Dependencies
 * SystemConfiguration.framework
@@ -43,6 +52,31 @@ Please add all following framework to your projects
 * libxml2.2.tbd
 * libz.tbd
 
+### info.plist
+```XML
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>dianping</string>
+		<string>imeituan</string>
+		<string>com.suning.SuningEBuy</string>
+		<string>openapp.jdmobile</string>
+		<string>vipshop</string>
+		<string>snssdk141</string>
+		<string>ctrip</string>
+		<string>suning</string>
+		<string>qunariphone</string>
+		<string>QunarAlipay</string>
+		<string>qunaraphone</string>
+		<string>yohobuy</string>
+		<string>kaola</string>
+		<string>agoda</string>
+		<string>openapp.xzdz</string>
+		<string>beibeiapp</string>
+		<string>taobao</string>
+		<string>tmall</string>
+	</array>
+```
+
 ### Setup deployment target to: iOS 8.0
 ![deployment target](https://github.com/KATracking/KATrackingAd/blob/master/README_Res/ios_deployment_target.png)
 
@@ -55,14 +89,17 @@ Please add all following framework to your projects
 Please initialize SDK as early into app lifecycle as possible, as once SDK initilized it will automatically pre-cashe ads.
 
 `AppDelegate`
+
 ```Objective-c
 #import <KATracking/KASDK.h>
 ```
 `AppDelegate : application:didFinishLaunchingWithOptions:`
+
 ```Objective-c
 [[KATracking sharedInstance] initWithAppId:@"<AppId>" channel:@"<AppChannel>"];
 ```
 Provided by operator
+
 * **AppId** - Application ID
 * **AppChannel** - Application distribution channel
 
@@ -71,6 +108,7 @@ Provided by operator
 ### Create a Native Ad
 To create a Native ad instance
 `KAAdNative`
+
 ```Objective-c
 KAAdNative *ad = [[KAAdNative alloc] initWithSlot:<AdSlot> delegate:<Delegate>];
 ```
@@ -80,6 +118,7 @@ KAAdNative *ad = [[KAAdNative alloc] initWithSlot:<AdSlot> delegate:<Delegate>];
 ### Load Native ad
 Simple call this method to load an ad, then wait for delegates to be tricked for load succes or fail
 `KAAdNative`
+
 ```Objective-c
 [ad load];
 ```
@@ -96,6 +135,7 @@ Each native ad also have the following properties
 ### Acquire primary ad view
 This method returns a UIView specified by size, which contains the main content of NativeAd.
 `KAAdNative`
+
 ```Objective-c
 UIView *primaryView = [ad primiaryViewOfSize:<size>];
 ```
@@ -104,6 +144,7 @@ UIView *primaryView = [ad primiaryViewOfSize:<size>];
 ### Report an impression
 Once the ad has been displayed
 `KAAdNative`
+
 ```Objective-c
 [ad nativeAdRenderedWithView:adView];
 ```
@@ -112,6 +153,7 @@ Once the ad has been displayed
 ### Report a click
 Once user did click on Ad, use one of the following two methods to report click event
 `KAAdNative`
+
 ```Objective-c
 [ad nativeAdClickedAtPointAndOpenLandingPage:touchPoint];
 ```
@@ -121,6 +163,7 @@ Once user did click on Ad, use one of the following two methods to report click 
 Use these delegates to receive events of request native ad complete or fail
 
 `KAAdNativeDelegate`
+
 ```Objective-c
 // Request has completed with nativeAd
 - (void) nativeAdRequestCompletedWithAd:(nonnull KAAdNative *)nativeAd;
@@ -138,7 +181,9 @@ Use these delegates to receive events of request native ad complete or fail
 
 ### Create a Splash Ad
 To create a Splash ad instance
+
 `KAAdSplash`
+
 ```Objective-c
 KAAdSplash *splash = [[KAAdSplash alloc] initWithSlot:<AdSlot> delegate:<Delegate>];
 ```
@@ -147,27 +192,33 @@ KAAdSplash *splash = [[KAAdSplash alloc] initWithSlot:<AdSlot> delegate:<Delegat
 
 ### Present a Splash Ad
 To load and present Splash Ad
+
 `KAAdSplash`
+
 ```Objective-c
 [splash loadAndPresentWithViewController:<Controller>];
 ```
 * **Controller** - UIViewController for which the splash is presented from
 
-### 展示广告并添加产品标识
-调用下面方法加载并展示开屏广告，同时可以添加产品自定的标识View，用于填充当由于素材尺寸不足填充全屏情况下的空白位置
+### Show ads and add product IDs
+Call the following method to load and display the open screen advertisement, and at the same time you can add the product custom logo view to fill the blank position when the full screen is filled due to insufficient material size.
+
 `KAAdSplash`
+
 ```Objective-c
 [splash loadAndPresentWithViewController:<Controller> andBackgroundColor:<Color> andBottomView:<View> andBottomViewAutoFitDisplay:<Auto>];
 ```
 
-* **Controller** - 用于展示开屏广告的UIViewController
-* **Color** - 标识填充区的背景颜色
-* **View** - 用于展示在标识填充区的UIView
-* **Auto** - 当希望SDK自动根据尺寸适应是否展示标识View的时候传入Yes, 否则传入No将始终显示标识View
+* **Controller** - UIViewController for which the Splash is presented from
+* **Color** - Identifies the background color of the fill area
+* **View** - Used to display the View in the fill area
+* **Auto** - When you want the SDK to automatically adapt to the size according to whether the display is displayed, otherwise it will be displayed.
 
-### 标识区可用尺寸
-调用下面方法来根据不同设备计算可以用于标识区的View大小
+### Logo area available size
+Call the following method to calculate the View size that can be used to identify the zone based on different devices.
+
 `KAAdSplash`
+
 ```Objective-c
 CGSize size = [KAAdSplash getBottomViewSize];
 ```
@@ -177,6 +228,7 @@ CGSize size = [KAAdSplash getBottomViewSize];
 Use these delegates to receive events of splash Ad
 
 `KAAdSplashDelegate`
+
 ```Objective-c
 // Ad is successfully presented
 - (void) splashAdPresentDidSuccess:(nonnull KAAdSplash *)splashAd;
@@ -197,6 +249,7 @@ withError:(nonnull NSError *)error;
 ### Create a Interstitial Ad
 To create a Interstitial ad instance
 `KAAdInterstitial`
+
 ```Objective-c
 KAAdInterstitial *interstitial = [[KAAdInterstitial alloc] initWithSlot:<AdSlot> delegate:<Delegate>];
 ```
@@ -205,11 +258,13 @@ KAAdInterstitial *interstitial = [[KAAdInterstitial alloc] initWithSlot:<AdSlot>
 
 To load an interstitial Ad
 `KAAdInterstitial`
+
 ```Objective-c
 [interstitial load];
 ```
 Test availability of the Ad
 `KAAdInterstitial`
+
 ```Objective-c
 BOOL ready = [interstitial isReady];
 ```
@@ -217,6 +272,7 @@ BOOL ready = [interstitial isReady];
 ### Present a Interstitial Ad
 To load and present Interstitial Ad
 `KAAdInterstitial`
+
 ```Objective-c
 [interstitial presentFromRootViewController:<Controller>];
 ```
@@ -226,6 +282,7 @@ To load and present Interstitial Ad
 Use these delegates to receive events of Interstitial Ad
 
 `KAAdInterstitialDelegate`
+
 ```Objective-c
 // Interstitial Ad load success
 - (void) interstitialAdLoadDidSuccess:(nonnull KAAdInterstitial *) interstitialAd;
@@ -259,16 +316,19 @@ BOOL ready = [KAAdIncentivized isReady];
 ### Present a Incentivized video Ad
 
 `KAAdIncentivized`
+
 ```Objective-c
-[KAAdIncentivized presentFromRootViewController:<Controller>];
+[KAAdIncentivized presentFromRootViewController:<Controller> andSkipButton:<isShowSkipButton>];
 ```
 
 * **Controller** - UIViewController for which the Incentivized video Ad is presented from
+* **isShowSkipButton** - YES or NO, Whether to display the skip button
 
 ### Delegates of Incentivized video Ad
 To set a delegate to receive events
 
 `KAAdIncentivized`
+
 ```Objective-c
 [KAAdIncentivized setDelegate:<Delegate>];
 ```
@@ -277,6 +337,7 @@ To set a delegate to receive events
 Use these delegates to receive events of Incentivized video Ad
 
 `KAAdIncentivizedDelegate`
+
 ```Objective-c
 // Incentvized video Ad has failed to present
 - (void) incentivizedAdPresentDidFailWithError:(NSError *)error;
@@ -291,37 +352,40 @@ Use these delegates to receive events of Incentivized video Ad
 - (void) incentivizedAdPresentDidSkip;
 ```
 
-# 横幅广告 - Banner
+# Banner Ad
 
-### 构建广告
-创建一个横幅广告的实例并将广告加到视图上
+### Create a Banner Ad
+
 `KAAdBanner`
+
 ```Objective-c
 KAAdBanner * banner = [[KAAdBanner alloc] initWithSlot:<adSlot> withSize:<size> delegate:<delegate> currentController:<controller>];
 [self.view addSubview:banner];
 ```
-* **adSlot** - 广告位SlotId，用于请求广告
-* **Size** - 广告尺寸<KAAdBannerSize>枚举
-* **Delegate** - id<KAAdBannerDelegate> 实例，用于接受广告事件回调
-* **controller** - 用于点击横幅广告后展示广告页的UIViewController
+* **adSlot** - Slot ID to request ad with
+* **Size** - <KAAdBannerSize> banner size
+* **Delegate** - id<KAAdBannerDelegate> object to receive delegate calls
+* **controller** - UIViewController for displaying ad pages after clicking on a banner ad
 
-请求并加载广告
+load Ad
 `KAAdBanner`
+
 ```Objective-c
 [banner load];
 ```
 
-设置广告的位置
+Setting Ad Positon
 `KAAdBanner`
+
 ```Objective-c
 [banner setPosition:<point>];
 ```
-* **point** - 设置广告的中心点坐标
+* **point** - setting ad center point
 
-### 广告回调
-使用以下回调接收加载广告的事件
+### Ad callback
 
 `KAAdBannerDelegate`
+
 ```Objective-c
 /**
 * Notifies the delegate that the banner has finished loading
@@ -342,3 +406,31 @@ andBanner:(nonnull KAAdBanner *)bannerAd;
 * Notifies the delegate that the banner has dismissed the presented screen.
 */
 - (void) bannerDidDismissScreen:(nonnull KAAdBanner *)bannerAd;
+```
+
+### SDK code
+
+```Objective-c
+    KAAdStatusCodeMissingResourceBundle        = 51001,    // Resource bundle is not present
+    KAAdStatusCodeNoFill                       = 51002,    // Ad is not filled at this time
+    KAAdStatusCodeDuplicateRequest             = 51003,    // Instance of ad is already served, usually caused duplicated request on same instance of ad
+    KAAdStatusCodeSDKNotInitialized            = 51004,
+    KAAdStatusCodeMediationRequestFailed       = 51101,    // General mediation platform failed to receive ad in time or returned mediation error
+    KAAdStatusCodeMediationInvalidRequest      = 51102,    // Mediation platform return invalid request error
+    KAAdStatusCodeMediationInvalidConfig       = 51103,     
+    KAAdStatusCodeFailToPresent                = 51104,
+    KAAdStatusCodeAdSwitchClose                = 51105,    // Ad closed
+    KAAdStatusCodeInvalidRequestPath           = 59994,    // Incorrect server address
+    KAAdStatusCodeNetworkUnavailable           = 59995,    // Network is currently not available
+    KAAdStatusCodeNetworkTimeout               = 59996,    // Network request timeout
+    KAAdStatusCodeInternalError                = 59997,    // SDK internal process error
+    KAAdStatusCodeServerError                  = 59998,    // Server has return an error
+    KAAdStatusCodeUnknown                      = 59999
+```
+
+### cocos2d-x present ad crash
+Please check if there is the following code in `AppController`, please add it.
+
+```Objective-c
+@property(nonatomic, readonly) UIWindow* window;
+```
