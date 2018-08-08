@@ -16,6 +16,21 @@
 - (void) nativeAdRequestFailedForSlot:(nonnull NSString *)nativeAdSlot
                            withStatus:(nonnull NSError *)nativeAdStatus;
 
+@optional
+/**
+ * Native ad request failed with slot and error describing the reason
+ */
+- (void) nativeAdRequestFailedWithAd:(nonnull KAAdNative *)nativeAd
+                          withStatus:(nonnull NSError *)nativeAdStatus;
+/**
+ * Notifies the delegate that the native ad has presented a full screen content.
+ */
+- (void) nativeAdDidPresentScreen:(nonnull KAAdNative *)native;
+
+/**
+ * Notifies the delegate that the native ad has dismissed the presented full screen content.
+ */
+- (void) nativeAdDidDismissScreen:(nonnull KAAdNative *)native;
 
 @end
 

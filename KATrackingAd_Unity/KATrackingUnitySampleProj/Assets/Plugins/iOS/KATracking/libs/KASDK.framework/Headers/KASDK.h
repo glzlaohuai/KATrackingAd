@@ -11,3 +11,4 @@
 #import <KASDK/KAAdInterstitial.h>
 #import <KASDK/KAAdSplash.h>
 #import <KASDK/KAAdIncentivized.h>
+#import <KASDK/KAAdBanner.h>

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <KATracking/KAAdSplash.h>
+#import <KASDK/KASDK.h>
 
 @interface KASplashDelegateimpl : NSObject<KAAdSplashDelegate>
 

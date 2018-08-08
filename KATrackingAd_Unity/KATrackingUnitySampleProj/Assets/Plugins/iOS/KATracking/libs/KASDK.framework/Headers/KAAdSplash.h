@@ -51,8 +51,18 @@
                              delegate:(nonnull id<KAAdSplashDelegate>)delegate;
 
 /**
- * Load and Show a Splash ad
+ * Load and Show a Splash ad，background color default black color
  */
 - (void) loadAndPresentWithViewController:(UIViewController *) controller;
+
+/**
+ * Load and Show a Splash ad
+ */
+- (void) loadAndPresentWithViewController:(UIViewController *) controller
+                       andBackgroundColor:(UIColor *)color
+                            andBottomView:(UIView *)bottomView
+              andBottomViewAutoFitDisplay:(BOOL)isAutoFitDisplay;
+
++ (CGSize)getBottomViewSize;
 
 @end

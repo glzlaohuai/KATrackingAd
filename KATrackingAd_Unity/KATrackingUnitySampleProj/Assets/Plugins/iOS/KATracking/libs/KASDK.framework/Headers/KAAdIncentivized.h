@@ -30,8 +30,8 @@
 
 + (void) setDelegate:(id<KAAdIncentivizedDelegate>) delegate;
 
-+ (BOOL) isReady;
++ (BOOL) isReady:(BOOL)isShowSkipButton;
 
-+ (void) presentFromRootViewController:(nonnull UIViewController *) controller;
++ (void) presentFromRootViewController:(nonnull UIViewController *)controller andSkipButton:(BOOL)isShowSkipButton;
 
 @end

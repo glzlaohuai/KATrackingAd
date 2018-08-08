@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <KATracking/KAAdIncentivized.h>
+#import <KASDK/KASDK.h>
 
 @interface KARewardVideoDelegateImpl : NSObject<KAAdIncentivizedDelegate>
 

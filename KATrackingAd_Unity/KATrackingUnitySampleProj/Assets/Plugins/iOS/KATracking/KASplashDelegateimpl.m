@@ -25,7 +25,7 @@
 }
 
 - (void)splashAdPresentDidFail:(NSString *)splashAdSlot withError:(NSError *)error{
-    NSString *msg = [splashAdSlot stringByAppendingString:[error localizedDescription]];
+    NSString *msg = [[splashAdSlot stringByAppendingString:@"#"] stringByAppendingString: [error localizedDescription]];
     UnitySendMessage(GAME_OBJ_NAME, "csSplashAdPresentDidFail", [msg UTF8String]);
 }
 
