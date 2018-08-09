@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <KATracking/KAAdInterstitial.h>
+#import <KASDK/KASDK.h>
 
 @interface KAInterstitialDelegateImpl : NSObject<KAAdInterstitialDelegate>
 

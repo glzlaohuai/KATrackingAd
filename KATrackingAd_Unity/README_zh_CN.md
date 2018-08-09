@@ -6,16 +6,17 @@
 * [接入](#step1)
 * [ios工程配置](#step2)
 * [如何运行示例工程](#step3)
+* [备注](#step4)
 
 ## <a name="start">关于</a>
 
 
 * 支持广告形式： `插屏`、`开屏`、`激励视频`
-* 支持 Unity4.x, Unity5.x, Unity2017;
+* 支持 Unity4.x、Unity5.x、 Unity2017、Unity2018;
 * 支持 iOS 8.0+;
 * [下载最新版本KATrackingUnityPlugin;](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_Unity/KATrackingUnityPlugin.unitypackage.zip)
 * [点击下载示例工程;](https://github.com/KATracking/KATrackingAd/tree/master/KATrackingAd_Unity/KATrackingUnitySampleProj)
-* [点击下载第三方广告sdk;](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/MediationSDK.zip) 
+* 点击下载第三方广告sdk：[part1](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/Mediation_1.zip)，[part2](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/Mediation_2.zip) 
 
 
 
@@ -109,40 +110,18 @@ KATracking.showRewardVideoAD ();
 ## <a name="step2">ios工程配置</a>
 
 *  导出xcode工程
-*  添加link flag：`-ObjC`: `Build Settings` -> `Other Linker Flags` -> `-ObjC`
-*  设置 deployment target: `General` -> `Deployment Info` -> `Deployment Target` -> `8.0` (8.0或以上，根据你的项目需求)
-*  添加以下依赖项: `Build Phases` -> `Link Binary With Libraries`.
-* AdSupport.framework
-* AVFoundation.framework
-* GLKit.framework
-* StoreKit.framework
-* SystemConfiguration.framework
-* CFNetwork.framework
-* CoreMotion.framework
-* CoreLocation.framework
-* CoreGraphics.framework
-* CoreData.framework
-* CoreText.framework
-* QuartzCore.framework
-* CoreTelephony.framework
-* libxml2.tbd
-* libc++.tbd
-* libz.tbd
-* KATracking.framework
-* libsqlite3.0.tbd
-* EventKit.framework
-* EventKitUI.framework
-* WebKit.framework
-* Security.framework
-* UIKit.framework
-
-*  根据你的需要添加第三方sdk (我们支持的三方sdk:`Inmobi`、`Admob`、`GDT`、`CloudMobi`、`Vungle`. 点击下载: [第三方广告sdk](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/MediationSDK.zip)
+*  根据[这里](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README.md)的说明来配置导出的ios工程
+*  根据你的需要添加第三方sdk
 
 ## <a name="step3">如何运行示例工程</a>
 
 * 在unity中打开示例工程
 * 导出xcode工程
 * 添加所有的第三方sdk到工程中
-* 根据步骤([ios工程配置](#step2)) 的描述来配置工程
+* 根据[这里](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README.md)的说明来配置ios工程
 * 可以运行了。
+
+## <a name="step4">备注</a>
+
+* 该plugin不支持iOS native sdk提供的[`原生广告`](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README.md#%E5%8E%9F%E7%94%9F%E5%B9%BF%E5%91%8A---native)类型以及不支持`开屏`广告的[`展示广告并添加产品标示`](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README.md#%E5%B1%95%E7%A4%BA%E5%B9%BF%E5%91%8A%E5%B9%B6%E6%B7%BB%E5%8A%A0%E4%BA%A7%E5%93%81%E6%A0%87%E8%AF%86)方法（这两部分都涉及到使用`UIView`，无法在unity端进行处理），如果您的产品中需要该功能，请参照plugin的现有代码自行修改添加。
 

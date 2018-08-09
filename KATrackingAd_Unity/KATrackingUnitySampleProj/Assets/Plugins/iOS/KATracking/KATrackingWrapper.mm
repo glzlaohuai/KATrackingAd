@@ -6,13 +6,11 @@
 //  Copyright © 2018年 Jason Y Liu. All rights reserved.
 //
 
-#import <KATracking/KATracking.h>
+#import <KASDK/KASDK.h>
 #import "KAInterstitialDelegateImpl.h"
 #import <UIKit/UIKit.h>
 #import "UnityInterface.h"
-#import <KATracking/KAAdSplash.h>
 #import "KASplashDelegateimpl.h"
-#import <KATracking/KAAdIncentivized.h>
 #import "KARewardVideoDelegateImpl.h"
 
 static NSMutableDictionary *adDict = [NSMutableDictionary dictionary];
@@ -84,15 +82,16 @@ extern "C"{
             [KAAdIncentivized setDelegate:rewardDelegate];
         }
         NSLog(@"oc端doShowRewardVideo...");
-        if ([KAAdIncentivized isReady]) {
-            [KAAdIncentivized presentFromRootViewController: UnityGetGLViewController()];
+        
+        if ([KAAdIncentivized isReady:NO]) {
+            [KAAdIncentivized presentFromRootViewController: UnityGetGLViewController() andSkipButton:NO];
         }else{
             NSLog(@"没有加载完毕的video...");
         }
     }
     
     bool doCheckIsRewardVideoAvaliable(){
-        bool isOK = [KAAdIncentivized isReady];
+        bool isOK = [KAAdIncentivized isReady:NO];
         NSLog(@"oc端检查视频广告是否可用,%d",isOK);
         return isOK;
     }

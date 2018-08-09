@@ -7,16 +7,17 @@
 * [SDK Set Up](#step1)
 * [Additional Settings for iOS](#step2)
 * [How To Run Sample Project](#step3)
+* [Others](#step4)
 
 ## <a name="start">Before You Start</a>
 
 
 * Support `interstitial`、`splash`、`rewardVideo`
-* Support Unity4.x, Unity5.x, Unity2017;
+* Support Unity4.x、Unity5.x、Unity2017、Unity2018;
 * Support iOS 8.0+;
-* [Click Here to Download Latest SDK;](https://github.com/AppicPlay/KATrackingUnityPlugin/blob/master/KATrackingUnityPlugin.unitypackage.zip)
-* [Click Here to Download Sample Unity Project;](https://github.com/AppicPlay/KATrackingUnityPlugin/blob/master/KATrackingUnitySampleProj.zip)
-* [Click Here to Download Third Party AD SDKs;](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/MediationSDK.zip) 
+* [Click Here to Download Latest SDK;](https://github.com/AppicPlay/KATrackingUnityPlugin/blob/master/KATrackingUnityPlugin.unitypackage)
+* [Click Here to Download Sample Unity Project;](https://github.com/KATracking/KATrackingAd/tree/master/KATrackingAd_Unity/KATrackingUnitySampleProj)
+* Click Here to Download Third Party AD SDKs： [part1](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/Mediation_1.zip)，[part2](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/Mediation_2.zip) 
 
 
 
@@ -111,42 +112,16 @@ KATracking.showRewardVideoAD ();
 ## <a name="step2">Additional Settings for iOS</a>
 
 *  Export a Xcode project.
-*  Add a static link to: `Build Settings` -> `Other Linker Flags` -> `-ObjC`
-*  Set deployment target: `General` -> `Deployment Info` -> `Deployment Target` -> `8.0` (8.0 or above depend on your need)
-*  Add dependencies: `Build Phases` -> `Link Binary With Libraries`.
-- GooleMobileAds.framework
-- InMobiSDK.framework
-- libGDTMobSDK.a
-- AdSupport.framework
-- AVFoundation.framework
-- GLKit.framework
-- StoreKit.framework
-- SystemConfiguration.framework
-- CFNetwork.framework
-- CoreMotion.framework
-- CoreLocation.framework
-- CoreGraphics.framework
-- CoreData.framework
-- CoreText.framework
-- QuartzCore.framework
-- CoreTelephony.framework
-- libxml2.tbd
-- libc++.tbd
-- libz.tbd
-- KATracking.framework
-- libsqlite3.0.tbd
-- EventKit.framework
-- EventKitUI.framework
-- WebKit.framework
-- Security.framework
-- UIKit.framework
-*  Add third party ad sdks depends on your need (till now we support:`Inmobi`、`Admob`、`GDT`、`CloudMobi`、`Vungle`. Click to download: [third party ad sdks](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/MediationSDK.zip)
+*  Follow instructions [here](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README_EN.md) to set your exported project.
+*  Add third party ad sdks depends on your need
 
 ## <a name="step3">How To Run The Sample Project</a>
 
 * Open it in unity
 * Export a Xcode project
 * Add all the third party ad sdks into the xcode project
-* Follow the above step([Additional Settings for iOS](#step2)) to set your project
+* Follow instructions [here](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README_EN.md) to set your exported project.
 * All done. Now you can build and run on your iphone or a simulator to see how it works, and also you can modify the `appID`、`appChannel`、`slotID`, and the sample project's bundleID and version to the same as your project's to see if everything works correctly.
 
+## <a name="step4">Others</a>
+* This plugin do not support `native ad ` and `splash ad`'s function: `[splash loadAndPresentWithViewController:<Controller> andBackgroundColor:<Color> andBottomView:<View> andBottomViewAutoFitDisplay:<Auto>];` (because these two sections all use `UIView` that we can't handle in`unity` side). If you really need these functions, please do it yourself.

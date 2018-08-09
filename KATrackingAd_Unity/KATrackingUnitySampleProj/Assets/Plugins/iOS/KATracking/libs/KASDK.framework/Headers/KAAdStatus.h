@@ -14,6 +14,7 @@ typedef NS_ENUM(NSInteger, KAAdStatusCode) {
     KAAdStatusCodeMediationInvalidRequest      = 51102,     // Mediation platform return invalid request error
     KAAdStatusCodeMediationInvalidConfig       = 51103,
     KAAdStatusCodeFailToPresent                = 51104,
+    KAAdStatusCodeAdSwitchClose                = 51105,     // Ad closed
     KAAdStatusCodeInvalidRequestPath           = 59994,        // Incorrect server address
     KAAdStatusCodeNetworkUnavailable           = 59995,        // Network is currently not available
     KAAdStatusCodeNetworkTimeout               = 59996,         // Network request timeout

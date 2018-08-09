@@ -85,9 +85,10 @@ namespace KATrackingAD
 
 		public static bool isRewardVideoADAvaliable ()
 		{
-			#if UNITY_IOS
+#if UNITY_IOS
 			return doCheckIsRewardVideoAvaliable ();
-			#endif
+#endif
+            return true;
 		}
 
 		private static void createDelegateObj ()

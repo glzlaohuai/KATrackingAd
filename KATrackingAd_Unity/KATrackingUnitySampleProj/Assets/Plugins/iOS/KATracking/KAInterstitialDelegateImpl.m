@@ -13,7 +13,7 @@
 @implementation KAInterstitialDelegateImpl
 
 -(void)interstitialAdLoadDidFailForSlot:(NSString *)interstitialAdSlot withError:(NSError *)interstitialAdStatus{
-    NSString *msg = [interstitialAdSlot stringByAppendingString: [interstitialAdStatus localizedDescription]];
+    NSString *msg = [[interstitialAdSlot stringByAppendingString: @"#"] stringByAppendingString:[interstitialAdStatus localizedDescription]];
     UnitySendMessage(GAME_OBJ_NAME, "csInterstitialAdLoadDidFailForSlot",[msg UTF8String]);
 }
 
