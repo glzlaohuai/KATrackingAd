@@ -1,0 +1,8 @@
+    implementation 'com.github.vungle:vungle-android-sdk:6.3.12'
+    implementation 'com.google.android.gms:play-services:8.4.0'
+
+//需要在project的build.gradle中加入以下maven库到allprojects结构下的repositories下：
+
+maven {
+            url 'https://jitpack.io'
+        }

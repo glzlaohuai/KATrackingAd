@@ -1,27 +1,28 @@
-# 当前版本Ver.3.1.6 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/ReleaseNote.md)
+# 当前版本Ver.3.2.1 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/ReleaseNote.md)
 # AppicPlay AD SDK接入说明
 
-* [关于](#start)
-* [基础SDK接入](#step1)
-* [加入第三方平台SDK](#step2)
-* [接入原生广告](#step3)
-* [接入开屏广告](#step4)
-* [关于权限申请](#step5)
+* [关于](#about)
+* [基础SDK接入](#essential)
+* [加入第三方平台SDK](#thirdPartySDK)
+* [接入原生广告](#nativeAD)
+* [接入开屏广告](#splashAD)
+* [接入插屏广告](#interstitialAD)
+* [接入横幅广告](#bannerAD)
+* [接入激励视频广告](#videoAD)
+* [关于权限申请](#permissions)
 
-## <a name="start">关于</a>
+## <a name="about">关于</a>
 
-* 支持广告类型：**原生**、**开屏**
+* 支持广告类型：**原生**、**开屏**、**插屏**、**横幅**、**激励视频**
 * 下载[AppicPlay AD SDK](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/AppicPlaySDK.zip)
-* 支持广告平台：**广点通**、**inmobi**、**头条**
 
-## <a name="step1">基础SDK接入</a>
+## <a name="essential">基础SDK接入</a>
 
-* 下载[sdk](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/AppicPlaySDK.zip)并解压，将解压后的`AppicPlay_AD_xxx.aar`、`AppicPlay_Core_xxx.aar`和`AppicPlay_Track_xxx.aar`文件加入工程依赖
+* 下载[sdk](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/AppicPlaySDK.zip)并解压，将解压后的`AppicPlay_AD_xxx.aar`、`AppicPlay_Core_xxx.aar`、`AppicPlay_Track_xxx.aar`和`AppicPlay_Extra_xxx.aar`文件加入工程依赖
 * 接入工程的`app module`的`build.gradle`中添加依赖：
 
 	```
 	implementation 'com.android.volley:volley:1.1.0'
-    implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support:support-v4:26.1.0'
     implementation 'android.arch.persistence.room:runtime:1.0.0'
     implementation 'com.liulishuo.filedownloader:library:1.7.4'
@@ -80,14 +81,21 @@
 	```
 	**注**:`appID`和`channelID`的值将在您接入sdk时由我方相关对接人员提供。
 
-## <a name="step2">加入第三方平台SDK</a>
+* `proguard`配置：
+
+	```
+	-keep class * implements com.appicplay.sdk.core.APApplicationInvoker
+-keepnames class com.appicplay.sdk.extra.APExtra
+	```
+
+## <a name="thirdPartySDK">加入第三方平台SDK</a>
 * 受支持的第三方平台sdk在[这里](https://github.com/KATracking/KATrackingAd/tree/master/AppicPlayAD_Android/ThirdParyADLibs)查看
-* `inmobi `文件夹内包含接入`inmobi`平台需要的所有配置，相应的：`gdt`对应`广点通`广告平台、`tt`对应`头条`广告平台
+* `inmobi `文件夹内包含接入`inmobi`平台需要的所有配置，相应的：`gdt`对应`广点通`广告平台、`tt`对应`头条`广告平台、`cloudmobi`对应`cloudmobi`平台、`unity`对应`unity`广告平台、`vungle`对应`vungle`广告平台、`tcash`对应`tcash`广告平台
 * 第三方广告平台所需要的配置可能包含有：`jar、aar`依赖项（在`libs`文件夹内）、`build.gradle`文件中的自动依赖项（在`dependicies`文件夹内）、需要配置的权限（在`permissions`文件内）、`AndroidMnifest.xml`中需要添加的组件（`activity`、`service`、`receiver`、`provider`等内容）（在`components`文件内）、混淆配置项（在`proguard`文件内）
 * 将需要支持的广告平台的所有内容加入到待接入工程中即可
 
 
-## <a name="step3">接入原生广告</a>
+## <a name="nativeAD">接入原生广告</a>
 
 1. **创建原生广告实例：**
 
@@ -143,7 +151,7 @@
 	```
 	**注**：广告展示时必须将`getExposureView `返回的view添加到容器中，其他内容（如`adTitle`、`adDesc`、`adIcon`，返回内容可能为`null`）由开发者自行决定是否展示以及如何展示。
 	
-## <a name="step4">接入开屏广告</a>
+## <a name="splashAD">接入开屏广告</a>
 1. **创建开屏广告实例**：
 
 	```
@@ -169,8 +177,81 @@
 3. **释放占用资源**
 	
 	开屏广告展示完毕之后，在合适的时机（绝对大多数情况应该是在展示开屏广告的activity的onDestroy回调方法中）调用方法：`splash.onDestroy()`
+	
+## <a name="interstitialAD">接入插屏广告</a>
+1. **创建插屏实例**
 
-## <a name="step5">关于权限申请</a>
+	`APInterstitial apInterstitial = new APInterstitial(activity, "slotID", interstitialListener`
+2. **设置期望尺寸**
+
+	`apInterstitial.setPreferImageSize(width, height);`
+
+3. **加载插屏**
+
+	`apInterstitial.loadInterstitial();`
+	
+4. **展示插屏**
+
+	`apInterstitial.show();`
+	
+5. **释放资源**
+
+	在不需要改插屏实例时（每次插屏展示完毕，需要再次展示时需要重新创建插屏实例），需要调用方法：`apInterstitial.onDestroy();`来释放所占用的资源。
+
+## <a name="bannerAD">接入横幅广告</a>
+
+1. **创建横幅广告实例**
+
+	`APBanner banner = new APBanner(activity, "slotID", listener);`
+	
+1. **加载广告**
+
+	`banner.loadBanner(bannerContainer);`
+	
+	**注**：bannerContainer尺寸：300dp*50dp
+	
+1. **释放资源**
+
+	在不需要该横幅广告实例时（一般情况下，应该是在创建该实例所处的`activity`的`onDestroy`方法回调时）,调用方法：`banner.onDestroy();`来释放该实例所占用的资源。
+	
+1. **隐藏banner**
+
+	`banner.hide();`
+	
+1. **展示banner**
+
+	`banner.show()`
+	
+	**注**：banner加载成功之后会立即显示，不需额外调用`show`方法，该方法对应于`hide`方法，用于在调用`hide`方法后，要继续显示banner时使用。
+	
+
+## <a name="videoAD">接入激励视频广告</a>
+
+**注**：激励视频不同于其他广告形式，使用单例模式，无需创建额外实例。
+
+1. **设置激励视频回调**
+
+	`APVideo.setListener(apVideoListener);`
+	
+1. **设置当前需要使用激励视频相关功能的activity**
+
+	`APVideo.setActivity(currentActivity);`
+	
+1. **加载激励视频**
+
+	`APVideo.loadVideoAD();`
+	
+1. **检查是否有可用的激励视频**
+
+	`APVideo.isReady();`
+	
+1. **展示激励视频广告**
+
+	`APVideo.showVideoAD(currentActivity);`
+	
+
+
+## <a name="permissions">关于权限申请</a>
 
 * sdk需要动态申请的权限：`android.permission.READ_PHONE_STATE`、`android.permission.WRITE_EXTERNAL_STORAGE`、`android.permission.ACCESS_FINE_LOCATION`
 
