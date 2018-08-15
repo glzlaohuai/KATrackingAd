@@ -54,6 +54,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 	```
 * `Application`的回调方法中分别做如下修改（工程如果没有自定义`Application`请自行加入）：
 	*	`onCreate`回调方法：
@@ -85,7 +86,8 @@
 
 	```
 	-keep class * implements com.appicplay.sdk.core.APApplicationInvoker
--keepnames class com.appicplay.sdk.extra.APExtra
+	-keepnames class com.appicplay.sdk.extra.APExtra
+	
 	```
 
 ## <a name="thirdPartySDK">加入第三方平台SDK</a>
