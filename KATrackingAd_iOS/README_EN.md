@@ -33,6 +33,7 @@ Please add all following framework to your projects
   * UM   
     * UMAnalytics.framework
     * UMCommon.framework
+  * FBAudienceNetwork.framework
 
 ### Dependencies
 * SystemConfiguration.framework
