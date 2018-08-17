@@ -1,5 +1,5 @@
 > [English Doc](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README_EN.md)
-# 当前版本 Ver.3.5.1 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/ReleaseNote.md)
+# 当前版本 Ver.3.5.2 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/ReleaseNote.md)
 # 接入说明
 
 ## 准备工作
@@ -7,6 +7,7 @@
 请将Mediation.zip中所有广告平台依赖库添加到Demo测试工程中，位置：KATrackingAdDemo/SDK/Mediation/，从而在Demo中测试所有广告位
 ### 获取广告平台依赖库-1 [下载链接](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/Mediation_1.zip)
 ### 获取广告平台依赖库-2 [下载链接](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/Mediation_2.zip)
+### 获取广告平台依赖库-3 [下载链接](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/Mediation_3.zip)
 
 请将以下依赖库全部添加到接入工程中
 ### 广告SDK依赖库
@@ -32,6 +33,7 @@
   * UM (选加，如果需要KASDK对接UM作为统计框架）   
     * UMAnalytics.framework
     * UMCommon.framework
+  * FBAudienceNetwork.framework
 
 ### 加入其它依赖库
 * SystemConfiguration.framework

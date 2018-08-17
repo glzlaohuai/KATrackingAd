@@ -1,5 +1,11 @@
 # 版本发布记录
 
+## Ver3.5.2
+## Release Date: 2018-8-17
+
+* 聚合新增平台 Facebook
+* 修复bug
+
 ## Ver3.5.1
 ## Release Date: 2018-8-1
 

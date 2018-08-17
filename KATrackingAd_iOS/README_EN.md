@@ -1,5 +1,5 @@
 > [中文文档](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README.md)
-# Current Ver.3.5.1
+# Current Ver.3.5.2
 # Integration Guideline
 
 ## Preparation
@@ -7,6 +7,7 @@
 In order to test all ad slots from mediated platforms, please download mediation.zip below, and unzip all frameworks to demo project at location: KATrackingAdDemo/SDK/Mediation/.
 ### Download Mediation-1.zip [LINK](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/Mediation_1.zip)
 ### Download Mediation-2.zip [LINK](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/Mediation_2.zip)
+### Download Mediation-3.zip [LINK](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/Mediation_3.zip)
 
 Please add all following framework to your projects
 ### KASDK framework
