@@ -1,5 +1,5 @@
 > [中文文档](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README.md)
-# Current Ver.3.5.2
+# Current Ver.3.5.3
 # Integration Guideline
 
 ## Preparation
