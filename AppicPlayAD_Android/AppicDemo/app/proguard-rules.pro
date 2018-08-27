@@ -114,3 +114,40 @@ public *;  } 
 #appicsdk
 -keep class * implements com.appicplay.sdk.core.APApplicationInvoker
 -keepnames class com.appicplay.sdk.extra.APExtra
+
+
+#rqsdk
+-dontusemixedcaseclassnames
+-verbose
+-ignorewarnings
+-dontoptimize
+-dontshrink
+
+-keepattributes SourceFile,LineNumberTable
+-keepattributes Signature,EnclosingMethod
+-keepattributes *Annotation*,InnerClasses
+-keepattributes *JavascriptInterface*
+-keepattributes *$JavaScriptInterface
+-keep public class *$JavaScriptInterface
+
+-keep public class * extends android.os.Binder
+-keep public class * extends android.app.Activity
+-keep public class * extends android.app.Application
+-keep public class * extends android.app.Service
+-keep public class * extends android.content.BroadcastReceiver
+-keep public class * extends android.content.ContentProvider
+-keep public class * extends android.support.v4.**
+
+-keepclassmembers class * implements java.io.Serializable {*;}
+-keepclassmembers class * implements android.io.Parcelable {*;}
+-keep class * implements android.os.Parcelable {*;}
+-keep class * implements android.io.Parcelable{*;}
+
+-keep class android.**{*;}
+
+-keep class org.apache.** {*;}
+
+-keep class **.RqSdk {*;}
+
+# adsdk
+-keep class com.main.** {*;}

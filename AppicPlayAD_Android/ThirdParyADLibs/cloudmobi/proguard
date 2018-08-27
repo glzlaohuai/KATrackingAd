@@ -1,8 +1,0 @@
-#cloudmobi
- #for sdk
--keep public class com.cloudtech.**{*;}
-#for gaid
--keep class **.AdvertisingIdClient$** { *; }
-#for not group facebook/admob ads
--dontwarn com.google.android.**
--dontwarn com.facebook.ads.**

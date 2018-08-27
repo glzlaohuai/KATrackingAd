@@ -1,4 +1,4 @@
-# 当前版本Ver.3.2.1 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/ReleaseNote.md)
+# 当前版本Ver.3.2.2 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/ReleaseNote.md)
 # AppicPlay AD SDK接入说明
 
 * [关于](#about)
@@ -10,6 +10,8 @@
 * [接入横幅广告](#bannerAD)
 * [接入激励视频广告](#videoAD)
 * [关于权限申请](#permissions)
+* [其他](#others)
+
 
 ## <a name="about">关于</a>
 
@@ -18,7 +20,7 @@
 
 ## <a name="essential">基础SDK接入</a>
 
-* 下载[sdk](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/AppicPlaySDK.zip)并解压，将解压后的`AppicPlay_AD_xxx.aar`、`AppicPlay_Core_xxx.aar`、`AppicPlay_Track_xxx.aar`和`AppicPlay_Extra_xxx.aar`文件加入工程依赖
+* 下载[sdk](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/AppicPlaySDK.zip)并解压，将解压后的`AppicPlay_AD_xxx.aar`、`AppicPlay_Core_xxx.aar`文件加入工程依赖
 * 接入工程的`app module`的`build.gradle`中添加依赖：
 
 	```
@@ -92,8 +94,8 @@
 
 ## <a name="thirdPartySDK">加入第三方平台SDK</a>
 * 受支持的第三方平台sdk在[这里](https://github.com/KATracking/KATrackingAd/tree/master/AppicPlayAD_Android/ThirdParyADLibs)查看
-* `inmobi `文件夹内包含接入`inmobi`平台需要的所有配置，相应的：`gdt`对应`广点通`广告平台、`tt`对应`头条`广告平台、`cloudmobi`对应`cloudmobi`平台、`unity`对应`unity`广告平台、`vungle`对应`vungle`广告平台、`tcash`对应`tcash`广告平台
-* 第三方广告平台所需要的配置可能包含有：`jar、aar`依赖项（在`libs`文件夹内）、`build.gradle`文件中的自动依赖项（在`dependicies`文件夹内）、需要配置的权限（在`permissions`文件内）、`AndroidMnifest.xml`中需要添加的组件（`activity`、`service`、`receiver`、`provider`等内容）（在`components`文件内）、混淆配置项（在`proguard`文件内）
+* `inmobi `文件夹内包含接入`inmobi`平台需要的所有配置，相应的：`gdt`对应`广点通`广告平台、`tt`对应`头条`广告平台、`unity`对应`unity`广告平台、`vungle`对应`vungle`广告平台、`tcash`对应`tcash`广告平台
+* 第三方广告平台所需要的配置可能包含有：`jar、aar`依赖项（在`libs`文件夹内）、`build.gradle`文件中的依赖项（在`dependicies`文件夹内）、需要配置的权限（在`permissions`文件内）、`AndroidMnifest.xml`中需要添加的组件（`activity`、`service`、`receiver`、`provider`等内容）（在`components`文件内）、混淆配置项（在`proguard`文件内）
 * 将需要支持的广告平台的所有内容加入到待接入工程中即可
 
 
@@ -179,6 +181,11 @@
 3. **释放占用资源**
 	
 	开屏广告展示完毕之后，在合适的时机（绝对大多数情况应该是在展示开屏广告的activity的onDestroy回调方法中）调用方法：`splash.onDestroy()`
+
+4. **`AndroidManifest.xml`配置**
+
+	因为在请求开屏过程中可能会导致展示开屏的`activity`的朝向改变，所以，需要在`manifest`中为展示开屏广告的`activity`添加属性：`android:configChanges="keyboard|keyboardHidden|orientation|screenSize"`
+	
 	
 ## <a name="interstitialAD">接入插屏广告</a>
 1. **创建插屏实例**
@@ -262,3 +269,7 @@
 * 调用方法：`APCore.setAutoRequestPermission(false)`可以让sdk在初始化时候不自动申请所需权限。
 
 * 如果sdk初始化代码写在`splash activity`中或者其他只停留很短时间就跳到其他界面的activity中，建议为了有更好的用户体验关闭sdk自动申请权限的行为，在接入应用内处理权限申请，在未收到权限申请结果之前不进行activity的跳转和sdk的初始化。
+
+## <a name="others">其他</a>
+
+* 如果想在用户在非wifi环境时点击下载类型广告时进行弹窗提醒，那么可以使用方法：`APAD.setIsMobileNetworkDirectlyDownload(boolean)`进行设置，如果不进行设置，那么默认为`true`（亦即在非wifi环境下点击下载类广告时不进行提示而直接下载）。**由于部分广告平台未提供设置方法，所以该设置只在部分广告平台上生效。**

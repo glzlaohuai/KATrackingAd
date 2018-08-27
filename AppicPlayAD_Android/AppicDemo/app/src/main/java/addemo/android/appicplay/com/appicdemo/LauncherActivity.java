@@ -23,6 +23,7 @@ public class LauncherActivity extends AppCompatActivity implements View.OnClickL
         findViewById(R.id.video).setOnClickListener(this);
 
         APAD.init(this, "test_test_test", "test_ad");
+        APAD.setIsMobileNetworkDirectlyDownload(true);
     }
 
     @Override
@@ -51,6 +52,7 @@ public class LauncherActivity extends AppCompatActivity implements View.OnClickL
 
         }
         startActivity(intent);
+
 
     }
 }

@@ -63,8 +63,12 @@ public class SplashActivity extends Activity implements View.OnClickListener {
         });
 
         splash.loadAndPresent((LinearLayout) findViewById(R.id.splashContainer), R.layout.splash_bottom);
-
     }
+
+
+
+
+
 
     @Override
     protected void onDestroy() {

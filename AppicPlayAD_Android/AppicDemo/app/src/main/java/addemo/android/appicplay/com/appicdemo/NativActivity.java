@@ -56,7 +56,7 @@ public class NativActivity extends Activity {
                         Log.i(TAG, "click: ");
                     }
                 });
-                apNative.setPreferImageSize(600, 300);
+                apNative.setPreferImageSize(1080, 1920);
 
                 apNative.loadNative();
             }
