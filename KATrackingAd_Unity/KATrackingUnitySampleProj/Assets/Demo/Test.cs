@@ -25,6 +25,7 @@ public class Test : MonoBehaviour
 
 	void OnEnable ()
 	{
+        Debug.Log("enabled.....");
 		KATracking.init ("test_test_test", "test_ad");
 		setupDelegates ();
 	}
@@ -139,27 +140,27 @@ public class Test : MonoBehaviour
 		logText.text = logText.text + "\n" + logMsg;
 	}
 
-
-
-
 	public void loadInterstitial ()
 	{
 		log ("loadInterstitial...");
-		KATracking.loadInterstitial ("DlGdpoGq");
+        KATracking.loadInterstitial ("geyzoWGx");
 	}
 
 	public void showInterstitial ()
 	{
 		log ("show interstitial");
-		if (KATracking.isInterstitialAvaliable ("DlGdpoGq")) {
-			KATracking.showInterstitial ("DlGdpoGq");
-		}
+        if (KATracking.isInterstitialAvaliable ("geyzoWGx")) {
+            log("interstitial is ready");
+            KATracking.showInterstitial ("geyzoWGx");
+        }else{
+            log("interstitial is not ready.");
+        }
 	}
 
 	public void loadSplash ()
 	{
 		log ("showSplash...");
-		KATracking.showSplash ("bPmPrQGq");
+        KATracking.showSplash ("XqmJPMGw");
 	}
 
 	public void loadRewardVideo ()
