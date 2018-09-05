@@ -19,10 +19,14 @@
 
 - (void)interstitialAdLoadDidSuccess:(KAAdInterstitial *)interstitialAd{
     UnitySendMessage(GAME_OBJ_NAME, "csInterstitialAdLoadDidSuccess", [[interstitialAd ka_slot] UTF8String]);
+    
+    
 }
 
 - (void)interstitialAdDidClick:(KAAdInterstitial *)splashAd{
     UnitySendMessage(GAME_OBJ_NAME, "csInterstitialAdDidClick", [[splashAd ka_slot] UTF8String]);
+    
+    
 }
 
 - (void)interstitialAdDidDismiss:(KAAdInterstitial *)interstitial{

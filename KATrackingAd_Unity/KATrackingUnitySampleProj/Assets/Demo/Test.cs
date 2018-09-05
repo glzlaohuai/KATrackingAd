@@ -7,179 +7,260 @@ using UnityEngine.UI;
 public class Test : MonoBehaviour
 {
 
-	public GameObject logObj;
-	private Text logText;
+    public GameObject logObj;
+    private Text logText;
 
-	// Use this for initialization
-	void Start ()
-	{
-		Debug.Log ("start....");
-		logText = logObj.transform.GetComponent<Text> ();
-		KATracking.init ("test_test_test", "test_ad");
-	}
+    // Use this for initialization
+    void Start()
+    {
+        Debug.Log("start....");
+        logText = logObj.transform.GetComponent<Text>();
 
-	// Update is called once per frame
-	void Update ()
-	{
-	}
+        init();
+    }
 
-	void OnEnable ()
-	{
-        Debug.Log("enabled.....");
-		KATracking.init ("test_test_test", "test_ad");
-		setupDelegates ();
-	}
+    // Update is called once per frame
+    void Update()
+    {
+    }
 
-	void OnDisable ()
-	{
-		KATracking.interstitialADLoadSuccess -= interstitialLoadSuccess;
-		KATracking.interstitialADClick -= interstitialADClick;
-		KATracking.interstitialADLoadFail -= interstitialLoadFailed;
-		KATracking.interstitialADPresent -= interstitialADPresent;
+    void OnEnable()
+    {
+        setupDelegates();
+    }
 
-		KATracking.splashADClick -= splashADClick;
-		KATracking.splashADDismiss -= splashDismiss;
-		KATracking.splashPresentFail -= splashPresentFail;
-		KATracking.splashPresentSuccess -= splashPresentSuccess;
-
-		KATracking.rewardVideoADPresentComplete -= rewardVideoPresentComplete;
-		KATracking.rewardVideoADPresentFail -= rewardVideoADPresentFail;
-		KATracking.rewardVideoADPresentSkip -= rewardVideoADPresentSkip;
-		KATracking.rewardVideoADPresentSuccess -= rewardVideoADPresentSuccess;
-	}
+    void OnDisable()
+    {
+        removeDelegates();
+    }
 
 
-	void setupDelegates ()
-	{
-		KATracking.interstitialADLoadSuccess += interstitialLoadSuccess;
-		KATracking.interstitialADClick += interstitialADClick;
-		KATracking.interstitialADLoadFail += interstitialLoadFailed;
-		KATracking.interstitialADPresent += interstitialADPresent;
+    void removeDelegates()
+    {
+        KATracking.interstitialADLoadSuccess -= interstitialLoadSuccess;
+        KATracking.interstitialADClick -= interstitialADClick;
+        KATracking.interstitialADLoadFail -= interstitialLoadFailed;
+        KATracking.interstitialADPresent -= interstitialADPresent;
 
-		KATracking.splashADClick += splashADClick;
-		KATracking.splashADDismiss += splashDismiss;
-		KATracking.splashPresentFail += splashPresentFail;
-		KATracking.splashPresentSuccess += splashPresentSuccess;
+        KATracking.splashADClick -= splashADClick;
+        KATracking.splashADDismiss -= splashDismiss;
+        KATracking.splashPresentFail -= splashPresentFail;
+        KATracking.splashPresentSuccess -= splashPresentSuccess;
 
-		KATracking.rewardVideoADPresentComplete += rewardVideoPresentComplete;
-		KATracking.rewardVideoADPresentFail += rewardVideoADPresentFail;
-		KATracking.rewardVideoADPresentSkip += rewardVideoADPresentSkip;
-		KATracking.rewardVideoADPresentSuccess += rewardVideoADPresentSuccess;
-	}
+        KATracking.rewardVideoADPresentComplete -= rewardVideoPresentComplete;
+        KATracking.rewardVideoADPresentFail -= rewardVideoADPresentFail;
+        KATracking.rewardVideoADPresentSkip -= rewardVideoADPresentSkip;
+        KATracking.rewardVideoADPresentSuccess -= rewardVideoADPresentSuccess;
+    }
 
 
-	//interstitial 回调
-	void interstitialLoadSuccess (string slotID)
-	{
-		log ("interstitialLoadSuccess,slotID:" + slotID);
-	}
+    void setupDelegates()
+    {
+        KATracking.interstitialADLoadSuccess += interstitialLoadSuccess;
+        KATracking.interstitialADClick += interstitialADClick;
+        KATracking.interstitialADLoadFail += interstitialLoadFailed;
+        KATracking.interstitialADPresent += interstitialADPresent;
+        KATracking.interstitialADDismiss += interstitialADDismiss;
 
-	void interstitialADPresent (string slotID)
-	{
-		log ("interstitialADPresent,slotID:" + slotID);
-	}
+        KATracking.splashADClick += splashADClick;
+        KATracking.splashADDismiss += splashDismiss;
+        KATracking.splashPresentFail += splashPresentFail;
+        KATracking.splashPresentSuccess += splashPresentSuccess;
 
-	void interstitialADClick (string slotID)
-	{
-		log ("interstitialADClick,slotID:" + slotID);
-	}
+        KATracking.rewardVideoADPresentComplete += rewardVideoPresentComplete;
+        KATracking.rewardVideoADPresentFail += rewardVideoADPresentFail;
+        KATracking.rewardVideoADPresentSkip += rewardVideoADPresentSkip;
+        KATracking.rewardVideoADPresentSuccess += rewardVideoADPresentSuccess;
 
-	void interstitialLoadFailed (string slotID, string reason)
-	{
-		log ("interstitialLoadFailed,slotID:" + slotID + ",reason:" + reason);
+        KATracking.bannerPresentScreen += bannerBeClicked;
+        KATracking.bannerLoadFailed += bannerLoadFailed;
+        KATracking.bannerLoadComplete += bannerLoadComplete;
+        KATracking.bannerPresentScreenDismissed += bannerPresentScreenDismissed;
+    }
 
-	}
 
-	//splash 回调
-	void splashADClick (string slotID)
-	{
-		log ("splashADClick,slotID:" + slotID);
+    public void init()
+    {
+        KATracking.init("test_test_test", "test_ad");
+    }
 
-	}
 
-	void splashDismiss (string slotID)
-	{
-		log ("splashDismiss,slotID:" + slotID);
+    //banner回调
+    void bannerBeClicked(string slotID)
+    {
+        log("bannerBeClicked,slotID: " + slotID);
+    }
 
-	}
+    void bannerLoadFailed(string slotID, string reason)
+    {
+        log("bannerLoadFailed, slotID: " + slotID + ", reason: " + reason);
+    }
 
-	void splashPresentSuccess (string slotID)
-	{
-		log ("splashPresentSuccess,slotID:" + slotID);
-	}
+    void bannerLoadComplete(string slotID)
+    {
+        log("bannerLoadComplete,slotID: " + slotID);
+    }
 
-	void splashPresentFail (string slotID, string reason)
-	{
-		log ("splashPresentFail,slotID:" + slotID + ",reason:" + reason);
-	}
+    void bannerPresentScreenDismissed(string slotID)
+    {
+        log("bannerPresentScreenDismissed,slotID: " + slotID);
+    }
 
-	//rewardVideo回调
-	void rewardVideoPresentComplete ()
-	{
-		log ("rewardVideoPresentComplete...");
-	}
 
-	void rewardVideoADPresentFail (string reason)
-	{
-		log ("rewardVideoADPresentFail,reason:" + reason);
-	}
 
-	void rewardVideoADPresentSkip ()
-	{
-		log ("rewardVideoADPresentSkip");
-	}
 
-	void rewardVideoADPresentSuccess ()
-	{
-		log ("rewardVideoADPresentSuccess");
-	}
+    //interstitial 回调
+    void interstitialLoadSuccess(string slotID)
+    {
+        log("interstitialLoadSuccess,slotID:" + slotID);
+    }
 
-	void log (string logMsg)
-	{
-		Debug.Log (logMsg);
-		logText.text = logText.text + "\n" + logMsg;
-	}
+    void interstitialADPresent(string slotID)
+    {
+        log("interstitialADPresent,slotID:" + slotID);
+    }
 
-	public void loadInterstitial ()
-	{
-		log ("loadInterstitial...");
-        KATracking.loadInterstitial ("geyzoWGx");
-	}
+    void interstitialADDismiss(string slotID)
+    {
+        log("interstitialADDismiss,slotID:" + slotID);
+    }
 
-	public void showInterstitial ()
-	{
-		log ("show interstitial");
-        if (KATracking.isInterstitialAvaliable ("geyzoWGx")) {
+
+    void interstitialADClick(string slotID)
+    {
+        log("interstitialADClick,slotID:" + slotID);
+    }
+
+    void interstitialLoadFailed(string slotID, string reason)
+    {
+        log("interstitialLoadFailed,slotID:" + slotID + ",reason:" + reason);
+
+    }
+
+    //splash 回调
+    void splashADClick(string slotID)
+    {
+        log("splashADClick,slotID:" + slotID);
+
+    }
+
+    void splashDismiss(string slotID)
+    {
+        log("splashDismiss,slotID:" + slotID);
+
+    }
+
+    void splashPresentSuccess(string slotID)
+    {
+        log("splashPresentSuccess,slotID:" + slotID);
+    }
+
+    void splashPresentFail(string slotID, string reason)
+    {
+        log("splashPresentFail,slotID:" + slotID + ",reason:" + reason);
+    }
+
+    //rewardVideo回调
+    void rewardVideoPresentComplete()
+    {
+        log("rewardVideoPresentComplete...");
+    }
+
+    void rewardVideoADPresentFail(string reason)
+    {
+        log("rewardVideoADPresentFail,reason:" + reason);
+    }
+
+    void rewardVideoADPresentSkip()
+    {
+        log("rewardVideoADPresentSkip");
+    }
+
+    void rewardVideoADPresentSuccess()
+    {
+        log("rewardVideoADPresentSuccess");
+    }
+
+    void log(string logMsg)
+    {
+        Debug.Log(logMsg);
+        logText.text = logText.text + "\n" + logMsg;
+    }
+
+    public void loadInterstitial()
+    {
+        log("loadInterstitial...");
+        KATracking.loadInterstitial("geyzoWGx");
+    }
+
+    public void showInterstitial()
+    {
+        log("show interstitial");
+        if (KATracking.isInterstitialAvaliable("geyzoWGx"))
+        {
             log("interstitial is ready");
-            KATracking.showInterstitial ("geyzoWGx");
-        }else{
+            KATracking.showInterstitial("geyzoWGx");
+        }
+        else
+        {
             log("interstitial is not ready.");
         }
-	}
+    }
 
-	public void loadSplash ()
-	{
-		log ("showSplash...");
-        KATracking.showSplash ("XqmJPMGw");
-	}
+    public void showSplash()
+    {
+        log("showSplash...");
+        KATracking.showSplash("XqmJPMGw");
+    }
 
-	public void loadRewardVideo ()
-	{
-		log ("loadRewardVideo...");
-		KATracking.loadRewardVideoAD ();
-	}
+    public void loadRewardVideo()
+    {
+        log("loadRewardVideo...");
+        KATracking.loadRewardVideoAD();
+    }
 
-	public void showRewardVideoAD ()
-	{
-		log ("showRewardVideo...");
-		if (KATracking.isRewardVideoADAvaliable ()) {
-			KATracking.showRewardVideoAD ();
-		}
-	}
+    public void showRewardVideoAD()
+    {
+        log("showRewardVideo...");
+        if (KATracking.isRewardVideoADAvaliable())
+        {
+            KATracking.showRewardVideoAD();
+        }
+    }
 
-	public void clearLog ()
-	{
-		logText.text = "";
-	}
+    public void loadBanner()
+    {
+        log("loadBanner...");
+
+        int[] iosDeviceSize = KATracking.getIOSDeviceScreenSize();
+        KATracking.loadAndPresentBanner("naArbAbz", KATracking.BANNER_SIZE.BANNER_SIZE_320_50, iosDeviceSize[0] / 2, 50 / 2);
+    }
+
+    public void showBanner()
+    {
+        log("showBanner...");
+        KATracking.showBanner("naArbAbz");
+    }
+
+
+    public void hideBanner()
+    {
+        log("hideBanner...");
+        KATracking.hideBanner("naArbAbz");
+    }
+
+
+    public void removeAndDestroyBanner()
+    {
+        log("removeAndDestroyBanner...");
+        KATracking.removeAndDestroyBanner("naArbAbz");
+    }
+
+
+
+    public void clearLog()
+    {
+        logText.text = "";
+    }
 
 }
