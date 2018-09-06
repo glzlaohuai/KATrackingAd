@@ -88,7 +88,6 @@
 
 	```
 	-keep class * implements com.appicplay.sdk.core.APApplicationInvoker
-	-keepnames class com.appicplay.sdk.extra.APExtra
 	
 	```
 
