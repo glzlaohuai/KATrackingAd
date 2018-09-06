@@ -108,7 +108,12 @@
 	```
 	KATracking.loadAndPresentBanner("slotID", bannerSize, x, y);
 	```
+	**注：**`bannerSize`参数为枚举类型，可选值：`BANNER_SIZE_320_50`、`BANNER_SIZE_480_60`、`BANNER_SIZE_728_90`
 	
+	**注：**`x`和`y`参数用于设置横幅广告**中心**位置所处`ios`设备的屏幕坐标。例如，如果想将横幅广告在屏幕底部居中显示，假设屏幕宽高分别为：`screenWidth`、`screenHeight`，同时`bannerSize`为`BANNER_SIZE_320_50 `，那么参数`x`应该设置为：`screenWidth/2`，`y`应该设置为：`screenHeight-50/2`。
+	
+	**注：**可以使用方法：`KATracking.getIOSDeviceScreenSize();`来获取ios设备的屏幕尺寸
+		
 * 隐藏横幅广告：
 
 	```
@@ -144,7 +149,6 @@
 	```
 	KATracking.showRewardVideoAD();
 	```
-	
 
 
 ## <a name="step2">ios工程配置</a>
