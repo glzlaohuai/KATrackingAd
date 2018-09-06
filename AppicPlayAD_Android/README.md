@@ -273,3 +273,5 @@
 ## <a name="others">其他</a>
 
 * 如果想在用户在非wifi环境时点击下载类型广告时进行弹窗提醒，那么可以使用方法：`APAD.setIsMobileNetworkDirectlyDownload(boolean)`进行设置，如果不进行设置，那么默认为`true`（亦即在非wifi环境下点击下载类广告时不进行提示而直接下载）。**由于部分广告平台未提供设置方法，所以该设置只在部分广告平台上生效。**
+
+* sdk在执行初始化过程中会从服务器获取广告相关配置文件，各类型广告相关功能均依赖该配置文件中的相关配置，可以通过方法：`APAD.hasSDKEverInitedSuccess(context);`来检查是否sdk初始化成功（成功从服务器获取到配置文件）
