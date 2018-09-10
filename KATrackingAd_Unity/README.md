@@ -137,7 +137,7 @@
 * load reward video ad:
 
 	```
-	KATracking.loadRewardVideoAD();
+	There is no need to invoke the reward video load method manually, sdk will handle the load stuff itself.
 	```
 	
 * check if reward video ad is ready or not:
