@@ -4,23 +4,27 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.androidquery.AQuery;
 import com.appicplay.sdk.ad.APBaseAD;
 import com.appicplay.sdk.ad.listener.APNativeADListener;
 import com.appicplay.sdk.ad.nativ.APNative;
+import com.appicplay.sdk.ad.nativ.APNativePattern;
 import com.appicplay.sdk.core.utils.LogUtils;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import addemo.android.appicplay.com.appicdemo.R;
+public class NativRawActivity extends Activity {
 
-public class NativActivity extends Activity {
-
-    private static final String TAG = "NativActivity";
+    private static final String TAG = "NativRawActivity";
 
     private APNative ad;
+
+    private AQuery aQuery = new AQuery(this);
 
     public static String formatTime(long time) {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -31,7 +35,7 @@ public class NativActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.nativ);
+        setContentView(R.layout.nativ_raw);
 
         findViewById(R.id.load).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,21 +58,22 @@ public class NativActivity extends Activity {
         if (this.ad != null) {
             this.ad.destroy();
             ViewGroup adContainer = this.findViewById(R.id.viewContainer);
-            adContainer.removeAllViews();
+            adContainer.setOnTouchListener(null);
+            adContainer.setOnClickListener(null);
         }
 
         //
         APNative x = new APNative(this, "PJyeKVAv", new APNativeADListener() {
             @Override
             public void success(APBaseAD ad, String slotID) {
-                NativActivity.this.ad = (APNative) ad;
-                Toast.makeText(NativActivity.this, "load成功", Toast.LENGTH_SHORT).show();
+                NativRawActivity.this.ad = (APNative) ad;
+                Toast.makeText(NativRawActivity.this, "load成功", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void fail(APBaseAD ad, String slotID, String errorMsg) {
                 LogUtils.v(TAG, "失败：" + slotID + ",error:" + errorMsg);
-                Toast.makeText(NativActivity.this, "load失败" + errorMsg, Toast.LENGTH_SHORT).show();
+                Toast.makeText(NativRawActivity.this, "load失败" + errorMsg, Toast.LENGTH_SHORT).show();
 
             }
 
@@ -82,6 +87,7 @@ public class NativActivity extends Activity {
                 LogUtils.v(TAG, "被点击：" + slotID);
             }
         });
+        x.setPattern(APNativePattern.RAW);
         x.setPreferImageSize(640, 960);
         x.loadNative();
     }
@@ -100,9 +106,20 @@ public class NativActivity extends Activity {
         LogUtils.v(TAG, "icon:" + iconUrl + ",imageUrl:" + imgUrl + ",title:" + title + ",desc:" + desc + ",action:" + action);
 
         ViewGroup viewContainer = findViewById(R.id.viewContainer);
-        viewContainer.removeAllViews();
-        viewContainer.addView(ad.getExposureView(viewContainer, APNative.MATCH_PARENT));
 
+        TextView titleView = findViewById(R.id.titleView);
+        TextView descView = findViewById(R.id.descView);
+        TextView actionView = findViewById(R.id.actionView);
+
+        ImageView imgView = findViewById(R.id.imgView);
+
+        titleView.setText(title);
+        descView.setText(desc);
+        actionView.setText(action);
+
+        aQuery.id(imgView).image(imgUrl);
+
+        ad.registerViewForInteraction(viewContainer);
         ad.show();
     }
 

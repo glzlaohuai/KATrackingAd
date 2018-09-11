@@ -68,6 +68,8 @@
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize" />
 
         <activity android:name=".NativActivity" />
+        <activity android:name=".NativRawActivity" />
+        <activity android:name=".NativListActivity" />
         <activity android:name=".InterstitialActivity" />
         <activity android:name=".BannerActivity" />
         <activity android:name=".VideoActivity" />
