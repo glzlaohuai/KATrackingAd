@@ -1,4 +1,4 @@
-# 当前版本Ver.3.2.2 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/ReleaseNote.md)
+# 当前版本Ver.3.2.4 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/ReleaseNote.md)
 # AppicPlay AD SDK接入说明
 
 * [关于](#about)
@@ -144,6 +144,9 @@
 	---	|	---
 	viewContainer	|	广告容器
 	viewWidth	|	待展示view的宽度，如果传值`APNative.MATCH_PARENT`，那么宽将于`viewContainer`相同，否则将按实际传的值来设置view的宽（单位px），返回view的高度将按照广告物料宽高比自行设置
+	
+	**注**：返回的view并不会自动添加到`viewContainer`中，需自行处理。
+	
 1. **当原生广告由adContainer展示出来之后（可以被用户看到）：**
 
 	调用方法：`apNative.show();`
@@ -224,9 +227,6 @@
 	```
 	apNative.destroy();
 	```
-	**注**：广告展示时必须将`getExposureView `返回的view添加到容器中，其他内容（如`adTitle`、`adDesc`、`adIcon`，返回内容可能为`null`）由开发者自行决定是否展示以及如何展示。
-	
-
 	
 ## <a name="splashAD">接入开屏广告</a>
 1. **创建开屏广告实例**：
