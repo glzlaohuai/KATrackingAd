@@ -34,7 +34,7 @@ public class LauncherActivity extends AppCompatActivity implements View.OnClickL
         Intent intent = null;
         switch (view.getId()) {
             case R.id.nativ:
-                intent = new Intent(LauncherActivity.this, com.appicplay.android.appicsdk_android.NativActivity.class);
+                intent = new Intent(LauncherActivity.this, NativActivity.class);
                 break;
             case R.id.nativ_raw:
                 intent = new Intent(LauncherActivity.this, NativRawActivity.class);

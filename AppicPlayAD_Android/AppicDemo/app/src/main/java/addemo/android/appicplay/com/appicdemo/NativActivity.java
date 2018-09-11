@@ -14,8 +14,6 @@ import com.appicplay.sdk.core.utils.LogUtils;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import addemo.android.appicplay.com.appicdemo.R;
-
 public class NativActivity extends Activity {
 
     private static final String TAG = "NativActivity";
