@@ -85,6 +85,9 @@ Please add all following framework to your projects
 ### Add the -ObjC linker flag
 ![linker flag](https://github.com/KATracking/KATrackingAd/blob/master/README_Res/linker_flag.png)
 
+### Setup ATS
+![linker flag](https://github.com/KATracking/KATrackingAd/blob/master/README_Res/ats.png)
+
 ## Let's code!
 
 ### SDK initialization

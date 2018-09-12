@@ -87,6 +87,9 @@
 ### 添加 -ObjC linker flag
 ![linker flag](https://github.com/KATracking/KATrackingAd/blob/master/README_Res/linker_flag.png)
 
+### 设置 ATS
+![linker flag](https://github.com/KATracking/KATrackingAd/blob/master/README_Res/ats.png)
+
 ## 开始接入
 
 ### SDK 初始化
