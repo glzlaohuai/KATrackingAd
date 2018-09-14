@@ -9,11 +9,13 @@ namespace KATrackingAD
 {
     public class KATracking : MonoBehaviour
     {
-        private static string DELEGATE_NAME = "KATrackingADServiceDelegate";
+        private const string DELEGATE_NAME = "KATrackingADServiceDelegate";
 
-        private static string BANNER_SIZE_320_50_STR = "BANNER_SIZE_320_50";
-        private static string BANNER_SIZE_468_60_STR = "BANNER_SIZE_468_60";
-        private static string BANNER_SIZE_728_90_STR = "BANNER_SIZE_728_90";
+        private const string BANNER_SIZE_320_50_STR = "BANNER_SIZE_320_50";
+        private const string BANNER_SIZE_468_60_STR = "BANNER_SIZE_468_60";
+        private const string BANNER_SIZE_728_90_STR = "BANNER_SIZE_728_90";
+
+        private const string ERROR_REASON_UNSUPPORTED_PLATFORM = "unsupported runtime platform for KATracking plugin";
 
         public enum BANNER_SIZE
         {
@@ -31,7 +33,6 @@ namespace KATrackingAD
 
         [DllImport("__Internal")] private static extern void doShowSplash(string slotID);
 
-        [DllImport("__Internal")] private static extern void doLoadRewardVideo();
         [DllImport("__Internal")] private static extern void doShowRewardVideo();
         [DllImport("__Internal")] private static extern bool doCheckIsRewardVideoAvaliable();
 
@@ -47,53 +48,74 @@ namespace KATrackingAD
         public static void init(string appID, string appChannel)
         {
             createDelegateObj();
-#if UNITY_IOS
-            doInit(appID, appChannel);
-#endif
+            if (Application.platform == RuntimePlatform.IPhonePlayer)
+            {
+                doInit(appID, appChannel);
+            }
         }
 
         public static void loadInterstitial(string slotID)
         {
-#if UNITY_IOS
-            doLoadInterstitial(slotID);
-#endif
+            if (Application.platform == RuntimePlatform.IPhonePlayer)
+            {
+                doLoadInterstitial(slotID);
+            }
+            else
+            {
+                if (interstitialADLoadFail != null)
+                {
+                    interstitialADLoadFail(slotID, ERROR_REASON_UNSUPPORTED_PLATFORM);
+                }
+            }
         }
 
         public static void showInterstitial(string slotID)
         {
-#if UNITY_IOS
-            doShowInterstitial(slotID);
-#endif
+            if (Application.platform == RuntimePlatform.IPhonePlayer)
+            {
+                doShowInterstitial(slotID);
+            }
         }
 
         public static bool isInterstitialAvaliable(string slotID)
         {
-#if UNITY_IOS
-            return doCheckIsInterstitialAvaliable(slotID);
-#endif
+            if (Application.platform == RuntimePlatform.IPhonePlayer)
+            {
+                return doCheckIsInterstitialAvaliable(slotID);
+            }
             return false;
         }
 
-
         public static void showSplash(string slotID)
         {
-#if UNITY_IOS
-            doShowSplash(slotID);
-#endif
-        }
-
-        public static void loadRewardVideoAD()
-        {
-#if UNITY_IOS
-            doLoadRewardVideo();
-#endif
+            if (Application.platform == RuntimePlatform.IPhonePlayer)
+            {
+                doShowSplash(slotID);
+            }
+            else
+            {
+                if (splashPresentFail != null)
+                {
+                    splashPresentFail(slotID, ERROR_REASON_UNSUPPORTED_PLATFORM);
+                }
+            }
         }
 
         public static void showRewardVideoAD()
         {
-#if UNITY_IOS
-            doShowRewardVideo();
-#endif
+
+            if (Application.platform == RuntimePlatform.IPhonePlayer)
+            {
+                doShowRewardVideo();
+
+            }
+            else
+            {
+                if (rewardVideoADPresentFail != null)
+                {
+                    rewardVideoADPresentFail(ERROR_REASON_UNSUPPORTED_PLATFORM);
+                }
+            }
         }
 
         public static void loadAndPresentBanner(string slotID, BANNER_SIZE bannerSize, int x, int y)
@@ -114,61 +136,75 @@ namespace KATrackingAD
                     break;
             }
 
-#if UNITY_IOS
-            doLoadBanner(slotID, bannerSizeStr);
-            doShowBanner(slotID);
-            doSetBannerPosition(slotID, x, y);
-#endif
+            if (Application.platform == RuntimePlatform.IPhonePlayer)
+            {
+                doLoadBanner(slotID, bannerSizeStr);
+                doShowBanner(slotID);
+                doSetBannerPosition(slotID, x, y);
+            }
+            else
+            {
+                if (bannerLoadFailed != null)
+                {
+                    bannerLoadFailed(slotID, ERROR_REASON_UNSUPPORTED_PLATFORM);
+                }
+            }
         }
 
         public static int[] getIOSDeviceScreenSize()
         {
-#if UNITY_IOS
-            string screenSizeStr = doGetScreenSize();
-            string[] splits = screenSizeStr.Split('#');
-            return new int[] { int.Parse(splits[0]), int.Parse(splits[1]) };
-
-#else
-            return new int[] { 0, 0 };
-#endif
+            if (Application.platform == RuntimePlatform.IPhonePlayer)
+            {
+                string screenSizeStr = doGetScreenSize();
+                string[] splits = screenSizeStr.Split('#');
+                return new int[] { int.Parse(splits[0]), int.Parse(splits[1]) };
+            }
+            else
+            {
+                return new int[] { 0, 0 };
+            }
         }
 
         public static void showBanner(string slotID)
         {
-#if UNITY_IOS
-            doShowBanner(slotID);
-#endif
+            if (Application.platform == RuntimePlatform.IPhonePlayer)
+            {
+                doShowBanner(slotID);
+            }
         }
 
         public static void hideBanner(string slotID)
         {
-#if UNITY_IOS
-            doHideBanner(slotID);
-#endif
+            if (Application.platform == RuntimePlatform.IPhonePlayer)
+            {
+                doHideBanner(slotID);
+            }
         }
 
         public static void removeAndDestroyBanner(string slotID)
         {
-#if UNITY_IOS
-            doRemoveAndDestroyBanner(slotID);
-#endif
+            if (Application.platform == RuntimePlatform.IPhonePlayer)
+            {
+                doRemoveAndDestroyBanner(slotID);
+            }
         }
 
         public static void setPosition(string slotID, int x, int y)
         {
-#if UNITY_IOS
-            doSetBannerPosition(slotID, x, y);
-#endif
+            if (Application.platform == RuntimePlatform.IPhonePlayer)
+            {
+                doSetBannerPosition(slotID, x, y);
+            }
         }
-
-
 
         public static bool isRewardVideoADAvaliable()
         {
-#if UNITY_IOS
-            return doCheckIsRewardVideoAvaliable();
-#endif
-            return true;
+            if (Application.platform==RuntimePlatform.IPhonePlayer)
+            {
+                return doCheckIsRewardVideoAvaliable();
+            }else{
+                return false;
+            }
         }
 
         private static void createDelegateObj()
@@ -178,9 +214,9 @@ namespace KATrackingAD
             {
                 GameObject singleton = new GameObject(DELEGATE_NAME);
                 singleton.AddComponent<KATracking>();
+                DontDestroyOnLoad(singleton);
             }
         }
-
 
         //---开屏广告回调
         public void csSplashAdPresentDidSuccess(string slotID)
@@ -331,9 +367,6 @@ namespace KATrackingAD
                 bannerPresentScreenDismissed(slotID);
             }
         }
-
-
-
 
         public static event Action<string> splashPresentSuccess;
         public static event Action<string, string> splashPresentFail;

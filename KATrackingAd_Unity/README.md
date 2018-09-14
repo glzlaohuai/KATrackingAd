@@ -110,11 +110,11 @@
 	KATracking.loadAndPresentBanner("slotID", bannerSize, x, y);
 	```
 	
-	**Note:**`bannerSize` is an param of `Enum` type. Its option values are:`BANNER_SIZE_320_50 `、`BANNER_SIZE_480_60 `、`BANNER_SIZE_728_90 `
+	**Note:** `bannerSize` is an param of `Enum` type. Its option values are:`BANNER_SIZE_320_50 `、`BANNER_SIZE_480_60 `、`BANNER_SIZE_728_90 `
 	
-	**Note:**`x` and `y` indicate a position on the `ios` device's screen that the banner ad's center point is located at, e.g. if you want the banner ad be positioned at the bottom of the screen, and center in horizontal, we assume that the variables `screenWidth` and `screenHeight` represent the screen size, and `bannerSize` is `BANNER_SIZE_320_50 `, then `x` should be `screenWidth/2` and `y` should be `screenHeight-50/2`.
+	**Note:** `x` and `y` indicate a position on the `ios` device's screen that the banner ad's center point is located at, e.g. if you want the banner ad be positioned at the bottom of the screen, and center in horizontal, we assume that the variables `screenWidth` and `screenHeight` represent the screen size, and `bannerSize` is `BANNER_SIZE_320_50 `, then `x` should be `screenWidth/2` and `y` should be `screenHeight-50/2`.
 	
-	**Note:**you can get the `ios` device's screen size by invoking the method:`KATracking.getIOSDeviceScreenSize();`
+	**Note:** you can get the `ios` device's screen size by invoking the method:`KATracking.getIOSDeviceScreenSize();`
 	
 * hide banner ad:
 
@@ -137,7 +137,7 @@
 * load reward video ad:
 
 	```
-	There is no need to invoke the reward video load method manually, sdk will handle the load stuff itself.
+	There is no need to invoke the reward video load method manually(and also, the plugin do not provide this function), sdk will handle the load stuff itself.
 	```
 	
 * check if reward video ad is ready or not:
@@ -154,8 +154,8 @@
 	
 ## <a name="step2">Additional Settings for iOS</a>
 
-* build an ios project
-* for the instructions [here](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README_EN.md) to set you ios project
+* export an ios project
+* follow the instructions [here](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README_EN.md) to set your ios project (during the exporting in previous step, the plugin has already done some of the settings for you, that include [add dependicies](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README.md#infoplist%E8%AE%BE%E7%BD%AE%E7%99%BD%E5%90%8D%E5%8D%95)、[set white list](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README.md#infoplist%E8%AE%BE%E7%BD%AE%E7%99%BD%E5%90%8D%E5%8D%95)、[add -ObjC linker flag](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README.md#infoplist%E8%AE%BE%E7%BD%AE%E7%99%BD%E5%90%8D%E5%8D%95) and set `Enable Bitcode` to `No`)
 * add third party ad sdks depend on your needs
 
 		

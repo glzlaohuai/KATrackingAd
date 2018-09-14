@@ -213,12 +213,6 @@ public class Test : MonoBehaviour
         KATracking.showSplash("XqmJPMGw");
     }
 
-    public void loadRewardVideo()
-    {
-        log("loadRewardVideo...");
-        KATracking.loadRewardVideoAD();
-    }
-
     public void showRewardVideoAD()
     {
         log("showRewardVideo...");

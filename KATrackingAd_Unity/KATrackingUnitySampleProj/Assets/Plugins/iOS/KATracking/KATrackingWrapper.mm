@@ -80,14 +80,6 @@ extern "C"{
         [splash loadAndPresentWithViewController: UnityGetGLViewController()];
     }
     
-    void doLoadRewardVideo(){
-        if (rewardDelegate == nil) {
-            rewardDelegate = [[KARewardVideoDelegateImpl alloc]init];
-            [KAAdIncentivized setDelegate:rewardDelegate];
-        }
-        [KAAdIncentivized load];
-    }
-    
     void doShowRewardVideo(){
         if (rewardDelegate == nil) {
             rewardDelegate = [[KARewardVideoDelegateImpl alloc]init];
