@@ -164,5 +164,5 @@
 * open it in unity
 * build an ios project out
 * add all third party ad sdks to the ios project
-* for the instructions [here](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README_EN.md) to set you ios project
+* follow the instructions [here](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README_EN.md) to set you ios project
 * all done

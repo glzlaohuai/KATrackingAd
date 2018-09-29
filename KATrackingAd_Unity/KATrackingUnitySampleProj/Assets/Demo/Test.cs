@@ -10,6 +10,14 @@ public class Test : MonoBehaviour
     public GameObject logObj;
     private Text logText;
 
+    const string APP_ID = "test_test_test";
+    const string CHANNEL_ID = "test_ad";
+
+    const string SPLASH_SLOTID = "XqmJPMGw";
+    const string BANNER_SLOTID = "naArbAbz";
+    const string INTERSTITIAL_SLOTID = "geyzoWGx";
+
+
     // Use this for initialization
     void Start()
     {
@@ -190,16 +198,16 @@ public class Test : MonoBehaviour
     public void loadInterstitial()
     {
         log("loadInterstitial...");
-        KATracking.loadInterstitial("geyzoWGx");
+        KATracking.loadInterstitial(INTERSTITIAL_SLOTID);
     }
 
     public void showInterstitial()
     {
         log("show interstitial");
-        if (KATracking.isInterstitialAvaliable("geyzoWGx"))
+        if (KATracking.isInterstitialAvaliable(INTERSTITIAL_SLOTID))
         {
             log("interstitial is ready");
-            KATracking.showInterstitial("geyzoWGx");
+            KATracking.showInterstitial(INTERSTITIAL_SLOTID);
         }
         else
         {
@@ -210,7 +218,7 @@ public class Test : MonoBehaviour
     public void showSplash()
     {
         log("showSplash...");
-        KATracking.showSplash("XqmJPMGw");
+        KATracking.showSplash(SPLASH_SLOTID);
     }
 
     public void showRewardVideoAD()
@@ -227,27 +235,27 @@ public class Test : MonoBehaviour
         log("loadBanner...");
 
         int[] iosDeviceSize = KATracking.getIOSDeviceScreenSize();
-        KATracking.loadAndPresentBanner("naArbAbz", KATracking.BANNER_SIZE.BANNER_SIZE_320_50, iosDeviceSize[0] / 2, 50 / 2);
+        KATracking.loadAndPresentBanner(BANNER_SLOTID, KATracking.BANNER_SIZE.BANNER_SIZE_320_50, iosDeviceSize[0] / 2, 50 / 2);
     }
 
     public void showBanner()
     {
         log("showBanner...");
-        KATracking.showBanner("naArbAbz");
+        KATracking.showBanner(BANNER_SLOTID);
     }
 
 
     public void hideBanner()
     {
         log("hideBanner...");
-        KATracking.hideBanner("naArbAbz");
+        KATracking.hideBanner(BANNER_SLOTID);
     }
 
 
     public void removeAndDestroyBanner()
     {
         log("removeAndDestroyBanner...");
-        KATracking.removeAndDestroyBanner("naArbAbz");
+        KATracking.removeAndDestroyBanner(BANNER_SLOTID);
     }
 
 
