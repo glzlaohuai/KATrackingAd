@@ -1,5 +1,11 @@
 # 版本发布记录
 
+## Ver3.5.4
+## Release Date: 2018-9-29
+
+* 修复bug,优化SDK
+* 聚合AppsFlyer，更新头条SDK，删掉CTSDK
+
 ## Ver3.5.3
 ## Release Date: 2018-8-23
 
