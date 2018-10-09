@@ -14,7 +14,7 @@
 
 * Support `interstitial`、`splash`、`rewardVideo`、`banner`
 * Support iOS 8.0+
-* [Download unity plugin](https://github.com/AppicPlay/KATrackingUnityPlugin/blob/master/KATrackingUnityPlugin.unitypackage)
+* [Download unity plugin](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_Unity/KATrackingUnityPlugin.unitypackage)
 * [Download unity sample project](https://github.com/KATracking/KATrackingAd/tree/master/KATrackingAd_Unity/KATrackingUnitySampleProj)
 * Download Third Party AD SDKs： [part1](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/Mediation_1.zip)，[part2](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/Mediation_2.zip)，[part3](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/Mediation_3.zip) 
 
