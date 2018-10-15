@@ -1,5 +1,10 @@
 # 版本发布记录
 
+## Ver3.5.5
+## Release Date: 2018-10-15
+
+* 修复bug,优化SDK
+
 ## Ver3.5.4
 ## Release Date: 2018-9-29
 

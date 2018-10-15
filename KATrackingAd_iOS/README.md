@@ -1,5 +1,5 @@
 > [English Doc](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README_EN.md)
-# 当前版本 Ver.3.5.4 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/ReleaseNote.md)
+# 当前版本 Ver.3.5.5 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/ReleaseNote.md)
 # 接入说明
 
 ## 准备工作
@@ -54,6 +54,7 @@
 * libsqlite3.0.tbd
 * libxml2.2.tbd
 * libz.tbd
+* libc++.tbd
 
 ### info.plist设置白名单
 ```XML
