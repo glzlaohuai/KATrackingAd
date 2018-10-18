@@ -1,5 +1,10 @@
 # 版本发布记录
 
+## Ver3.5.6
+## Release Date: 2018-10-18
+
+* 修复bug,更新Admob(GoogleMobileAds.framework)
+
 ## Ver3.5.5
 ## Release Date: 2018-10-15
 
