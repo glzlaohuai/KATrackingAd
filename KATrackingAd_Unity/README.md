@@ -14,7 +14,7 @@
 
 * Support `interstitial`、`splash`、`rewardVideo`、`banner`
 * Support iOS 8.0+
-* [Download unity plugin](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_Unity/KATrackingUnityPlugin.unitypackage)
+* [Download unity plugin](https://github.com/KATracking/KATrackingAd/releases)
 * [Download unity sample project](https://github.com/KATracking/KATrackingAd/tree/master/KATrackingAd_Unity/KATrackingUnitySampleProj)
 * Download Third Party AD SDKs： [part1](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/Mediation_1.zip)，[part2](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/Mediation_2.zip)，[part3](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/Mediation_3.zip) 
 
@@ -166,6 +166,7 @@
 ## <a name="step3">How to run the sample project</a>
 
 * open it in unity
+* import this plugn
 * build an ios project out
 * add all third party ad sdks to the ios project
 * follow the instructions [here](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README_EN.md) to set you ios project

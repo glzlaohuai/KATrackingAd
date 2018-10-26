@@ -13,7 +13,7 @@
 
 * 支持广告形式： `插屏`、`开屏`、`激励视频`、`横幅`
 * 支持 iOS 8.0+;
-* [下载KATrackingUnityPlugin;](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_Unity/KATrackingUnityPlugin.unitypackage)
+* [下载KATrackingUnityPlugin;](https://github.com/KATracking/KATrackingAd/releases)
 * [下载示例工程;](https://github.com/KATracking/KATrackingAd/tree/master/KATrackingAd_Unity/KATrackingUnitySampleProj)
 * 点击下载第三方广告sdk：[part1](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/Mediation_1.zip)，[part2](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/Mediation_2.zip) ，[part3](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/Mediation_3.zip) 
 
@@ -165,6 +165,7 @@
 ## <a name="step3">如何运行示例工程</a>
 
 * 在unity中打开示例工程
+* 导入插件
 * 导出xcode工程
 * 添加所有的第三方sdk到工程中
 * 根据[这里](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README.md)的说明来配置ios工程
