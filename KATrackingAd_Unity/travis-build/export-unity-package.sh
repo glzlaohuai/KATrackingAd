@@ -7,7 +7,7 @@ EXPORT_PATH=$(pwd)/$PROJECT_NAME.unitypackage
 RELEASE_DIRECTORY=./release
 KA_SDK_UNZIP_DIR=$(pwd)/sdkunzipped
 KA_SDK_ZIP_FILE=$(pwd)/KATrackingAd_iOS/KASDK+Demo.zip
-KA_SDK_PATH=KATrackingAdDemo/KATrackingAdDemo/SDK/KASDK
+KA_SDK_PATH=KASDK+Demo/KATrackingAdDemo/SDK/KASDK
 KA_SDK_RESOURCE_BUNDLE_NAME=KAResources.bundle
 KA_SDK_FRAMEWORK_NAME=KASDK.framework
 
