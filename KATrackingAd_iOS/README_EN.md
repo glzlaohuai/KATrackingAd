@@ -1,5 +1,5 @@
 > [中文文档](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README.md)
-# Current Ver.3.5.2
+# Current Ver.3.5.6
 # Integration Guideline
 
 ## Preparation
@@ -18,7 +18,6 @@ Please add all following framework to your projects
 * Mediation.zip
   * InMobi.framework
   * GoogleMobileAds.framework
-  * CTSDK.framework
   * UnityAds.framework
   * VungleSDK.framework
   * AppLovinSDK.framework
@@ -28,12 +27,13 @@ Please add all following framework to your projects
     * WMAdSDK.bundle
   * GDT
     * libGDTMobSDK.a
-  * TalkingData
+  * TalkingData (Optional)
     * libTalkingData.a
-  * UM   
+  * UM (Optional)
     * UMAnalytics.framework
     * UMCommon.framework
   * FBAudienceNetwork.framework
+  * AppsFlyer (Optional)
 
 ### Dependencies
 * SystemConfiguration.framework
@@ -53,6 +53,7 @@ Please add all following framework to your projects
 * libsqlite3.0.tbd
 * libxml2.2.tbd
 * libz.tbd
+* libc++.tbd
 
 ### info.plist
 ```XML
@@ -84,6 +85,9 @@ Please add all following framework to your projects
 
 ### Add the -ObjC linker flag
 ![linker flag](https://github.com/KATracking/KATrackingAd/blob/master/README_Res/linker_flag.png)
+
+### Setup ATS
+![linker flag](https://github.com/KATracking/KATrackingAd/blob/master/README_Res/ats.png)
 
 ## Let's code!
 

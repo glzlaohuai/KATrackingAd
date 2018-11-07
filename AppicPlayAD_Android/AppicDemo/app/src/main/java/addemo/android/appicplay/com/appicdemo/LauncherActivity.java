@@ -21,8 +21,11 @@ public class LauncherActivity extends AppCompatActivity implements View.OnClickL
         findViewById(R.id.interstitial).setOnClickListener(this);
         findViewById(R.id.splash).setOnClickListener(this);
         findViewById(R.id.video).setOnClickListener(this);
+        findViewById(R.id.nativ_raw).setOnClickListener(this);
+        findViewById(R.id.nativ_list).setOnClickListener(this);
 
         APAD.init(this, "test_test_test", "test_ad");
+        APAD.setIsMobileNetworkDirectlyDownload(true);
     }
 
     @Override
@@ -32,6 +35,12 @@ public class LauncherActivity extends AppCompatActivity implements View.OnClickL
         switch (view.getId()) {
             case R.id.nativ:
                 intent = new Intent(LauncherActivity.this, NativActivity.class);
+                break;
+            case R.id.nativ_raw:
+                intent = new Intent(LauncherActivity.this, NativRawActivity.class);
+                break;
+            case R.id.nativ_list:
+                intent = new Intent(LauncherActivity.this, NativListActivity.class);
                 break;
             case R.id.banner:
                 intent = new Intent(LauncherActivity.this, BannerActivity.class);
@@ -51,6 +60,7 @@ public class LauncherActivity extends AppCompatActivity implements View.OnClickL
 
         }
         startActivity(intent);
+
 
     }
 }

@@ -8,7 +8,19 @@
         android:id="@+id/nativ"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="native" />
+        android:text="native template" />
+
+    <Button
+        android:id="@+id/nativ_raw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="native raw" />
+
+    <Button
+        android:id="@+id/nativ_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="native template in listview" />
 
     <Button
         android:id="@+id/banner"

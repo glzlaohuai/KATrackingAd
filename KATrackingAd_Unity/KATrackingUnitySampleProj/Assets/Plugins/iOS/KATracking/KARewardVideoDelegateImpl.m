@@ -15,6 +15,7 @@
 -(void)incentivizedAdPresentDidSkip{
     NSLog(@"oc端incentivizedAdPresentDidSkip...");
     UnitySendMessage(GAME_OBJ_NAME, "csIncentivizedAdPresentDidSkip","");
+
 }
 
 - (void)incentivizedAdPresentDidSuccess{

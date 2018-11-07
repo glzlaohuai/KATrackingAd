@@ -1,5 +1,5 @@
 > [English Doc](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README_EN.md)
-# 当前版本 Ver.3.5.2 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/ReleaseNote.md)
+# 当前版本 Ver.3.5.6 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/ReleaseNote.md)
 # 接入说明
 
 ## 准备工作
@@ -18,7 +18,6 @@
 * Mediation.zip
   * InMobi.framework
   * GoogleMobileAds.framework
-  * CTSDK.framework
   * UnityAds.framework
   * VungleSDK.framework
   * AppLovinSDK.framework
@@ -33,6 +32,7 @@
   * UM (选加，如果需要KASDK对接UM作为统计框架）   
     * UMAnalytics.framework
     * UMCommon.framework
+  * AppsFlyer (选加，如果需要KASDK对接AppsFlyer作为统计框架)
   * FBAudienceNetwork.framework
 
 ### 加入其它依赖库
@@ -54,6 +54,7 @@
 * libsqlite3.0.tbd
 * libxml2.2.tbd
 * libz.tbd
+* libc++.tbd
 
 ### info.plist设置白名单
 ```XML
@@ -86,6 +87,9 @@
 
 ### 添加 -ObjC linker flag
 ![linker flag](https://github.com/KATracking/KATrackingAd/blob/master/README_Res/linker_flag.png)
+
+### 设置 ATS
+![linker flag](https://github.com/KATracking/KATrackingAd/blob/master/README_Res/ats.png)
 
 ## 开始接入
 

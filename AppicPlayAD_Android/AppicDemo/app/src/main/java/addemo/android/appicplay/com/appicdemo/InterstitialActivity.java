@@ -54,6 +54,7 @@ public class InterstitialActivity extends Activity implements View.OnClickListen
             @Override
             public void fail(APBaseAD apBaseAD, String s, String s1) {
                 Log.i(TAG, "fail: " + s1);
+                loadBtn.setEnabled(true);
             }
 
             @Override
