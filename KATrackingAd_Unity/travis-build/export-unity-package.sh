@@ -21,6 +21,8 @@ mkdir $KA_ANDROID_SDK_UNZIP_DIR
 unzip $KA_IOS_SDK_ZIP_FILE -d $KA_IOS_SDK_UNZIP_DIR
 unzip $KA_ANDROID_SDK_ZIP_FILE -d $KA_ANDROID_SDK_UNZIP_DIR
 
+mkdir $PROJECT_PATH/Assets/Plugins/iOS/KATracking/libs/
+
 #mv unzipped framework and resource.bundle to unity sample proj
 echo "move framework and bundle to unity sample project"
 mv $KA_IOS_SDK_UNZIP_DIR/$KA_IOS_SDK_PATH/$KA_IOS_SDK_RESOURCE_BUNDLE_NAME $PROJECT_PATH/Assets/Plugins/iOS/KATracking/libs/$KA_IOS_SDK_RESOURCE_BUNDLE_NAME

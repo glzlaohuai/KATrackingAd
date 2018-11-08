@@ -11,7 +11,7 @@
 ## <a name="start">关于</a>
 
 * 支持广告形式： `插屏`、`开屏`、`激励视频`、`横幅`
-* 支持 iOS 8.0+;
+* 支持 iOS 8.0+、Android 4.0+;
 * 支持平台：iOS、Android
 * [下载KATrackingUnityPlugin;](https://github.com/KATracking/KATrackingAd/releases)
 * [下载示例工程;](https://github.com/KATracking/KATrackingAd/tree/master/KATrackingAd_Unity/KATrackingUnitySampleProj)
