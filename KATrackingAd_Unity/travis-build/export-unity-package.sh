@@ -16,6 +16,7 @@ KA_IOS_SDK_FRAMEWORK_NAME=KASDK.framework
 ERROR_CODE=0
 
 echo "Unzipping sdk zip file..."
+mkdir $PROJECT_PATH/Assets/Plugins/iOS/KATracking/libs
 mkdir $KA_IOS_SDK_UNZIP_DIR
 mkdir $KA_ANDROID_SDK_UNZIP_DIR
 unzip $KA_IOS_SDK_ZIP_FILE -d $KA_IOS_SDK_UNZIP_DIR
