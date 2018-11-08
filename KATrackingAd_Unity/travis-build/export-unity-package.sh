@@ -9,7 +9,7 @@ KA_IOS_SDK_UNZIP_DIR=$(pwd)/ka_ios_sdk_unzipped
 KA_IOS_SDK_ZIP_FILE=$(pwd)/KATrackingAd_iOS/KASDK+Demo.zip
 KA_ANDROID_SDK_ZIP_FILE=$(pwd)/AppicPlayAD_Android/AppicPlaySDK.zip
 KA_ANDROID_SDK_UNZIP_DIR=$(pwd)/ka_android_sdk_unzipped
-KA_IOS_SDK_PATH=KASDK+Demo/KATrackingAdDemo/SDK/KASDK
+KA_IOS_SDK_PATH=KATrackingAdDemo/KATrackingAdDemo/SDK/KASDK
 KA_IOS_SDK_RESOURCE_BUNDLE_NAME=KAResources.bundle
 KA_IOS_SDK_FRAMEWORK_NAME=KASDK.framework
 
@@ -28,7 +28,7 @@ mv $KA_IOS_SDK_UNZIP_DIR/$KA_IOS_SDK_PATH/$KA_IOS_SDK_FRAMEWORK_NAME $PROJECT_PA
 
 #mv unzipped android aar files to unity sample project
 echo "move android sdk's aar files to unity sample project"
-cp $KA_ANDROID_SDK_UNZIP_DIR/* $PROJECT_PATH/Assets/Plugins/Android/KATracking/libs
+cp $KA_ANDROID_SDK_UNZIP_DIR/AppicPlaySDK/* $PROJECT_PATH/Assets/Plugins/Android/KATracking/libs
 
 echo "Exporting KAUnityPlugin package at=$EXPORT_PATH"
 mkdir $UNITY_BUILD_DIR
