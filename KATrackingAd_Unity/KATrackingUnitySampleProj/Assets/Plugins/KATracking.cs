@@ -24,6 +24,12 @@ namespace KATrackingAD
             BANNER_SIZE_728_90
         }
 
+#if UNITY_ANDROID
+        private static AndroidJavaClass apUnityWrapper;
+        private static AndroidJavaClass unityPlayer;
+#endif
+
+
 #if UNITY_IOS // && !UNITY_EDITOR
         [DllImport("__Internal")] private static extern void doInit(string appID, string appChannel);
 
@@ -45,12 +51,53 @@ namespace KATrackingAD
         [DllImport("__Internal")] private static extern string doGetScreenSize();
 #endif
 
+
+#if UNITY_ANDROID
+        private static AndroidJavaClass getAPUnityWrapper()
+        {
+            if (apUnityWrapper == null)
+            {
+                apUnityWrapper = new AndroidJavaClass("com.appicplay.sdk.unitywrapper.APSDKUnityWrapper");
+            }
+            return apUnityWrapper;
+        }
+
+        private static AndroidJavaClass getUnityPlayer()
+        {
+            if (unityPlayer == null)
+            {
+                unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+            }
+            return unityPlayer;
+        }
+
+        private static AndroidJavaObject getCurrentActivity()
+        {
+            AndroidJavaObject currentActivity = getUnityPlayer().GetStatic<AndroidJavaObject>("currentActivity");
+            return currentActivity;
+        }
+#endif
+
+
         public static void init(string appID, string appChannel)
         {
             createDelegateObj();
             if (Application.platform == RuntimePlatform.IPhonePlayer)
             {
+#if UNITY_IOS
                 doInit(appID, appChannel);
+#endif
+            }
+            if (Application.platform == RuntimePlatform.Android)
+            {
+
+#if UNITY_ANDROID
+                AndroidJavaObject currentActivity = getUnityPlayer().GetStatic<AndroidJavaObject>("currentActivity");
+                currentActivity.Call("runOnUiThread", new AndroidJavaRunnable(() =>
+                {
+                    getAPUnityWrapper().CallStatic("init", currentActivity, appID, appChannel);
+                }));
+#endif
             }
         }
 
@@ -58,7 +105,15 @@ namespace KATrackingAD
         {
             if (Application.platform == RuntimePlatform.IPhonePlayer)
             {
+#if UNITY_IOS
                 doLoadInterstitial(slotID);
+#endif
+            }
+            else if (Application.platform == RuntimePlatform.Android)
+            {
+#if UNITY_ANDROID
+                getAPUnityWrapper().CallStatic("loadInterstitial", getCurrentActivity(), slotID);
+#endif
             }
             else
             {
@@ -73,7 +128,16 @@ namespace KATrackingAD
         {
             if (Application.platform == RuntimePlatform.IPhonePlayer)
             {
+#if UNITY_IOS
+
                 doShowInterstitial(slotID);
+#endif
+            }
+            else if (Application.platform == RuntimePlatform.Android)
+            {
+#if UNITY_ANDROID
+                getAPUnityWrapper().CallStatic("showInterstitial",getCurrentActivity(),slotID);
+#endif
             }
         }
 
@@ -81,7 +145,16 @@ namespace KATrackingAD
         {
             if (Application.platform == RuntimePlatform.IPhonePlayer)
             {
+#if UNITY_IOS
+
                 return doCheckIsInterstitialAvaliable(slotID);
+#endif
+            }
+            else if (Application.platform == RuntimePlatform.Android)
+            {
+#if UNITY_ANDROID
+                return getAPUnityWrapper().CallStatic<bool>("isInterstitialReady", slotID);
+#endif
             }
             return false;
         }
@@ -90,7 +163,16 @@ namespace KATrackingAD
         {
             if (Application.platform == RuntimePlatform.IPhonePlayer)
             {
+#if UNITY_IOS
+
                 doShowSplash(slotID);
+#endif
+            }
+            else if (Application.platform == RuntimePlatform.Android)
+            {
+#if UNITY_ANDROID
+                getAPUnityWrapper().CallStatic("showSplash", getCurrentActivity(), slotID);
+#endif
             }
             else
             {
@@ -106,8 +188,17 @@ namespace KATrackingAD
 
             if (Application.platform == RuntimePlatform.IPhonePlayer)
             {
-                doShowRewardVideo();
+#if UNITY_IOS
 
+                doShowRewardVideo();
+#endif
+
+            }
+            else if (Application.platform == RuntimePlatform.Android)
+            {
+#if UNITY_ANDROID
+                getAPUnityWrapper().CallStatic("showVideoAD", getCurrentActivity());
+#endif
             }
             else
             {
@@ -120,7 +211,10 @@ namespace KATrackingAD
 
         public static void loadAndPresentBanner(string slotID, BANNER_SIZE bannerSize, int x, int y)
         {
-            string bannerSizeStr = BANNER_SIZE_320_50_STR;
+            if (Application.platform == RuntimePlatform.IPhonePlayer)
+            {
+#if UNITY_IOS
+                 string bannerSizeStr = BANNER_SIZE_320_50_STR;
             switch (bannerSize)
             {
                 case BANNER_SIZE.BANNER_SIZE_320_50:
@@ -135,12 +229,21 @@ namespace KATrackingAD
                 default:
                     break;
             }
-
-            if (Application.platform == RuntimePlatform.IPhonePlayer)
-            {
                 doLoadBanner(slotID, bannerSizeStr);
                 doShowBanner(slotID);
                 doSetBannerPosition(slotID, x, y);
+#endif
+            }
+
+            if (Application.platform == RuntimePlatform.Android)
+            {
+#if UNITY_ANDROID
+                if (bannerSize != BANNER_SIZE.BANNER_SIZE_320_50)
+                {
+                    throw new Exception("android ad sdk only support banner size 320 * 50. ");
+                }
+                getAPUnityWrapper().CallStatic("loadAndPresentBanner", getCurrentActivity(), slotID, x, y);
+#endif
             }
             else
             {
@@ -151,25 +254,41 @@ namespace KATrackingAD
             }
         }
 
-        public static int[] getIOSDeviceScreenSize()
+        public static int[] getDeviceScreenSize()
         {
             if (Application.platform == RuntimePlatform.IPhonePlayer)
             {
+#if UNITY_IOS
                 string screenSizeStr = doGetScreenSize();
                 string[] splits = screenSizeStr.Split('#');
                 return new int[] { int.Parse(splits[0]), int.Parse(splits[1]) };
+#endif
             }
-            else
+            else if (Application.platform == RuntimePlatform.Android)
             {
-                return new int[] { 0, 0 };
+#if UNITY_ANDROID
+                string screenSizeStr = getAPUnityWrapper().CallStatic<string>("getScreenSize", getCurrentActivity());
+                string[] splits = screenSizeStr.Split('#');
+                return new int[] { int.Parse(splits[0]), int.Parse(splits[1]) };
+#endif
             }
+            return new int[] { 0, 0 };
         }
 
         public static void showBanner(string slotID)
         {
             if (Application.platform == RuntimePlatform.IPhonePlayer)
             {
+#if UNITY_IOS
+
                 doShowBanner(slotID);
+#endif
+            }
+            else if (Application.platform == RuntimePlatform.Android)
+            {
+#if UNITY_ANDROID
+                getAPUnityWrapper().CallStatic("showBanner",getCurrentActivity(), slotID);
+#endif
             }
         }
 
@@ -177,7 +296,17 @@ namespace KATrackingAD
         {
             if (Application.platform == RuntimePlatform.IPhonePlayer)
             {
+#if UNITY_IOS
+
                 doHideBanner(slotID);
+#endif
+            }
+            else if (Application.platform == RuntimePlatform.Android)
+            {
+
+#if UNITY_ANDROID
+                getAPUnityWrapper().CallStatic("hideBanner",getCurrentActivity(), slotID);
+#endif
             }
         }
 
@@ -185,7 +314,16 @@ namespace KATrackingAD
         {
             if (Application.platform == RuntimePlatform.IPhonePlayer)
             {
+#if UNITY_IOS
+
                 doRemoveAndDestroyBanner(slotID);
+#endif
+            }
+            else if (Application.platform == RuntimePlatform.Android)
+            {
+#if UNITY_ANDROID
+                getAPUnityWrapper().CallStatic("removeAndDestroyBanner", getCurrentActivity(),slotID);
+#endif
             }
         }
 
@@ -193,18 +331,34 @@ namespace KATrackingAD
         {
             if (Application.platform == RuntimePlatform.IPhonePlayer)
             {
+#if UNITY_IOS
+
                 doSetBannerPosition(slotID, x, y);
+#endif
+            }
+            else if (Application.platform == RuntimePlatform.Android)
+            {
+#if UNITY_ANDROID
+                throw new Exception("android ad sdk do not support this operation.");
+#endif
             }
         }
 
         public static bool isRewardVideoADAvaliable()
         {
-            if (Application.platform==RuntimePlatform.IPhonePlayer)
+            if (Application.platform == RuntimePlatform.IPhonePlayer)
             {
+#if UNITY_IOS
                 return doCheckIsRewardVideoAvaliable();
-            }else{
-                return false;
+#endif
             }
+            else if (Application.platform == RuntimePlatform.Android)
+            {
+#if UNITY_ANDROID
+                return getAPUnityWrapper().CallStatic<bool>("isVideoReady");
+#endif
+            }
+            return false;
         }
 
         private static void createDelegateObj()

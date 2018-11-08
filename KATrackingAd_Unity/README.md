@@ -6,8 +6,8 @@
 * [Before you get started](#about)
 * [Integrate](#step1)
 * [Additional Settings for iOS](#step2)
-* [How To Run Sample Project](#step3)
-* [Others](#step4)
+* [Additional Settings for Android](#step3)
+* [How To Run Sample Project](#step4)
 
 ## <a name="about">Before you get started</a>
 
@@ -162,12 +162,19 @@
 * follow the instructions [here](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README_EN.md) to set your ios project (during the exporting in previous step, the plugin has already done some of the settings for you, that include [add dependicies](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README.md#infoplist%E8%AE%BE%E7%BD%AE%E7%99%BD%E5%90%8D%E5%8D%95)、[set white list](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README.md#infoplist%E8%AE%BE%E7%BD%AE%E7%99%BD%E5%90%8D%E5%8D%95)、[add -ObjC linker flag](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README.md#infoplist%E8%AE%BE%E7%BD%AE%E7%99%BD%E5%90%8D%E5%8D%95) and set `Enable Bitcode` to `No`)
 * add third party ad sdks depend on your needs
 
-		
-## <a name="step3">How to run the sample project</a>
+## <a name="step3">Additional Settings for Android</a>
+
+* export an android project
+* open the project in `android studio`
+* edit the `build.gradle`file, add two repos `jcenter()` and `google()` inside the structure `allprojects{repositories{#add listed two repos here#}}`
+* follow the instructions [here](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/README.md) to set your android project 
+* add third party ad sdks depend on your needs
+
+
+## <a name="step4">How to run the sample project</a>
 
 * open it in unity
 * import this plugn
-* build an ios project out
-* add all third party ad sdks to the ios project
-* follow the instructions [here](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README_EN.md) to set you ios project
+* build an android or ios project out
+* follow the specific platform's([android](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/README.md)、[ios](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README_EN.md)) instructions to set you ios project
 * all done

@@ -13,10 +13,19 @@ public class Test : MonoBehaviour
     const string APP_ID = "test_test_test";
     const string CHANNEL_ID = "test_ad";
 
+#if UNITY_ANDROID
+    const string SPLASH_SLOTID = "zKyjJJyM";
+    const string BANNER_SLOTID = "naArbAbz";
+    const string INTERSTITIAL_SLOTID = "XYmLkMAx";
+#elif UNITY_IOS
     const string SPLASH_SLOTID = "XqmJPMGw";
     const string BANNER_SLOTID = "naArbAbz";
     const string INTERSTITIAL_SLOTID = "geyzoWGx";
-
+#else
+    const string SPLASH_SLOTID = "zKyjJJyM";
+    const string BANNER_SLOTID = "naArbAbz";
+    const string INTERSTITIAL_SLOTID = "XYmLkMAx";
+#endif
 
     // Use this for initialization
     void Start()
@@ -232,10 +241,9 @@ public class Test : MonoBehaviour
 
     public void loadBanner()
     {
-        log("loadBanner...");
-
-        int[] iosDeviceSize = KATracking.getIOSDeviceScreenSize();
-        KATracking.loadAndPresentBanner(BANNER_SLOTID, KATracking.BANNER_SIZE.BANNER_SIZE_320_50, iosDeviceSize[0] / 2, 50 / 2);
+        int[] iosDeviceSize = KATracking.getDeviceScreenSize();
+        log("loadBanner，screenSize："+iosDeviceSize[0]+","+iosDeviceSize[1]);
+        KATracking.loadAndPresentBanner(BANNER_SLOTID, KATracking.BANNER_SIZE.BANNER_SIZE_320_50, iosDeviceSize[0] / 2, iosDeviceSize[1]-50/2);
     }
 
     public void showBanner()
