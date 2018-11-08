@@ -5,21 +5,30 @@ UNITY_BUILD_DIR=$(pwd)/Build
 LOG_FILE=$UNITY_BUILD_DIR/unity_package.log
 EXPORT_PATH=$(pwd)/$PROJECT_NAME.unitypackage
 RELEASE_DIRECTORY=./release
-KA_SDK_UNZIP_DIR=$(pwd)/sdkunzipped
-KA_SDK_ZIP_FILE=$(pwd)/KATrackingAd_iOS/KASDK+Demo.zip
-KA_SDK_PATH=KASDK+Demo/KATrackingAdDemo/SDK/KASDK
-KA_SDK_RESOURCE_BUNDLE_NAME=KAResources.bundle
-KA_SDK_FRAMEWORK_NAME=KASDK.framework
+KA_IOS_SDK_UNZIP_DIR=$(pwd)/ka_ios_sdk_unzipped
+KA_IOS_SDK_ZIP_FILE=$(pwd)/KATrackingAd_iOS/KASDK+Demo.zip
+KA_ANDROID_SDK_ZIP_FILE=$(pwd)/AppicPlayAD_Android/AppicPlaySDK.zip
+KA_ANDROID_SDK_UNZIP_DIR=$(pwd)/ka_android_sdk_unzipped
+KA_IOS_SDK_PATH=KASDK+Demo/KATrackingAdDemo/SDK/KASDK
+KA_IOS_SDK_RESOURCE_BUNDLE_NAME=KAResources.bundle
+KA_IOS_SDK_FRAMEWORK_NAME=KASDK.framework
 
 ERROR_CODE=0
 
 echo "Unzipping sdk zip file..."
-mkdir $KA_SDK_UNZIP_DIR
-unzip $KA_SDK_ZIP_FILE -d $KA_SDK_UNZIP_DIR
+mkdir $KA_IOS_SDK_UNZIP_DIR
+mkdir $KA_ANDROID_SDK_UNZIP_DIR
+unzip $KA_IOS_SDK_ZIP_FILE -d $KA_IOS_SDK_UNZIP_DIR
+unzip $KA_ANDROID_SDK_ZIP_FILE -d $KA_ANDROID_SDK_UNZIP_DIR
+
 #mv unzipped framework and resource.bundle to unity sample proj
 echo "move framework and bundle to unity sample project"
-mv $KA_SDK_UNZIP_DIR/$KA_SDK_PATH/$KA_SDK_RESOURCE_BUNDLE_NAME $PROJECT_PATH/Assets/Plugins/iOS/KATracking/libs/$KA_SDK_RESOURCE_BUNDLE_NAME
-mv $KA_SDK_UNZIP_DIR/$KA_SDK_PATH/$KA_SDK_FRAMEWORK_NAME $PROJECT_PATH/Assets/Plugins/iOS/KATracking/libs/$KA_SDK_FRAMEWORK_NAME
+mv $KA_IOS_SDK_UNZIP_DIR/$KA_IOS_SDK_PATH/$KA_IOS_SDK_RESOURCE_BUNDLE_NAME $PROJECT_PATH/Assets/Plugins/iOS/KATracking/libs/$KA_IOS_SDK_RESOURCE_BUNDLE_NAME
+mv $KA_IOS_SDK_UNZIP_DIR/$KA_IOS_SDK_PATH/$KA_IOS_SDK_FRAMEWORK_NAME $PROJECT_PATH/Assets/Plugins/iOS/KATracking/libs/$KA_IOS_SDK_FRAMEWORK_NAME
+
+#mv unzipped android aar files to unity sample project
+echo "move android sdk's aar files to unity sample project"
+cp $KA_ANDROID_SDK_UNZIP_DIR/* $PROJECT_PATH/Assets/Plugins/Android/KATracking/libs
 
 echo "Exporting KAUnityPlugin package at=$EXPORT_PATH"
 mkdir $UNITY_BUILD_DIR
