@@ -114,11 +114,11 @@
 	KATracking.loadAndPresentBanner("slotID", bannerSize, x, y);
 	```
 	
-	**Note:** `bannerSize` is an param of `Enum` type. Its option values are:`BANNER_SIZE_320_50 `、`BANNER_SIZE_480_60 `、`BANNER_SIZE_728_90 `
+	**Note:** `bannerSize` is an param of `Enum` type. Its option values are:`BANNER_SIZE_320_50 `、`BANNER_SIZE_480_60 `、`BANNER_SIZE_728_90`(`android` platform only support the size `BANNER_SIZE_320_50`)
 	
 	**Note:** `x` and `y` indicate a position on the `ios` device's screen that the banner ad's center point is located at, e.g. if you want the banner ad be positioned at the bottom of the screen, and center in horizontal, we assume that the variables `screenWidth` and `screenHeight` represent the screen size, and `bannerSize` is `BANNER_SIZE_320_50 `, then `x` should be `screenWidth/2` and `y` should be `screenHeight-50/2`.
 	
-	**Note:** you can get the `ios` device's screen size by invoking the method:`KATracking.getIOSDeviceScreenSize();`
+	**Note:** you can get the device's screen size by invoking the method:`KATracking.getDeviceScreenSize();`
 	
 * hide banner ad:
 
