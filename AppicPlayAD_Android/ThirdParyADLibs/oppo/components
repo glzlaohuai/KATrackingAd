@@ -1,0 +1,6 @@
+<activity android:name="com.oppo.mobad.activity.AdActivity" />
+<service android:name="com.oppo.mobad.service.AdService" />
+<activity
+    android:name="com.oppo.mobad.activity.VideoActivity"
+    android:configChanges="keyboardHidden|orientation|screenSize"
+    android:screenOrientation="sensor" />

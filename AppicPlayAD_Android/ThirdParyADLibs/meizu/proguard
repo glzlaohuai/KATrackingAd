@@ -1,0 +1,2 @@
+-keep class com.shenqi.sdk.**{*;}
+-keep class com.shenqi.listener.**{*;}
