@@ -26,6 +26,7 @@ public class LauncherActivity extends AppCompatActivity implements View.OnClickL
 
         APAD.init(this, "test_test_test", "test_ad");
         APAD.setIsMobileNetworkDirectlyDownload(true);
+        APAD.useDefaultConfigForSplashIfNoConfigExist(this, "zKyjJJyM");
     }
 
     @Override
