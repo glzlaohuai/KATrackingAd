@@ -1,5 +1,13 @@
 # 版本发布记录
 
+## Ver3.6.0
+## Release Date: 2018-11-16
+
+* 更新Unity、Vungle SDK (在Mediation_2里)
+* 修复头条bug
+* 去掉KAResources.bundle
+* 优化SDK
+
 ## Ver3.5.8
 ## Release Date: 2018-11-14
 
