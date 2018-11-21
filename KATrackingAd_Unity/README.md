@@ -157,10 +157,10 @@
 	```
 	
 ## <a name="step2">Additional Settings for iOS</a>
-
+* add third party ad sdks depend on your needs (you can put the third party ad sdks' files in directory: `Assets/Plugins/iOS/KATracking/libs` or any other subdir under `Assets/Plugins/iOS/` that you think it's proper)
 * export an ios project
 * follow the instructions [here](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README_EN.md) to set your ios project (during the exporting in previous step, the plugin has already done some of the settings for you, that include [add dependicies](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README.md#infoplist%E8%AE%BE%E7%BD%AE%E7%99%BD%E5%90%8D%E5%8D%95)、[set white list](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README.md#infoplist%E8%AE%BE%E7%BD%AE%E7%99%BD%E5%90%8D%E5%8D%95)、[add -ObjC linker flag](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README.md#infoplist%E8%AE%BE%E7%BD%AE%E7%99%BD%E5%90%8D%E5%8D%95) and set `Enable Bitcode` to `No`)
-* add third party ad sdks depend on your needs
+
 
 ## <a name="step3">Additional Settings for Android</a>
 
