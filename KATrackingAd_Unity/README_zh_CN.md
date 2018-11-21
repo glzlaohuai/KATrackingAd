@@ -166,12 +166,12 @@
 *  根据你的需要添加第三方sdk
 
 ## <a name="step3">Android工程配置</a>
-
+*  根据你的需要添加需要支持的第三方sdk（你可以将第三方sdk添加到文件夹：`Assets/Plugins/iOS/KATracking/libs`下，或者文件夹`Assets/Plugins/iOS/`下的任意你觉得合适的其他位置）
 *  导出android工程
 *  在AndroidStudio中打开导出的工程
 *  编辑`build.gradle`文件，在该文件内找到`allprojects`结构，在该结构下的`repositories`结构内添加以下两个repo：`jcenter()`和`google()`
 *  根据[这里](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/README.md)的说明来配置导出的Android工程
-*  根据你的需要添加需要支持的第三方sdk
+
 
 ## <a name="step4">如何运行示例工程</a>
 
