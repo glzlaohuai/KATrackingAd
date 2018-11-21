@@ -1,5 +1,11 @@
 # 版本发布记录
 
+## Ver3.6.1
+## Release Date: 2018-11-21
+
+* 修复原生banner广告bug
+* 修复插屏广告统计bug
+
 ## Ver3.6.0
 ## Release Date: 2018-11-16
 
