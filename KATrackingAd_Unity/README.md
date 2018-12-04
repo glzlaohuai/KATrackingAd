@@ -94,7 +94,7 @@
 	
 	**Note**: Because it need time to complete the load stuff, so you should invoke the load method at a proper time before trying to display it.
 	
-	**Note**: Make sure not to invoke this method inside its loadFailed delegate method, for in some extream occasions(bad networks or current no ad fill temporarily), doing this will cause a frequent load interstitial request and result in a bad performance in the integrated game. The proper time to invoke this method should be the time when the 'interstitial show event' is triggered.
+	**Note**: Make sure not to invoke this method inside its loadFailed delegate method, for in some extreme occasions(bad networks or current no ad fill temporarily), doing this will cause a frequent load interstitial request and result in a bad performance in the integrated game. The proper time to invoke this method should be the time when the 'interstitial show event' is triggered.
 	
 * check if interstitial ad is ready or not:
 
