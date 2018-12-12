@@ -84,6 +84,8 @@
 	APAD.init(this, "appID", "channelID");
 	```
 	**注**:`appID`和`channelID`的值将在您接入sdk时由我方相关对接人员提供。
+	
+	**注**：请勿将该方法调用放到`Application`的`onCreate`中，为了保证每次应用重新启动都会执行该方法（以保证配置的更新），请将该方法调用放到`Activity`的`onCreate`方法中。
 
 * `proguard`配置：
 
