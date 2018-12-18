@@ -21,7 +21,7 @@
 
 ## <a name="essential">基础SDK接入</a>
 
-* 下载[sdk](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/AppicPlaySDK.zip)并解压，将解压后的`AppicPlay_AD_xxx.aar`、`AppicPlay_Core_xxx.aar`文件加入工程依赖
+* 下载[sdk](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/AppicPlaySDK.zip)并解压，将解压后的`APSDK_AD_xxx.aar`、`APSDK_Core_xxx.aar`文件加入工程依赖
 * 接入工程的`app module`的`build.gradle`中添加依赖：
 
 	```
@@ -45,9 +45,19 @@
 		@Override
     	protected void attachBaseContext(Context base) {
        	super.attachBaseContext(base);
-       	APApplication.onApplicationAttachBaseContext(base);
+       	APApplication.onApplicationAttachBaseContext(base,this);
     	}
 		```
+	*	`onTerminate`回调方法：
+
+		```
+		@Override
+    	public void onTerminate() {
+       super.onTerminate();
+       APApplication.onApplicationTerminate(this);
+    }
+		```
+		
 * main activity 的`onCreate`回调方法中执行初始化（不建议在splash activity中执行初始化，因为初始化过程中会申请权限，而splash activity一般停留时间很短，会影响体验）：
 
 	```
