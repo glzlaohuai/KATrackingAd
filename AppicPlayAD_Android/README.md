@@ -27,37 +27,7 @@
 	```
 	implementation 'com.android.volley:volley:1.1.0'
     implementation 'com.android.support:support-v4:26.1.0'
-    implementation 'android.arch.persistence.room:runtime:1.0.0'
     implementation 'com.liulishuo.filedownloader:library:1.7.4'
-	```
-* `AndroidManifest.xml`的`application`节点下加入：
-
-	```
-	<provider
-            android:name="android.support.v4.content.FileProvider"
-            android:authorities="${applicationId}.fileprovider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/appicplay_file_path" />
-        </provider>
-        
-        <service
-            android:name="com.appicplay.sdk.ad.service.DownloadService"
-            android:exported="false" />
-        
-	```
-* `AndroidManiest.xml`的`application`节点加入配置：`android:hardwareAccelerated="true"`
-* `AndroidManifest.xml`中加入权限：
-
-	```
-	<uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 	```
 * `Application`的回调方法中分别做如下修改（工程如果没有自定义`Application`请自行加入）：
 	*	`onCreate`回调方法：
