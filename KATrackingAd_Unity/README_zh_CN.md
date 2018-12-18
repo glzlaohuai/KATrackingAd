@@ -166,11 +166,7 @@
 *  根据[这里](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README.md)的说明来配置导出的ios工程（插件在导出iOS工程时已经进行了一部分的设置，包括：[添加依赖库](https://github.com/KATracking/KATrackingAd/tree/master/KATrackingAd_iOS#%E5%8A%A0%E5%85%A5%E5%85%B6%E5%AE%83%E4%BE%9D%E8%B5%96%E5%BA%93)、[设置白名单](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README.md#infoplist%E8%AE%BE%E7%BD%AE%E7%99%BD%E5%90%8D%E5%8D%95)、[添加-ObjC linker flag](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README.md#infoplist%E8%AE%BE%E7%BD%AE%E7%99%BD%E5%90%8D%E5%8D%95)、`Enable Bitcode`设置为No）
 
 ## <a name="step3">Android工程配置</a>
-*  导出android工程
-*  在AndroidStudio中打开导出的工程
-*  编辑`build.gradle`文件，在该文件内找到`allprojects`结构，在该结构下的`repositories`结构内添加以下两个repo：`jcenter()`和`google()`
-*  根据[这里](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/README.md)的说明来配置导出的Android工程
-
+*  根据[这里](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/README.md#thirdPartySDK)的说明来添加需要支持的三方广告sdk
 
 ## <a name="step4">如何运行示例工程</a>
 
