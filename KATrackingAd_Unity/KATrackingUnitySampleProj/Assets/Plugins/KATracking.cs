@@ -9,7 +9,7 @@ namespace KATrackingAD
 {
     public class KATracking : MonoBehaviour
     {
-        private const string DELEGATE_NAME = "KATrackingADServiceDelegate";
+        private const string DELEGATE_NAME = "APSDKServiceDelegate";
 
         private const string BANNER_SIZE_320_50_STR = "BANNER_SIZE_320_50";
         private const string BANNER_SIZE_468_60_STR = "BANNER_SIZE_468_60";
@@ -214,21 +214,21 @@ namespace KATrackingAD
             if (Application.platform == RuntimePlatform.IPhonePlayer)
             {
 #if UNITY_IOS
-                 string bannerSizeStr = BANNER_SIZE_320_50_STR;
-            switch (bannerSize)
-            {
-                case BANNER_SIZE.BANNER_SIZE_320_50:
-                    bannerSizeStr = BANNER_SIZE_320_50_STR;
-                    break;
-                case BANNER_SIZE.BANNER_SIZE_480_60:
-                    bannerSizeStr = BANNER_SIZE_468_60_STR;
-                    break;
-                case BANNER_SIZE.BANNER_SIZE_728_90:
-                    bannerSizeStr = BANNER_SIZE_728_90_STR;
-                    break;
-                default:
-                    break;
-            }
+                string bannerSizeStr = BANNER_SIZE_320_50_STR;
+                switch (bannerSize)
+                {
+                    case BANNER_SIZE.BANNER_SIZE_320_50:
+                        bannerSizeStr = BANNER_SIZE_320_50_STR;
+                        break;
+                    case BANNER_SIZE.BANNER_SIZE_480_60:
+                        bannerSizeStr = BANNER_SIZE_468_60_STR;
+                        break;
+                    case BANNER_SIZE.BANNER_SIZE_728_90:
+                        bannerSizeStr = BANNER_SIZE_728_90_STR;
+                        break;
+                    default:
+                        break;
+                }
                 doLoadBanner(slotID, bannerSizeStr);
                 doShowBanner(slotID);
                 doSetBannerPosition(slotID, x, y);
@@ -369,6 +369,10 @@ namespace KATrackingAD
                 GameObject singleton = new GameObject(DELEGATE_NAME);
                 singleton.AddComponent<KATracking>();
                 DontDestroyOnLoad(singleton);
+            }
+            else if (findObj.GetComponent<KATracking>() == null)
+            {
+                findObj.AddComponent<KATracking>();
             }
         }
 

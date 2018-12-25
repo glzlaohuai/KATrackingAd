@@ -1,4 +1,4 @@
-# 当前版本Ver.3.2.4 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/ReleaseNote.md)
+# 当前版本Ver.3.3.0 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/ReleaseNote.md)
 # AppicPlay AD SDK接入说明
 
 * [关于](#about)
@@ -21,43 +21,13 @@
 
 ## <a name="essential">基础SDK接入</a>
 
-* 下载[sdk](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/AppicPlaySDK.zip)并解压，将解压后的`AppicPlay_AD_xxx.aar`、`AppicPlay_Core_xxx.aar`文件加入工程依赖
+* 下载[sdk](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/AppicPlaySDK.zip)并解压，将解压后的`APSDK_AD_xxx.aar`、`APSDK_Core_xxx.aar`文件加入工程依赖
 * 接入工程的`app module`的`build.gradle`中添加依赖：
 
 	```
 	implementation 'com.android.volley:volley:1.1.0'
     implementation 'com.android.support:support-v4:26.1.0'
-    implementation 'android.arch.persistence.room:runtime:1.0.0'
     implementation 'com.liulishuo.filedownloader:library:1.7.4'
-	```
-* `AndroidManifest.xml`的`application`节点下加入：
-
-	```
-	<provider
-            android:name="android.support.v4.content.FileProvider"
-            android:authorities="${applicationId}.fileprovider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/appicplay_file_path" />
-        </provider>
-        
-        <service
-            android:name="com.appicplay.sdk.ad.service.DownloadService"
-            android:exported="false" />
-        
-	```
-* `AndroidManiest.xml`的`application`节点加入配置：`android:hardwareAccelerated="true"`
-* `AndroidManifest.xml`中加入权限：
-
-	```
-	<uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 	```
 * `Application`的回调方法中分别做如下修改（工程如果没有自定义`Application`请自行加入）：
 	*	`onCreate`回调方法：
@@ -75,9 +45,19 @@
 		@Override
     	protected void attachBaseContext(Context base) {
        	super.attachBaseContext(base);
-       	APApplication.onApplicationAttachBaseContext(base);
+       	APApplication.onApplicationAttachBaseContext(base,this);
     	}
 		```
+	*	`onTerminate`回调方法：
+
+		```
+		@Override
+    	public void onTerminate() {
+       super.onTerminate();
+       APApplication.onApplicationTerminate(this);
+    }
+		```
+		
 * main activity 的`onCreate`回调方法中执行初始化（不建议在splash activity中执行初始化，因为初始化过程中会申请权限，而splash activity一般停留时间很短，会影响体验）：
 
 	```

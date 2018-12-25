@@ -6,4 +6,4 @@
 //  Copyright © 2018年 glzlaohuai. All rights reserved.
 //
 
-#define GAME_OBJ_NAME           "KATrackingADServiceDelegate"
+#define GAME_OBJ_NAME           "APSDKServiceDelegate"
