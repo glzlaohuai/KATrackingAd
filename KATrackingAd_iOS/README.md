@@ -376,7 +376,7 @@ KAAdBanner * banner = [[KAAdBanner alloc] initWithSlot:<adSlot> withSize:<size> 
 ```
 * **adSlot** - 广告位SlotId，用于请求广告
 * **Size** - 广告尺寸<KAAdBannerSize>枚举
-* **Delegate** - id<KAAdBannerDelegate> 实例，用于接受广告事件回调
+* **Delegate** - id<KAAdBannerDelegate> 实例，用于接收广告事件回调
 * **controller** - 用于点击横幅广告后展示广告页的UIViewController
 
 请求并加载广告
@@ -419,6 +419,74 @@ KAAdBanner * banner = [[KAAdBanner alloc] initWithSlot:<adSlot> withSize:<size> 
  * Notifies the delegate that the banner has dismissed the presented screen.
  */
 - (void) bannerDidDismissScreen:(nonnull KAAdBanner *)bannerAd;
+```
+
+### 兑换码
+
+输入兑换码兑换礼物
+
+`KAPub`
+
+```Objective-c
+[KAPub redeemCode:<code> withDelegate:<Delegate>]
+```
+* **code** - 兑换码 (相关配置请联系运营人员获取)
+* **Delegate** - id<KAPubConfigManagerDelegate>实例，用于接收兑换是否成功
+
+使用以下回调接收兑换事件
+
+`KAPubConfigManagerDelegate`
+
+```Objective-c
+/**
+ * 将成功兑换回的数据包返回给代理进行处理,并返回对应的兑换码
+ */
+- (void) redeemCodeSuccessWithData:(NSDictionary *)data withCode:(NSString *)code;
+/**
+ * 兑换失败，返回错误码和对应的兑换码
+ */
+- (void) redeemCodeFailedWithError:(NSError *)error withCode:(NSString *)code;
+```
+### 支付
+`KAPub`
+
+支付
+
+```Objective-c
+[KAPub payWithIAPId:<iapId> withOrderId:<orderId> withDelegate:<Delegate>]
+```
+恢复购买
+
+```Objective-c
+[KAPub restoreCompletedTransactionsWithDelegate:<Delegate>]
+```
+
+
+* **iapId** - 平台计费点
+* **orderId** - 订单Id（请保证每次传入的订单Id为唯一Id）
+* **Delegate** - id<KAPubConfigManagerDelegate>实例，用于接收是否支付成功
+
+使用以下回调接收支付事件
+
+`KAPubConfigManagerDelegate `
+
+```Objective-c
+/**
+ * 支付成功并返回平台计费点id
+ */
+- (void)paymentSuccessWithIapId:(NSString *)iapId;
+/**
+ * 支付失败返回平台计费点id和错误信息
+ */
+- (void)paymentFailedIapId:(NSString *)iapId withErrorInfo:(NSError *)error;
+/**
+ * 恢复购买失败
+ */
+- (void)restorePaymentFailed;
+/**
+ * 恢复购买成功并返回Apple计费点id
+ */
+- (void)restorePaymentSuccessWithIdentifier:(NSString *)iapId;
 ```
 
 ### SDK错误码
