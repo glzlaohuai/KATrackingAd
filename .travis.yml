@@ -11,7 +11,7 @@ cache:
     - $UNITY_DOWNLOAD_CACHE
     
 before_install:
-- rvm get stable
+#- rvm get stable
 - chmod a+x ./KATrackingAd_Unity/travis-build/*.sh
 
 install:
