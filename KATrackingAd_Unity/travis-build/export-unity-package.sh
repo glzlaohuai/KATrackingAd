@@ -48,7 +48,7 @@ echo "move ios ad framework to unity plugin project"
 mv $KA_IOS_SDK_UNZIP_DIR/$KA_IOS_SDK_PATH/$KA_IOS_SDK_FRAMEWORK_NAME $PROJECT_PATH/Assets/Plugins/iOS/KATracking/libs/$KA_IOS_SDK_FRAMEWORK_NAME
 
 echo "move android ad sdk's libs to unity plugin project"
-cp $KA_ANDROID_SDK_UNZIP_DIR/AppicPlaySDK/* $PROJECT_PATH/Assets/Plugins/Android/KATracking/libs
+cp $KA_ANDROID_SDK_UNZIP_DIR/* $PROJECT_PATH/Assets/Plugins/Android/KATracking/libs
 
 
 echo "Exporting KAUnityPlugin package at=$EXPORT_PATH"
