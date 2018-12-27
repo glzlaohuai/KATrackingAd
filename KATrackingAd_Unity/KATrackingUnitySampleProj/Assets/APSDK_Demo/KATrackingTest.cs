@@ -4,7 +4,7 @@ using UnityEngine;
 using KATrackingAD;
 using UnityEngine.UI;
 
-public class Test : MonoBehaviour
+public class KATrackingTest : MonoBehaviour
 {
 
     public GameObject logObj;

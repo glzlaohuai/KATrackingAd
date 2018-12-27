@@ -81,11 +81,14 @@ namespace KATrackingAD
 
         public static void init(string appID, string appChannel)
         {
-            createDelegateObj();
+            bool hasEverCreated = createDelegateObj();
             if (Application.platform == RuntimePlatform.IPhonePlayer)
             {
 #if UNITY_IOS
-                doInit(appID, appChannel);
+                if (!hasEverCreated)
+                {
+                    doInit(appID, appChannel);
+                }
 #endif
             }
             if (Application.platform == RuntimePlatform.Android)
@@ -235,7 +238,7 @@ namespace KATrackingAD
 #endif
             }
 
-            if (Application.platform == RuntimePlatform.Android)
+            else if (Application.platform == RuntimePlatform.Android)
             {
 #if UNITY_ANDROID
                 if (bannerSize != BANNER_SIZE.BANNER_SIZE_320_50)
@@ -361,11 +364,13 @@ namespace KATrackingAD
             return false;
         }
 
-        private static void createDelegateObj()
+        private static bool createDelegateObj()
         {
+            bool hasEverCreated = true;
             GameObject findObj = GameObject.Find(DELEGATE_NAME);
             if (findObj == null)
             {
+                hasEverCreated = false;
                 GameObject singleton = new GameObject(DELEGATE_NAME);
                 singleton.AddComponent<KATracking>();
                 DontDestroyOnLoad(singleton);
@@ -374,6 +379,8 @@ namespace KATrackingAD
             {
                 findObj.AddComponent<KATracking>();
             }
+
+            return hasEverCreated;
         }
 
         //---开屏广告回调

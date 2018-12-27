@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465934, g: 0.49642956, b: 0.5748249, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.49641287, b: 0.5748173, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -220,10 +220,10 @@ RectTransform:
   m_Father: {fileID: 312367826}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 175, y: -174.54001}
-  m_SizeDelta: {x: 330, y: 26.7}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 26.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &20996826
 MonoBehaviour:
@@ -264,7 +264,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 769734791}
+      - m_Target: {fileID: 769734792}
         m_MethodName: showBanner
         m_Mode: 1
         m_Arguments:
@@ -343,10 +343,10 @@ RectTransform:
   m_Father: {fileID: 312367826}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 175, y: -22.555}
-  m_SizeDelta: {x: 330, y: 25.11}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 25.11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &107093224
 MonoBehaviour:
@@ -387,7 +387,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 769734791}
+      - m_Target: {fileID: 769734792}
         m_MethodName: loadInterstitial
         m_Mode: 1
         m_Arguments:
@@ -541,10 +541,10 @@ RectTransform:
   m_Father: {fileID: 312367826}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 175, y: -141.14}
-  m_SizeDelta: {x: 330, y: 30.1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 30.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &151789504
 MonoBehaviour:
@@ -585,7 +585,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 769734791}
+      - m_Target: {fileID: 769734792}
         m_MethodName: loadBanner
         m_Mode: 1
         m_Arguments:
@@ -664,10 +664,10 @@ RectTransform:
   m_Father: {fileID: 312367826}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 175, y: -203.68}
-  m_SizeDelta: {x: 330, y: 21.58}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 21.58}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &227255075
 MonoBehaviour:
@@ -708,7 +708,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 769734791}
+      - m_Target: {fileID: 769734792}
         m_MethodName: hideBanner
         m_Mode: 1
         m_Arguments:
@@ -1037,10 +1037,10 @@ RectTransform:
   m_Father: {fileID: 312367826}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 175, y: -52.25}
-  m_SizeDelta: {x: 330, y: 24.28}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 24.28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &722418827
 MonoBehaviour:
@@ -1081,7 +1081,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 769734791}
+      - m_Target: {fileID: 769734792}
         m_MethodName: showInterstitial
         m_Mode: 1
         m_Arguments:
@@ -1140,7 +1140,7 @@ GameObject:
   - component: {fileID: 769734788}
   - component: {fileID: 769734787}
   - component: {fileID: 769734786}
-  - component: {fileID: 769734791}
+  - component: {fileID: 769734792}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1222,7 +1222,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &769734791
+--- !u!114 &769734792
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1230,7 +1230,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 769734785}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8d075593bb9d4e1993c36edf0d9d679, type: 3}
+  m_Script: {fileID: 11500000, guid: bf013a8e561cb4848967e405bc1cceae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   logObj: {fileID: 145344459}
@@ -1341,10 +1341,10 @@ RectTransform:
   m_Father: {fileID: 312367826}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 175, y: -230.26}
-  m_SizeDelta: {x: 330, y: 21.58}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 21.58}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &909768603
 MonoBehaviour:
@@ -1385,7 +1385,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 769734791}
+      - m_Target: {fileID: 769734792}
         m_MethodName: removeAndDestroyBanner
         m_Mode: 1
         m_Arguments:
@@ -1755,10 +1755,10 @@ RectTransform:
   m_Father: {fileID: 312367826}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 175, y: -109.04}
-  m_SizeDelta: {x: 330, y: 24.1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 24.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1297497784
 MonoBehaviour:
@@ -1799,7 +1799,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 769734791}
+      - m_Target: {fileID: 769734792}
         m_MethodName: showRewardVideoAD
         m_Mode: 1
         m_Arguments:
@@ -1953,10 +1953,10 @@ RectTransform:
   m_Father: {fileID: 312367826}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 175, y: -80.69}
-  m_SizeDelta: {x: 330, y: 22.6}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 22.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1473113162
 MonoBehaviour:
@@ -1997,7 +1997,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 769734791}
+      - m_Target: {fileID: 769734792}
         m_MethodName: showSplash
         m_Mode: 1
         m_Arguments:
@@ -2120,7 +2120,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 769734791}
+      - m_Target: {fileID: 0}
         m_MethodName: clearLog
         m_Mode: 1
         m_Arguments:
