@@ -37,13 +37,19 @@ mkdir $KA_ANDROID_SDK_UNZIP_DIR
 unzip $KA_IOS_SDK_ZIP_FILE -d $KA_IOS_SDK_UNZIP_DIR
 unzip $KA_ANDROID_SDK_ZIP_FILE -d $KA_ANDROID_SDK_UNZIP_DIR
 
+echo "ios ad sdk's files: "
+ls $KA_IOS_SDK_UNZIP_DIR
+
+echo "android ad sdk's files: "
+ls $KA_ANDROID_SDK_UNZIP_DIR
+
 #mv unzipped framework and resource.bundle to unity sample proj
-echo "move framework and bundle to unity sample project"
+echo "move ios ad framework to unity plugin project"
 mv $KA_IOS_SDK_UNZIP_DIR/$KA_IOS_SDK_PATH/$KA_IOS_SDK_FRAMEWORK_NAME $PROJECT_PATH/Assets/Plugins/iOS/KATracking/libs/$KA_IOS_SDK_FRAMEWORK_NAME
 
-#mv unzipped android aar files to unity sample project
-# echo "move android sdk's aar files to unity sample project"
-# cp $KA_ANDROID_SDK_UNZIP_DIR/AppicPlaySDK/* $PROJECT_PATH/Assets/Plugins/Android/KATracking/libs
+echo "move android ad sdk's libs to unity plugin project"
+cp $KA_ANDROID_SDK_UNZIP_DIR/AppicPlaySDK/* $PROJECT_PATH/Assets/Plugins/Android/KATracking/libs
+
 
 echo "Exporting KAUnityPlugin package at=$EXPORT_PATH"
 mkdir $UNITY_BUILD_DIR
@@ -53,7 +59,7 @@ mkdir $UNITY_BUILD_DIR
 -silent-crashes \
 -logFile \
 -projectPath "$PROJECT_PATH" \
--exportPackage "Assets/Plugins" "$EXPORT_PATH" \
+-exportPackage "Assets" "$EXPORT_PATH" \
 -quit \
 | tee "$LOG_FILE"
 
@@ -63,7 +69,7 @@ ERROR_CODE=0
 
 echo "Packaging unity package into release..."
 #Preprare release unity package by packing into ZIP
-RELEASE_ZIP_FILE=$RELEASE_DIRECTORY/$PROJECT_NAME.zip
+RELEASE_ZIP_FILE=$RELEASE_DIRECTORY/APSDK_AD.zip
 
 mkdir -p $RELEASE_DIRECTORY
 
