@@ -7,7 +7,6 @@
 * [Integrate](#step1)
 * [Additional Settings for iOS](#step2)
 * [Additional Settings for Android](#step3)
-* [How To Run Sample Project](#step4)
 
 ## <a name="about">Before you get started</a>
 
@@ -169,12 +168,3 @@
 * edit the `build.gradle`file, add two repos `jcenter()` and `google()` inside the structure `allprojects{repositories{#add listed two repos here#}}`
 * follow the instructions [here](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/README.md) to set your android project 
 * add third party ad sdks depend on your needs
-
-
-## <a name="step4">How to run the sample project</a>
-
-* open it in unity
-* import this plugn
-* build an android or ios project out
-* follow the specific platform's([android](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/README.md)、[ios](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README_EN.md)) instructions to set you ios project
-* all done

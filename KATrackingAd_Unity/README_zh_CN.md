@@ -6,7 +6,6 @@
 * [接入](#step1)
 * [ios工程配置](#step2)
 * [android工程配置](#step3)
-* [如何运行示例工程](#step4)
 
 ## <a name="start">关于</a>
 
@@ -168,11 +167,4 @@
 ## <a name="step3">Android工程配置</a>
 *  根据[这里](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/README.md#thirdPartySDK)的说明来添加需要支持的三方广告sdk
 
-## <a name="step4">如何运行示例工程</a>
 
-* 在unity中打开示例工程
-* 导入插件
-* 导出android/ios工程
-* 添加所有的第三方sdk到工程中
-* 根据对应平台的接入说明文档（[android](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/README.md)、[ios](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README.md)）来配置导出工程
-* 可以运行了
