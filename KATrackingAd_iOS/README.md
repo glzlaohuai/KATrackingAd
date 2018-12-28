@@ -1,5 +1,5 @@
 > [English Doc](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README_EN.md)
-# 当前版本 Ver.3.6.3 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/ReleaseNote.md)
+# 当前版本 Ver.3.6.5 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/ReleaseNote.md)
 # 接入说明
 
 ## 准备工作
@@ -193,6 +193,81 @@ UIView *primaryView = [ad primiaryViewOfSize:<size>];
 - (void) nativeAdRequestFailedWithAd:(nonnull KAAdNative *)nativeAd
                           withStatus:(nonnull NSError *)nativeAdStatus;
 ```
+
+# 原生模板广告 - NativeExpress
+
+### 构建广告
+创建一个原生模板广告的实例
+`KAAdNativeExpress`
+
+```Objective-c
+KAAdNativeExpress *ad = [[KAAdNativeExpress alloc] initWithSlot:<AdSlot> delegate:<Delegate>];
+```
+* **AdSlot** - 广告位SlotId，用于请求广告
+* **Delegate** - id<KAAdNativeDelegate> 实例，用于接收请求广告的回调
+
+### 加载广告
+调用load方法来获取广告，并通过回调来判断广告是否请求成功
+`KAAdNativeExpress`
+
+```Objective-c
+[ad load];
+```
+
+### 获取广告大图素材
+通过调用以下方法，获取包含原生广告素材的UIView，返回值有可能为空，为空时请使用adIcon作为素材展示图文广告
+`KAAdNativeExpress`
+
+```Objective-c
+UIView *primaryView = [ad primiaryViewOfSize:<size> withRootViewController:<rootViewController>];
+```
+* **size** - 广告素材指定尺寸
+* **rootViewController** - 广告位展示落地页通过rootviewController进行跳转，必传参数
+
+### 广告素材信息
+下列参数包含了其他广告相关的素材信息
+
+* **ka_slot** - 广告为的SlotId
+* **ka_adTitle** - 广告文字标题
+* **ka_adDescription** - 广告文字说明
+* **ka_adIcon** - 广告图标图片的UIImage
+
+
+### 上报广告展示
+当广告被展示后，调用此方法上报展示事件
+`KAAdNativeExpress`
+
+```Objective-c
+[ad nativeExpressAdRenderedWithView:adView];
+```
+* **adView** - 装载广告素材的容器UIView
+
+### 回收素材
+当广告素材被从展示界面中移除后，请调用以下方法来回收素材
+`KAAdNativeExpress`
+
+```Objective-c
+[ad recyclePrimaryView];
+```
+
+### 广告回调
+使用以下回调接收加载广告成功和失败的事件
+`KAAdNativeExpressDelegate`
+
+```Objective-c
+广告请求成功
+- (void) nativeExpressAdRequestCompletedWithAd:(nonnull KAAdNativeExpress *)nativeAd;
+
+广告请求失败
+- (void) nativeExpressAdRequestFailedWithAd:(nonnull KAAdNativeExpress *)nativeAd
+                                 withStatus:(nonnull NSError *)nativeAdStatus;
+
+@optional
+
+广告点击
+- (void) nativeExpressAdDidClicked:(nonnull KAAdNativeExpress *)native;
+```
+
 
 # 开屏广告 - Splash
 
