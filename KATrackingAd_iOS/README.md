@@ -564,6 +564,25 @@ KAAdBanner * banner = [[KAAdBanner alloc] initWithSlot:<adSlot> withSize:<size> 
 - (void)restorePaymentSuccessWithIdentifier:(NSString *)iapId;
 ```
 
+### PUSH
+
+
+`KAPub`
+
+在`UIApplicationDelegate`的代理方法中获取deviceToken
+
+```Objective-c
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+	[KAPub setDeviceToken:deviceToken];
+} 
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    [KAPub handlePushMessage:userInfo];
+}
+```
+
 ### SDK错误码
 
 ```Objective-c
