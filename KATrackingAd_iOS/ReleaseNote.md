@@ -1,5 +1,11 @@
 # 版本发布记录
 
+## Ver3.6.5.2
+## Release Date: 2018-12-29
+
+* 修复激励视频无回调的bug
+* 更新talkingdata SDK(在Mediation_2.zip中)至4.0.29版本
+
 ## Ver3.6.3.2
 ## Release Date: 2018-12-27
 
