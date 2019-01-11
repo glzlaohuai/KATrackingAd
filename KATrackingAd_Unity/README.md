@@ -163,8 +163,4 @@
 
 ## <a name="step3">Additional Settings for Android</a>
 
-* export an android project
-* open the project in `android studio`
-* edit the `build.gradle`file, add two repos `jcenter()` and `google()` inside the structure `allprojects{repositories{#add listed two repos here#}}`
-* follow the instructions [here](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/README.md) to set your android project 
-* add third party ad sdks depend on your needs
+* follow the instructions [here](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/README.md#thirdPartySDK) to add third party ad sdks depend on your needs
