@@ -4,6 +4,7 @@
 ## Release Date: 2019-01-11
 
 * 修复静态素材插屏bug
+* 更新InMobi SDK（7.2.0）
 
 ## Ver3.6.5.2
 ## Release Date: 2018-12-31
