@@ -1,10 +1,22 @@
 # 版本发布记录
 
-## Ver3.6.5.2
-## Release Date: 2018-12-29
+## Ver3.6.5.5
+## Release Date: 2019-01-11
 
-* 修复激励视频无回调的bug
-* 更新talkingdata SDK(在Mediation_2.zip中)至4.0.29版本
+* 修复静态素材插屏bug
+* 更新InMobi SDK（7.2.0）
+
+## Ver3.6.5.2
+## Release Date: 2018-12-31
+
+* 支持兑换码功能
+
+## Ver3.6.5
+## Release Date: 2018-12-28
+
+* 支持原生视频API
+* 修复插屏Bug
+* 修复视频Bug
 
 ## Ver3.6.3.2
 ## Release Date: 2018-12-27
