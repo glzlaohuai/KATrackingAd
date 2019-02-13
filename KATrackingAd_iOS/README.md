@@ -13,7 +13,6 @@
 ### 广告SDK依赖库
 * KASDK+Demo.zip - 其中包含：
   * KASDK.framework
-  * KAResources.bundle
 ### 广告平台依赖库
 * Mediation.zip
   * InMobi.framework
