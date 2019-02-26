@@ -213,33 +213,32 @@ KAAdNativeExpress *ad = [[KAAdNativeExpress alloc] initWithSlot:<AdSlot> delegat
 [ad load];
 ```
 
-### 获取广告大图素材
-通过调用以下方法，获取包含原生广告素材的UIView，返回值有可能为空，为空时请使用adIcon作为素材展示图文广告
-`KAAdNativeExpress`
-
-```Objective-c
-UIView *primaryView = [ad primiaryViewOfSize:<size> withRootViewController:<rootViewController>];
-```
-* **size** - 广告素材指定尺寸
-* **rootViewController** - 广告位展示落地页通过rootviewController进行跳转，必传参数
-
 ### 广告素材信息
-下列参数包含了其他广告相关的素材信息
+下列参数包含了其他广告相关的素材信息，请在load请求成功后再调用相应素材
 
 * **ka_slot** - 广告为的SlotId
 * **ka_adTitle** - 广告文字标题
 * **ka_adDescription** - 广告文字说明
 * **ka_adIcon** - 广告图标图片的UIImage
+* **ka_adScreenShots** - 广告大图的UIView
+* **ka_VideoAdView** - 广告视频的UIView
 
-
-### 上报广告展示
-当广告被展示后，调用此方法上报展示事件
+### rootviewController
 `KAAdNativeExpress`
 
 ```Objective-c
-[ad nativeExpressAdRenderedWithView:adView];
+[ad setRootViewController:<controller>]
 ```
-* **adView** - 装载广告素材的容器UIView
+
+* **controller** - 广告位展示落地页通过rootviewController进行跳转，必传参数
+
+### 注册可点击视图
+`KAAdNativeExpress`
+
+```Objective-c
+- (BOOL)registerContainer:(__kindof UIView *)containerView
+```
+* **containerView** - 注册原生广告的容器视图，必传参数
 
 ### 回收素材
 当广告素材被从展示界面中移除后，请调用以下方法来回收素材
