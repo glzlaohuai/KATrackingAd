@@ -2,21 +2,33 @@
 # 当前版本 Ver.3.7 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/ReleaseNote.md)
 # 接入说明
 
-## 准备工作
-* note：我们推荐使用cocoapods进行sdk管理，以下将介绍cocoapods的基本用法，如果没有相关经验请在命令行窗口中顺序执行以下命令
+SDK可以通过下文提到的两种方式获取
 
-###cocoapods安装
+* 通过CocoaPods获取并集成
+* 通过直接下载ZIP压缩包获取并集成
+* 注意：我们推荐使用cocoapods进行sdk管理，以下将介绍cocoapods的基本用法，如果没有相关经验请在命令行窗口中顺序执行以下命令
+
+
+## 准备工作
+如果你尚未安装CocoaPods请根据下述流程安装
+
+### CocoaPods安装
 `sudo gem install -n /usr/local/bin cocoapods --pre`
 
-###cocoapods公有仓库安装
+### CocoaPods公有仓库安装
 `pod setup`
 
-###在项目中使用cocoapods
+## 通过CocoaPods集成
 * 在命令行窗口中切换当前工作路径，到你的Xcode工程文件所在目录  
+
 `cd projectPath`
-* 创建Podfile文件   
+
+* 创建Podfile文件
+
 `pod init`
-* 用文本编译器打开Podfile文件，添加需要依赖的sdk库  
+
+* 用文本编译器打开Podfile文件，添加需要依赖的sdk库
+
 `  pod 'AppicSDK'`  
 `  pod 'AppicAppLovinSDK'`  
 `  pod 'AppicAppsFlyerLib'`  
@@ -32,21 +44,28 @@
 `  pod 'AppicFBAudienceNetwork'` 
 
 * 在命令行窗口执行cocoapods安装命令  
+
 `pod install`
+
 * 用Xcode通过新生成的xcworkspace打开项目，编译测试。此时sdk已经集成完毕
 
-###更新sdk版本
-* 当sdk版本时，需要首先在命令行窗口中更新cocoapods代码仓库  
+### 更新SDK版本
+* 当SDK版本时，需要首先在命令行窗口中更新cocoapods代码仓库  
+
 `pod repo update`
+
 * 在命令行窗口中切换当前工作路径，到你的Xcode工程文件所在目录  
+
 `cd projectPath`
+
 * 在命令行窗口中执行以下指令进行更新  
+
 `pod update`
 
-### 获取KASDK+Demo.zip [下载链接](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS_new/KASDK%2BDemo.zip)
-Demo中已经配置了所有第三方sdk的依赖库，请按照上面的步骤安装cocoapods，并在工程路径执行`pod install`命令进行sdk安装，安装之后即可运行。
+### 获取SDK对接Demo [下载链接](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS_new/Demo.zip)
+Demo中已经配置了对所有第三方sdk的依赖库的引用，请按照上面的步骤安装cocoapods，并在工程路径执行`pod install`命令进行sdk安装，安装之后即可运行。
 
-### sdk说明及直接下载地址
+## 下载SDK压缩包进行集成
 * 如果使用cocoapods方式集成，则不用手动下载sdk。
 * 如果使用手工集成，请通过以下链接下载对应版本的sdk
   
