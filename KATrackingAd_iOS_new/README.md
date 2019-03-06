@@ -70,28 +70,28 @@ Demo中已经配置了对所有第三方sdk的依赖库的引用，请按照上�
 * 如果使用手工集成，请通过以下链接下载对应版本的sdk
   
 #### 广告SDK依赖库
-* AppicSDK [下载链接](https://img.appicplay.com/sdk/Mediation/KASDK/KASDK.v3.7.zip)
+* AppicSDK [下载链接](https://img.atomhike.com/sdk/Mediation/KASDK/KASDK.v3.7.zip)
 
 #### 广告平台依赖库
-* AppicInMobiSDK [下载链接](https://img.appicplay.com/sdk/Mediation/InMobiSDK/InMobiSDK.v0.0.4.zip)
-* AppicGoogleMobileAds [下载链接](https://img.appicplay.com/sdk/Mediation/GoogleMobileAds/GoogleMobileAds.v0.0.4.zip)
-* AppicUnityAds [下载链接](https://img.appicplay.com/sdk/Mediation/UnityAds/UnityAds.v0.0.4.zip)
-* AppicVungleSDK [下载链接](https://img.appicplay.com/sdk/Mediation/VungleSDK/VungleSDK.v0.0.4.zip)
-* AppicAppLovinSDK [下载链接](https://img.appicplay.com/sdk/Mediation/AppLovinSDK/AppLovinSDK.v0.0.4.zip)
-* AppicIronSource [下载链接](https://img.appicplay.com/sdk/Mediation/IronSource/IronSource.v0.0.4.zip)
-* Appictoutiao [下载链接](https://img.appicplay.com/sdk/Mediation/toutiao/toutiao.v0.0.4.zip)
+* AppicInMobiSDK [下载链接](https://img.atomhike.com/sdk/Mediation/InMobiSDK/InMobiSDK.v0.0.4.zip)
+* AppicGoogleMobileAds [下载链接](https://img.atomhike.com/sdk/Mediation/GoogleMobileAds/GoogleMobileAds.v0.0.4.zip)
+* AppicUnityAds [下载链接](https://img.atomhike.com/sdk/Mediation/UnityAds/UnityAds.v0.0.4.zip)
+* AppicVungleSDK [下载链接](https://img.atomhike.com/sdk/Mediation/VungleSDK/VungleSDK.v0.0.4.zip)
+* AppicAppLovinSDK [下载链接](https://img.atomhike.com/sdk/Mediation/AppLovinSDK/AppLovinSDK.v0.0.4.zip)
+* AppicIronSource [下载链接](https://img.atomhike.com/sdk/Mediation/IronSource/IronSource.v0.0.4.zip)
+* Appictoutiao [下载链接](https://img.atomhike.com/sdk/Mediation/toutiao/toutiao.v0.0.4.zip)
   * WMAdSDK.framework
   * WMAdSDK.bundle
-* AppicGDT [下载链接](https://img.appicplay.com/sdk/Mediation/GDT/GDT.v0.0.4.zip)
+* AppicGDT [下载链接](https://img.atomhike.com/sdk/Mediation/GDT/GDT.v0.0.4.zip)
   * libGDTMobSDK.a
-* AppicTalkingData (选加，如果需要KASDK对接TD作为统计框架）[下载链接](https://img.appicplay.com/sdk/Mediation/TalkingData/TalkingData.v0.0.4.zip)
+* AppicTalkingData (选加，如果需要KASDK对接TD作为统计框架）[下载链接](https://img.atomhike.com/sdk/Mediation/TalkingData/TalkingData.v0.0.4.zip)
   * libTalkingData.a
-* AppicUM (选加，如果需要KASDK对接UM作为统计框架）[下载链接](https://img.appicplay.com/sdk/Mediation/UM/UM.v0.0.4.zip)   
+* AppicUM (选加，如果需要KASDK对接UM作为统计框架）[下载链接](https://img.atomhike.com/sdk/Mediation/UM/UM.v0.0.4.zip)   
   * UMAnalytics.framework
   * UMCommon.framework
-* AppicAppsFlyerLib (选加，如果需要KASDK对接AppsFlyer作为统计框架) [下载链接](https://img.appicplay.com/sdk/Mediation/AppsFlyerLib/AppsFlyerLib.v0.0.4.zip)
+* AppicAppsFlyerLib (选加，如果需要KASDK对接AppsFlyer作为统计框架) [下载链接](https://img.atomhike.com/sdk/Mediation/AppsFlyerLib/AppsFlyerLib.v0.0.4.zip)
 * 
-* AppicFBAudienceNetwork [下载链接](https://img.appicplay.com/sdk/Mediation/FBAudienceNetwork/FBAudienceNetwork.v0.0.4.zip)
+* AppicFBAudienceNetwork [下载链接](https://img.atomhike.com/sdk/Mediation/FBAudienceNetwork/FBAudienceNetwork.v0.0.4.zip)
    
 ### 加入其它依赖库
 * SystemConfiguration.framework
