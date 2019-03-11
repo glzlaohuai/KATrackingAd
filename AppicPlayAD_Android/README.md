@@ -1,4 +1,4 @@
-# 当前版本Ver.3.3.0 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/ReleaseNote.md)
+# 当前版本Ver.3.5.0 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/ReleaseNote.md)
 # AppicPlay AD SDK接入说明
 
 * [关于](#about)
@@ -55,7 +55,7 @@
     	public void onTerminate() {
        super.onTerminate();
        APApplication.onApplicationTerminate(this);
-    }
+    	}
 		```
 		
 * main activity 的`onCreate`回调方法中执行初始化（不建议在splash activity中执行初始化，因为初始化过程中会申请权限，而splash activity一般停留时间很短，会影响体验）：
