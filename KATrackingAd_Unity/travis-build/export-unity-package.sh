@@ -14,13 +14,30 @@ echo "project path: $PROJECT_PATH"
 echo "export file: $EXPORT_PATH"
 
 KA_IOS_SDK_UNZIP_DIR=$(pwd)/ka_ios_sdk_unzipped
-KA_IOS_SDK_ZIP_FILE=$(pwd)/KATrackingAd_iOS/KASDK+Demo.zip
+KA_IOS_SDK_ZIP_FILE=$(pwd)/KATrackingAd_iOS/KASDK.zip
 
 KA_ANDROID_SDK_ZIP_FILE=$(pwd)/AppicPlayAD_Android/AppicPlaySDK.zip
 KA_ANDROID_SDK_UNZIP_DIR=$(pwd)/ka_android_sdk_unzipped
 
-KA_IOS_SDK_PATH=KATrackingAdDemo/KATrackingAdDemo/SDK/KASDK
 KA_IOS_SDK_FRAMEWORK_NAME=KASDK.framework
+
+IOS_V_SEGMENT=${TRAVIS_TAG%%+*}
+IOS_V_SENGMENT_LENGTH=${#IOS_V_SEGMENT}
+IOS_V_NUM_LENGTH=$(($IOS_V_SENGMENT_LENGTH-3))
+IOS_V_NUM=${IOS_V_SEGMENT:3:$IOS_V_NUM_LENGTH}
+
+IOS_SDK_DOWNLOAD_URL="https://img.appicplay.com/sdk/Mediation/KASDK/KASDK.v"
+
+echo "此次提交的tag：$TRAVIS_TAG"
+echo "此次提交的ios的sdk版本号为：$IOS_V_NUM"
+IOS_SDK_DOWNLOAD_URL=${IOS_SDK_DOWNLOAD_URL}${IOS_V_NUM}.zip
+echo "iossdk从下载连接地址：$IOS_SDK_DOWNLOAD_URL"
+
+curl -o $KA_IOS_SDK_ZIP_FILE $IOS_SDK_DOWNLOAD_URL
+
+#ios1.2.3+android1.2.3
+echo "此次提交的tag：$TRAVIS_TAG"
+IOS_V_SEGMENT=
 
 echo "ios sdk zip file: $KA_IOS_SDK_ZIP_FILE"
 echo "ios sdk unzipped dir: $KA_IOS_SDK_UNZIP_DIR"
@@ -45,7 +62,7 @@ ls $KA_ANDROID_SDK_UNZIP_DIR
 
 #mv unzipped framework and resource.bundle to unity sample proj
 echo "move ios ad framework to unity plugin project"
-mv $KA_IOS_SDK_UNZIP_DIR/$KA_IOS_SDK_PATH/$KA_IOS_SDK_FRAMEWORK_NAME $PROJECT_PATH/Assets/Plugins/iOS/KATracking/libs/$KA_IOS_SDK_FRAMEWORK_NAME
+mv $KA_IOS_SDK_UNZIP_DIR/$KA_IOS_SDK_FRAMEWORK_NAME $PROJECT_PATH/Assets/Plugins/iOS/KATracking/libs/$KA_IOS_SDK_FRAMEWORK_NAME
 
 echo "move android ad sdk's libs to unity plugin project"
 cp $KA_ANDROID_SDK_UNZIP_DIR/* $PROJECT_PATH/Assets/Plugins/Android
