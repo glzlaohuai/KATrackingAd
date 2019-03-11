@@ -32,12 +32,16 @@ echo "此次提交的tag：$TRAVIS_TAG"
 echo "此次提交的ios的sdk版本号为：$IOS_V_NUM"
 IOS_SDK_DOWNLOAD_URL=${IOS_SDK_DOWNLOAD_URL}${IOS_V_NUM}.zip
 echo "iossdk从下载连接地址：$IOS_SDK_DOWNLOAD_URL"
+echo "开始下载ios sdk..."
 
 curl -o $KA_IOS_SDK_ZIP_FILE $IOS_SDK_DOWNLOAD_URL
 
-#ios1.2.3+android1.2.3
-echo "此次提交的tag：$TRAVIS_TAG"
-IOS_V_SEGMENT=
+if [ $? != 0 ] ; then
+echo "ios sdk下载失败，build失败"
+ERROR_CODE=1
+exit $ERROR_CODE
+fi
+
 
 echo "ios sdk zip file: $KA_IOS_SDK_ZIP_FILE"
 echo "ios sdk unzipped dir: $KA_IOS_SDK_UNZIP_DIR"
