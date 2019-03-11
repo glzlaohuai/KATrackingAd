@@ -7,6 +7,8 @@ VERSION=2017.2.0f3
 
 UNITY_OSX_PACKAGE="MacEditorInstaller/Unity-$VERSION.pkg"
 
+echo "当前标签：$TRAVIS_TAG"
+
 download() {
 	
 	FILE=$1
