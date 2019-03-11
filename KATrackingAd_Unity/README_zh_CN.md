@@ -156,7 +156,12 @@
 	```
 	KATracking.showRewardVideoAD();
 	```
+	
+* 获取渠道号：
 
+	```
+	KATracking.getChannelID();
+	```
 
 ## <a name="step2">iOS工程配置</a>
 
@@ -165,6 +170,8 @@
 *  根据[这里](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README.md)的说明来配置导出的ios工程（插件在导出iOS工程时已经进行了一部分的设置，包括：[添加依赖库](https://github.com/KATracking/KATrackingAd/tree/master/KATrackingAd_iOS#%E5%8A%A0%E5%85%A5%E5%85%B6%E5%AE%83%E4%BE%9D%E8%B5%96%E5%BA%93)、[设置白名单](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README.md#infoplist%E8%AE%BE%E7%BD%AE%E7%99%BD%E5%90%8D%E5%8D%95)、[添加-ObjC linker flag](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README.md#infoplist%E8%AE%BE%E7%BD%AE%E7%99%BD%E5%90%8D%E5%8D%95)、`Enable Bitcode`设置为No）
 
 ## <a name="step3">Android工程配置</a>
-*  根据[这里](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/README.md#thirdPartySDK)的说明来添加需要支持的三方广告sdk
+*  在`Unity Editor`的`Player Settings`中勾选`Custom Gradle Template`
+*  在上一步生成的`gradle`文件中添加依赖：`implementation 'com.android.support:support-v4:26.1.0'`到其`dependency`
+*  导出android工程，并将其在`android studio`中打开并运行。如果运行正常，那么请将该andorid工程发给我们，我们将使用安卓打包工具来将需要的三方sdk添加到该工程中。
 
 
