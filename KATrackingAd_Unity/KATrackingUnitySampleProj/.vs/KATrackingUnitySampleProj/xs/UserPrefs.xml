@@ -1,8 +1,9 @@
 ﻿<Properties StartupConfiguration="{32E40D57-BAF4-035F-2F62-E298AC93A102}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/XXX.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Plugins/KATracking.cs">
     <Files>
-      <File FileName="Assets/XXX.cs" Line="16" Column="3" />
+      <File FileName="Assets/APSDK_Demo/KATrackingTest.cs" Line="1" Column="1" />
+      <File FileName="Assets/Plugins/KATracking.cs" Line="118" Column="18" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

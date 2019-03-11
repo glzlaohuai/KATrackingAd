@@ -24,6 +24,8 @@ namespace KATrackingAD
             BANNER_SIZE_728_90
         }
 
+        private static string channelID;
+
 #if UNITY_ANDROID
         private static AndroidJavaClass apUnityWrapper;
         private static AndroidJavaClass unityPlayer;
@@ -81,6 +83,7 @@ namespace KATrackingAD
 
         public static void init(string appID, string appChannel)
         {
+            channelID = appChannel;
             bool hasEverCreated = createDelegateObj();
             if (Application.platform == RuntimePlatform.IPhonePlayer)
             {
@@ -103,6 +106,23 @@ namespace KATrackingAD
 #endif
             }
         }
+
+        public static string getChannelID()
+        {
+            if (Application.platform == RuntimePlatform.IPhonePlayer)
+            {
+                return channelID;
+            }
+            else if (Application.platform == RuntimePlatform.Android)
+            {
+#if UNITY_ANDROID
+                return getAPUnityWrapper().CallStatic<string>("getChannelID", getCurrentActivity());
+#endif
+            }
+
+            return channelID;
+        }
+
 
         public static void loadInterstitial(string slotID)
         {
@@ -139,7 +159,7 @@ namespace KATrackingAD
             else if (Application.platform == RuntimePlatform.Android)
             {
 #if UNITY_ANDROID
-                getAPUnityWrapper().CallStatic("showInterstitial",getCurrentActivity(),slotID);
+                getAPUnityWrapper().CallStatic("showInterstitial", getCurrentActivity(), slotID);
 #endif
             }
         }
@@ -290,7 +310,7 @@ namespace KATrackingAD
             else if (Application.platform == RuntimePlatform.Android)
             {
 #if UNITY_ANDROID
-                getAPUnityWrapper().CallStatic("showBanner",getCurrentActivity(), slotID);
+                getAPUnityWrapper().CallStatic("showBanner", getCurrentActivity(), slotID);
 #endif
             }
         }
@@ -308,7 +328,7 @@ namespace KATrackingAD
             {
 
 #if UNITY_ANDROID
-                getAPUnityWrapper().CallStatic("hideBanner",getCurrentActivity(), slotID);
+                getAPUnityWrapper().CallStatic("hideBanner", getCurrentActivity(), slotID);
 #endif
             }
         }
@@ -325,7 +345,7 @@ namespace KATrackingAD
             else if (Application.platform == RuntimePlatform.Android)
             {
 #if UNITY_ANDROID
-                getAPUnityWrapper().CallStatic("removeAndDestroyBanner", getCurrentActivity(),slotID);
+                getAPUnityWrapper().CallStatic("removeAndDestroyBanner", getCurrentActivity(), slotID);
 #endif
             }
         }

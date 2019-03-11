@@ -102,6 +102,8 @@ public class KATrackingTest : MonoBehaviour
     }
 
 
+
+
     //banner回调
     void bannerBeClicked(string slotID)
     {
@@ -242,8 +244,8 @@ public class KATrackingTest : MonoBehaviour
     public void loadBanner()
     {
         int[] iosDeviceSize = KATracking.getDeviceScreenSize();
-        log("loadBanner，screenSize："+iosDeviceSize[0]+","+iosDeviceSize[1]);
-        KATracking.loadAndPresentBanner(BANNER_SLOTID, KATracking.BANNER_SIZE.BANNER_SIZE_320_50, iosDeviceSize[0] / 2, iosDeviceSize[1]-50/2);
+        log("loadBanner，screenSize：" + iosDeviceSize[0] + "," + iosDeviceSize[1]);
+        KATracking.loadAndPresentBanner(BANNER_SLOTID, KATracking.BANNER_SIZE.BANNER_SIZE_320_50, iosDeviceSize[0] / 2, iosDeviceSize[1] - 50 / 2);
     }
 
     public void showBanner()
@@ -267,10 +269,18 @@ public class KATrackingTest : MonoBehaviour
     }
 
 
+    public void showChannelID()
+    {
+        log("channelID is:" + KATrackingAD.KATracking.getChannelID());
+    }
+
 
     public void clearLog()
     {
         logText.text = "";
     }
+
+
+
 
 }
