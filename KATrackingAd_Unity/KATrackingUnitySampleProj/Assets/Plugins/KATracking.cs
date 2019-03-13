@@ -176,7 +176,7 @@ namespace KATrackingAD
             else if (Application.platform == RuntimePlatform.Android)
             {
 #if UNITY_ANDROID
-                return getAPUnityWrapper().CallStatic<bool>("isInterstitialReady", slotID);
+                return getAPUnityWrapper().CallStatic<bool>("isInterstitialReady", getCurrentActivity(),slotID);
 #endif
             }
             return false;
