@@ -361,6 +361,14 @@ KAAdSplash *splash = [[KAAdSplash alloc] initWithSlot:<AdSlot> delegate:<Delegat
 ```
 * **Controller** - 用于展示开屏广告的UIViewController
 
+### 暂停展示广告
+使用以下方法来暂停展示广告，在load到开始展示的这段时间里，你认为不再适合展示开屏广告，可以调用此方法来暂停展示
+`KAAdSplash`
+
+```Objective-c
+[splash suspend];
+```
+
 ### 展示广告并添加产品标识
 调用下面方法加载并展示开屏广告，同时可以添加产品自定的标识View，用于填充当由于素材尺寸不足填充全屏情况下的空白位置
 `KAAdSplash`
