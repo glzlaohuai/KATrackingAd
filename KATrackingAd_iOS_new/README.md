@@ -1,5 +1,5 @@
 > [English Doc](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS_new/README_EN.md)
-# 当前版本 Ver.3.7.1 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS_new/ReleaseNote.md)
+# 当前版本 Ver.3.7.2 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS_new/ReleaseNote.md)
 # 接入说明
 
 SDK可以通过下文提到的两种方式获取
@@ -39,6 +39,7 @@ SDK可以通过下文提到的两种方式获取
 `  pod 'AppicTalkingData'`  
 `  pod 'Appictoutiao'`  
 `  pod 'AppicUM'`  
+`  pod 'AppicFirebase'`  
 `  pod 'AppicUnityAds'`  
 `  pod 'AppicVungleSDK'`  
 `  pod 'AppicFBAudienceNetwork'` 
@@ -70,7 +71,7 @@ Demo中已经配置了对所有第三方sdk的依赖库的引用，请按照上�
 * 如果使用手工集成，请通过以下链接下载对应版本的sdk
   
 #### 广告SDK依赖库
-* AppicSDK [下载链接](https://img.atomhike.com/sdk/Mediation/KASDK/KASDK.v3.7.1.zip)
+* AppicSDK [下载链接](https://img.atomhike.com/sdk/Mediation/KASDK/KASDK.v3.7.2.zip)
 
 #### 广告平台依赖库
 * AppicInMobiSDK [下载链接](https://img.atomhike.com/sdk/Mediation/InMobiSDK/InMobiSDK.v0.0.4.zip)
@@ -89,8 +90,21 @@ Demo中已经配置了对所有第三方sdk的依赖库的引用，请按照上�
 * AppicUM (选加，如果需要KASDK对接UM作为统计框架）[下载链接](https://img.atomhike.com/sdk/Mediation/UM/UM.v0.0.4.zip)   
   * UMAnalytics.framework
   * UMCommon.framework
+* AppicFirebase (选加，如果需要KASDK对接Firebase作为统计框架））[download path](https://img.atomhike.com/sdk/Mediation/Firebase/Firebase.v5.18.0.zip)   
+  * Crashlytics.framework
+  * Fabric.framework
+  * FIRAnalyticsConnector.framework
+  * FirebaseAnalytics.framework
+  * FirebaseCore.framework
+  * FirebaseCoreDiagnostics.framework
+  * FirebaseCrash.framework
+  * FirebaseInstanceID.framework
+  * GoogleAppMeasurement.framework
+  * GoogleToolboxForMac.framework
+  * GoogleUtilities.framework
+  * nanopb.framework
+  * Protobuf.framework
 * AppicAppsFlyerLib (选加，如果需要KASDK对接AppsFlyer作为统计框架) [下载链接](https://img.atomhike.com/sdk/Mediation/AppsFlyerLib/AppsFlyerLib.v0.0.4.zip)
-* 
 * AppicFBAudienceNetwork [下载链接](https://img.atomhike.com/sdk/Mediation/FBAudienceNetwork/FBAudienceNetwork.v0.0.4.zip)
    
 ### 加入其它依赖库

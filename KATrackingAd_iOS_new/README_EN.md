@@ -1,5 +1,5 @@
 > [中文文档](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS_new/README.md)
-# Current Ver.3.7.1 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS_new/ReleaseNote.md)
+# Current Ver.3.7.2 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS_new/ReleaseNote.md)
 # Integration Guideline
 
 SDK can be obtained in two ways as mentioned below.
@@ -39,6 +39,7 @@ If you have not installed CocoaPods, please follow the process below.
 `  pod 'AppicTalkingData'`  
 `  pod 'Appictoutiao'`  
 `  pod 'AppicUM'`  
+`  pod 'AppicFirebase'`   
 `  pod 'AppicUnityAds'`  
 `  pod 'AppicVungleSDK'`  
 `  pod 'AppicFBAudienceNetwork'` 
@@ -70,7 +71,7 @@ A reference to all third-party sdk dependent libraries has been configured in De
 * If integrate manually, please download the corresponding version of sdk via the link below.
   
 #### Advertising SDK dependency library
-* AppicSDK [download path](https://img.atomhike.com/sdk/Mediation/KASDK/KASDK.v3.7.1.zip)
+* AppicSDK [download path](https://img.atomhike.com/sdk/Mediation/KASDK/KASDK.v3.7.2.zip)
 
 #### Advertising platform dependency library
 * AppicInMobiSDK [download path](https://img.atomhike.com/sdk/Mediation/InMobiSDK/InMobiSDK.v0.0.4.zip)
@@ -89,8 +90,22 @@ A reference to all third-party sdk dependent libraries has been configured in De
 * AppicUM (Optional, if you need KASDK to dock UM as a statistical framework）[download path](https://img.atomhike.com/sdk/Mediation/UM/UM.v0.0.4.zip)   
   * UMAnalytics.framework
   * UMCommon.framework
+* AppicFirebase (Optional, if you need KASDK to dock AppicFirebase as a statistical framework）[download path](https://img.atomhike.com/sdk/Mediation/Firebase/Firebase.v5.18.0.zip)   
+  * Crashlytics.framework
+  * Fabric.framework
+  * FIRAnalyticsConnector.framework
+  * FirebaseAnalytics.framework
+  * FirebaseCore.framework
+  * FirebaseCoreDiagnostics.framework
+  * FirebaseCrash.framework
+  * FirebaseInstanceID.framework
+  * GoogleAppMeasurement.framework
+  * GoogleToolboxForMac.framework
+  * GoogleUtilities.framework
+  * nanopb.framework
+  * Protobuf.framework
 * AppicAppsFlyerLib (Optional, if you need KASDK to dock AppsFlyer as a statistical framework) [download path](https://img.atomhike.com/sdk/Mediation/AppsFlyerLib/AppsFlyerLib.v0.0.4.zip)
-* 
+
 * AppicFBAudienceNetwork [download path](https://img.atomhike.com/sdk/Mediation/FBAudienceNetwork/FBAudienceNetwork.v0.0.4.zip)
    
 ### Join other dependency libraries
