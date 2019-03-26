@@ -81,8 +81,8 @@ Demo中已经配置了对所有第三方sdk的依赖库的引用，请按照上�
 * AppicAppLovinSDK [下载链接](https://img.atomhike.com/sdk/Mediation/AppLovinSDK/AppLovinSDK.v0.0.4.zip)
 * AppicIronSource [下载链接](https://img.atomhike.com/sdk/Mediation/IronSource/IronSource.v0.0.4.zip)
 * Appictoutiao [下载链接](https://img.atomhike.com/sdk/Mediation/toutiao/toutiao.v0.0.4.zip)
-  * WMAdSDK.framework
-  * WMAdSDK.bundle
+  * BUAdSDK.framework
+  * BUAdSDK.bundle
 * AppicGDT [下载链接](https://img.atomhike.com/sdk/Mediation/GDT/GDT.v0.0.4.zip)
   * libGDTMobSDK.a
 * AppicTalkingData (选加，如果需要KASDK对接TD作为统计框架）[下载链接](https://img.atomhike.com/sdk/Mediation/TalkingData/TalkingData.v0.0.4.zip)
