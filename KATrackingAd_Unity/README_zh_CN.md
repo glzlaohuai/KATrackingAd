@@ -14,7 +14,7 @@
 * 支持平台：iOS、Android
 * [下载KATrackingUnityPlugin;](https://github.com/KATracking/KATrackingAd/releases)
 * [下载示例工程;](https://github.com/KATracking/KATrackingAd/tree/master/KATrackingAd_Unity/KATrackingUnitySampleProj)
-* 点击下载iOS第三方广告sdk：[part1](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/Mediation_1.zip)，[part2](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/Mediation_2.zip) ，[part3](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/Mediation_3.zip) 
+* [这里](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS_new/README_EN.md#download-the-sdk-zip-package-for-integration)下载iOS第三方平台的广告sdk
 * Android[第三方广告sdk](https://github.com/KATracking/KATrackingAd/tree/master/AppicPlayAD_Android/ThirdParyADLibs)
 
 
