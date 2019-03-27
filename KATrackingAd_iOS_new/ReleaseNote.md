@@ -1,4 +1,10 @@
 # 版本发布记录
+## Ver3.7.3
+## Release Date: 2019-03-27
+
+* KAAdNativeExpress添加图标的和大图url的获取方法
+* 优化原生落地页的逻辑
+
 ## Ver3.7.2
 ## Release Date: 2019-03-22
 

@@ -1,5 +1,5 @@
 > [English Doc](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS_new/README_EN.md)
-# 当前版本 Ver.3.7.2 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS_new/ReleaseNote.md)
+# 当前版本 Ver.3.7.3 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS_new/ReleaseNote.md)
 # 接入说明
 
 SDK可以通过下文提到的两种方式获取
@@ -279,11 +279,14 @@ KAAdNativeExpress *ad = [[KAAdNativeExpress alloc] initWithSlot:<AdSlot> delegat
 * **Delegate** - id<KAAdNativeDelegate> 实例，用于接收请求广告的回调
 
 ### 加载广告
-调用load方法来获取广告，并通过回调来判断广告是否请求成功
+调用load或loadWithoutCache方法来获取广告，并通过回调来判断广告是否请求成功
 `KAAdNativeExpress`
 
 ```Objective-c
+此方法需要ka_adIcon和ka_adScreenShots来获取图片素材
 [ad load];
+此方法需要ka_adIconUrl和ka_adScreenShotsUrl来获取素材的url
+[ad loadWithoutCache];
 ```
 
 ### 广告素材信息
@@ -295,6 +298,8 @@ KAAdNativeExpress *ad = [[KAAdNativeExpress alloc] initWithSlot:<AdSlot> delegat
 * **ka_adIcon** - 广告图标图片的UIImage
 * **ka_adScreenShots** - 广告大图的UIView
 * **ka_VideoAdView** - 广告视频的UIView
+* **ka_adIconUrl** - 广告图标的url
+* **ka_adScreenShotsUrl** - 广告大图的url
 
 ### rootviewController
 `KAAdNativeExpress`
