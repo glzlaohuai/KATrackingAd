@@ -1,5 +1,5 @@
 # 版本发布记录
-## Ver3.7.3
+## Ver3.7.5
 ## Release Date: 2019-03-27
 
 * KAAdNativeExpress添加图标的和大图url的获取方法
