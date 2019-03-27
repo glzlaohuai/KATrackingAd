@@ -59,6 +59,7 @@ public class KATrackingTest : MonoBehaviour
         KATracking.interstitialADLoadFail -= interstitialLoadFailed;
         KATracking.interstitialADPresent -= interstitialADPresent;
 
+
         KATracking.splashADClick -= splashADClick;
         KATracking.splashADDismiss -= splashDismiss;
         KATracking.splashPresentFail -= splashPresentFail;
@@ -78,6 +79,7 @@ public class KATrackingTest : MonoBehaviour
         KATracking.interstitialADLoadFail += interstitialLoadFailed;
         KATracking.interstitialADPresent += interstitialADPresent;
         KATracking.interstitialADDismiss += interstitialADDismiss;
+        KATracking.interstitialShowFail += KATracking_InterstitialShowFail;
 
         KATracking.splashADClick += splashADClick;
         KATracking.splashADDismiss += splashDismiss;
@@ -94,6 +96,8 @@ public class KATrackingTest : MonoBehaviour
         KATracking.bannerLoadComplete += bannerLoadComplete;
         KATracking.bannerPresentScreenDismissed += bannerPresentScreenDismissed;
     }
+
+
 
 
     public void init()
@@ -154,6 +158,10 @@ public class KATrackingTest : MonoBehaviour
     {
         log("interstitialLoadFailed,slotID:" + slotID + ",reason:" + reason);
 
+    }
+    void KATracking_InterstitialShowFail(string slotID, string reason)
+    {
+        log("interstitialShowFailed, slotID:" + slotID + ", reason: " + reason);
     }
 
     //splash 回调
