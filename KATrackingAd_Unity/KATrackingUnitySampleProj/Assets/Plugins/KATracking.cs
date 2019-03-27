@@ -461,6 +461,18 @@ namespace KATrackingAD
             }
         }
 
+        public void csInterstitialAdShowFailed(string slotIDAndReason)
+        {
+
+            string[] splits = slotIDAndReason.Split('#');
+
+            if (interstitialShowFail != null)
+            {
+                interstitialShowFail(splits[0], splits[1]);
+            }
+        }
+
+
         public void csInterstitialADDismiss(string slotID)
         {
             if (interstitialADDismiss != null)
@@ -561,6 +573,7 @@ namespace KATrackingAD
 
         public static event Action<string> interstitialADLoadSuccess;
         public static event Action<string, string> interstitialADLoadFail;
+        public static event Action<string, string> interstitialShowFail;
         public static event Action<string> interstitialADPresent;
         public static event Action<string> interstitialADClick;
         public static event Action<string> interstitialADDismiss;
