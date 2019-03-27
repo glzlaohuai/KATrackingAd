@@ -71,7 +71,7 @@ Demo中已经配置了对所有第三方sdk的依赖库的引用，请按照上�
 * 如果使用手工集成，请通过以下链接下载对应版本的sdk
   
 #### 广告SDK依赖库
-* AppicSDK [下载链接](https://img.atomhike.com/sdk/Mediation/KASDK/KASDK.v3.7.2.zip)
+* AppicSDK [下载链接](https://img.atomhike.com/sdk/Mediation/KASDK/KASDK.v3.7.3.zip)
 
 #### 广告平台依赖库
 * AppicInMobiSDK [下载链接](https://img.atomhike.com/sdk/Mediation/InMobiSDK/InMobiSDK.v0.0.4.zip)
