@@ -1,4 +1,9 @@
 # 版本发布记录
+## Ver.3.5.3
+## Release Date: 2019-03-27
+* 支持百度sdk、更新小米sdk
+* 已知bug修复
+
 ## Ver.3.5.2
 ## Release Date: 2019-03-14
 * 支持更多的三方平台sdk
