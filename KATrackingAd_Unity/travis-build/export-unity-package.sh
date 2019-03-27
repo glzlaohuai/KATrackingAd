@@ -14,7 +14,7 @@ echo "project path: $PROJECT_PATH"
 echo "export file: $EXPORT_PATH"
 
 KA_IOS_SDK_UNZIP_DIR=$(pwd)/ka_ios_sdk_unzipped
-KA_IOS_SDK_ZIP_FILE=$(pwd)/KATrackingAd_iOS/KASDK.zip
+KA_IOS_SDK_ZIP_FILE=$(pwd)/KASDK.zip
 
 KA_ANDROID_SDK_ZIP_FILE=$(pwd)/AppicPlayAD_Android/AppicPlaySDK.zip
 KA_ANDROID_SDK_UNZIP_DIR=$(pwd)/ka_android_sdk_unzipped
