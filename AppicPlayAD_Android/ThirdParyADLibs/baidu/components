@@ -1,0 +1,120 @@
+<!--百度-->
+        <!-- 广告SDK ========== 声明开始 -->
+        <!-- 以下内容 请直接复制到 项目中，并修改相关包名  -->
+        <!-- 广告SDK ========== 声明开始 -->
+        <activity
+            android:name="com.duoku.alone.ssp.activtiy.PlayActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
+
+        <service
+            android:name="com.duoku.alone.ssp.DuokuAdService"
+            android:exported="false" />
+
+        <!-- 和传媒 开始 ↓↓↓ -->
+
+
+        <!-- 和传媒开屏页 需配置 screenOrientation ：：landscape / portrait -->
+        <activity
+            android:name="com.analytics.sdk.view.WebviewActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation"
+            android:screenOrientation="sensor" />
+        <service
+            android:name="com.analytics.sdk.service.DownLoadService"
+            android:enabled="true" />
+
+        <!--<service android:name="com.qq.e.comm.DownloadService" android:exported="false" />-->
+        <service
+            android:name="om.aa.cc.ff.DownloadService"
+            android:exported="false" />
+        <!--<activity android:name="com.qq.e.ads.ADActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenSize" />-->
+        <activity
+            android:name="om.aa.cc.ff.ADActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize" />
+
+        <activity
+            android:name="com.baidu.mobads.AppActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <provider
+            android:name="com.baidu.mobads.openad.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/bd_file_paths" />
+        </provider>
+        <!-- 和传媒 结束 ↑↑↑ -->
+
+        <!-- 广点通开始↓↓↓↓ -->
+        <meta-data
+            android:name="com.tencent.rdm.uuid"
+            android:value="bd10a2bb-4a29-4b31-8d4c-d9abc842608b" />
+
+        <!-- targetSDKVersion >= 24时才需要添加这个provider。provider的authorities属性的值为${applicationId}.fileprovider，请开发者根据自己的${applicationId}来设置这个值 -->
+        <!-- 修改 此处需要 authorities 为 应用包名.fileprovider -->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/gdt_file_path" />
+        </provider>
+        <service
+            android:name="com.qq.e.comm.DownloadService"
+            android:exported="false" />
+        <!-- 请开发者注意字母的大小写，ADActivity，而不是AdActivity -->
+        <activity
+            android:name="com.qq.e.ads.ADActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize" />
+        <activity
+            android:name="com.qq.e.ads.PortraitADActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.qq.e.ads.LandscapeADActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:screenOrientation="landscape" />
+        <!-- 广点通结束↑↑↑↑ -->
+
+        <!-- 头条广告声明开始 -->
+        <provider
+            android:name="com.bytedance.sdk.openadsdk.TTFileProvider"
+            android:authorities="${applicationId}.TTFileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <provider
+            android:name="com.bytedance.sdk.openadsdk.multipro.TTMultiProvider"
+            android:authorities="${applicationId}.TTMultiProvider"
+            android:exported="false" />
+
+        <service android:name=".service.AppDownloadService" />
+
+        <!-- 头条广告声明结束↑↑↑↑ -->
+
+        <!-- 沙盒环境....DUOKU_AD_APPKEY：填写appKey信息 -->
+        <meta-data
+            android:name="DUOKU_AD_APPKEY"
+            android:value="appic_play_packer_ad_bd_appkey" />
+        <!-- DUOKU_AD_PRODUCT_KEY：填写 -->
+        <meta-data
+            android:name="DUOKU_AD_PRODUCT_KEY"
+            android:value="appic_play_packer_ad_bd_productKey" />
+        <!-- DUOKU_AD_VERSION：填写sdk 版本 -->
+        <meta-data
+            android:name="DUOKU_AD_VERSION"
+            android:value="3.1.9" />
+        <!-- DUOKU_AD_CHANNELID：填写APP 的发放渠道版本 默认多酷  选填 -->
+        <!-- <meta-data -->
+        <!-- android:name="DUOKU_AD_CHANNELID" -->
+        <!-- android:value="DK"/> -->
+        <!-- 广告SDK ========== 声明结束 -->
