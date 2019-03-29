@@ -116,7 +116,7 @@ A reference to all third-party sdk dependent libraries has been configured in De
 * AdSupport.framework
 * UIKit.framework
 * StoreKit.framework
-* CoreLocation.framework
+* CoreLocation.framework（optional）
 * CFNetwork.framework
 * CoreMotion.framework
 * AVFoundation.framework
