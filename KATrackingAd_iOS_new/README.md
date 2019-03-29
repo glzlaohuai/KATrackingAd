@@ -1,5 +1,5 @@
 > [English Doc](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS_new/README_EN.md)
-# 当前版本 Ver.3.7.6 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS_new/ReleaseNote.md)
+# 当前版本 Ver.3.7.7 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS_new/ReleaseNote.md)
 # 接入说明
 
 SDK可以通过下文提到的两种方式获取
@@ -43,6 +43,7 @@ SDK可以通过下文提到的两种方式获取
 `  pod 'AppicUnityAds'`  
 `  pod 'AppicVungleSDK'`  
 `  pod 'AppicFBAudienceNetwork'` 
+`  pod 'AppicAdjustSdk'` 
 
 * 在命令行窗口执行cocoapods安装命令  
 
@@ -106,6 +107,7 @@ Demo中已经配置了对所有第三方sdk的依赖库的引用，请按照上�
   * Protobuf.framework
 * AppicAppsFlyerLib (选加，如果需要KASDK对接AppsFlyer作为统计框架) [下载链接](https://img.atomhike.com/sdk/Mediation/AppsFlyerLib/AppsFlyerLib.v0.0.4.zip)
 * AppicFBAudienceNetwork [下载链接](https://img.atomhike.com/sdk/Mediation/FBAudienceNetwork/FBAudienceNetwork.v0.0.4.zip)
+* AppicAdjustSdk [下载链接](https://img.atomhike.com/sdk/Mediation/AdjustSdk/AdjustSdk.v4.17.1.zip)
    
 ### 加入其它依赖库
 * SystemConfiguration.framework

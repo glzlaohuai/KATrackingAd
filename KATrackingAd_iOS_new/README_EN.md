@@ -1,5 +1,5 @@
 > [中文文档](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS_new/README.md)
-# Current Ver.3.7.6 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS_new/ReleaseNote.md)
+# Current Ver.3.7.7 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS_new/ReleaseNote.md)
 # Integration Guideline
 
 SDK can be obtained in two ways as mentioned below.
@@ -43,6 +43,7 @@ If you have not installed CocoaPods, please follow the process below.
 `  pod 'AppicUnityAds'`  
 `  pod 'AppicVungleSDK'`  
 `  pod 'AppicFBAudienceNetwork'` 
+`  pod 'AppicAdjustSdk'` 
 
 * Execute the CocoaPods install command in the command line window.  
 
@@ -107,6 +108,8 @@ A reference to all third-party sdk dependent libraries has been configured in De
 * AppicAppsFlyerLib (Optional, if you need KASDK to dock AppsFlyer as a statistical framework) [download path](https://img.atomhike.com/sdk/Mediation/AppsFlyerLib/AppsFlyerLib.v0.0.4.zip)
 
 * AppicFBAudienceNetwork [download path](https://img.atomhike.com/sdk/Mediation/FBAudienceNetwork/FBAudienceNetwork.v0.0.4.zip)
+* AppicAdjustSdk [download path](https://img.atomhike.com/sdk/Mediation/AdjustSdk/AdjustSdk.v4.17.1.zip)
+
    
 ### Join other dependency libraries
 * SystemConfiguration.framework
