@@ -72,7 +72,7 @@ A reference to all third-party sdk dependent libraries has been configured in De
 * If integrate manually, please download the corresponding version of sdk via the link below.
   
 #### Advertising SDK dependency library
-* AppicSDK [download path](https://img.atomhike.com/sdk/Mediation/KASDK/KASDK.v3.7.6.zip)
+* AppicSDK [download path](https://img.atomhike.com/sdk/Mediation/KASDK/KASDK.v3.7.7.zip)
 
 #### Advertising platform dependency library
 * AppicInMobiSDK [download path](https://img.atomhike.com/sdk/Mediation/InMobiSDK/InMobiSDK.v0.0.4.zip)
