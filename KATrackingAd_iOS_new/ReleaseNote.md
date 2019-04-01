@@ -1,4 +1,9 @@
 # 版本发布记录
+## Ver3.7.8
+## Release Date: 2019-04-01
+
+* 优化KAAdNativeExpress点击逻辑
+
 ## Ver3.7.7
 ## Release Date: 2019-03-29
 
