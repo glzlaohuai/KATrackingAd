@@ -42,7 +42,7 @@ SDK可以通过下文提到的两种方式获取
 `  pod 'AppicFirebase'`  
 `  pod 'AppicUnityAds'`  
 `  pod 'AppicVungleSDK'`  
-`  pod 'AppicFBAudienceNetwork'` 
+`  pod 'AppicFBAudienceNetwork'`  
 `  pod 'AppicAdjustSdk'` 
 
 * 在命令行窗口执行cocoapods安装命令  

@@ -42,7 +42,7 @@ If you have not installed CocoaPods, please follow the process below.
 `  pod 'AppicFirebase'`   
 `  pod 'AppicUnityAds'`  
 `  pod 'AppicVungleSDK'`  
-`  pod 'AppicFBAudienceNetwork'` 
+`  pod 'AppicFBAudienceNetwork'`  
 `  pod 'AppicAdjustSdk'` 
 
 * Execute the CocoaPods install command in the command line window.  
