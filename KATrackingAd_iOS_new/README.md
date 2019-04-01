@@ -117,9 +117,9 @@ Demo中已经配置了对所有第三方sdk的依赖库的引用，请按照上�
 * AdSupport.framework
 * UIKit.framework
 * StoreKit.framework
-* CoreLocation.framework
+* CoreLocation.framework（选加，加上的话需要声明NSLocationAlwaysUsageDescription权限）
 * CFNetwork.framework
-* CoreMotion.framework（选加，加上的话需要声明NSLocationAlwaysUsageDescription权限）
+* CoreMotion.framework
 * AVFoundation.framework
 * CoreData.framework
 * CoreText.framework
