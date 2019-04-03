@@ -151,3 +151,9 @@ public *;  } 
 
 # adsdk
 -keep class com.main.** {*;}
+
+#toutiao
+#头条
+-keep class com.bytedance.sdk.openadsdk.** { *; }
+-keep class com.androidquery.callback.** {*;}
+-keep class com.bytedance.sdk.openadsdk.service.TTDownloadProvider

@@ -19,9 +19,7 @@ public class XApplication extends Application {
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
-
-        APApplication.onApplicationAttachBaseContext(base);
-
+        APApplication.onApplicationAttachBaseContext(base, this);
         MultiDex.install(this);
     }
 }

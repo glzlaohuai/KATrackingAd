@@ -6,13 +6,6 @@
 
 
     <Button
-        android:id="@+id/load"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="load" />
-
-
-    <Button
         android:id="@+id/show"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
