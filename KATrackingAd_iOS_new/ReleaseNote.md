@@ -1,4 +1,10 @@
 # 版本发布记录
+## Ver3.7.9
+## Release Date: 2019-04-04
+
+* 更新白名单
+* 优化KAAdNative和KAAdNativeExpress的跳转逻辑
+
 ## Ver3.7.8
 ## Release Date: 2019-04-01
 
