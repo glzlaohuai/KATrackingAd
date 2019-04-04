@@ -66,6 +66,11 @@ public class InterstitialActivity extends Activity implements View.OnClickListen
             public void click(APBaseAD apBaseAD, String s) {
                 Log.i(TAG, "click: ");
             }
+
+            @Override
+            public void showFailed(APBaseAD apBaseAD, String s, String s1) {
+
+            }
         });
 
         apInterstitial.setPreferImageSize(1080, 1920);

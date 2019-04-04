@@ -45,12 +45,10 @@ public class VideoActivity extends Activity {
             public void showFailed(String s) {
                 Log.i(TAG, "showFailed: ");
             }
-        });
 
-        findViewById(R.id.load).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                load();
+            public void showSkip() {
+
             }
         });
 
@@ -65,8 +63,6 @@ public class VideoActivity extends Activity {
     }
 
     private void load() {
-
-        APVideo.loadVideoAD();
 
     }
 

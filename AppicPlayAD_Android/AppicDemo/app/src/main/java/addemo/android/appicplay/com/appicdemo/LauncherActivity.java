@@ -24,7 +24,7 @@ public class LauncherActivity extends AppCompatActivity implements View.OnClickL
         findViewById(R.id.nativ_raw).setOnClickListener(this);
         findViewById(R.id.nativ_list).setOnClickListener(this);
 
-        APAD.init(this, "test_test_test", "test_ad");
+        APAD.init(this, "EKJvVnyRrgyWjzlw", "Rr586y");
         APAD.setIsMobileNetworkDirectlyDownload(true);
         APAD.useDefaultConfigForSplashIfNoConfigExist(this, "zKyjJJyM");
     }

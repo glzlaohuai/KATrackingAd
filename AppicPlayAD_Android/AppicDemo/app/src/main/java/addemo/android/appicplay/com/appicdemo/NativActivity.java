@@ -79,6 +79,16 @@ public class NativActivity extends Activity {
             public void click(APBaseAD ad, String slotID) {
                 LogUtils.v(TAG, "被点击：" + slotID);
             }
+
+            @Override
+            public void gotoDeeplink(APBaseAD apBaseAD) {
+
+            }
+
+            @Override
+            public void gotoDownload(APBaseAD apBaseAD) {
+
+            }
         });
         x.setPreferImageSize(640, 960);
         x.loadNative();

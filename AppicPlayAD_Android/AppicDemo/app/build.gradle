@@ -1,11 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 27
     defaultConfig {
         applicationId "addemo.android.appicplay.com.appicdemo"
         minSdkVersion 14
-        targetSdkVersion 28
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -34,37 +34,21 @@ repositories {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.android.support:support-v4:28.0.0-beta01'
-    implementation 'com.android.support:appcompat-v7:28.0.0-beta01'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    implementation 'com.android.support:support-v4:27.1.1'
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+
     implementation 'com.android.support:multidex:1.0.0'
-
-    implementation(name: 'ad-release', ext: 'aar')
-    implementation(name: 'core-release', ext: 'aar')
-
+    implementation(name: 'APSDK_Ad_v3.5.4', ext: 'aar')
+    implementation(name: 'APSDK_Core_v3.5.4', ext: 'aar')
     implementation 'com.android.volley:volley:1.1.0'
-    implementation 'android.arch.persistence.room:runtime:1.0.0'
     implementation 'com.liulishuo.filedownloader:library:1.7.4'
 
-    //    inmobi
-    implementation 'com.squareup.picasso:picasso:2.5.2'
-    implementation 'com.android.support:recyclerview-v7:24.0.0'
-    implementation 'com.google.android.gms:play-services:8.4.0'
-
     //tt
-    implementation(name: 'open_ad_sdk', ext: 'aar')
+    implementation(name: 'open_ad_sdk-1.9.9.2', ext: 'aar')
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.6'
 
-    //tcash
-    implementation(name: 'TCASH_1_common', ext: 'aar')
-
-    //unity
-    implementation(name: 'unity-ads', ext: 'aar')
-
-    //vungle
-    implementation 'com.github.vungle:vungle-android-sdk:6.3.12'
-    implementation 'com.google.android.gms:play-services:8.4.0'
 }

@@ -2,6 +2,7 @@ package addemo.android.appicplay.com.appicdemo;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -85,6 +86,16 @@ public class NativRawActivity extends Activity {
             @Override
             public void click(APBaseAD ad, String slotID) {
                 LogUtils.v(TAG, "被点击：" + slotID);
+            }
+
+            @Override
+            public void gotoDeeplink(APBaseAD apBaseAD) {
+                Log.i(TAG, "gotoDeeplink: ");
+            }
+
+            @Override
+            public void gotoDownload(APBaseAD apBaseAD) {
+                Log.i(TAG, "gotoDownload: ");
             }
         });
         x.setPattern(APNativePattern.RAW);

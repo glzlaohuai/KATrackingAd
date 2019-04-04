@@ -90,6 +90,16 @@ public class NativListActivity extends Activity {
                 public void click(APBaseAD ad, String slotID) {
 
                 }
+
+                @Override
+                public void gotoDeeplink(APBaseAD apBaseAD) {
+
+                }
+
+                @Override
+                public void gotoDownload(APBaseAD apBaseAD) {
+
+                }
             });
             apNative.setPreferImageSize(640, 960);
             apNative.loadNative();
