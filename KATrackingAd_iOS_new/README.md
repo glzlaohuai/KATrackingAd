@@ -152,6 +152,21 @@ Demo中已经配置了对所有第三方sdk的依赖库的引用，请按照上�
 		<string>beibeiapp</string>
 		<string>taobao</string>
 		<string>tmall</string>
+		<string>openjd</string>
+		<string>jhs</string>
+		<string>yhd</string>
+		<string>wireless1688</string>
+		<string>GomeEShop</string>
+		<string>wbmain</string>
+		<string>xhsdiscover</string>
+		<string>douyin</string>
+		<string>pinduoduo</string>
+		<string>jdmobile</string>
+		<string>tbopen</string>
+		<string>pddopen</string>
+		<string>mogujie</string>
+		<string>koubei</string>
+		<string>eleme</string>
 	</array>
 ```
 

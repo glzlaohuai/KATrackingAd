@@ -154,6 +154,21 @@ A reference to all third-party sdk dependent libraries has been configured in De
 		<string>beibeiapp</string>
 		<string>taobao</string>
 		<string>tmall</string>
+		<string>openjd</string>
+		<string>jhs</string>
+		<string>yhd</string>
+		<string>wireless1688</string>
+		<string>GomeEShop</string>
+		<string>wbmain</string>
+		<string>xhsdiscover</string>
+		<string>douyin</string>
+		<string>pinduoduo</string>
+		<string>jdmobile</string>
+		<string>tbopen</string>
+		<string>pddopen</string>
+		<string>mogujie</string>
+		<string>koubei</string>
+		<string>eleme</string>
 	</array>
 ```
 
