@@ -10,6 +10,7 @@
 * [接入插屏广告](#interstitialAD)
 * [接入横幅广告](#bannerAD)
 * [接入激励视频广告](#videoAD)
+* [接入任务墙](#wall)
 * [关于权限申请](#permissions)
 * [其他](#others)
 
@@ -314,6 +315,25 @@
 
 	`APVideo.showVideoAD(currentActivity);`
 	
+
+## <a name="wall">接入任务墙</a>
+
+1. **展示任务墙**：
+
+	`APWall.showWall(activity,listener);`
+
+1. **回调说明**：
+
+	方法	|	说明
+	---	|	---
+	onShowSuccess(wallID)	|	任务墙展示成功，`wallID`为展示的任务墙的id
+	onShowFailed(wallID,errorMsg)	|	任务墙展示失败
+	onJumpToApp(wallID,pkgName,rewardJson)	|	点击任务，跳到指定应用前回调该方法；`pkgName`为要跳转到应用的包名；`rewardJson`为`JSONObject`，内部字段由接入方提供，并由我方配置在任务墙后台，接入方根据该json决定完成该任务后具体给予用户什么奖励
+	onBackToWall(wallID,pkgName,rewardJson)	|	从跳转应用回到任务墙之后回调该方法，参数含义同`onJumpToApp `，接入方应该在收到该回调时给予用户奖励
+	onWallClosed	|	任务墙关闭
+	
+	
+
 
 
 ## <a name="permissions">关于权限申请</a>
