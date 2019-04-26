@@ -51,13 +51,13 @@
 		```
 	*	`onTerminate`回调方法：
 
+
 		```
 		@Override
     	public void onTerminate() {
-       super.onTerminate();
-       APApplication.onApplicationTerminate(this);
+       	super.onTerminate();
+       	APApplication.onApplicationTerminate(this);
     	}
-    		
 		```
 		
 * main activity 的`onCreate`回调方法中执行初始化（不建议在splash activity中执行初始化，因为初始化过程中会申请权限，而splash activity一般停留时间很短，会影响体验）：
