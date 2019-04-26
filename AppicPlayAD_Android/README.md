@@ -73,9 +73,9 @@
 
 	```
 	-keep class * implements com.appicplay.sdk.core.APApplicationInvoker
--keepattributes *Annotation*
--keep class * extends com.appicplay.sdk.core.bugreport.plugins.Plugin {*;}
--keep enum com.appicplay.sdk.core.bugreport.** {*;}
+	-keepattributes *Annotation*
+	-keep class * extends com.appicplay.sdk.core.bugreport.plugins.Plugin {*;}
+	-keep enum com.appicplay.sdk.core.bugreport.** {*;}
 	```
 
 ## <a name="thirdPartySDK">加入第三方平台SDK</a>
