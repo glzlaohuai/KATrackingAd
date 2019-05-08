@@ -1,4 +1,4 @@
-# 当前版本Ver.3.6.0 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/ReleaseNote.md)
+# 当前版本Ver.3.6.1 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/ReleaseNote.md)
 # AppicPlay AD SDK接入说明
 
 * [关于](#about)
@@ -73,9 +73,6 @@
 
 	```
 	-keep class * implements com.appicplay.sdk.core.APApplicationInvoker
-	-keepattributes *Annotation*
-	-keep class * extends com.appicplay.sdk.core.bugreport.plugins.Plugin {*;}
-	-keep enum com.appicplay.sdk.core.bugreport.** {*;}
 	```
 
 ## <a name="thirdPartySDK">加入第三方平台SDK</a>
