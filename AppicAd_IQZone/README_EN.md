@@ -1,4 +1,3 @@
-# Current Ver.3.8.0 
 # Integration Guideline
    
 ### Required libs and frameworks
@@ -68,13 +67,13 @@ Please add the following URLSchemes to info.plist
 
 
 ### Minimum deployment target: iOS 8.0
-![deployment target](https://github.com/KATracking/KATrackingAd/blob/master/README_Res/ios_deployment_target.png)
+![deployment target](https://github.com/KATracking/KATrackingAd/blob/master/AppicAd_IQZone/ios_deployment_target.png)
 
 ### Add linker flag: -ObjC
-![linker flag](https://github.com/KATracking/KATrackingAd/blob/master/README_Res/linker_flag.png)
+![linker flag](https://github.com/KATracking/KATrackingAd/blob/master/AppicAd_IQZone/linker_flag.png)
 
 ### Setup ATS
-![linker flag](https://github.com/KATracking/KATrackingAd/blob/master/README_Res/ats.png)
+![linker flag](https://github.com/KATracking/KATrackingAd/blob/master/AppicAd_IQZone/ats.png)
 
 ## Let's code!
 
