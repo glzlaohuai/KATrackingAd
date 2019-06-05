@@ -1,5 +1,12 @@
 # 版本发布记录
 
+## Ver3.8.2
+## Release Date: 2019-06-05
+
+* 删除KANative
+* 为了更好的兼容三方广告，所以删除KANativeExpress中获取素材url的方法
+* 广告收益优化
+
 ## Ver3.7.15
 ## Release Date: 2019-05-09
 
