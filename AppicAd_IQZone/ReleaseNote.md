@@ -1,5 +1,10 @@
 # Release Notes
 
+## Ver3.8.4
+## Release Date: 2019-06-06
+* Resolved code conflicts
+* Fixed minor UI bug
+
 ## Ver3.8.0
 ## Release Date: 2019-05-22
 
