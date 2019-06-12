@@ -1,4 +1,9 @@
 # 版本发布记录
+## Ver3.8.5
+## Release Date: 2019-06-12
+
+* 修复KAAdNativeExpress大图设置frame时素材错位的bug
+
 ## Ver3.8.4
 ## Release Date: 2019-06-10
 
