@@ -109,6 +109,7 @@ A reference to all third-party sdk dependent libraries has been configured in De
 
 * AppicFBAudienceNetwork [download path](https://img.atomhike.com/sdk/Mediation/FBAudienceNetwork/FBAudienceNetwork.v0.0.4.zip)
 * AppicAdjustSdk [download path](https://img.atomhike.com/sdk/Mediation/AdjustSdk/AdjustSdk.v4.17.1.zip)
+* BaiduSDK [download path](https://img.atomhike.com/sdk/Mediation/BaiduSDK/BaiduSDK.v4.64.zip)
 
    
 ### Join other dependency libraries
