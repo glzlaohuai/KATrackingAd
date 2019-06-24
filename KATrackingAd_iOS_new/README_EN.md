@@ -1,5 +1,5 @@
 > [中文文档](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS_new/README.md)
-# Current Ver.3.7.15 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS_new/ReleaseNote.md)
+# Current Ver.3.8.6 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS_new/ReleaseNote.md)
 # Integration Guideline
 
 SDK can be obtained in two ways as mentioned below.
@@ -72,7 +72,7 @@ A reference to all third-party sdk dependent libraries has been configured in De
 * If integrate manually, please download the corresponding version of sdk via the link below.
   
 #### Advertising SDK dependency library
-* AppicSDK [download path](https://img.atomhike.com/sdk/Mediation/KASDK/KASDK.v3.7.15.zip)
+* AppicSDK [download path](https://img.atomhike.com/sdk/Mediation/KASDK/KASDK.v3.8.6.zip)
 
 #### Advertising platform dependency library
 * AppicInMobiSDK [download path](https://img.atomhike.com/sdk/Mediation/InMobiSDK/InMobiSDK.v0.0.4.zip)
@@ -109,6 +109,7 @@ A reference to all third-party sdk dependent libraries has been configured in De
 
 * AppicFBAudienceNetwork [download path](https://img.atomhike.com/sdk/Mediation/FBAudienceNetwork/FBAudienceNetwork.v0.0.4.zip)
 * AppicAdjustSdk [download path](https://img.atomhike.com/sdk/Mediation/AdjustSdk/AdjustSdk.v4.17.1.zip)
+* BaiduSDK [download path](https://img.atomhike.com/sdk/Mediation/BaiduSDK/BaiduSDK.v4.64.zip)
 
    
 ### Join other dependency libraries
@@ -131,6 +132,9 @@ A reference to all third-party sdk dependent libraries has been configured in De
 * libxml2.2.tbd
 * libz.tbd
 * libc++.tbd
+* MessageUI.framework
+* SafariServices.framework
+* CoreMedia.framework
 
 ### info.plist Set whitelist
 ```XML
@@ -201,89 +205,6 @@ Provided by operator
 
 * **AppId** - Application ID
 * **AppChannel** - Application distribution channel
-
-# Native Ad
-
-### Create a Native Ad
-To create a Native ad instance
-`KAAdNative`
-
-```Objective-c
-KAAdNative *ad = [[KAAdNative alloc] initWithSlot:<AdSlot> delegate:<Delegate>];
-```
-* **AdSlot** - Slot ID to request ad with
-* **Delegate** - id<KAAdNativeDelegate> object to receive delegate calls
-
-### Load Native ad
-Simple call this method to load an ad, then wait for delegates to be tricked for load succes or fail
-`KAAdNative`
-
-```Objective-c
-[ad load];
-```
-
-### Acquire primary ad view
-This method returns a UIView specified by size, which contains the main content of NativeAd.
-`KAAdNative`
-
-```Objective-c
-UIView *primaryView = [ad primiaryViewOfSize:<size>];
-```
-* **size** - size of main ad content
-
-### Properties of Native Ad
-Each native ad also have the following properties 
-
-* **ka_slot** - The slot id used to request the Ad
-* **ka_requestId** - An string uniquely identified this request of Ad
-* **ka_adTitle** - Ad title text
-* **ka_adDescription** - Ad text description
-* **ka_adIcon** - UIImageView containing the icon image of Ad
-
-
-### Report an impression
-Once the ad has been displayed
-`KAAdNative`
-
-```Objective-c
-[ad nativeAdRenderedWithView:adView];
-```
-* **adView** - the UIView containing ad content
-
-### Report a click
-Once user did click on Ad, use one of the following two methods to report click event
-`KAAdNative`
-
-```Objective-c
-[ad nativeAdClickedAtPointAndOpenLandingPage:touchPoint];
-```
-* **touchPoint** - CGPoint of click coordinates within UIView containing ad content
-
-### Recycling material
-When the advertising materials are removed from the display interface, please call the following method to reclaim the material
-`KAAdNative`
-
-```Objective-c
-[ad recyclePrimaryView];
-```
-
-### Delegates of Native Ad
-Use these delegates to receive events of request native ad complete or fail
-`KAAdNativeDelegate`
-
-```Objective-c
-
-// Request has completed with nativeAd
-- (void) nativeAdRequestCompletedWithAd:(nonnull KAAdNative *)nativeAd;
-
-// Request has failed
-- (void) nativeAdRequestFailedForSlot:(nonnull NSString *)nativeAdSlot
-                           withStatus:(nonnull NSError *)nativeAdStatus;
-
-@optional
-- (void) nativeAdRequestFailedWithAd:(nonnull KAAdNative *)nativeAd
-                          withStatus:(nonnull NSError *)nativeAdStatus;
-```
 
 # Native template ad - NativeExpress
 

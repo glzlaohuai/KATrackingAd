@@ -1,5 +1,5 @@
 > [English Doc](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS_new/README_EN.md)
-# 当前版本 Ver.3.7.15 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS_new/ReleaseNote.md)
+# 当前版本 Ver.3.8.6 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS_new/ReleaseNote.md)
 # 接入说明
 
 SDK可以通过下文提到的两种方式获取
@@ -72,7 +72,7 @@ Demo中已经配置了对所有第三方sdk的依赖库的引用，请按照上�
 * 如果使用手工集成，请通过以下链接下载对应版本的sdk
   
 #### 广告SDK依赖库
-* AppicSDK [下载链接](https://img.atomhike.com/sdk/Mediation/KASDK/KASDK.v3.7.15.zip)
+* AppicSDK [下载链接](https://img.atomhike.com/sdk/Mediation/KASDK/KASDK.v3.8.6.zip)
 
 #### 广告平台依赖库
 * AppicInMobiSDK [下载链接](https://img.atomhike.com/sdk/Mediation/InMobiSDK/InMobiSDK.v0.0.4.zip)
@@ -108,6 +108,7 @@ Demo中已经配置了对所有第三方sdk的依赖库的引用，请按照上�
 * AppicAppsFlyerLib (选加，如果需要KASDK对接AppsFlyer作为统计框架) [下载链接](https://img.atomhike.com/sdk/Mediation/AppsFlyerLib/AppsFlyerLib.v0.0.4.zip)
 * AppicFBAudienceNetwork [下载链接](https://img.atomhike.com/sdk/Mediation/FBAudienceNetwork/FBAudienceNetwork.v0.0.4.zip)
 * AppicAdjustSdk [下载链接](https://img.atomhike.com/sdk/Mediation/AdjustSdk/AdjustSdk.v4.17.1.zip)
+* BaiduSDK [下载链接](https://img.atomhike.com/sdk/Mediation/BaiduSDK/BaiduSDK.v4.64.zip)
    
 ### 加入其它依赖库
 * SystemConfiguration.framework
@@ -117,7 +118,7 @@ Demo中已经配置了对所有第三方sdk的依赖库的引用，请按照上�
 * AdSupport.framework
 * UIKit.framework
 * StoreKit.framework
-* CoreLocation.framework（选加，加上的话需要声明NSLocationAlwaysUsageDescription权限）
+* CoreLocation.framework
 * CFNetwork.framework
 * CoreMotion.framework
 * AVFoundation.framework
@@ -129,6 +130,9 @@ Demo中已经配置了对所有第三方sdk的依赖库的引用，请按照上�
 * libxml2.2.tbd
 * libz.tbd
 * libc++.tbd
+* MessageUI.framework
+* SafariServices.framework
+* CoreMedia.framework
 
 ### info.plist设置白名单
 ```XML
@@ -200,89 +204,6 @@ Demo中已经配置了对所有第三方sdk的依赖库的引用，请按照上�
 * **AppId** - 应用标识
 * **AppChannel** - 应用渠道号
 
-# 原生广告 - Native
-
-### 构建广告
-创建一个原生广告的实例
-`KAAdNative`
-
-```Objective-c
-KAAdNative *ad = [[KAAdNative alloc] initWithSlot:<AdSlot> delegate:<Delegate>];
-```
-* **AdSlot** - 广告位SlotId，用于请求广告
-* **Delegate** - id<KAAdNativeDelegate> 实例，用于接收请求广告的回调
-
-### 加载广告
-调用load方法来获取广告，并通过回调来判断广告是否请求成功
-`KAAdNative`
-
-```Objective-c
-[ad load];
-```
-
-### 获取广告大图素材
-通过调用以下方法，获取包含原生广告大图素材的UIView，返回值有可能为空，为空时请使用adIcon作为素材展示图文广告
-`KAAdNative`
-
-```Objective-c
-UIView *primaryView = [ad primiaryViewOfSize:<size>];
-```
-* **size** - 广告素材指定尺寸
-
-### 广告素材信息
-下列参数包含了其他广告相关的素材信息
-
-* **ka_slot** - 广告为的SlotId
-* **ka_requestId** - 请求ID
-* **ka_adTitle** - 广告文字标题
-* **ka_adDescription** - 广告文字说明
-* **ka_adIcon** - 广告图标图片的UIImage
-
-
-### 上报广告展示
-当广告被展示后，调用此方法上报展示事件
-`KAAdNative`
-
-```Objective-c
-[ad nativeAdRenderedWithView:adView];
-```
-* **adView** - 装载广告素材的容器UIView
-
-### 上报广告点击
-当用户点击了广告，调用此方法上报点击事件
-`KAAdNative`
-
-```Objective-c
-[ad nativeAdClickedAtPointAndOpenLandingPage:touchPoint];
-```
-* **touchPoint** - 点击在容器UIView中的CGPoint
-
-### 回收素材
-当广告素材被从展示界面中移除后，请调用以下方法来回收素材
-`KAAdNative`
-
-```Objective-c
-[ad recyclePrimaryView];
-```
-
-### 广告回调
-使用以下回调接收加载广告成功和失败的事件
-`KAAdNativeDelegate`
-
-```Objective-c
-
-广告请求成功
-- (void) nativeAdRequestCompletedWithAd:(nonnull KAAdNative *)nativeAd;
-
-广告请求失败
-- (void) nativeAdRequestFailedForSlot:(nonnull NSString *)nativeAdSlot
-                           withStatus:(nonnull NSError *)nativeAdStatus;
-
-@optional
-- (void) nativeAdRequestFailedWithAd:(nonnull KAAdNative *)nativeAd
-                          withStatus:(nonnull NSError *)nativeAdStatus;
-```
-
 # 原生模板广告 - NativeExpress
 
 ### 构建广告
@@ -302,9 +223,6 @@ KAAdNativeExpress *ad = [[KAAdNativeExpress alloc] initWithSlot:<AdSlot> delegat
 ```Objective-c
 此方法需要ka_adIcon和ka_adScreenShots来获取图片素材
 [ad load];
-
-此方法需要ka_adIconUrl和ka_adScreenShotsUrl来获取素材的url
-[ad loadWithoutCache];
 ```
 
 ### 广告素材信息
@@ -316,8 +234,6 @@ KAAdNativeExpress *ad = [[KAAdNativeExpress alloc] initWithSlot:<AdSlot> delegat
 * **ka_adIcon** - 广告图标图片的UIImage
 * **ka_adScreenShots** - 广告大图的UIView
 * **ka_VideoAdView** - 广告视频的UIView
-* **ka_adIconUrl** - 广告图标的url
-* **ka_adScreenShotsUrl** - 广告大图的url
 
 ### rootviewController
 `KAAdNativeExpress`

@@ -1,4 +1,31 @@
 # 版本发布记录
+## Ver3.8.6
+## Release Date: 2019-06-24
+
+* 激励视频不再支持带跳过按钮的广告类型
+* 优化SDK的冷启动时间，修复一些bug
+
+## Ver3.8.5
+## Release Date: 2019-06-12
+
+* 修复KAAdNativeExpress大图设置frame时素材错位的bug
+
+## Ver3.8.4
+## Release Date: 2019-06-10
+
+* 修复插屏某些情况下导致的bug
+
+## Ver3.8.3
+## Release Date: 2019-06-06
+
+* 解决和三方框架冲突的问题
+
+## Ver3.8.2
+## Release Date: 2019-06-05
+
+* 删除KANative
+* 为了更好的兼容三方广告，所以删除KANativeExpress中获取素材url的方法
+* 广告收益优化
 
 ## Ver3.7.15
 ## Release Date: 2019-05-09

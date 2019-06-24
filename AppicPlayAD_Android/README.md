@@ -231,7 +231,7 @@
 	
 	参数	|	说明
 	---	|	---
-	splashViewContainer	|	承载广告内容的容器（容器类型为LinearLayout，要保证其`orientation`属性为`portrait`）
+	splashViewContainer	|	承载广告内容的容器（容器类型为LinearLayout，要保证其`orientation`属性为`vertical`）
 	bottomViewLayoutID	|	布局文件的id，如果广告平台返回的物料内容不足以填充全部广告容器，那么将由该布局填充，由于剩余空间高度不确定，请确保该布局能按高度自适应
 
 3. **释放占用资源**
