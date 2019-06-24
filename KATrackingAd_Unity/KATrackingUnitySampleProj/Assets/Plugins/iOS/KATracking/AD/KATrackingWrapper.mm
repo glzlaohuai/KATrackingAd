@@ -86,14 +86,14 @@ extern "C"{
             [KAAdIncentivized setDelegate:rewardDelegate];
         }
         
-        if ([KAAdIncentivized isReady:NO]) {
-            [KAAdIncentivized presentFromRootViewController: UnityGetGLViewController() andSkipButton:NO];
+        if ([KAAdIncentivized isReady]) {
+            [KAAdIncentivized presentFromRootViewController: UnityGetGLViewController()];
         }else{
         }
     }
     
     bool doCheckIsRewardVideoAvaliable(){
-        bool isOK = [KAAdIncentivized isReady:NO];
+        bool isOK = [KAAdIncentivized isReady];
         return isOK;
     }
     
