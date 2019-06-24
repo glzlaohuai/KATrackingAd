@@ -26,7 +26,7 @@ IOS_V_SENGMENT_LENGTH=${#IOS_V_SEGMENT}
 IOS_V_NUM_LENGTH=$(($IOS_V_SENGMENT_LENGTH-3))
 IOS_V_NUM=${IOS_V_SEGMENT:3:$IOS_V_NUM_LENGTH}
 
-IOS_SDK_DOWNLOAD_URL="https://img.appicplay.com/sdk/Mediation/KASDK/KASDK.v"
+IOS_SDK_DOWNLOAD_URL="http://img.appicplay.com/sdk/Mediation/KASDK/KASDK.v"
 
 echo "此次提交的tag：$TRAVIS_TAG"
 echo "此次提交的ios的sdk版本号为：$IOS_V_NUM"
