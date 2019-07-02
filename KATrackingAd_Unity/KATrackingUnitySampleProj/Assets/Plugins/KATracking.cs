@@ -51,6 +51,7 @@ namespace KATrackingAD
         [DllImport("__Internal")] private static extern void doRemoveAndDestroyBanner(string slotID);
 
         [DllImport("__Internal")] private static extern string doGetScreenSize();
+        [DllImport("__Internal")] private static extern void doShouldSDKInitForCurrentLocation(string appID, string channelID);
 #endif
 
 
@@ -384,6 +385,16 @@ namespace KATrackingAD
             return false;
         }
 
+        public static void shouldSDKInitedForCurrentLocal(string appid, string channel)
+        {
+            if (Application.platform == RuntimePlatform.IPhonePlayer)
+            {
+#if UNITY_IOS
+                doShouldSDKInitForCurrentLocation(appid, channel);
+#endif
+            }
+        }
+
         private static bool createDelegateObj()
         {
             bool hasEverCreated = true;
@@ -565,6 +576,17 @@ namespace KATrackingAD
             }
         }
 
+        public void csSDKInitiateResult(string msg)
+        {
+            string[] splits = msg.Split('#');
+            bool isShouldInited = Boolean.Parse(splits[0]);
+            if (sdkShouldInitCallback != null)
+            {
+                sdkShouldInitCallback(isShouldInited, splits[1]);
+            }
+        }
+
+
         public static event Action<string> splashPresentSuccess;
         public static event Action<string, string> splashPresentFail;
         public static event Action<string> splashADClick;
@@ -587,6 +609,8 @@ namespace KATrackingAD
         public static event Action<string, string> bannerLoadFailed;
         public static event Action<string> bannerPresentScreen;
         public static event Action<string> bannerPresentScreenDismissed;
+
+        public static event Action<bool, string> sdkShouldInitCallback;
 
     }
 }
