@@ -387,6 +387,7 @@ namespace KATrackingAD
 
         public static void shouldSDKInitedForCurrentLocal(string appid, string channel)
         {
+            createDelegateObj();
             if (Application.platform == RuntimePlatform.IPhonePlayer)
             {
 #if UNITY_IOS
