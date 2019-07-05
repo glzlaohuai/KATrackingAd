@@ -89,10 +89,7 @@ namespace KATrackingAD
             if (Application.platform == RuntimePlatform.IPhonePlayer)
             {
 #if UNITY_IOS
-                if (!hasEverCreated)
-                {
                     doInit(appID, appChannel);
-                }
 #endif
             }
             if (Application.platform == RuntimePlatform.Android)
