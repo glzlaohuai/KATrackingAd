@@ -26,7 +26,7 @@
 	在游戏开始位置执行sdk的初始化方法
 
 	```
-	APSDK("appID", "channelID");
+	APSDK.init("appID", "channelID");
 	```
 
 * 添加广告回调监听：
