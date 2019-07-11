@@ -1,9 +1,10 @@
 >[English Doc](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_Unity/README.md)
 
-# KATracking unity plugin 接入说明
+# APSDK unity plugin 接入说明
 
 * [关于](#start)
-* [接入](#step1)
+* [广告接入](#step1)
+* [支付接入](#pay)
 * [ios工程配置](#step2)
 * [android工程配置](#step3)
 
@@ -13,12 +14,10 @@
 * 支持 iOS 8.0+、Android 4.0+;
 * 支持平台：iOS、Android
 * [下载KATrackingUnityPlugin;](https://github.com/KATracking/KATrackingAd/releases)
-* [下载示例工程;](https://github.com/KATracking/KATrackingAd/tree/master/KATrackingAd_Unity/KATrackingUnitySampleProj)
 * [这里](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS_new/README_EN.md#download-the-sdk-zip-package-for-integration)下载iOS第三方平台的广告sdk
-* Android[第三方广告sdk](https://github.com/KATracking/KATrackingAd/tree/master/AppicPlayAD_Android/ThirdParyADLibs)
 
 
-## <a name="step1">接入</a>
+## <a name="step1">广告接入</a>
 
 * 将sdk导入unity工程
 
@@ -27,7 +26,7 @@
 	在游戏开始位置执行sdk的初始化方法
 
 	```
-	KATracking.init("appID", "channelID");
+	APSDK("appID", "channelID");
 	```
 
 * 添加广告回调监听：
@@ -35,26 +34,26 @@
 	```
 	void setupDelegates()
     {
-        KATracking.interstitialADLoadSuccess += interstitialLoadSuccess;
-        KATracking.interstitialADClick += interstitialADClick;
-        KATracking.interstitialADLoadFail += interstitialLoadFailed;
-        KATracking.interstitialADPresent += interstitialADPresent;
-        KATracking.interstitialADDismiss += interstitialADDismiss;
+        APSDK.interstitialADLoadSuccess += interstitialLoadSuccess;
+        APSDK.interstitialADClick += interstitialADClick;
+        APSDK.interstitialADLoadFail += interstitialLoadFailed;
+        APSDK.interstitialADPresent += interstitialADPresent;
+        APSDK.interstitialADDismiss += interstitialADDismiss;
 
-        KATracking.splashADClick += splashADClick;
-        KATracking.splashADDismiss += splashDismiss;
-        KATracking.splashPresentFail += splashPresentFail;
-        KATracking.splashPresentSuccess += splashPresentSuccess;
+        APSDK.splashADClick += splashADClick;
+        APSDK.splashADDismiss += splashDismiss;
+        APSDK.splashPresentFail += splashPresentFail;
+        APSDK.splashPresentSuccess += splashPresentSuccess;
 
-        KATracking.rewardVideoADPresentComplete += rewardVideoPresentComplete;
-        KATracking.rewardVideoADPresentFail += rewardVideoADPresentFail;
-        KATracking.rewardVideoADPresentSkip += rewardVideoADPresentSkip;
-        KATracking.rewardVideoADPresentSuccess += rewardVideoADPresentSuccess;
+        APSDK.rewardVideoADPresentComplete += rewardVideoPresentComplete;
+        APSDK.rewardVideoADPresentFail += rewardVideoADPresentFail;
+        APSDK.rewardVideoADPresentSkip += rewardVideoADPresentSkip;
+        APSDK.rewardVideoADPresentSuccess += rewardVideoADPresentSuccess;
 
-        KATracking.bannerPresentScreen += bannerBeClicked;
-        KATracking.bannerLoadFailed += bannerLoadFailed;
-        KATracking.bannerLoadComplete += bannerLoadComplete;
-        KATracking.bannerPresentScreenDismissed += bannerPresentScreenDismissed;
+        APSDK.bannerPresentScreen += bannerBeClicked;
+        APSDK.bannerLoadFailed += bannerLoadFailed;
+        APSDK.bannerLoadComplete += bannerLoadComplete;
+        APSDK.bannerPresentScreenDismissed += bannerPresentScreenDismissed;
     }
 	```
 * 移除广告回调监听:
@@ -62,33 +61,33 @@
 	```
 	void removeDelegates()
     {
-        KATracking.interstitialADLoadSuccess -= interstitialLoadSuccess;
-        KATracking.interstitialADClick -= interstitialADClick;
-        KATracking.interstitialADLoadFail -= interstitialLoadFailed;
-        KATracking.interstitialADPresent -= interstitialADPresent;
+        APSDK.interstitialADLoadSuccess -= interstitialLoadSuccess;
+        APSDK.interstitialADClick -= interstitialADClick;
+        APSDK.interstitialADLoadFail -= interstitialLoadFailed;
+        APSDK.interstitialADPresent -= interstitialADPresent;
 
-        KATracking.splashADClick -= splashADClick;
-        KATracking.splashADDismiss -= splashDismiss;
-        KATracking.splashPresentFail -= splashPresentFail;
-        KATracking.splashPresentSuccess -= splashPresentSuccess;
+        APSDK.splashADClick -= splashADClick;
+        APSDK.splashADDismiss -= splashDismiss;
+        APSDK.splashPresentFail -= splashPresentFail;
+        APSDK.splashPresentSuccess -= splashPresentSuccess;
 
-        KATracking.rewardVideoADPresentComplete -= rewardVideoPresentComplete;
-        KATracking.rewardVideoADPresentFail -= rewardVideoADPresentFail;
-        KATracking.rewardVideoADPresentSkip -= rewardVideoADPresentSkip;
-        KATracking.rewardVideoADPresentSuccess -= rewardVideoADPresentSuccess;
+        APSDK.rewardVideoADPresentComplete -= rewardVideoPresentComplete;
+        APSDK.rewardVideoADPresentFail -= rewardVideoADPresentFail;
+        APSDK.rewardVideoADPresentSkip -= rewardVideoADPresentSkip;
+        APSDK.rewardVideoADPresentSuccess -= rewardVideoADPresentSuccess;
     }
 	```
 
 * 展示开屏广告：
 
 	```
-	KATracking.showSplash("slotID");
+	APSDK.showSplash("slotID");
 	```
 	
 * 插屏广告加载：
 
 	```
-	KATracking.loadInterstitial("slotID");
+	APSDK.loadInterstitial("slotID");
 	```
 	
 	**注**：由于插屏广告加载需要时间，所以需要在展示之前的合适时间提前执行插屏广告的加载方法
@@ -99,19 +98,19 @@
 * 检查插屏广告是否可用：
 
 	```
-	KATracking.isInterstitialAvaliable("slotID");
+	APSDK.isInterstitialAvaliable("slotID");
 	```
 	
 * 展示插屏广告：
 
 	```
-	KATracking.showInterstitial("slotID");
+	APSDK.showInterstitial("slotID");
 	```
 		
 * 创建并展示横幅广告：
 
 	```
-	KATracking.loadAndPresentBanner("slotID", bannerSize, x, y);
+	APSDK.loadAndPresentBanner("slotID", bannerSize, x, y);
 	```
 	**注：**`bannerSize`参数为枚举类型，可选值：`BANNER_SIZE_320_50`、`BANNER_SIZE_480_60`、`BANNER_SIZE_728_90`
 	
@@ -119,24 +118,24 @@
 	
 	**注：**`x`和`y`参数用于设置横幅广告**中心**位置所处`ios`设备的屏幕坐标。例如，如果想将横幅广告在屏幕底部居中显示，假设屏幕宽高分别为：`screenWidth`、`screenHeight`，同时`bannerSize`为`BANNER_SIZE_320_50 `，那么参数`x`应该设置为：`screenWidth/2`，`y`应该设置为：`screenHeight-50/2`。
 	
-	**注**：可以使用方法：`KATracking.getDeviceScreenSize();`来获取设备屏幕尺寸
+	**注**：可以使用方法：`APSDK.getDeviceScreenSize();`来获取设备屏幕尺寸
 		
 * 隐藏横幅广告：
 
 	```
-	KATracking.hideBanner("slotID");
+	APSDK.hideBanner("slotID");
 	```
 
 * 展示横幅广告：
 
 	```
-	KATracking.showBanner("slotID");
+	APSDK.showBanner("slotID");
 	```
 	
 * 将横幅广告移除并销毁：
 
 	```
-	KATracking.removeAndDestroyBanner("slotID");
+	APSDK.removeAndDestroyBanner("slotID");
 	```
 	
 * 加载视频广告：
@@ -148,30 +147,164 @@
 * 检查视频广告是否可以展示：
 
 	```
-	KATracking.isRewardVideoADAvaliable()
+	APSDK.isRewardVideoADAvaliable()
 	```
 	
 * 展示视频广告：
 
 	```
-	KATracking.showRewardVideoAD();
+	APSDK.showRewardVideoAD();
 	```
 	
 * 获取渠道号：
 
 	```
-	KATracking.getChannelID();
+	APSDK.getChannelID();
 	```
+
+## <a name="pay">支付接入</a>
+* **添加获取计费点列表回调**：
+
+	```
+	APSDK.IAPLoadFailed += MyIAPLoadFailedDelegate;
+   APSDK.IAPLoadSuccess += MyIAPLoadSuccessDelegate;
+	```
+	
+	* 计费点列表获取失败回调参数说明：
+
+		参数	|	类型	|	说明
+		---		|	---		|	---
+		errorCode	|	int		|	错误码
+		errorMsg	|	string		|	错误描述
+		
+	* 计费点列表获取成功回调参数说明：
+
+		参数	|	类型	|	说明
+		---		|	---		|	---
+		iapList	|	List<>	|	计费点列表
+		
+	* 计费点结构说明：
+
+		参数	|	类型	|	说明
+		---		|	---		|	---
+		iapID	|	string	|	计费点id
+		channelIAPID	|	string	|	对应的渠道计费点id（大部分情况下你无需关心该参数）
+		productName	|	string	|	产品名
+		price	|	int		|	价格
+
+* **获取计费点列表**：
+
+	调用方法：`APSDK.loadIAPList(timeout);`
+	
+	**注**：`timeout`参数为超时时间，单位为毫秒
+
+		
+* **添加支付回调监听：**
+
+	```
+	void setupPayDelegates()
+    {
+        APSDK.PayFailed += MyPayFailedDelegate;
+        APSDK.PaySuccess += MyPaySuccessDelegate;
+    }
+	```
+	
+	* 支付失败回调参数说明：
+
+		参数	|	类型	|	说明
+		---		|	---		|	---
+		iapID	|	string		|	调用支付时传入的计费点id
+		orderID	|	string	|	调用支付时传入的订单号
+		errorCode	|	int		|	错误码
+		errorMsg	|	string		|	错误描述
+		
+	* 支付成功回调参数说明：
+
+		参数	|	类型	|	说明
+		---		|	---		|	---
+		iapID	|	string		|	调用支付时传入的计费点id
+		orderID	|	string	|	调用支付时传入的订单号
+
+* **调起支付：**
+
+	使用方法：`APSDK.pay("orderID", "iapID");`来调起来支付功能
+	
+* **添加兑换码监听回调：**
+
+	```
+	void setupRedeemCodeDelegates()
+    {
+		APSDK.RedeemFailed += MyRedeemFailed;
+		APSDK.RedeemSuccess += MyRedeemSuccess;
+    }
+	```
+	* 兑换码失败回调参数说明：
+
+		参数	|	类型	|	说明
+		---		|	---		|	---
+		redeemCode	|	string		|	传入的兑换码id
+		errorCode		|	int		|	错误码
+		errorMsg		|	string		|	错误描述
+		
+	* 兑换码成功回调参数说明：
+
+		参数	|	类型	|	说明
+		---		|	---		|	---
+		redeemCode	|	string		|	传入的兑换码
+		jsonString		|	string		|	兑换成功后返回的json格式的字符串
+		redeemData		|	Dictionary	|	兑换成功后使用jsonString构造的dictionary结构数据（游戏中也可以自行使用返回的jsonString来构造Dictionary）
+
+*	**查单：**
+
+	使用方法：`APSDK.checkOrder("orderID");`来进行查单。
+	
+*	**添加查单结果回调：**
+
+	```
+		APSDK.CheckOrderFailed += APSDK_CheckOrderFailed;
+        APSDK.CheckResultOrderCompleted += APSDK_CheckResultOrderCompleted;
+        APSDK.CheckResultOrderNotCompleted += APSDK_CheckResultOrderNotCompleted;
+        APSDK.CheckResultOrderCompletedAndHasAlreadyCheckedBefore += APSDK_CheckResultOrderCompletedAndHasAlreadyCheckedBefore;
+	```
+	*	查单结果回调说明：
+
+		回调	|	说明
+		---		|	---
+		CheckOrderFailed		|	由于网络或者其他原因，检查失败，收到这个回调之后游戏应当在适当时机重新进行查单操作
+		CheckResultOrderCompleted	|	该笔订单已支付成功
+		CheckResultOrderNotCompleted	|	该笔订单未支付成功
+		CheckResultOrderCompletedAndHasAlreadyCheckedBefore	|	该笔订单已支付成功且之前已经对该订单执行过查单操作且之前进行查单操作时回调过：`CheckResultOrderCompleted `
+
+	
+* **使用兑换码：**
+
+	```
+	APSDK.redeemCode("redeemCode");
+	```	
+* **游戏暂停：**
+
+	游戏暂停时，调用方法：
+
+	```
+	APSDK.pauseGame();
+	```
+* **退出游戏：**
+
+	退出游戏时，调用方法：
+	```
+	APSDK.exitGame();
+	```		
+		
 
 ## <a name="step2">iOS工程配置</a>
 
-*  根据你的需要添加需要支持的第三方sdk（你可以将第三方sdk添加到文件夹：`Assets/Plugins/iOS/KATracking/libs`下，或者文件夹`Assets/Plugins/iOS/`下的任意你觉得合适的其他位置）
+*  根据你的需要添加需要支持的第三方sdk（你可以将第三方sdk添加到文件夹：`Assets/Plugins/iOS/APSDK/libs`下，或者文件夹`Assets/Plugins/iOS/`下的任意你觉得合适的其他位置）
 *  导出xcode工程
 *  根据[这里](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README.md)的说明来配置导出的ios工程（插件在导出iOS工程时已经进行了一部分的设置，包括：[添加依赖库](https://github.com/KATracking/KATrackingAd/tree/master/KATrackingAd_iOS#%E5%8A%A0%E5%85%A5%E5%85%B6%E5%AE%83%E4%BE%9D%E8%B5%96%E5%BA%93)、[设置白名单](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README.md#infoplist%E8%AE%BE%E7%BD%AE%E7%99%BD%E5%90%8D%E5%8D%95)、[添加-ObjC linker flag](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README.md#infoplist%E8%AE%BE%E7%BD%AE%E7%99%BD%E5%90%8D%E5%8D%95)、`Enable Bitcode`设置为No）
 
 ## <a name="step3">Android工程配置</a>
 *  在`Unity Editor`的`Player Settings`中勾选`Custom Gradle Template`
 *  在上一步生成的`gradle`文件中添加依赖：`implementation 'com.android.support:support-v4:26.1.0'`到其`dependency`
-*  导出android工程，并将其在`android studio`中打开并运行。如果运行正常，那么请将该andorid工程发给我们，我们将使用安卓打包工具来将需要的三方sdk添加到该工程中。
+*  导出apk，测试功能正常，将该apk发给我们来产出各个渠道包。
 
 
