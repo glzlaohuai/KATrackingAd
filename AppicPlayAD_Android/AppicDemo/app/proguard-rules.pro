@@ -88,8 +88,10 @@
 
 
 #inmobi
--keepattributes SourceFile,LineNumberTable -keep class com.inmobi.** { *; } 
--keep public class com.google.android.gms.**  -dontwarn com.google.android.gms.** 
+-keepattributes SourceFile,LineNumberTable 
+-keep class com.inmobi.** { *; } 
+-keep public class com.google.android.gms.** 
+-dontwarn com.google.android.gms.** 
 -dontwarn com.squareup.picasso.** 
 -keep class com.google.android.gms.ads.identifier.AdvertisingIdClient{  public *; 
 } 
