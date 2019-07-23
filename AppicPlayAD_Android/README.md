@@ -1,4 +1,4 @@
-# 当前版本Ver.3.6.2 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/ReleaseNote.md)
+# 当前版本Ver.3.6.3 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/ReleaseNote.md)
 # AppicPlay AD SDK接入说明
 
 * [关于](#about)
@@ -18,11 +18,11 @@
 ## <a name="about">关于</a>
 
 * 支持广告类型：**原生**、**开屏**、**插屏**、**横幅**、**激励视频**
-* 下载[AppicPlay AD SDK](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/AppicPlaySDK.zip)
+* 下载[AppicPlay AD SDK](http://sayhey.oss-cn-shanghai.aliyuncs.com/sdk/android/APSDK_v3.6.3.aar)
 
 ## <a name="essential">基础SDK接入</a>
 
-* 下载[sdk](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/AppicPlaySDK.zip)并解压，将解压后的`APSDK_AD_xxx.aar`、`APSDK_Core_xxx.aar`文件加入工程依赖
+* 下载[sdk](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/AppicPlaySDK.zip)并将下载的sdk文件（`aar`文件）加入工程依赖
 * 接入工程的`app module`的`build.gradle`中添加依赖：
 
 	```
@@ -63,7 +63,7 @@
 * main activity 的`onCreate`回调方法中执行初始化（不建议在splash activity中执行初始化，因为初始化过程中会申请权限，而splash activity一般停留时间很短，会影响体验）：
 
 	```
-	APAD.init(this, "appID", "channelID");
+	APSDK.init(this, "appID", "channelID");
 	```
 	**注**:`appID`和`channelID`的值将在您接入sdk时由我方相关对接人员提供。
 	
@@ -72,13 +72,15 @@
 * `proguard`配置：
 
 	```
-	-keep class * implements com.appicplay.sdk.core.APApplicationInvoker
+	-keep class * extends com.appicplay.sdk.core.base.ad.Ad
+	-keep class * extends com.appicplay.sdk.core.base.ad.AdSDK
+	-keep class * implements com.appicplay.sdk.core.base.lifecycle.IApplicationLifecycle
 	```
 
 ## <a name="thirdPartySDK">加入第三方平台SDK</a>
 * 受支持的第三方平台sdk在[这里](https://github.com/KATracking/KATrackingAd/tree/master/AppicPlayAD_Android/ThirdParyADLibs)查看
-* `inmobi `文件夹内包含接入`inmobi`平台需要的所有配置，相应的：`gdt`对应`广点通`广告平台、`tt`对应`头条`广告平台、`unity`对应`unity`广告平台、`vungle`对应`vungle`广告平台、`tcash`对应`tcash`广告平台
-* 第三方广告平台所需要的配置可能包含有：`jar、aar`依赖项（在`libs`文件夹内）、`build.gradle`文件中的依赖项（在`dependicies`文件夹内）、需要配置的权限（在`permissions`文件内）、`AndroidMnifest.xml`中需要添加的组件（`activity`、`service`、`receiver`、`provider`等内容）（在`components`文件内）、混淆配置项（在`proguard`文件内）
+* `inmobi `文件夹内包含接入`inmobi`平台需要的所有配置，相应的：`gdt`对应`广点通`广告平台、`tt`对应`头条`广告平台、`unity`对应`unity`广告平台、`vungle`对应`vungle`广告平台、`admob`对应`admob`广告平台
+* 第三方广告平台所需要的配置可能包含有：`jar、aar`依赖项（在`libs`文件夹内）、`build.gradle`文件中的依赖项（在`dependicies`文件夹内）、需要配置的权限（在`permissions`文件内）、`AndroidMnifest.xml`中需要添加的组件（`activity`、`service`、`receiver`、`provider`等内容）（在`components`文件内）、混淆配置项（在`proguard`文件内）、res资源文件项（在`res`文件夹内）
 * 将需要支持的广告平台的所有内容加入到待接入工程中即可
 
 
@@ -302,10 +304,6 @@
 
 	`APVideo.setActivity(currentActivity);`
 	
-1. **加载激励视频**
-
-	`APVideo.loadVideoAD();`
-	
 1. **检查是否有可用的激励视频**
 
 	`APVideo.isReady();`
@@ -350,4 +348,4 @@
 * 如果想在用户在非wifi环境时点击下载类型广告时进行弹窗提醒，那么可以使用方法：`APAD.setIsMobileNetworkDirectlyDownload(boolean)`进行设置，如果不进行设置，那么默认为`true`（亦即在非wifi环境下点击下载类广告时不进行提示而直接下载）。**由于部分广告平台未提供设置方法，所以该设置只在部分广告平台上生效。**
 
 * sdk在执行初始化过程中会从服务器获取广告相关配置文件，各类型广告相关功能均依赖该配置文件中的相关配置，可以通过方法：`APAD.hasSDKEverInitedSuccess(context);`来检查是否sdk初始化成功（成功从服务器获取到配置文件）
-* 由于sdk初始化完成需要大概几秒钟的时间（具体时间依赖当前的网络环境），而splash广告一般在启动应用时候就需要进行加载和展示，所以为了保证在sdk未初始化完成前也能正常进行开屏广告的加载和展示功能，sdk提供了方法：`APAD.useDefaultConfigForSplashIfNoConfigExist(context, "splashSlotID");`来为指定的开屏广告位设置默认配置以保证开屏广告在sdk未完成初始化时亦可以正常的加载。**该方法必须要在sdk初始化方法之后调用**。
+* 由于sdk初始化完成（获取到配置）需要大概几秒钟的时间（具体时间依赖当前的网络环境），而splash广告一般在启动应用时候就需要进行加载和展示，所以为了保证在sdk未初始化完成前也能正常进行开屏广告的加载和展示功能，sdk提供了方法：`APAD.useDefaultConfigForSplashIfNoConfigExist(context, "splashSlotID");`来为指定的开屏广告位设置默认配置以保证开屏广告在sdk未完成初始化时亦可以正常的加载。**该方法必须要在sdk初始化方法之后调用**。

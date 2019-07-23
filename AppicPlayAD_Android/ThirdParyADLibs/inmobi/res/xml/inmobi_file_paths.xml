@@ -1,0 +1,6 @@
+<paths>
+    <!--inmobi-->
+    <external-path
+        name="external_files"
+        path="." />
+</paths>

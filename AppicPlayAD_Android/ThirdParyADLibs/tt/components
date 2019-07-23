@@ -10,5 +10,5 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/appicplay_file_path" />
+                android:resource="@xml/tt_file_paths" />
         </provider>
