@@ -13,7 +13,7 @@
 * 支持广告形式： `插屏`、`开屏`、`激励视频`、`横幅`
 * 支持 iOS 8.0+、Android 4.0+;
 * 支持平台：iOS、Android
-* [下载KATrackingUnityPlugin;](https://github.com/KATracking/KATrackingAd/releases)
+* [下载KATrackingUnityPlugin;](http://sayhey.oss-cn-shanghai.aliyuncs.com/sdk/android/APSDKUnityPlugin.unitypackage)
 * [这里](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS_new/README_EN.md#download-the-sdk-zip-package-for-integration)下载iOS第三方平台的广告sdk
 
 

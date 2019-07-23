@@ -13,7 +13,7 @@
 
 * Support `interstitial`、`splash`、`rewardVideo`、`banner`
 * Support iOS 8.0+、Android 4.0+
-* [Download unity plugin](https://github.com/KATracking/KATrackingAd/releases)
+* [Download unity plugin](http://sayhey.oss-cn-shanghai.aliyuncs.com/sdk/android/APSDKUnityPlugin.unitypackage)
 * [Download unity sample project](https://github.com/KATracking/KATrackingAd/tree/master/KATrackingAd_Unity/KATrackingUnitySampleProj)
 * Download iOS Third Party AD SDKs from [here](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS_new/README_EN.md#download-the-sdk-zip-package-for-integration)
 * [Android Third Party AD SDKs](https://github.com/KATracking/KATrackingAd/tree/master/AppicPlayAD_Android/ThirdParyADLibs)
