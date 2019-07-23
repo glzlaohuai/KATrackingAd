@@ -17,7 +17,7 @@
 
 ## <a name="Download">Download</a>
 
-* Download [AppicPlay AD SDK](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/AppicPlaySDK.zip)
+* Download [AppicPlay AD SDK](http://sayhey.oss-cn-shanghai.aliyuncs.com/sdk/android/APSDK_v3.6.3.aar)
 
 ## <a name="Preparation">Preparation</a>
 
