@@ -1,5 +1,6 @@
-# 当前版本Ver.3.6.3 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/ReleaseNote.md)
-# AppicPlay AD SDK接入说明
+> [Chinese Doc](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/README.md)
+# Current Ver.3.6.3 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/ReleaseNote.md)
+# AppicPlay AD SDK Integration guide
 
 * [Download](#Download)
 * [Preparation](#Preparation)
