@@ -294,6 +294,16 @@
 	```
 	APSDK.exitGame();
 	```		
+* **查看渠道是否支持游戏退出方法：**
+
+	```
+	APSDK.hasSpecialExitGameMethod();
+	```
+* **查看渠道是否支持游戏暂停方法：**
+
+	```
+	APSDK.hasSpecialPauseGameMethod();
+	```
 		
 
 ## <a name="step2">iOS工程配置</a>
