@@ -150,6 +150,9 @@ Use these delegates to receive events of NativeExpress
 
 @optional
 
+Notifies the delegate that the native ad has been clicked
+- (void) nativeExpressAdDidClick:(nonnull APIQZoneAdNativeExpress *)nativeAd;
+
 Notifies the delegate that the native ad has presented a full screen content
 - (void) nativeExpressAdDidPresentScreen:(nonnull APIQZoneAdNativeExpress *)nativeAd;
 
@@ -208,6 +211,9 @@ Use these delegates to receive events of Interstitial Ad
 // Interstitial Ad presented successful
 - (void) interstitialAdDidPresent:(nonnull APIQZoneAdInterstitial *) interstitial;
 
+// Notifies the delegate that the interstitial has been clicked.
+- (void) interstitialAdDidClick:(nonnull APIQZoneAdInterstitial *) interstitial;
+
 // Notifies the delegate that the interstitial has been dismissed.
 - (void) interstitialAdDidDismiss:(nonnull APIQZoneAdInterstitial *) interstitial;
 
@@ -264,6 +270,9 @@ Use these delegates to receive events of Incentivzed Video Ad
 // Incentivized video Ad has presented successful
 - (void) incentivizedAdPresentDidSuccess;
 
+// Incentivized video Ad has been clicked
+- (void) incentivizedAdDidClick;
+
 // Incentivized video Ad has complete without skip 
 - (void) incentivizedAdPresentDidComplete;
 
@@ -315,6 +324,10 @@ Use these delegates to receive events of Banner Ad
 - (void) bannerAdFailedLoadingForSlot:(nonnull NSString *)adSlot
                            withStatus:(nonnull NSError *)nativeAdStatus
                             andBanner:(nonnull APIQZoneAdBanner *)bannerAd;
+                            
+// Notifies the delegate that the banner has been clicked                            
+- (void) bannerDidClick:(nonnull APIQZoneAdBanner *)bannerAd;
+
 // Notifies the delegate that the banner has finished presenting screen.
 - (void) bannerDidPresentScreen:(nonnull APIQZoneAdBanner *)bannerAd;
 
