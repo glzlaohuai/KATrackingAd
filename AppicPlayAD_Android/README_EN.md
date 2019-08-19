@@ -50,7 +50,7 @@
     	}
 		```
 		
-* To initialize SDK, please add the follow line to onCreate delegate of your main activity or Application. With consideration of user experience, if you choose to use Splash ad type, it is suggested to request necessary permissions after Splash ad is closed, instead of letting the SDK to obtain during initilization process. Please see [Permissions](#permissions) for more details:
+* To initialize SDK, please add the follow line to onCreate delegate of your main activity or Application.
 
 	```
 	APAD.init(this, "appID", "channelID");
@@ -319,7 +319,7 @@ Apart from other ad types, rewarded video uses singleton to automatically load a
 	* `android.permission.WRITE_EXTERNAL_STORAGE`
 	* `android.permission.ACCESS_FINE_LOCATION`
 * SDK initialization (`APAD.init(context,appID,channelID)`) triggers requesting for permissions as part of init process, call this `APCore.setAutoRequestPermission(false)` to stop SDK doing so automatically, please make sure that your code will request for the same permissions at later stage, otherwise SDK may not function properly
-* If SDK initialization is written within Splash Activity, it is suggested to turn off auto request permissions, and request them after splash is closed.
+
 
 ## <a name="others">etc</a>
 

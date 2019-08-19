@@ -61,7 +61,7 @@
     	}
 		```
 		
-* main activity 的`onCreate`回调方法中执行初始化（不建议在splash activity中执行初始化，因为初始化过程中会申请权限，而splash activity一般停留时间很短，会影响体验）：
+* main activity 的`onCreate`回调方法中执行初始化
 
 	```
 	APSDK.init(this, "appID", "channelID");
@@ -241,9 +241,6 @@
 	
 	开屏广告展示完毕之后，在合适的时机（绝对大多数情况应该是在展示开屏广告的activity的onDestroy回调方法中）调用方法：`splash.onDestroy()`
 
-4. **`AndroidManifest.xml`配置**
-
-	因为在请求开屏过程中可能会导致展示开屏的`activity`的朝向改变，所以，需要在`manifest`中为展示开屏广告的`activity`添加属性：`android:configChanges="keyboard|keyboardHidden|orientation|screenSize"`
 	
 	
 ## <a name="interstitialAD">接入插屏广告</a>
@@ -333,7 +330,6 @@
 	
 
 
-
 ## <a name="permissions">关于权限申请</a>
 
 * sdk需要动态申请的权限：`android.permission.READ_PHONE_STATE`、`android.permission.WRITE_EXTERNAL_STORAGE`、`android.permission.ACCESS_FINE_LOCATION`
@@ -342,7 +338,6 @@
 
 * 调用方法：`APCore.setAutoRequestPermission(false)`可以让sdk在初始化时候不自动申请所需权限。
 
-* 如果sdk初始化代码写在`splash activity`中或者其他只停留很短时间就跳到其他界面的activity中，建议为了有更好的用户体验关闭sdk自动申请权限的行为，在接入应用内处理权限申请，在未收到权限申请结果之前不进行activity的跳转和sdk的初始化。
 
 ## <a name="others">其他</a>
 
