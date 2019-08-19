@@ -1,4 +1,12 @@
 # 版本发布记录
+## Ver3.9.0
+## Release Date: 2019-08-19
+
+* KAAdSplash添加指定显示时间时长功能
+* KAAdBanner添加设置广告的轮换时间间隔功能
+* 优化部分插屏展示样式
+* 修复一些bug
+
 ## Ver3.8.11
 ## Release Date: 2019-07-31
 

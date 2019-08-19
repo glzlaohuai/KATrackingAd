@@ -1,5 +1,5 @@
 > [English Doc](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS_new/README_EN.md)
-# 当前版本 Ver.3.8.11 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS_new/ReleaseNote.md)
+# 当前版本 Ver.3.9.0 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS_new/ReleaseNote.md)
 # 接入说明
 
 SDK可以通过下文提到的两种方式获取
@@ -72,7 +72,7 @@ Demo中已经配置了对所有第三方sdk的依赖库的引用，请按照上�
 * 如果使用手工集成，请通过以下链接下载对应版本的sdk
   
 #### 广告SDK依赖库
-* AppicSDK [下载链接](https://img.atomhike.com/sdk/Mediation/KASDK/KASDK.v3.8.11.zip)
+* AppicSDK [下载链接](https://img.atomhike.com/sdk/Mediation/KASDK/KASDK.v3.9.0.zip)
 
 #### 广告平台依赖库
 * AppicInMobiSDK [下载链接](https://img.atomhike.com/sdk/Mediation/InMobiSDK/InMobiSDK.v0.0.4.zip)
@@ -297,6 +297,13 @@ KAAdSplash *splash = [[KAAdSplash alloc] initWithSlot:<AdSlot> delegate:<Delegat
 * **AdSlot** - 广告位SlotId，用于请求广告
 * **Delegate** - id<KAAdSplashDelegate> 实例，用于接收广告事件回调
 
+### 设置显示时长
+调用下面方法设置广告显示时长
+
+```Objective-c
+[splash setShowInterval:<NSInteger>];
+```
+
 ### 展示广告
 调用下面方法加载并展示开屏广告
 `KAAdSplash`
@@ -477,6 +484,13 @@ KAAdBanner * banner = [[KAAdBanner alloc] initWithSlot:<adSlot> withSize:<size> 
 * **Size** - 广告尺寸<KAAdBannerSize>枚举
 * **Delegate** - id<KAAdBannerDelegate> 实例，用于接收广告事件回调
 * **controller** - 用于点击横幅广告后展示广告页的UIViewController
+
+设置广告轮换的时间间隔，当该值小于等于0时广告不轮换
+`KAAdBanner`
+
+```Objective-c
+[banner setInterval:<NSInteger>];
+```
 
 请求并加载广告
 `KAAdBanner`

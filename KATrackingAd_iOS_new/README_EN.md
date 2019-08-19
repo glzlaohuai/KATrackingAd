@@ -1,5 +1,5 @@
 > [中文文档](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS_new/README.md)
-# Current Ver.3.8.11 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS_new/ReleaseNote.md)
+# Current Ver.3.9.0 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS_new/ReleaseNote.md)
 # Integration Guideline
 
 SDK can be obtained in two ways as mentioned below.
@@ -72,7 +72,7 @@ A reference to all third-party sdk dependent libraries has been configured in De
 * If integrate manually, please download the corresponding version of sdk via the link below.
   
 #### Advertising SDK dependency library
-* AppicSDK [download path](https://img.atomhike.com/sdk/Mediation/KASDK/KASDK.v3.8.11.zip)
+* AppicSDK [download path](https://img.atomhike.com/sdk/Mediation/KASDK/KASDK.v3.9.0.zip)
 
 #### Advertising platform dependency library
 * AppicInMobiSDK [download path](https://img.atomhike.com/sdk/Mediation/InMobiSDK/InMobiSDK.v0.0.4.zip)
