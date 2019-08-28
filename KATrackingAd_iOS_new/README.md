@@ -429,7 +429,7 @@ withError:(nonnull NSError *) interstitialAdStatus;
 `KAAdIncentivized`
 
 ```Objective-c
-BOOL ready = [KAAdIncentivized isReady:<isShowSkipButton>];
+BOOL ready = [KAAdIncentivized isReady];
 ```
 
 ### 展示广告
@@ -437,10 +437,9 @@ BOOL ready = [KAAdIncentivized isReady:<isShowSkipButton>];
 `KAAdIncentivized`
 
 ```Objective-c
-[KAAdIncentivized presentFromRootViewController:<Controller> andSkipButton:<isShowSkipButton>];
+[KAAdIncentivized presentFromRootViewController:<Controller>];
 ```
 * **Controller** - 用于展示激励视频广告的UIViewController
-* **isShowSkipButton** - 传入YES播放视频过程中显示跳过按钮，NO则不显示
 
 ### 广告回调
 设置一个激励视频的回调实例

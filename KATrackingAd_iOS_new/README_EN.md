@@ -416,7 +416,7 @@ Check if the ad is ready for use
 `KAAdIncentivized`
 
 ```Objective-c
-BOOL ready = [KAAdIncentivized isReady:<isShowSkipButton>];
+BOOL ready = [KAAdIncentivized isReady];
 ```
 
 ### Present a Incentivized video Ad
@@ -425,10 +425,9 @@ Call the following method to load and display the incentive video ad
 `KAAdIncentivized`
 
 ```Objective-c
-[KAAdIncentivized presentFromRootViewController:<Controller> andSkipButton:<isShowSkipButton>];
+[KAAdIncentivized presentFromRootViewController:<Controller>];
 ```
 * **Controller** - UIViewController for which the Incentivized video Ad is presented from
-* **isShowSkipButton** - YES or NO, Whether to display the skip button
 
 ### Delegates of Incentivized video Ad
 To set a delegate to receive events
