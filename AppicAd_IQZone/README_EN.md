@@ -335,6 +335,85 @@ Use these delegates to receive events of Banner Ad
 - (void) bannerDidDismissScreen:(nonnull APIQZoneAdBanner *)bannerAd;
 ```
 
+# Splash Ad
+
+### Instantiation of Splash Ad
+Create an instance of a splash
+`APIQZoneAdSplash`
+
+```Objective-c
+APIQZoneAdSplash *splash = [[APIQZoneAdSplash alloc] initWithSlot:<AdSlot> delegate:<Delegate>];
+```
+* **AdSlot** - Slot ID to request ad with
+* **Delegate** - id<APIQZoneAdSplashDelegate> object to receive delegate calls
+
+### Display duration
+Use the following method to set duration of how long the splash ad will be displayed for
+
+```Objective-c
+[splash setShowInterval:<NSInteger>];
+```
+
+### Load and show
+Splash ad only provides one method to performance loading and showing when an ad is ready
+`APIQZoneAdSplash`
+
+```Objective-c
+[splash loadAndPresentWithViewController:<Controller>];
+```
+* **Controller** - the UIViewController which splash ad will be diplayed from
+
+### Suspend splash
+Use this method to suspend splash from showing when you decided that the ad has been taking too long to load, and it is no longer suitable to show it. Only use thid after loadAndPresentWithViewControll has been called.
+`APIQZoneAdSplash`
+
+```Objective-c
+[splash suspend];
+```
+
+### Specifying an branding view
+Sometime that the asset served in ad is not big enough to cover the entire screen, the next alternative method allow you to specify a UIView to fill up remaining space, this is usually filled with a logo or branding images of the hosting app. If you do not wish to add this view, use the loadAndPresentWithViewController method above.
+`APIQZoneAdSplash`
+
+```Objective-c
+[splash loadAndPresentWithViewController:<Controller> andBackgroundColor:<Color> andBottomView:<View> andBottomViewAutoFitDisplay:<Auto>];
+```
+
+* **Controller** - the UIViewController which splash ad will be diplayed from
+* **Color** - background color of the branding view
+* **View** - the UIView to fill the branding area
+* **Auto** - set to YES if you wishes SDK to decide when to display branding view, set to NO to show it constantly
+
+### Size of branding view
+For ease of use, call the following method for max CGSize of branding view
+`APIQZoneAdSplash`
+
+```Objective-c
+CGSize size = [APIQZoneAdSplash getBottomViewSize];
+```
+
+### Delegates of Splash Ad
+Use these delegates to receive events of Splash Ad
+
+`APIQZoneAdSplashDelegate`
+
+```Objective-c
+// Ad is successfully presented
+- (void) splashAdPresentDidSuccess:(nonnull APIQZoneAdSplash *)splashAd;
+
+// Ad present has failed
+- (void) splashAdPresentDidFail:(nonnull APIQZoneAdSplash *)splashAdSlot
+withError:(nonnull NSError *)error;
+
+// Ad has been clicked
+- (void) splashAdDidClick:(nonnull APIQZoneAdSplash *)splashAd;
+
+// Ad view has been dismissed from screen
+- (void) splashAdDidDismiss:(nonnull APIQZoneAdSplash *)splashAd;
+
+// Splash ad will dismissed
+- (void) splashAdWillDismiss:(nonnull APIQZoneAdSplash *)splashAd;
+
 ### SDK Error Code
 
 ```Objective-c
