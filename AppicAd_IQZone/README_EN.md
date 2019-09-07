@@ -355,7 +355,7 @@ Use the following method to set duration of how long the splash ad will be displ
 ```
 
 ### Load and show
-Splash ad only provides one method to performance loading and showing when an ad is ready
+Splash ad only provide one method to perform loading and showing all together
 `APIQZoneAdSplash`
 
 ```Objective-c
@@ -364,7 +364,7 @@ Splash ad only provides one method to performance loading and showing when an ad
 * **Controller** - the UIViewController which splash ad will be diplayed from
 
 ### Suspend splash
-Use this method to suspend splash from showing when you decided that the ad has been taking too long to load, and it is no longer suitable to show it. Only use thid after loadAndPresentWithViewControll has been called.
+Use this method to suspend splash from showing when you decide that the ad has been taking too long to load, and it is no longer suitable to show. Only use this after loadAndPresentWithViewControll has been called.
 `APIQZoneAdSplash`
 
 ```Objective-c
@@ -372,7 +372,7 @@ Use this method to suspend splash from showing when you decided that the ad has 
 ```
 
 ### Specifying an branding view
-Sometime that the asset served in ad is not big enough to cover the entire screen, the next alternative method allow you to specify a UIView to fill up remaining space, this is usually filled with a logo or branding images of the hosting app. If you do not wish to add this view, use the loadAndPresentWithViewController method above.
+Sometime that the asset served in ad is not big enough to cover the entire screen, the next alternative method allow you to specify a UIView to fill up the remaining space, this is usually filled with a logo or branding images of the hosting app. If you do not wish to add this view, use the loadAndPresentWithViewController method instead.
 `APIQZoneAdSplash`
 
 ```Objective-c
@@ -382,10 +382,10 @@ Sometime that the asset served in ad is not big enough to cover the entire scree
 * **Controller** - the UIViewController which splash ad will be diplayed from
 * **Color** - background color of the branding view
 * **View** - the UIView to fill the branding area
-* **Auto** - set to YES if you wishes SDK to decide when to display branding view, set to NO to show it constantly
+* **Auto** - set to YES if you wish SDK to decide when to display branding view depands on the size of ad asset, set to NO to show it constantly
 
 ### Size of branding view
-For ease of use, call the following method for max CGSize of branding view
+For ease of use, call the following method for max possible CGSize of branding area
 `APIQZoneAdSplash`
 
 ```Objective-c
