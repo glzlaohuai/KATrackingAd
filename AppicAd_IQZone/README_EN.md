@@ -297,6 +297,7 @@ APIQZoneAdBanner * banner = [[APIQZoneAdBanner alloc] initWithSlot:<adSlot> with
 * **controller** - UIViewController for displaying landing page when clicked banner ad
 
 load Ad
+
 `APIQZoneAdBanner`
 
 ```Objective-c
@@ -304,6 +305,7 @@ load Ad
 ```
 
 Setting Ad Positon
+
 `APIQZoneAdBanner`
 ```Objective-c
 [banner setPosition:<point>];
@@ -339,6 +341,7 @@ Use these delegates to receive events of Banner Ad
 
 ### Instantiation of Splash Ad
 Create an instance of a splash
+
 `APIQZoneAdSplash`
 
 ```Objective-c
@@ -356,6 +359,7 @@ Use the following method to set duration of how long the splash ad will be displ
 
 ### Load
 Load a Splash Ad
+
 `APIQZoneAdSplash`
 
 ```Objective-c
@@ -364,6 +368,7 @@ Load a Splash Ad
 
 ### Present Splash
 Present Splash Ad once received loadSuccess
+
 `APIQZoneAdSplash`
 
 ```Objective-c
@@ -374,6 +379,7 @@ Present Splash Ad once received loadSuccess
 
 ### Present with branding view
 Sometime that the asset served in ad is not big enough to cover the entire screen, the next alternative method allow you to specify a UIView to fill up the remaining space, this is usually filled with a logo or branding images of the hosting app. If you do not wish to add this view, use the presentresentWithViewController method instead.
+
 `APIQZoneAdSplash`
 
 ```Objective-c
@@ -387,6 +393,7 @@ Sometime that the asset served in ad is not big enough to cover the entire scree
 
 ### Size of branding view
 For ease of use, call the following method for max possible CGSize of branding area
+
 `APIQZoneAdSplash`
 
 ```Objective-c
@@ -396,6 +403,7 @@ CGSize size = [APIQZoneAdSplash getBottomViewSize];
 
 ### Suspend splash
 Use this method to suspend splash from showing when you decide that the ad has been taking too long to load, and it is no longer suitable to show. Only use this after loadAndPresentWithViewControll has been called.
+
 `APIQZoneAdSplash`
 
 ```Objective-c
