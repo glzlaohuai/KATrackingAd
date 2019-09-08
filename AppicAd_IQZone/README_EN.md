@@ -354,29 +354,30 @@ Use the following method to set duration of how long the splash ad will be displ
 [splash setShowInterval:<NSInteger>];
 ```
 
-### Load and show
-Splash ad only provide one method to perform loading and showing all together
+### Load
+Load a Splash Ad
 `APIQZoneAdSplash`
 
 ```Objective-c
-[splash loadAndPresentWithViewController:<Controller>];
+[splash load];
 ```
+
+### Present Splash
+Present Splash Ad once received loadSuccess
+`APIQZoneAdSplash`
+
+```Objective-c
+[splash presentWithViewController:<Controller> andBackgroundColor:<Color> andBottomView:<View> andBottomViewAutoFitDisplay:<Auto>];
+```
+
 * **Controller** - the UIViewController which splash ad will be diplayed from
 
-### Suspend splash
-Use this method to suspend splash from showing when you decide that the ad has been taking too long to load, and it is no longer suitable to show. Only use this after loadAndPresentWithViewControll has been called.
+### Present with branding view
+Sometime that the asset served in ad is not big enough to cover the entire screen, the next alternative method allow you to specify a UIView to fill up the remaining space, this is usually filled with a logo or branding images of the hosting app. If you do not wish to add this view, use the presentresentWithViewController method instead.
 `APIQZoneAdSplash`
 
 ```Objective-c
-[splash suspend];
-```
-
-### Specifying an branding view
-Sometime that the asset served in ad is not big enough to cover the entire screen, the next alternative method allow you to specify a UIView to fill up the remaining space, this is usually filled with a logo or branding images of the hosting app. If you do not wish to add this view, use the loadAndPresentWithViewController method instead.
-`APIQZoneAdSplash`
-
-```Objective-c
-[splash loadAndPresentWithViewController:<Controller> andBackgroundColor:<Color> andBottomView:<View> andBottomViewAutoFitDisplay:<Auto>];
+[splash presentWithViewController:<Controller> andBackgroundColor:<Color> andBottomView:<View> andBottomViewAutoFitDisplay:<Auto>];
 ```
 
 * **Controller** - the UIViewController which splash ad will be diplayed from
@@ -392,12 +393,27 @@ For ease of use, call the following method for max possible CGSize of branding a
 CGSize size = [APIQZoneAdSplash getBottomViewSize];
 ```
 
+
+### Suspend splash
+Use this method to suspend splash from showing when you decide that the ad has been taking too long to load, and it is no longer suitable to show. Only use this after loadAndPresentWithViewControll has been called.
+`APIQZoneAdSplash`
+
+```Objective-c
+[splash suspend];
+```
+
 ### Delegates of Splash Ad
 Use these delegates to receive events of Splash Ad
 
 `APIQZoneAdSplashDelegate`
 
 ```Objective-c
+// Ad is loaded successfully
+- (void) splashAdLoadSuccess:(APIQZoneAdSplash *)splashAd;
+
+// Ad has failed to load
+- (void) splashAdLoadFail:(APIQZoneAdSplash *)splashAd withError:(nonnull NSError *)error;
+
 // Ad is successfully presented
 - (void) splashAdPresentDidSuccess:(nonnull APIQZoneAdSplash *)splashAd;
 
