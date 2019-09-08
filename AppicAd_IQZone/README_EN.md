@@ -372,7 +372,7 @@ Present Splash Ad once received loadSuccess
 `APIQZoneAdSplash`
 
 ```Objective-c
-[splash presentWithViewController:<Controller> andBackgroundColor:<Color> andBottomView:<View> andBottomViewAutoFitDisplay:<Auto>];
+[splash presentWithViewController:<Controller>];
 ```
 
 * **Controller** - the UIViewController which splash ad will be diplayed from
