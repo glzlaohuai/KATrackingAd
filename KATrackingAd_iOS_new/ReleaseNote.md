@@ -1,4 +1,13 @@
 # 版本发布记录
+## Ver3.9.1
+## Release Date: 2019-09-10
+
+* 优化开屏展示逻辑
+* 修复部分平台的banner无点击回调的bug
+* 修复部分广告在模拟器上点击时崩溃的bug
+* 更新广点通SDK4.10.2
+* 获取KAAdNativeExpress的ka_adScreenShots时现在会有一个默认的尺寸
+
 ## Ver3.9.0
 ## Release Date: 2019-08-19
 
