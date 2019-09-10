@@ -197,12 +197,13 @@ Demo中已经配置了对所有第三方sdk的依赖库的引用，请按照上�
 `AppDelegate : application:didFinishLaunchingWithOptions:`
 
 ```Objective-c
-[[KATracking sharedInstance] initWithAppId:@"<AppId>" channel:@"<AppChannel>"];
+[[KATracking sharedInstance] initWithAppId:@"<AppId>"];
 ```
 请向运营人员索取
 
 * **AppId** - 应用标识
-* **AppChannel** - 应用渠道号
+
+####3.9.0以前的版本请以"AppId-AppChannel"的形式传入初始化方法
 
 # 原生模板广告 - NativeExpress
 
