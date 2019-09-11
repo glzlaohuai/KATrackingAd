@@ -24,7 +24,7 @@
 * Invoke sdk's initialization method at your game's entrance point:
 
 	```
-	APSDK.init("appID", "channelID");
+	APSDK.init("appID");
 	```
 	
 * add callback methods for the ad events that you might be interested in like this:
