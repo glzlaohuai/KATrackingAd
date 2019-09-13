@@ -1,5 +1,14 @@
 # Release Notes
 
+## Ver 3.9.0.2
+## Release Date: 2019-09-13
+* Resolved a duplicate error
+
+## Ver 3.9.0.1 ~ Ver 3.9.0.1.1
+## Release Date: 2019-09-08
+* Splash Ad is supported
+* Splash supports load and show
+
 ## Ver 3.8.10
 ## Release Date: 2019-07-25
 * Added click delegate to all ad types
