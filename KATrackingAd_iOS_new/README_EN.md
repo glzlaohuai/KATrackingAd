@@ -205,6 +205,8 @@ Provided by operator
 
 * **AppId** - Application ID
 
+### Important Note!! Since SDK ver.3.9.0, initialization takes only one parameter, in the form of "appid-appchannel", or use the auto generated appid string from dashboard when you create your app.
+
 # Native template ad - NativeExpress
 
 ### Create an ad
