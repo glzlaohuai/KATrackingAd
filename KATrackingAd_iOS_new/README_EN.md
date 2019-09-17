@@ -75,7 +75,7 @@ A reference to all third-party sdk dependent libraries has been configured in De
 * AppicSDK [download path](https://img.atomhike.com/sdk/Mediation/KASDK/KASDK.v3.9.1.zip)
 
 #### Advertising platform dependency library
-* AppicInMobiSDK [download path](https://img.atomhike.com/sdk/Mediation/InMobiSDK/InMobiSDK.v0.0.4.zip)
+* AppicInMobiSDK [download path](https://img.atomhike.com/sdk/Mediation/InMobiSDK/InMobiSDK.v7.3.0.zip)
 * AppicGoogleMobileAds [download path](https://img.atomhike.com/sdk/Mediation/GoogleMobileAds/GoogleMobileAds.v0.0.4.zip)
 * AppicUnityAds [download path](https://img.atomhike.com/sdk/Mediation/UnityAds/UnityAds.v0.0.4.zip)
 * AppicVungleSDK [download path](https://img.atomhike.com/sdk/Mediation/VungleSDK/VungleSDK.v0.0.4.zip)
@@ -84,7 +84,7 @@ A reference to all third-party sdk dependent libraries has been configured in De
 * Appictoutiao [download path](https://img.atomhike.com/sdk/Mediation/toutiao/toutiao.v0.0.4.zip)
   * WMAdSDK.framework
   * WMAdSDK.bundle
-* AppicGDT [download path](https://img.atomhike.com/sdk/Mediation/GDT/GDT.v0.0.4.zip)
+* AppicGDT [download path](https://img.atomhike.com/sdk/Mediation/GDT/GDT.v4.10.2.zip)
   * libGDTMobSDK.a
 * AppicTalkingData (Optional, if you need KASDK to dock TD as a statistical framework）[download path](https://img.atomhike.com/sdk/Mediation/TalkingData/TalkingData.v0.0.4.zip)
   * libTalkingData.a
