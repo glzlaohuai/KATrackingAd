@@ -199,12 +199,11 @@ Please initialize SDK as early into app lifecycle as possible, as once SDK initi
 `AppDelegate : application:didFinishLaunchingWithOptions:`
 
 ```Objective-c
-[[KATracking sharedInstance] initWithAppId:@"<AppId>" channel:@"<AppChannel>"];
+[[KATracking sharedInstance] initWithAppId:@"<AppId>"];
 ```
 Provided by operator
 
 * **AppId** - Application ID
-* **AppChannel** - Application distribution channel
 
 # Native template ad - NativeExpress
 

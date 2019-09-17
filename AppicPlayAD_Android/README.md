@@ -1,5 +1,5 @@
 > [English Doc](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/README_EN.md)
-# 当前版本Ver.3.6.3 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/ReleaseNote.md)
+# 当前版本Ver.3.6.4.1 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/ReleaseNote.md)
 # AppicPlay AD SDK接入说明
 
 * [关于](#about)
@@ -64,9 +64,9 @@
 * main activity 的`onCreate`回调方法中执行初始化
 
 	```
-	APSDK.init(this, "appID", "channelID");
+	APSDK.init(this, "appID");
 	```
-	**注**:`appID`和`channelID`的值将在您接入sdk时由我方相关对接人员提供。
+	**注**:`appID`的值将在您接入sdk时由我方相关对接人员提供。
 	
 	**注**：请勿将该方法调用放到`Application`的`onCreate`中，为了保证每次应用重新启动都会执行该方法（以保证配置的更新），请将该方法调用放到`Activity`的`onCreate`方法中。
 

@@ -53,9 +53,9 @@
 * To initialize SDK, please add the follow line to onCreate delegate of your main activity or Application.
 
 	```
-	APAD.init(this, "appID", "channelID");
+	APAD.init(this, "appID");
 	```
-	**Note**: `appID` and `channelID` are provided by our operator.
+	**Note**: `appID` is provided by our operator.
 	
 	**Note**: To allow SDK to perform most effectively, it is suggested to initialize SDK within onCreate delegate of your main activity.
 
