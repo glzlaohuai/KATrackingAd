@@ -88,12 +88,11 @@ Please initialize SDK as early into app lifecycle as possible, as once SDK initi
 `AppDelegate : application:didFinishLaunchingWithOptions:`
 
 ```Objective-c
-[[KATracking sharedInstance] initWithAppId:@"<AppId>" channel:@"<AppChannel>"];
+[[KATracking sharedInstance] initWithAppId:@"<AppId>"];
 ```
 Provided to each App integration
 
-* **AppId** - Application ID
-* **AppChannel** - Application distribution channel
+* **AppId** - Application ID, provided in dashboard
 
 # Native ad - NativeExpress
 
