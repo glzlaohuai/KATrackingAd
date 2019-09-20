@@ -1,4 +1,11 @@
 # 版本发布记录
+
+## Ver3.9.2
+## Release Date: 2019-09-20
+
+* 修复banner导致崩溃的bug
+* 优化SDK冷启动速度
+
 ## Ver3.9.1
 ## Release Date: 2019-09-10
 
