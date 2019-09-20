@@ -1,5 +1,11 @@
 # Release Notes
 
+## Ver 3.9.2
+## Release Date: 2019-09-19
+* Removed all references to UIWebView
+* Change to WKWebView
+* SDK initialization takes only one parameter
+
 ## Ver 3.9.0.2
 ## Release Date: 2019-09-13
 * Resolved a duplicate error
