@@ -1,5 +1,9 @@
 # Release Notes
 
+## Ver 3.9.3
+## Release Date: 2019-09-23
+* Compatibility issues with iOS-13
+
 ## Ver 3.9.2
 ## Release Date: 2019-09-19
 * Removed all references to UIWebView
