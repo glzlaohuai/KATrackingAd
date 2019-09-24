@@ -1,5 +1,5 @@
 > [Chinese Doc](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/README.md)
-# Current Ver.3.6.3 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/ReleaseNote.md)
+# Current Ver.3.6.4.2 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/ReleaseNote.md)
 # AppicPlay AD SDK Integration guide
 
 * [Download](#Download)
@@ -17,7 +17,7 @@
 
 ## <a name="Download">Download</a>
 
-* Download [AppicPlay AD SDK](http://sayhey.oss-cn-shanghai.aliyuncs.com/sdk/android/APSDK_v3.6.3.aar)
+* Download [AppicPlay AD SDK](http://sayhey.oss-cn-shanghai.aliyuncs.com/sdk/android/APSDK_v3.6.4.2.aar)
 
 ## <a name="Preparation">Preparation</a>
 
