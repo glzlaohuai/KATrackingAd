@@ -1,5 +1,10 @@
 # 版本发布记录
 
+## Ver3.9.3
+## Release Date: 2019-09-24
+
+* 适配iOS13
+
 ## Ver3.9.2
 ## Release Date: 2019-09-20
 
