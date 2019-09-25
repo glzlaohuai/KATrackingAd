@@ -4,6 +4,7 @@
 ## Release Date: 2019-09-24
 
 * 适配iOS13
+* 更新头条SDK
 
 ## Ver3.9.2
 ## Release Date: 2019-09-20
