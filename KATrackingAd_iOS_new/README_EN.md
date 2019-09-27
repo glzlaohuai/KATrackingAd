@@ -84,7 +84,7 @@ A reference to all third-party sdk dependent libraries has been configured in De
 * Appictoutiao [download path](https://img.atomhike.com/sdk/Mediation/toutiao/toutiao.v2.4.6.3.zip)
   * WMAdSDK.framework
   * WMAdSDK.bundle
-* AppicGDT [download path](https://img.atomhike.com/sdk/Mediation/GDT/GDT.v4.10.2.zip)
+* AppicGDT [download path](https://img.atomhike.com/sdk/Mediation/GDT/GDT.v4.10.13.zip)
   * libGDTMobSDK.a
 * AppicTalkingData (Optional, if you need KASDK to dock TD as a statistical framework）[download path](https://img.atomhike.com/sdk/Mediation/TalkingData/TalkingData.v0.0.4.zip)
   * libTalkingData.a

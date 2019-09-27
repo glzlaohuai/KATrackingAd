@@ -84,7 +84,7 @@ Demo中已经配置了对所有第三方sdk的依赖库的引用，请按照上�
 * Appictoutiao [下载链接](https://img.atomhike.com/sdk/Mediation/toutiao/toutiao.v2.4.6.3.zip)
   * BUAdSDK.framework
   * BUAdSDK.bundle
-* AppicGDT [下载链接](https://img.atomhike.com/sdk/Mediation/GDT/GDT.v4.10.2.zip)
+* AppicGDT [下载链接](https://img.atomhike.com/sdk/Mediation/GDT/GDT.v4.10.13.zip)
   * libGDTMobSDK.a
 * AppicTalkingData (选加，如果需要KASDK对接TD作为统计框架）[下载链接](https://img.atomhike.com/sdk/Mediation/TalkingData/TalkingData.v0.0.4.zip)
   * libTalkingData.a
