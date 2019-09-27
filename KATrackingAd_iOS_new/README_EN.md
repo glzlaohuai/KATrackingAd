@@ -120,7 +120,7 @@ A reference to all third-party sdk dependent libraries has been configured in De
 * AdSupport.framework
 * UIKit.framework
 * StoreKit.framework
-* CoreLocation.framework（optional）
+* CoreLocation.framework
 * CFNetwork.framework
 * CoreMotion.framework
 * AVFoundation.framework
@@ -135,6 +135,10 @@ A reference to all third-party sdk dependent libraries has been configured in De
 * MessageUI.framework
 * SafariServices.framework
 * CoreMedia.framework
+* MobileCoreServices.framework
+* MediaPlayer.framework
+* libresolv.9.tbd
+* ImageIO.framework
 
 ### info.plist Set whitelist
 ```XML
