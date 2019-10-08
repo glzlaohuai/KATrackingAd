@@ -1,5 +1,9 @@
 # 版本发布记录
 
+## Ver3.9.3.5
+## Release Date: 2019-10-08
+* 修复bug
+
 ## Ver3.9.3
 ## Release Date: 2019-09-24
 
