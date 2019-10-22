@@ -1,4 +1,9 @@
 # 版本发布记录
+
+## Ver.3.6.5
+## Release Date: 2019-10-22
+* 已知bug修复
+
 ## Ver.3.6.4.2
 ## Release Date: 2019-09-24
 * 更新头条sdk

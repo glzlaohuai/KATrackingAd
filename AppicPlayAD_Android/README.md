@@ -1,5 +1,5 @@
 > [English Doc](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/README_EN.md)
-# 当前版本Ver.3.6.4.2 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/ReleaseNote.md)
+# 当前版本Ver.3.6.5 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/ReleaseNote.md)
 # AppicPlay AD SDK接入说明
 
 * [关于](#about)
@@ -19,7 +19,7 @@
 ## <a name="about">关于</a>
 
 * 支持广告类型：**原生**、**开屏**、**插屏**、**横幅**、**激励视频**
-* 下载[AppicPlay AD SDK](http://sayhey.oss-cn-shanghai.aliyuncs.com/sdk/android/APSDK_v3.6.4.2.aar)
+* 下载[AppicPlay AD SDK](http://sayhey.oss-cn-shanghai.aliyuncs.com/sdk/android/APSDK_v3.6.5.aar)
 
 ## <a name="essential">基础SDK接入</a>
 
@@ -73,9 +73,9 @@
 * `proguard`配置：
 
 	```
-	-keep class * extends com.appicplay.sdk.core.base.ad.Ad
-	-keep class * extends com.appicplay.sdk.core.base.ad.AdSDK
-	-keep class * implements com.appicplay.sdk.core.base.lifecycle.IApplicationLifecycle
+	-keep class * extends com.ap.android.atom.sdk.core.base.ad.Ad
+	-keep class * extends com.ap.android.atom.sdk.core.base.ad.AdSDK
+	-keep class * implements com.ap.android.atom.sdk.core.base.lifecycle.IApplicationLifecycle
 	```
 
 ## <a name="thirdPartySDK">加入第三方平台SDK</a>
