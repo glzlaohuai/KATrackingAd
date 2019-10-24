@@ -138,6 +138,7 @@ A reference to all third-party sdk dependent libraries has been configured in De
 * MobileCoreServices.framework
 * MediaPlayer.framework
 * libresolv.9.tbd
+* libresolv.tbd
 * ImageIO.framework
 
 ### info.plist Set whitelist
