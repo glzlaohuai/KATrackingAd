@@ -1,5 +1,5 @@
 > [中文文档](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS_new/README.md)
-# Current Ver.3.9.3.5 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS_new/ReleaseNote.md)
+# Current Ver.3.10 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS_new/ReleaseNote.md)
 # Integration Guideline
 
 SDK can be obtained in two ways as mentioned below.
@@ -72,7 +72,7 @@ A reference to all third-party sdk dependent libraries has been configured in De
 * If integrate manually, please download the corresponding version of sdk via the link below.
   
 #### Advertising SDK dependency library
-* AppicSDK [download path](https://img.atomhike.com/sdk/Mediation/KASDK/KASDK.v3.9.3.5.zip)
+* AppicSDK [download path](https://img.atomhike.com/sdk/Mediation/KASDK/KASDK.v3.10.1.zip)
 
 #### Advertising platform dependency library
 * AppicInMobiSDK [download path](https://img.atomhike.com/sdk/Mediation/InMobiSDK/InMobiSDK.v7.3.0.zip)
@@ -81,7 +81,7 @@ A reference to all third-party sdk dependent libraries has been configured in De
 * AppicVungleSDK [download path](https://img.atomhike.com/sdk/Mediation/VungleSDK/VungleSDK.v0.0.4.zip)
 * AppicAppLovinSDK [download path](https://img.atomhike.com/sdk/Mediation/AppLovinSDK/AppLovinSDK.v0.0.4.zip)
 * AppicIronSource [download path](https://img.atomhike.com/sdk/Mediation/IronSource/IronSource.v0.0.4.zip)
-* Appictoutiao [download path](https://img.atomhike.com/sdk/Mediation/toutiao/toutiao.v2.4.6.3.zip)
+* Appictoutiao [download path](https://img.atomhike.com/sdk/Mediation/toutiao/toutiao.v2.4.6.3.987.zip)
   * WMAdSDK.framework
   * WMAdSDK.bundle
 * AppicGDT [download path](https://img.atomhike.com/sdk/Mediation/GDT/GDT.v4.10.13.zip)
@@ -105,7 +105,7 @@ A reference to all third-party sdk dependent libraries has been configured in De
   * GoogleUtilities.framework
   * nanopb.framework
   * Protobuf.framework
-* AppicAppsFlyerLib (Optional, if you need KASDK to dock AppsFlyer as a statistical framework) [download path](https://img.atomhike.com/sdk/Mediation/AppsFlyerLib/AppsFlyerLib.v0.0.4.zip)
+* AppicAppsFlyerLib (Optional, if you need APSDK to dock AppsFlyer as a statistical framework) [download path](https://img.atomhike.com/sdk/Mediation/AppsFlyerLib/AppsFlyerLib.v0.0.4.zip)
 
 * AppicFBAudienceNetwork [download path](https://img.atomhike.com/sdk/Mediation/FBAudienceNetwork/FBAudienceNetwork.v0.0.4.zip)
 * AppicAdjustSdk [download path](https://img.atomhike.com/sdk/Mediation/AdjustSdk/AdjustSdk.v4.17.1.zip)
@@ -199,12 +199,12 @@ Please initialize SDK as early into app lifecycle as possible, as once SDK initi
 `AppDelegate`
 
 ```Objective-c
-#import <KASDK/KASDK.h>
+#import <APSDK/APPch.h>
 ```
 `AppDelegate : application:didFinishLaunchingWithOptions:`
 
 ```Objective-c
-[[KATracking sharedInstance] initWithAppId:@"<AppId>"];
+[[APTracking sharedInstance] initWithAppId:@"<AppId>"];
 ```
 Provided by operator
 
@@ -216,17 +216,17 @@ Provided by operator
 
 ### Create an ad
 Create an instance of a native template ad
-`KAAdNativeExpress`
+`APAdNativeExpress`
 
 ```Objective-c
-KAAdNativeExpress *ad = [[KAAdNativeExpress alloc] initWithSlot:<AdSlot> delegate:<Delegate>];
+APAdNativeExpress *ad = [[APAdNativeExpress alloc] initWithSlot:<AdSlot> delegate:<Delegate>];
 ```
 * **AdSlot** - Slot ID to request ad with
-* **Delegate** - id<KAAdNativeDelegate> object to receive delegate calls
+* **Delegate** - id<APAdNativeDelegate> object to receive delegate calls
 
 ### Load Native ad
 Simple call this method to load an ad, then wait for delegates to be tricked for load succes or fail
-`KAAdNativeExpress`
+`APAdNativeExpress`
 
 ```Objective-c
 [ad load];
@@ -243,7 +243,7 @@ Each native ad also have the following properties
 * **ka_VideoAdView** - UIImageView containing the video of Ad
 
 ### rootviewController
-`KAAdNativeExpress`
+`APAdNativeExpress`
 
 ```Objective-c
 [ad setRootViewController:<controller>]
@@ -252,7 +252,7 @@ Each native ad also have the following properties
 * **controller** - Advertising display landing page redirects via rootviewController, which must pass parameters
 
 ### Register clickable view
-`KAAdNativeExpress`
+`APAdNativeExpress`
 
 ```Objective-c
 - (BOOL)registerContainer:(__kindof UIView *)containerView
@@ -261,7 +261,7 @@ Each native ad also have the following properties
 
 ### Recycling material
 When the advertising materials are removed from the display interface, please call the following method to reclaim the material
-`KAAdNativeExpress`
+`APAdNativeExpress`
 
 ```Objective-c
 [ad recyclePrimaryView];
@@ -269,20 +269,20 @@ When the advertising materials are removed from the display interface, please ca
 
 ### Delegates of Native Ad
 Use these delegates to receive events of request native ad complete or fail
-`KAAdNativeExpressDelegate`
+`APAdNativeExpressDelegate`
 
 ```Objective-c
 // Request has completed with nativeAd
-- (void) nativeExpressAdRequestCompletedWithAd:(nonnull KAAdNativeExpress *)nativeAd;
+- (void) nativeExpressAdRequestCompletedWithAd:(nonnull APAdNativeExpress *)nativeAd;
 
 // Request has failed
-- (void) nativeExpressAdRequestFailedWithAd:(nonnull KAAdNativeExpress *)nativeAd
+- (void) nativeExpressAdRequestFailedWithAd:(nonnull APAdNativeExpress *)nativeAd
                                  withStatus:(nonnull NSError *)nativeAdStatus;
 
 @optional
 
 Ad click
-- (void) nativeExpressAdDidClicked:(nonnull KAAdNativeExpress *)native;
+- (void) nativeExpressAdDidClicked:(nonnull APAdNativeExpress *)native;
 ```
 
 
@@ -291,19 +291,19 @@ Ad click
 ### Create a Splash Ad
 To create a Splash ad instance
 
-`KAAdSplash`
+`APAdSplash`
 
 ```Objective-c
-KAAdSplash *splash = [[KAAdSplash alloc] initWithSlot:<AdSlot> delegate:<Delegate>];
+APAdSplash *splash = [[APAdSplash alloc] initWithSlot:<AdSlot> delegate:<Delegate>];
 ```
 * **AdSlot** - Slot ID to request ad with
-* **Delegate** - id<KAAdSplashDelegate> object to receive delegate calls
+* **Delegate** - id<APAdSplashDelegate> object to receive delegate calls
 
 
 ### Present a Splash Ad
 To load and present Splash Ad
 
-`KAAdSplash`
+`APAdSplash`
 
 ```Objective-c
 [splash loadAndPresentWithViewController:<Controller>];
@@ -314,7 +314,7 @@ To load and present Splash Ad
 ### Show ads and add product IDs
 Call the following method to load and display the open screen advertisement, and at the same time you can add the product custom logo view to fill the blank position when the full screen is filled due to insufficient material size.
 
-`KAAdSplash`
+`APAdSplash`
 
 ```Objective-c
 [splash loadAndPresentWithViewController:<Controller> andBackgroundColor:<Color> andBottomView:<View> andBottomViewAutoFitDisplay:<Auto>];
@@ -328,30 +328,30 @@ Call the following method to load and display the open screen advertisement, and
 ### Logo area available size
 Call the following method to calculate the View size that can be used to identify the zone based on different devices.
 
-`KAAdSplash`
+`APAdSplash`
 
 ```Objective-c
-CGSize size = [KAAdSplash getBottomViewSize];
+CGSize size = [APAdSplash getBottomViewSize];
 ```
 
 ### Delegates of Splash Ad
 Use these delegates to receive events of splash Ad
 
-`KAAdSplashDelegate`
+`APAdSplashDelegate`
 
 ```Objective-c
 // Ad is successfully presented
-- (void) splashAdPresentDidSuccess:(nonnull KAAdSplash *)splashAd;
+- (void) splashAdPresentDidSuccess:(nonnull APAdSplash *)splashAd;
 
 // Ad present has failed
 - (void) splashAdPresentDidFail:(nonnull NSString *)splashAdSlot
 withError:(nonnull NSError *)error;
 
 // Ad has been clicked
-- (void) splashAdDidClick:(KAAdSplash *)splashAd;
+- (void) splashAdDidClick:(APAdSplash *)splashAd;
 
 // Ad view has been dismissed from screen
-- (void) splashAdDidDismiss:(KAAdSplash *)splashAd;
+- (void) splashAdDidDismiss:(APAdSplash *)splashAd;
 ```
 
 # Interstitial Ad
@@ -359,23 +359,23 @@ withError:(nonnull NSError *)error;
 ### Create a Interstitial Ad
 To create a Interstitial ad instance
 
-`KAAdInterstitial`
+`APAdInterstitial`
 
 ```Objective-c
-KAAdInterstitial *interstitial = [[KAAdInterstitial alloc] initWithSlot:<AdSlot> delegate:<Delegate>];
+APAdInterstitial *interstitial = [[APAdInterstitial alloc] initWithSlot:<AdSlot> delegate:<Delegate>];
 ```
 * **AdSlot** - Slot ID to request ad with
-* **Delegate** - id<KAAdInterstitialDelegate> object to receive delegate calls
+* **Delegate** - id<APAdInterstitialDelegate> object to receive delegate calls
 
 To load an interstitial Ad
-`KAAdInterstitial`
+`APAdInterstitial`
 
 ```Objective-c
 [interstitial load];
 ```
 
 Test availability of the Ad
-`KAAdInterstitial`
+`APAdInterstitial`
 
 ```Objective-c
 BOOL ready = [interstitial isReady];
@@ -383,7 +383,7 @@ BOOL ready = [interstitial isReady];
 
 ### Present a Interstitial Ad
 To load and present Interstitial Ad
-`KAAdInterstitial`
+`APAdInterstitial`
 
 ```Objective-c
 [interstitial presentFromRootViewController:<Controller>];
@@ -393,22 +393,22 @@ To load and present Interstitial Ad
 ### Delegates of Interstitial Ad
 Use these delegates to receive events of Interstitial Ad
 
-`KAAdInterstitialDelegate`
+`APAdInterstitialDelegate`
 
 ```Objective-c
 // Interstitial Ad load success
-- (void) interstitialAdLoadDidSuccess:(nonnull KAAdInterstitial *) interstitialAd;
+- (void) interstitialAdLoadDidSuccess:(nonnull APAdInterstitial *) interstitialAd;
 
 // Interstitial Ad load fail
 - (void) interstitialAdLoadDidFailForSlot:(nonnull NSString *) interstitialAdSlot
 withError:(nonnull NSError *) interstitialAdStatus;
 
 // Interstitial Ad presented successful
-- (void) interstitialAdDidPresent:(nonnull KAAdInterstitial *) interstitial;
+- (void) interstitialAdDidPresent:(nonnull APAdInterstitial *) interstitial;
 
 
 // Interstitial Ad has been clicked
-- (void) interstitialAdDidClick:(nonnull KAAdInterstitial *) splashAd;
+- (void) interstitialAdDidClick:(nonnull APAdInterstitial *) splashAd;
 
 // Interstitial Ad has been dismissed from screen
 ```
@@ -419,37 +419,37 @@ withError:(nonnull NSError *) interstitialAdStatus;
 Incentive video ads are singletoned in the SDK, so there's no need to create new instances, you can use the class method to display ads directly, and the video ads start to load automatically as soon as the SDK is successfully initialized.
 
 Check if the ad is ready for use
-`KAAdIncentivized`
+`APAdIncentivized`
 
 ```Objective-c
-BOOL ready = [KAAdIncentivized isReady];
+BOOL ready = [APAdIncentivized isReady];
 ```
 
 ### Present a Incentivized video Ad
 Call the following method to load and display the incentive video ad
 
-`KAAdIncentivized`
+`APAdIncentivized`
 
 ```Objective-c
-[KAAdIncentivized presentFromRootViewController:<Controller>];
+[APAdIncentivized presentFromRootViewController:<Controller>];
 ```
 * **Controller** - UIViewController for which the Incentivized video Ad is presented from
 
 ### Delegates of Incentivized video Ad
 To set a delegate to receive events
 
-`KAAdIncentivized`
+`APAdIncentivized`
 
 ```Objective-c
-[KAAdIncentivized setDelegate:<Delegate>];
+[APAdIncentivized setDelegate:<Delegate>];
 ```
-* **Delegate** - The id<KAAdIncentivizedDelegate> object
+* **Delegate** - The id<APAdIncentivizedDelegate> object
 Use these delegates to receive events of Incentivized video Ad
 
 ### Ad callback
 Receive events that load ads using the following callbacks 
 
-`KAAdIncentivizedDelegate`
+`APAdIncentivizedDelegate`
 
 ```Objective-c
 // Incentvized video Ad has failed to present
@@ -470,26 +470,26 @@ Receive events that load ads using the following callbacks
 ### Create a Banner Ad
 Create an instance of a banner and add the ad to the view
 
-`KAAdBanner`
+`APAdBanner`
 
 ```Objective-c
-KAAdBanner * banner = [[KAAdBanner alloc] initWithSlot:<adSlot> withSize:<size> delegate:<delegate> currentController:<controller>];
+APAdBanner * banner = [[APAdBanner alloc] initWithSlot:<adSlot> withSize:<size> delegate:<delegate> currentController:<controller>];
 [self.view addSubview:banner];
 ```
 * **adSlot** - Slot ID to request ad with
-* **Size** - <KAAdBannerSize> banner size
-* **Delegate** - id<KAAdBannerDelegate> object to receive delegate calls
+* **Size** - <APAdBannerSize> banner size
+* **Delegate** - id<APAdBannerDelegate> object to receive delegate calls
 * **controller** - UIViewController for displaying ad pages after clicking on a banner ad
 
 load Ad
-`KAAdBanner`
+`APAdBanner`
 
 ```Objective-c
 [banner load];
 ```
 
 Setting Ad Positon
-`KAAdBanner`
+`APAdBanner`
 ```Objective-c
 [banner setPosition:<point>];
 ```
@@ -499,45 +499,45 @@ Setting Ad Positon
 ### Ad callback
 Receive events that load ads using the following callbacks
 
-`KAAdBannerDelegate`
+`APAdBannerDelegate`
 
 ```Objective-c
 /**
  * Notifies the delegate that the banner has finished loading
  */
-- (void) bannerAdCompleteLoadingWithAd:(nonnull KAAdBanner *)bannerAd;
+- (void) bannerAdCompleteLoadingWithAd:(nonnull APAdBanner *)bannerAd;
 /**
  * Notifies the delegate that the banner has failed to load with some error.
  */
 - (void) bannerAdFailedLoadingForSlot:(nonnull NSString *)adSlot
                            withStatus:(nonnull NSError *)nativeAdStatus
-                            andBanner:(nonnull KAAdBanner *)bannerAd;
+                            andBanner:(nonnull APAdBanner *)bannerAd;
 /**
  * Notifies the delegate that the banner has finished presenting screen.
  */
-- (void) bannerDidPresentScreen:(nonnull KAAdBanner *)bannerAd;
+- (void) bannerDidPresentScreen:(nonnull APAdBanner *)bannerAd;
 
 /**
  * Notifies the delegate that the banner has dismissed the presented screen.
  */
-- (void) bannerDidDismissScreen:(nonnull KAAdBanner *)bannerAd;
+- (void) bannerDidDismissScreen:(nonnull APAdBanner *)bannerAd;
 ```
 
 ### Redemption code
 
 Enter redemption code to redeem gifts
 
-`KAPub`
+`APPub`
 
 ```Objective-c
-[KAPub redeemCode:<code> withDelegate:<Delegate>]
+[APPub redeemCode:<code> withDelegate:<Delegate>]
 ```
 * **code** - Redemption code (contact the operator for the relevant configuration)
-* **Delegate** - id<KAPubConfigManagerDelegate> instances，Used to receive redemption is successfull or not.
+* **Delegate** - id<APPubConfigManagerDelegate> instances，Used to receive redemption is successfull or not.
 
 Receive redemption events using the following callbacks
 
-`KAPubConfigManagerDelegate`
+`APPubConfigManagerDelegate`
 
 ```Objective-c
 /**
@@ -550,27 +550,27 @@ Receive redemption events using the following callbacks
 - (void) redeemCodeFailedWithError:(NSError *)error withCode:(NSString *)code;
 ```
 ### Payment
-`KAPub`
+`APPub`
 
 Payment
 
 ```Objective-c
-[KAPub payWithIAPId:<iapId> withOrderId:<orderId> withDelegate:<Delegate>]
+[APPub payWithIAPId:<iapId> withOrderId:<orderId> withDelegate:<Delegate>]
 ```
 Restore purchase
 
 ```Objective-c
-[KAPub restoreCompletedTransactionsWithDelegate:<Delegate>]
+[APPub restoreCompletedTransactionsWithDelegate:<Delegate>]
 ```
 
 
 * **iapId** - Platform billing point
 * **orderId** - Order Id (please ensure that each incoming order Id is a unique Id)
-* **Delegate** - id<KAPubConfigManagerDelegate>instance，Used to receive whether payment is successful
+* **Delegate** - id<APPubConfigManagerDelegate>instance，Used to receive whether payment is successful
 
 Receive payment events using the following callbacks
 
-`KAPubConfigManagerDelegate `
+`APPubConfigManagerDelegate `
 
 ```Objective-c
 /**
@@ -594,40 +594,40 @@ Receive payment events using the following callbacks
 ### PUSH
 
 
-`KAPub`
+`APPub`
 
 Get the deviceToken in the proxy method of `UIApplicationDelegate`
 
 ```Objective-c
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
-	[KAPub setDeviceToken:deviceToken];
+	[APPub setDeviceToken:deviceToken];
 } 
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
-    [KAPub handlePushMessage:userInfo];
+    [APPub handlePushMessage:userInfo];
 }
 ```
 
 ### SDK Error Code
 
 ```Objective-c
-    KAAdStatusCodeMissingResourceBundle        = 51001,    // Resource bundle is not present
-    KAAdStatusCodeNoFill                       = 51002,    // Ad is not filled at this time
-    KAAdStatusCodeDuplicateRequest             = 51003,    // Instance of ad is already served, usually caused duplicated request on same instance of ad
-    KAAdStatusCodeSDKNotInitialized            = 51004,
-    KAAdStatusCodeMediationRequestFailed       = 51101,    // General mediation platform failed to receive ad in time or returned mediation error
-    KAAdStatusCodeMediationInvalidRequest      = 51102,    // Mediation platform return invalid request error
-    KAAdStatusCodeMediationInvalidConfig       = 51103,     
-    KAAdStatusCodeFailToPresent                = 51104,
-    KAAdStatusCodeAdSwitchClose                = 51105,    // Ad closed
-    KAAdStatusCodeInvalidRequestPath           = 59994,    // Incorrect server address
-    KAAdStatusCodeNetworkUnavailable           = 59995,    // Network is currently not available
-    KAAdStatusCodeNetworkTimeout               = 59996,    // Network request timeout
-    KAAdStatusCodeInternalError                = 59997,    // SDK internal process error
-    KAAdStatusCodeServerError                  = 59998,    // Server has return an error
-    KAAdStatusCodeUnknown                      = 59999
+    APAdStatusCodeMissingResourceBundle        = 51001,    // Resource bundle is not present
+    APAdStatusCodeNoFill                       = 51002,    // Ad is not filled at this time
+    APAdStatusCodeDuplicateRequest             = 51003,    // Instance of ad is already served, usually caused duplicated request on same instance of ad
+    APAdStatusCodeSDKNotInitialized            = 51004,
+    APAdStatusCodeMediationRequestFailed       = 51101,    // General mediation platform failed to receive ad in time or returned mediation error
+    APAdStatusCodeMediationInvalidRequest      = 51102,    // Mediation platform return invalid request error
+    APAdStatusCodeMediationInvalidConfig       = 51103,     
+    APAdStatusCodeFailToPresent                = 51104,
+    APAdStatusCodeAdSwitchClose                = 51105,    // Ad closed
+    APAdStatusCodeInvalidRequestPath           = 59994,    // Incorrect server address
+    APAdStatusCodeNetworkUnavailable           = 59995,    // Network is currently not available
+    APAdStatusCodeNetworkTimeout               = 59996,    // Network request timeout
+    APAdStatusCodeInternalError                = 59997,    // SDK internal process error
+    APAdStatusCodeServerError                  = 59998,    // Server has return an error
+    APAdStatusCodeUnknown                      = 59999
 ```
 
 ### cocos2d-x present ad crash
