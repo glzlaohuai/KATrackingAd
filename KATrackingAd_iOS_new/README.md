@@ -1,5 +1,6 @@
 > [English Doc](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS_new/README_EN.md)
-# 当前版本 Ver.3.9.3.5 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS_new/ReleaseNote.md)
+# 当前版本 Ver.3.10.1
+[ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS_new/ReleaseNote.md)
 # 接入说明
 
 SDK可以通过下文提到的两种方式获取
@@ -72,7 +73,7 @@ Demo中已经配置了对所有第三方sdk的依赖库的引用，请按照上�
 * 如果使用手工集成，请通过以下链接下载对应版本的sdk
   
 #### 广告SDK依赖库
-* AppicSDK [下载链接](https://img.atomhike.com/sdk/Mediation/KASDK/KASDK.v3.9.3.5.zip)
+* AppicSDK [下载链接](https://img.atomhike.com/sdk/Mediation/KASDK/KASDK.v3.10.1.zip)
 
 #### 广告平台依赖库
 * AppicInMobiSDK [下载链接](https://img.atomhike.com/sdk/Mediation/InMobiSDK/InMobiSDK.v7.3.0.zip)
@@ -86,12 +87,12 @@ Demo中已经配置了对所有第三方sdk的依赖库的引用，请按照上�
   * BUAdSDK.bundle
 * AppicGDT [下载链接](https://img.atomhike.com/sdk/Mediation/GDT/GDT.v4.10.13.zip)
   * libGDTMobSDK.a
-* AppicTalkingData (选加，如果需要KASDK对接TD作为统计框架）[下载链接](https://img.atomhike.com/sdk/Mediation/TalkingData/TalkingData.v0.0.4.zip)
+* AppicTalkingData (选加，如果需要APSDK对接TD作为统计框架）[下载链接](https://img.atomhike.com/sdk/Mediation/TalkingData/TalkingData.v0.0.4.zip)
   * libTalkingData.a
-* AppicUM (选加，如果需要KASDK对接UM作为统计框架）[下载链接](https://img.atomhike.com/sdk/Mediation/UM/UM.v0.0.4.zip)   
+* AppicUM (选加，如果需要APSDK对接UM作为统计框架）[下载链接](https://img.atomhike.com/sdk/Mediation/UM/UM.v0.0.4.zip)   
   * UMAnalytics.framework
   * UMCommon.framework
-* AppicFirebase (选加，如果需要KASDK对接Firebase作为统计框架））[download path](https://img.atomhike.com/sdk/Mediation/Firebase/Firebase.v5.18.0.zip)   
+* AppicFirebase (选加，如果需要APSDK对接Firebase作为统计框架））[download path](https://img.atomhike.com/sdk/Mediation/Firebase/Firebase.v5.18.0.zip)   
   * Crashlytics.framework
   * Fabric.framework
   * FIRAnalyticsConnector.framework
@@ -196,12 +197,12 @@ Demo中已经配置了对所有第三方sdk的依赖库的引用，请按照上�
 `AppDelegate`
 
 ```Objective-c
-#import <KASDK/KASDK.h>
+#import <APSDK/APPch.h>
 ```
 `AppDelegate : application:didFinishLaunchingWithOptions:`
 
 ```Objective-c
-[[KATracking sharedInstance] initWithAppId:@"<AppId>"];
+[[APSDK sharedInstance] initWithAppId:@"<AppId>"];
 ```
 请向运营人员索取
 
@@ -210,20 +211,20 @@ Demo中已经配置了对所有第三方sdk的依赖库的引用，请按照上�
 ### 重要！！！3.9.0以前的版本升级后请以"AppId-AppChannel"的形式传入SDK的初始化方法
 
 # 原生模板广告 - NativeExpress
-
+APAd
 ### 构建广告
 创建一个原生模板广告的实例
-`KAAdNativeExpress`
+`APAdNativeExpress`
 
 ```Objective-c
-KAAdNativeExpress *ad = [[KAAdNativeExpress alloc] initWithSlot:<AdSlot> delegate:<Delegate>];
+APAdNativeExpress *ad = [[APAdNativeExpress alloc] initWithSlot:<AdSlot> delegate:<Delegate>];
 ```
 * **AdSlot** - 广告位SlotId，用于请求广告
-* **Delegate** - id<KAAdNativeDelegate> 实例，用于接收请求广告的回调
+* **Delegate** - id<APAdNativeDelegate> 实例，用于接收请求广告的回调
 
 ### 加载广告
 调用load或loadWithoutCache方法来获取广告，并通过回调来判断广告是否请求成功
-`KAAdNativeExpress`
+`APAdNativeExpress`
 
 ```Objective-c
 此方法需要ka_adIcon和ka_adScreenShots来获取图片素材
@@ -241,7 +242,7 @@ KAAdNativeExpress *ad = [[KAAdNativeExpress alloc] initWithSlot:<AdSlot> delegat
 * **ka_VideoAdView** - 广告视频的UIView
 
 ### rootviewController
-`KAAdNativeExpress`
+`APAdNativeExpress`
 
 ```Objective-c
 [ad setRootViewController:<controller>]
@@ -250,7 +251,7 @@ KAAdNativeExpress *ad = [[KAAdNativeExpress alloc] initWithSlot:<AdSlot> delegat
 * **controller** - 广告位展示落地页通过rootviewController进行跳转，必传参数
 
 ### 注册可点击视图
-`KAAdNativeExpress`
+`APAdNativeExpress`
 
 ```Objective-c
 - (BOOL)registerContainer:(__kindof UIView *)containerView
@@ -259,7 +260,7 @@ KAAdNativeExpress *ad = [[KAAdNativeExpress alloc] initWithSlot:<AdSlot> delegat
 
 ### 回收素材
 当广告素材被从展示界面中移除后，请调用以下方法来回收素材
-`KAAdNativeExpress`
+`APAdNativeExpress`
 
 ```Objective-c
 [ad recyclePrimaryView];
@@ -267,26 +268,26 @@ KAAdNativeExpress *ad = [[KAAdNativeExpress alloc] initWithSlot:<AdSlot> delegat
 
 ### 广告回调
 使用以下回调接收加载广告成功和失败的事件
-`KAAdNativeExpressDelegate`
+`APAdNativeExpressDelegate`
 
 ```Objective-c
 广告请求成功
-- (void) nativeExpressAdRequestCompletedWithAd:(nonnull KAAdNativeExpress *)nativeAd;
+- (void) nativeExpressAdRequestCompletedWithAd:(nonnull APAdNativeExpress *)nativeAd;
 
 广告请求失败
-- (void) nativeExpressAdRequestFailedWithAd:(nonnull KAAdNativeExpress *)nativeAd
+- (void) nativeExpressAdRequestFailedWithAd:(nonnull APAdNativeExpress *)nativeAd
                                  withStatus:(nonnull NSError *)nativeAdStatus;
 
 @optional
 
 广告点击
-- (void) nativeExpressAdDidClicked:(nonnull KAAdNativeExpress *)native;
+- (void) nativeExpressAdDidClicked:(nonnull APAdNativeExpress *)native;
 
 广告落地页展示
-- (void) nativeExpressAdDidPresentScreen:(nonnull KAAdNativeExpress *)nativeAd;
+- (void) nativeExpressAdDidPresentScreen:(nonnull APAdNativeExpress *)nativeAd;
 
 广告落地页关闭
-- (void) nativeExpressAdDidDismissScreen:(nonnull KAAdNativeExpress *)nativeAd;
+- (void) nativeExpressAdDidDismissScreen:(nonnull APAdNativeExpress *)nativeAd;
 ```
 
 
@@ -294,13 +295,13 @@ KAAdNativeExpress *ad = [[KAAdNativeExpress alloc] initWithSlot:<AdSlot> delegat
 
 ### 构建广告
 创建一个开屏广告的实例
-`KAAdSplash`
+`APAdSplash`
 
 ```Objective-c
-KAAdSplash *splash = [[KAAdSplash alloc] initWithSlot:<AdSlot> delegate:<Delegate>];
+APAdSplash *splash = [[APAdSplash alloc] initWithSlot:<AdSlot> delegate:<Delegate>];
 ```
 * **AdSlot** - 广告位SlotId，用于请求广告
-* **Delegate** - id<KAAdSplashDelegate> 实例，用于接收广告事件回调
+* **Delegate** - id<APAdSplashDelegate> 实例，用于接收广告事件回调
 
 ### 设置显示时长
 调用下面方法设置广告显示时长
@@ -311,7 +312,7 @@ KAAdSplash *splash = [[KAAdSplash alloc] initWithSlot:<AdSlot> delegate:<Delegat
 
 ### 展示广告
 调用下面方法加载并展示开屏广告
-`KAAdSplash`
+`APAdSplash`
 
 ```Objective-c
 [splash loadAndPresentWithViewController:<Controller>];
@@ -320,7 +321,7 @@ KAAdSplash *splash = [[KAAdSplash alloc] initWithSlot:<AdSlot> delegate:<Delegat
 
 ### 暂停展示广告
 使用以下方法来暂停展示广告，在load到开始展示的这段时间里，你认为不再适合展示开屏广告，可以调用此方法来暂停展示
-`KAAdSplash`
+`APAdSplash`
 
 ```Objective-c
 [splash suspend];
@@ -328,7 +329,7 @@ KAAdSplash *splash = [[KAAdSplash alloc] initWithSlot:<AdSlot> delegate:<Delegat
 
 ### 展示广告并添加产品标识
 调用下面方法加载并展示开屏广告，同时可以添加产品自定的标识View，用于填充当由于素材尺寸不足填充全屏情况下的空白位置
-`KAAdSplash`
+`APAdSplash`
 
 ```Objective-c
 [splash loadAndPresentWithViewController:<Controller> andBackgroundColor:<Color> andBottomView:<View> andBottomViewAutoFitDisplay:<Auto>];
@@ -341,53 +342,53 @@ KAAdSplash *splash = [[KAAdSplash alloc] initWithSlot:<AdSlot> delegate:<Delegat
 
 ### 标识区可用尺寸
 调用下面方法来根据不同设备计算可以用于标识区的View大小
-`KAAdSplash`
+`APAdSplash`
 
 ```Objective-c
-CGSize size = [KAAdSplash getBottomViewSize];
+CGSize size = [APAdSplash getBottomViewSize];
 ```
 
 ### 广告回调
 使用以下回调接收加载广告的事件
 
-`KAAdSplashDelegate`
+`APAdSplashDelegate`
 
 ```Objective-c
 // Ad is successfully presented
-- (void) splashAdPresentDidSuccess:(nonnull KAAdSplash *)splashAd;
+- (void) splashAdPresentDidSuccess:(nonnull APAdSplash *)splashAd;
 
 // Ad present has failed
 - (void) splashAdPresentDidFail:(nonnull NSString *)splashAdSlot
 withError:(nonnull NSError *)error;
 
 // Ad has been clicked
-- (void) splashAdDidClick:(KAAdSplash *)splashAd;
+- (void) splashAdDidClick:(APAdSplash *)splashAd;
 
 // Ad view has been dismissed from screen
-- (void) splashAdDidDismiss:(KAAdSplash *)splashAd;
+- (void) splashAdDidDismiss:(APAdSplash *)splashAd;
 ```
 
 # 插屏广告 - Interstitial
 
 ### 构建广告
 创建一个插屏广告的实例
-`KAAdInterstitial`
+`APAdInterstitial`
 
 ```Objective-c
-KAAdInterstitial *interstitial = [[KAAdInterstitial alloc] initWithSlot:<AdSlot> delegate:<Delegate>];
+APAdInterstitial *interstitial = [[APAdInterstitial alloc] initWithSlot:<AdSlot> delegate:<Delegate>];
 ```
 * **AdSlot** - 广告位SlotId，用于请求广告
-* **Delegate** - id<KAAdInterstitialDelegate> 实例，用于接收广告事件回调
+* **Delegate** - id<APAdInterstitialDelegate> 实例，用于接收广告事件回调
 
 请求并加载广告
-`KAAdInterstitial`
+`APAdInterstitial`
 
 ```Objective-c
 [interstitial load];
 ```
 
 检测广告是否已经可以使用
-`KAAdInterstitial`
+`APAdInterstitial`
 
 ```Objective-c
 BOOL ready = [interstitial isReady];
@@ -395,7 +396,7 @@ BOOL ready = [interstitial isReady];
 
 ### 展示广告
 调用下面方法加载并展示开屏广告
-`KAAdInterstitial`
+`APAdInterstitial`
 
 ```Objective-c
 [interstitial presentFromRootViewController:<Controller>];
@@ -405,22 +406,22 @@ BOOL ready = [interstitial isReady];
 ### 广告回调
 使用以下回调接收加载广告的事件
 
-`KAAdInterstitialDelegate`
+`APAdInterstitialDelegate`
 
 ```Objective-c
 // Interstitial Ad load success
-- (void) interstitialAdLoadDidSuccess:(nonnull KAAdInterstitial *) interstitialAd;
+- (void) interstitialAdLoadDidSuccess:(nonnull APAdInterstitial *) interstitialAd;
 
 // Interstitial Ad load fail
 - (void) interstitialAdLoadDidFailForSlot:(nonnull NSString *) interstitialAdSlot
 withError:(nonnull NSError *) interstitialAdStatus;
 
 // Interstitial Ad presented successful
-- (void) interstitialAdDidPresent:(nonnull KAAdInterstitial *) interstitial;
+- (void) interstitialAdDidPresent:(nonnull APAdInterstitial *) interstitial;
 
 
 // Interstitial Ad has been clicked
-- (void) interstitialAdDidClick:(nonnull KAAdInterstitial *) splashAd;
+- (void) interstitialAdDidClick:(nonnull APAdInterstitial *) splashAd;
 
 // Interstitial Ad has been dismissed from screen
 ```
@@ -431,34 +432,34 @@ withError:(nonnull NSError *) interstitialAdStatus;
 激励视频广告在SDK中为单例，因此无需在创建新的实例，可以直接使用类方法展示广告，视频广告在SDK初始化成功后立即开始自动加载。
 
 检测广告是否已经可以使用
-`KAAdIncentivized`
+`APAdIncentivized`
 
 ```Objective-c
-BOOL ready = [KAAdIncentivized isReady];
+BOOL ready = [APAdIncentivized isReady];
 ```
 
 ### 展示广告
 调用下面方法加载并展示极力视频广告
-`KAAdIncentivized`
+`APAdIncentivized`
 
 ```Objective-c
-[KAAdIncentivized presentFromRootViewController:<Controller>];
+[APAdIncentivized presentFromRootViewController:<Controller>];
 ```
 * **Controller** - 用于展示激励视频广告的UIViewController
 
 ### 广告回调
 设置一个激励视频的回调实例
-`KAAdIncentivized`
+`APAdIncentivized`
 
 ```Objective-c
-[KAAdIncentivized setDelegate:<Delegate>];
+[APAdIncentivized setDelegate:<Delegate>];
 ```
-* **Delegate** - id<KAAdIncentivizedDelegate> 实例，用于接收广告事件回调
+* **Delegate** - id<APAdIncentivizedDelegate> 实例，用于接收广告事件回调
 
 ### 广告回调
 使用以下回调接收加载广告的事件
 
-`KAAdIncentivizedDelegate`
+`APAdIncentivizedDelegate`
 
 ```Objective-c
 // Incentvized video Ad has failed to present
@@ -478,33 +479,33 @@ BOOL ready = [KAAdIncentivized isReady];
 
 ### 构建广告
 创建一个横幅广告的实例并将广告加到视图上
-`KAAdBanner`
+`APAdBanner`
 
 ```Objective-c
-KAAdBanner * banner = [[KAAdBanner alloc] initWithSlot:<adSlot> withSize:<size> delegate:<delegate> currentController:<controller>];
+APAdBanner * banner = [[APAdBanner alloc] initWithSlot:<adSlot> withSize:<size> delegate:<delegate> currentController:<controller>];
 [self.view addSubview:banner];
 ```
 * **adSlot** - 广告位SlotId，用于请求广告
-* **Size** - 广告尺寸<KAAdBannerSize>枚举
-* **Delegate** - id<KAAdBannerDelegate> 实例，用于接收广告事件回调
+* **Size** - 广告尺寸<APAdBannerSize>枚举
+* **Delegate** - id<APAdBannerDelegate> 实例，用于接收广告事件回调
 * **controller** - 用于点击横幅广告后展示广告页的UIViewController
 
 设置广告轮换的时间间隔，当该值小于等于0时广告不轮换
-`KAAdBanner`
+`APAdBanner`
 
 ```Objective-c
 [banner setInterval:<NSInteger>];
 ```
 
 请求并加载广告
-`KAAdBanner`
+`APAdBanner`
 
 ```Objective-c
 [banner load];
 ```
 
 设置广告的位置
-`KAAdBanner`
+`APAdBanner`
 ```Objective-c
 [banner setPosition:<point>];
 ```
@@ -514,28 +515,28 @@ KAAdBanner * banner = [[KAAdBanner alloc] initWithSlot:<adSlot> withSize:<size> 
 ### 广告回调
 使用以下回调接收加载广告的事件
 
-`KAAdBannerDelegate`
+`APAdBannerDelegate`
 
 ```Objective-c
 /**
  * Notifies the delegate that the banner has finished loading
  */
-- (void) bannerAdCompleteLoadingWithAd:(nonnull KAAdBanner *)bannerAd;
+- (void) bannerAdCompleteLoadingWithAd:(nonnull APAdBanner *)bannerAd;
 /**
  * Notifies the delegate that the banner has failed to load with some error.
  */
 - (void) bannerAdFailedLoadingForSlot:(nonnull NSString *)adSlot
                            withStatus:(nonnull NSError *)nativeAdStatus
-                            andBanner:(nonnull KAAdBanner *)bannerAd;
+                            andBanner:(nonnull APAdBanner *)bannerAd;
 /**
  * Notifies the delegate that the banner has finished presenting screen.
  */
-- (void) bannerDidPresentScreen:(nonnull KAAdBanner *)bannerAd;
+- (void) bannerDidPresentScreen:(nonnull APAdBanner *)bannerAd;
 
 /**
  * Notifies the delegate that the banner has dismissed the presented screen.
  */
-- (void) bannerDidDismissScreen:(nonnull KAAdBanner *)bannerAd;
+- (void) bannerDidDismissScreen:(nonnull APAdBanner *)bannerAd;
 ```
 
 ### 兑换码
@@ -613,7 +614,7 @@ KAAdBanner * banner = [[KAAdBanner alloc] initWithSlot:<adSlot> withSize:<size> 
 
 在`UIApplicationDelegate`的代理方法中获取deviceToken
 
-```Objective-c
+```Objective-cAPAd
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
 	[KAPub setDeviceToken:deviceToken];
@@ -628,21 +629,21 @@ KAAdBanner * banner = [[KAAdBanner alloc] initWithSlot:<adSlot> withSize:<size> 
 ### SDK错误码
 
 ```Objective-c
-    KAAdStatusCodeMissingResourceBundle        = 51001,    // Resource bundle is not present
-    KAAdStatusCodeNoFill                       = 51002,    // Ad is not filled at this time
-    KAAdStatusCodeDuplicateRequest             = 51003,    // Instance of ad is already served, usually caused duplicated request on same instance of ad
-    KAAdStatusCodeSDKNotInitialized            = 51004,
-    KAAdStatusCodeMediationRequestFailed       = 51101,    // General mediation platform failed to receive ad in time or returned mediation error
-    KAAdStatusCodeMediationInvalidRequest      = 51102,    // Mediation platform return invalid request error
-    KAAdStatusCodeMediationInvalidConfig       = 51103,     
-    KAAdStatusCodeFailToPresent                = 51104,
-    KAAdStatusCodeAdSwitchClose                = 51105,    // Ad closed
-    KAAdStatusCodeInvalidRequestPath           = 59994,    // Incorrect server address
-    KAAdStatusCodeNetworkUnavailable           = 59995,    // Network is currently not available
-    KAAdStatusCodeNetworkTimeout               = 59996,    // Network request timeout
-    KAAdStatusCodeInternalError                = 59997,    // SDK internal process error
-    KAAdStatusCodeServerError                  = 59998,    // Server has return an error
-    KAAdStatusCodeUnknown                      = 59999
+    APAdStatusCodeMissingResourceBundle        = 51001,    // Resource bundle is not present
+    APAdStatusCodeNoFill                       = 51002,    // Ad is not filled at this time
+    APAdStatusCodeDuplicateRequest             = 51003,    // Instance of ad is already served, usually caused duplicated request on same instance of ad
+    APAdStatusCodeSDKNotInitialized            = 51004,
+    APAdStatusCodeMediationRequestFailed       = 51101,    // General mediation platform failed to receive ad in time or returned mediation error
+    APAdStatusCodeMediationInvalidRequest      = 51102,    // Mediation platform return invalid request error
+    APAdStatusCodeMediationInvalidConfig       = 51103,     
+    APAdStatusCodeFailToPresent                = 51104,
+    APAdStatusCodeAdSwitchClose                = 51105,    // Ad closed
+    APAdStatusCodeInvalidRequestPath           = 59994,    // Incorrect server address
+    APAdStatusCodeNetworkUnavailable           = 59995,    // Network is currently not available
+    APAdStatusCodeNetworkTimeout               = 59996,    // Network request timeout
+    APAdStatusCodeInternalError                = 59997,    // SDK internal process error
+    APAdStatusCodeServerError                  = 59998,    // Server has return an error
+    APAdStatusCodeUnknown                      = 59999
 ```
 
 ### cocos2d-x播放广告崩溃问题
