@@ -1,5 +1,5 @@
 > [Chinese Doc](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/README.md)
-# Current Ver.3.6.4.2 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/ReleaseNote.md)
+# Current Ver.3.6.5 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/ReleaseNote.md)
 # AppicPlay AD SDK Integration guide
 
 * [Download](#Download)
@@ -17,7 +17,7 @@
 
 ## <a name="Download">Download</a>
 
-* Download [AppicPlay AD SDK](http://sayhey.oss-cn-shanghai.aliyuncs.com/sdk/android/APSDK_v3.6.4.2.aar)
+* Download [AppicPlay AD SDK](http://sayhey.oss-cn-shanghai.aliyuncs.com/sdk/android/APSDK_v3.6.5.aar)
 
 ## <a name="Preparation">Preparation</a>
 
@@ -62,9 +62,9 @@
 * `proguard` configuration：
 
 	```
-	-keep class * implements com.appicplay.sdk.core.APApplicationInvoker
-	-keep class * extends com.appicplay.sdk.core.base.ad.Ad
-	-keep class * extends com.appicplay.sdk.core.base.ad.AdSDK
+	-keep class * extends com.ap.android.atom.sdk.core.base.ad.Ad
+	-keep class * extends com.ap.android.atom.sdk.core.base.ad.AdSDK
+	-keep class * implements com.ap.android.atom.sdk.core.base.lifecycle.IApplicationLifecycle
 	```
 
 ## <a name="thirdPartySDK">Third party SDKs</a>

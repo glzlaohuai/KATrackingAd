@@ -137,6 +137,7 @@ Demo中已经配置了对所有第三方sdk的依赖库的引用，请按照上�
 * MobileCoreServices.framework
 * MediaPlayer.framework
 * libresolv.9.tbd
+* libresolv.tbd
 * ImageIO.framework（如果以上依赖库增加完仍旧报错，请添加ImageIO.framework）
 
 ### info.plist设置白名单
