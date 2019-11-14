@@ -7,9 +7,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.appicplay.sdk.ad.APBaseAD;
-import com.appicplay.sdk.ad.listener.APSplashADListener;
-import com.appicplay.sdk.ad.splash.APSplash;
+import com.ap.android.atom.sdk.ad.APBaseAD;
+import com.ap.android.atom.sdk.ad.listener.APSplashADListener;
+import com.ap.android.atom.sdk.ad.splash.APSplash;
 
 public class SplashActivity extends Activity implements View.OnClickListener {
 
@@ -40,7 +40,7 @@ public class SplashActivity extends Activity implements View.OnClickListener {
         }
 
 
-        splash = new APSplash(this, "zKyjJJyM", new APSplashADListener() {
+        splash = new APSplash(this, Config.SPLASH_SLOT_ID, new APSplashADListener() {
             @Override
             public void dismiss(APBaseAD apBaseAD, String s) {
                 Log.i(TAG, "dismiss: ");

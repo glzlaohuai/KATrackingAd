@@ -7,9 +7,9 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.appicplay.sdk.ad.APBaseAD;
-import com.appicplay.sdk.ad.banner.APBanner;
-import com.appicplay.sdk.ad.listener.APBannerADListener;
+import com.ap.android.atom.sdk.ad.APBaseAD;
+import com.ap.android.atom.sdk.ad.banner.APBanner;
+import com.ap.android.atom.sdk.ad.listener.APBannerADListener;
 
 
 public class BannerActivity extends Activity implements View.OnClickListener {
@@ -30,7 +30,7 @@ public class BannerActivity extends Activity implements View.OnClickListener {
     }
 
     private void bannerLoad() {
-        banner = new APBanner(this, "naArbAbz", new APBannerADListener() {
+        banner = new APBanner(this, Config.BANNER_SLOT_ID, new APBannerADListener() {
             @Override
             public void success(APBaseAD apBaseAD, String s) {
                 Log.i(TAG, "success: ");

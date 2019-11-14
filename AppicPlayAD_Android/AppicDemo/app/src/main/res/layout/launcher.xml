@@ -41,10 +41,10 @@
         android:text="splash" />
 
     <Button
-        android:id="@+id/video"
+        android:id="@+id/incentivized"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="video" />
+        android:text="incentivized" />
 
 
 </LinearLayout>

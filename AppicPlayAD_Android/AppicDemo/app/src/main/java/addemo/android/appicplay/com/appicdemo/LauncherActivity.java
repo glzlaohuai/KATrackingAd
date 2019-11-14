@@ -5,7 +5,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.appicplay.sdk.ad.APAD;
+import com.ap.android.atom.sdk.ad.APAD;
+import com.ap.android.atom.sdk.core.APSDK;
 
 public class LauncherActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -20,11 +21,11 @@ public class LauncherActivity extends AppCompatActivity implements View.OnClickL
         findViewById(R.id.nativ).setOnClickListener(this);
         findViewById(R.id.interstitial).setOnClickListener(this);
         findViewById(R.id.splash).setOnClickListener(this);
-        findViewById(R.id.video).setOnClickListener(this);
+        findViewById(R.id.incentivized).setOnClickListener(this);
         findViewById(R.id.nativ_raw).setOnClickListener(this);
         findViewById(R.id.nativ_list).setOnClickListener(this);
 
-        APAD.init(this, "EKJvVnyRrgyWjzlw", "Rr586y");
+        APSDK.init(this, Config.APP_INFO_ID);
         APAD.setIsMobileNetworkDirectlyDownload(true);
         APAD.useDefaultConfigForSplashIfNoConfigExist(this, "zKyjJJyM");
     }
@@ -55,8 +56,8 @@ public class LauncherActivity extends AppCompatActivity implements View.OnClickL
                 intent = new Intent(LauncherActivity.this, SplashActivity.class);
                 break;
 
-            case R.id.video:
-                intent = new Intent(LauncherActivity.this, VideoActivity.class);
+            case R.id.incentivized:
+                intent = new Intent(LauncherActivity.this, IncentivizedActivity.class);
                 break;
 
         }
