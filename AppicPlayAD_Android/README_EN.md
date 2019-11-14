@@ -1,6 +1,6 @@
 > [Chinese Doc](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/README.md)
 # Current Ver.3.7.0 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/ReleaseNote.md)
-# AppicPlay AD SDK Integration guide
+# AppicAd SDK Integration guide
 
 * [Download](#Download)
 * [Preparation](#Preparation)
@@ -12,12 +12,12 @@
 * [Banner Ad](#bannerAD)
 * [Rewarded Video](#videoAD)
 * [Permissions](#permissions)
-* [etc](#others)
+* [More](#others)
 
 
 ## <a name="Download">Download</a>
 
-* Download [AppicPlay AD SDK](http://sayhey.oss-cn-shanghai.aliyuncs.com/sdk/android/APSDK_v3.6.5.aar)
+* Download [AppicAd SDK](http://sayhey.oss-cn-shanghai.aliyuncs.com/sdk/android/APSDK_v3.7.aar)
 
 ## <a name="Preparation">Preparation</a>
 
@@ -30,7 +30,7 @@
 	implementation 'com.liulishuo.filedownloader:library:1.7.4'
 	implementation(name: 'android-gif-drawable-1.2.6', ext: 'aar')
 	```
-	download: [android-gif-drawable-1.2.6.aar](https://github.com/KATracking/KATrackingAd/tree/master/AppicPlayAD_Android/android-gif-drawable-1.2.6.aar)
+	If your App has already integrated android-gif-drawable-1.2.6, you can ignore this, or please download at: [android-gif-drawable-1.2.6.aar](https://github.com/KATracking/KATrackingAd/tree/master/AppicPlayAD_Android/android-gif-drawable-1.2.6.aar)
 		
 * To initialize SDK, please add the follow line to onCreate delegate of your main activity or Application.
 
