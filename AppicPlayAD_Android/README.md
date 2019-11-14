@@ -275,19 +275,19 @@
 
 1. **设置激励视频回调**
 
-	`APVideo.setListener(apVideoListener);`
+	`APIncentivized.setListener(apVideoListener);`
 	
 1. **设置当前需要使用激励视频相关功能的activity**
 
-	`APVideo.setActivity(currentActivity);`
+	`APIncentivized.setActivity(currentActivity);`
 	
 1. **检查是否有可用的激励视频**
 
-	`APVideo.isReady();`
+	`APIncentivized.isReady();`
 	
 1. **展示激励视频广告**
 
-	`APVideo.showVideoAD(currentActivity);`
+	`APIncentivized.showVideoAD(currentActivity);`
 	
 
 ## <a name="wall">接入任务墙</a>
