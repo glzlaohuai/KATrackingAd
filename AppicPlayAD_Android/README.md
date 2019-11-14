@@ -1,6 +1,6 @@
 > [English Doc](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/README_EN.md)
 # 当前版本Ver.3.7.0 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/ReleaseNote.md)
-# AppicPlay AD SDK接入说明
+# AppicAd SDK接入说明
 
 * [关于](#about)
 * [基础SDK接入](#essential)
@@ -19,7 +19,7 @@
 ## <a name="about">关于</a>
 
 * 支持广告类型：**原生**、**开屏**、**插屏**、**横幅**、**激励视频**
-* 下载[AppicPlay AD SDK](http://sayhey.oss-cn-shanghai.aliyuncs.com/sdk/android/APSDK_v3.7.0.aar)
+* 下载[AppicAd SDK](http://sayhey.oss-cn-shanghai.aliyuncs.com/sdk/android/APSDK_v3.7.0.aar)
 
 ## <a name="essential">基础SDK接入</a>
 
