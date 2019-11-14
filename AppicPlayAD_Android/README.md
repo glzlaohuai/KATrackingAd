@@ -275,7 +275,7 @@
 
 1. **设置激励视频回调**
 
-	`APIncentivized.setListener(apVideoListener);`
+	`APIncentivized.setListener(apIncentivizedListener);`
 	
 1. **设置当前需要使用激励视频相关功能的activity**
 
