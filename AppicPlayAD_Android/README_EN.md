@@ -282,23 +282,23 @@ Apart from other ad types, rewarded video uses singleton to automatically load a
 
 1. **Set listener**
 
-	`APVideo.setListener(apVideoListener);`
+	`APIncentivized.setListener(apIncentivizedADListener);`
 	
 2. **Set activity**
 
 	Use this method to set activity which is to display video ad
 	
-	`APVideo.setActivity(currentActivity);`
+	`APIncentivized.setActivity(currentActivity);`
 	
 3. **Ad availability**
 
 	Use this method to check if a ad is ready to display
 	
-	`APVideo.isReady();`
+	`APIncentivized.isReady();`
 	
 4. **Show ad**
 
-	`APVideo.showVideoAD(currentActivity);`
+	`APIncentivized.showVideoAD(currentActivity);`
 		
 ## <a name="permissions">Permissions</a>
 
