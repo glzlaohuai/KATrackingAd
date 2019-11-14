@@ -1,6 +1,6 @@
 > [Chinese Doc](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/README.md)
-# Current Ver.3.6.5 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/ReleaseNote.md)
-# AppicPlay AD SDK Integration guide
+# Current Ver.3.7.0 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/ReleaseNote.md)
+# AppicAd SDK Integration guide
 
 * [Download](#Download)
 * [Preparation](#Preparation)
@@ -12,12 +12,12 @@
 * [Banner Ad](#bannerAD)
 * [Rewarded Video](#videoAD)
 * [Permissions](#permissions)
-* [etc](#others)
+* [More](#others)
 
 
 ## <a name="Download">Download</a>
 
-* Download [AppicPlay AD SDK](http://sayhey.oss-cn-shanghai.aliyuncs.com/sdk/android/APSDK_v3.6.5.aar)
+* Download [AppicAd SDK](http://sayhey.oss-cn-shanghai.aliyuncs.com/sdk/android/APSDK_v3.7.aar)
 
 ## <a name="Preparation">Preparation</a>
 
@@ -28,27 +28,9 @@
 	implementation 'com.android.volley:volley:1.1.0'
 	implementation 'com.android.support:support-v4:26.1.0'
 	implementation 'com.liulishuo.filedownloader:library:1.7.4'
+	implementation(name: 'android-gif-drawable-1.2.6', ext: 'aar')
 	```
-* Please add the following code to `Application` lifecycle:
-
-	*	`onCreate` delegate：
-
-		```
-		@Override
-    	public void onCreate() {
-        super.onCreate();
-        APApplication.onApplicationCreate(this);
-    	}
-		```
-	*	`attachBaseContext` delegate：
-
-		```
-		@Override
-    	protected void attachBaseContext(Context base) {
-       	super.attachBaseContext(base);
-       	APApplication.onApplicationAttachBaseContext(base,this);
-    	}
-		```
+	If your App has already integrated android-gif-drawable-1.2.6, you can ignore this, or please download at: [android-gif-drawable-1.2.6.aar](https://github.com/KATracking/KATrackingAd/tree/master/AppicPlayAD_Android/android-gif-drawable-1.2.6.aar)
 		
 * To initialize SDK, please add the follow line to onCreate delegate of your main activity or Application.
 
@@ -56,8 +38,6 @@
 	APAD.init(this, "appID");
 	```
 	**Note**: `appID` is provided by our operator.
-	
-	**Note**: To allow SDK to perform most effectively, it is suggested to initialize SDK within onCreate delegate of your main activity.
 
 * `proguard` configuration：
 
@@ -131,6 +111,14 @@ Native Ad is set to be using Template mode by default, or call `apNativeInstance
 	Ad View	|	`getExposureView`
 	
 	**Note**: Title, Description and Icon are all nullable, please ensure verification 	before using them
+	
+		
+1. **Check Ad Type（is video typ or not）**
+
+	```
+	apNative.isVideoTypeAD();
+	```
+
 	
 5. **Ad View**
 
@@ -324,3 +312,4 @@ Apart from other ad types, rewarded video uses singleton to automatically load a
 ## <a name="others">etc</a>
 
 * If you wishes to inform users before download starts under cellular network, use this method to enable this feature `APAD.setIsMobileNetworkDirectlyDownload(boolean)`, default is set to `true`
+* supported cpu architecture: `armeabi-v7a`
