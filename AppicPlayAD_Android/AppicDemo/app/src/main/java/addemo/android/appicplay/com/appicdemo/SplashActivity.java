@@ -44,6 +44,7 @@ public class SplashActivity extends Activity implements View.OnClickListener {
             @Override
             public void dismiss(APBaseAD apBaseAD, String s) {
                 Log.i(TAG, "dismiss: ");
+                ((LinearLayout)findViewById(R.id.splashContainer)).removeAllViews();
             }
 
             @Override

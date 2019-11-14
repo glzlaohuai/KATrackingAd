@@ -1,9 +1,7 @@
 package addemo.android.appicplay.com.appicdemo;
 
-import android.content.BroadcastReceiver;
 
 public class Config {
-
 
     public static final String APP_INFO_ID = "qXvbPemZQrAYWZwp-6rmezr";
     public static final String NATIVE_SLOT_ID = "rGoJqMye";

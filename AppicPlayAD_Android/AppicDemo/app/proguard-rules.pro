@@ -116,8 +116,10 @@ public *;  } 
 -dontwarn com.facebook.ads.**
 
 #appicsdk
--keep class * implements com.appicplay.sdk.core.APApplicationInvoker
--keepnames class com.appicplay.sdk.extra.APExtra
+-keep class * extends com.ap.android.atom.sdk.core.base.ad.Ad
+-keep class * extends com.ap.android.atom.sdk.core.base.ad.AdSDK
+-keep class * implements com.ap.android.atom.sdk.core.base.lifecycle.IApplicationLifecycle
+
 
 
 #rqsdk
