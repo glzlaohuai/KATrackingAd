@@ -35,7 +35,7 @@
 	```
 	点击下载：[android-gif-drawable-1.2.6.aar](https://github.com/KATracking/KATrackingAd/tree/master/AppicPlayAD_Android/android-gif-drawable-1.2.6.aar)
 		
-* applicaton或``或入口activity 的`onCreate`回调方法中执行初始化
+* applicaton或入口activity 的`onCreate`回调方法中执行初始化
 
 	```
 	APSDK.init(context, "appID");
