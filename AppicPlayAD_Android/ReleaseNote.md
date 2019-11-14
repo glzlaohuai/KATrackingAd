@@ -1,5 +1,9 @@
 # 版本发布记录
 
+## Ver.3.7.0
+## Release Date: 2019-11-14
+* 已知bug修复
+
 ## Ver.3.6.5
 ## Release Date: 2019-10-22
 * 已知bug修复

@@ -1,5 +1,5 @@
 > [English Doc](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/README_EN.md)
-# 当前版本Ver.3.6.5 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/ReleaseNote.md)
+# 当前版本Ver.3.7.0 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/ReleaseNote.md)
 # AppicPlay AD SDK接入说明
 
 * [关于](#about)
@@ -30,45 +30,18 @@
 	implementation 'com.android.volley:volley:1.1.0'
     implementation 'com.android.support:support-v4:26.1.0'
     implementation 'com.liulishuo.filedownloader:library:1.7.4'
+    implementation(name: 'android-gif-drawable-1.2.6', ext: 'aar')
+    
 	```
-* `Application`的回调方法中分别做如下修改（工程如果没有自定义`Application`请自行加入）：
-	*	`onCreate`回调方法：
-
-		```
-		@Override
-    	public void onCreate() {
-        super.onCreate();
-        APApplication.onApplicationCreate(this);
-    	}
-		```
-	*	`attachBaseContext`回调方法：
-
-		```
-		@Override
-    	protected void attachBaseContext(Context base) {
-       	super.attachBaseContext(base);
-       	APApplication.onApplicationAttachBaseContext(base,this);
-    	}
-		```
-	*	`onTerminate`回调方法：
-
-
-		```
-		@Override
-    	public void onTerminate() {
-       	super.onTerminate();
-       	APApplication.onApplicationTerminate(this);
-    	}
-		```
+	点击下载：[android-gif-drawable-1.2.6.aar](https://github.com/KATracking/KATrackingAd/tree/master/AppicPlayAD_Android/android-gif-drawable-1.2.6.aar)
 		
-* main activity 的`onCreate`回调方法中执行初始化
+* applicaton或``或入口activity 的`onCreate`回调方法中执行初始化
 
 	```
-	APSDK.init(this, "appID");
+	APSDK.init(context, "appID");
 	```
 	**注**:`appID`的值将在您接入sdk时由我方相关对接人员提供。
 	
-	**注**：请勿将该方法调用放到`Application`的`onCreate`中，为了保证每次应用重新启动都会执行该方法（以保证配置的更新），请将该方法调用放到`Activity`的`onCreate`方法中。
 
 * `proguard`配置：
 
@@ -122,6 +95,13 @@
 	标题文字	|	`getTitle`
 	响应按钮的文字（可能包含的值：“查看详情”、“下载”等）	|	`getActionText`
 	获取包含广告内容的view	|	`getExposureView`
+	
+1. **检查原生广告类型（是否视频）：**
+
+	```
+	apNative.isVideoTypeAD();
+	```
+	
 1. **将广告内容添加到容器中：**
 
 	使用方法：`getExposureView(viewContainer,viewWidth)`来获得待添加到广告容器中的view
@@ -345,3 +325,4 @@
 
 * sdk在执行初始化过程中会从服务器获取广告相关配置文件，各类型广告相关功能均依赖该配置文件中的相关配置，可以通过方法：`APAD.hasSDKEverInitedSuccess(context);`来检查是否sdk初始化成功（成功从服务器获取到配置文件）
 * 由于sdk初始化完成（获取到配置）需要大概几秒钟的时间（具体时间依赖当前的网络环境），而splash广告一般在启动应用时候就需要进行加载和展示，所以为了保证在sdk未初始化完成前也能正常进行开屏广告的加载和展示功能，sdk提供了方法：`APAD.useDefaultConfigForSplashIfNoConfigExist(context, "splashSlotID");`来为指定的开屏广告位设置默认配置以保证开屏广告在sdk未完成初始化时亦可以正常的加载。**该方法必须要在sdk初始化方法之后调用**。
+* 支持架构：只支持：armeabi-v7a
