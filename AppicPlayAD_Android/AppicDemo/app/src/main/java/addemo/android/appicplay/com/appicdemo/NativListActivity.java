@@ -13,9 +13,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.androidquery.AQuery;
-import com.appicplay.sdk.ad.APBaseAD;
-import com.appicplay.sdk.ad.listener.APNativeADListener;
-import com.appicplay.sdk.ad.nativ.APNative;
+import com.ap.android.atom.sdk.ad.APBaseAD;
+import com.ap.android.atom.sdk.ad.listener.APNativeADListener;
+import com.ap.android.atom.sdk.ad.nativ.APNative;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,7 +67,7 @@ public class NativListActivity extends Activity {
 
         for (int i = 0; i < 2; i++) {
             final int finalI = i;
-            final APNative apNative = new APNative(this, "PJyeKVAv", new APNativeADListener() {
+            final APNative apNative = new APNative(this, Config.NATIVE_SLOT_ID, new APNativeADListener() {
                 @Override
                 public void success(APBaseAD ad, String slotID) {
                     nativeList.add(ad);
@@ -98,6 +98,24 @@ public class NativListActivity extends Activity {
 
                 @Override
                 public void gotoDownload(APBaseAD apBaseAD) {
+
+                }
+
+                @Override
+                public void videoShowFailed(APBaseAD apBaseAD, String s) {
+                    Log.i(TAG, "videoShowFailed: " + s);
+
+                }
+
+                @Override
+                public void videoShowCompleted(APBaseAD apBaseAD) {
+                    Log.i(TAG, "videoShowCompleted: " + finalI);
+
+                }
+
+                @Override
+                public void videoShowCountDown(APBaseAD apBaseAD, int i) {
+                    Log.i(TAG, "videoShowCountDown: " + i);
 
                 }
             });

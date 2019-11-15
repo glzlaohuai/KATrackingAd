@@ -11,6 +11,9 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
         multiDexEnabled true
+        ndk{
+            abiFilters 'armeabi-v7a'
+        }
     }
     buildTypes {
         release {
@@ -22,6 +25,8 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+
 }
 
 
@@ -42,13 +47,13 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:27.1.1'
 
     implementation 'com.android.support:multidex:1.0.0'
-    implementation(name: 'APSDK_Ad_v3.5.4', ext: 'aar')
-    implementation(name: 'APSDK_Core_v3.5.4', ext: 'aar')
+    implementation(name: 'APSDK_v3.7.0', ext: 'aar')
     implementation 'com.android.volley:volley:1.1.0'
     implementation 'com.liulishuo.filedownloader:library:1.7.4'
 
     //tt
-    implementation(name: 'open_ad_sdk-1.9.9.2', ext: 'aar')
-    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.6'
+    implementation(name: 'open_ad_sdk-2.3.0.8', ext: 'aar')
+    implementation(name: 'android-gif-drawable-1.2.6', ext: 'aar')
+//    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.6'
 
 }

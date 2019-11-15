@@ -12,7 +12,6 @@
 
     <!--tt-->
     <!--头条-->
-    <!--头条-->
     <!--必须要有的权限-->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
@@ -20,8 +19,8 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
-    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
     <!--最好能提供的权限-->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
@@ -55,7 +54,7 @@
         <activity android:name=".NativListActivity" />
         <activity android:name=".InterstitialActivity" />
         <activity android:name=".BannerActivity" />
-        <activity android:name=".VideoActivity" />
+        <activity android:name=".IncentivizedActivity" />
 
 
         <!--头条-->
@@ -71,7 +70,7 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/appicplay_file_path" />
+                android:resource="@xml/tt_file_paths" />
         </provider>
 
         <meta-data

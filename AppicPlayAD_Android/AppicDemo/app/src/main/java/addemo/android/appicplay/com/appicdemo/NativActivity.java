@@ -2,14 +2,15 @@ package addemo.android.appicplay.com.appicdemo;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.appicplay.sdk.ad.APBaseAD;
-import com.appicplay.sdk.ad.listener.APNativeADListener;
-import com.appicplay.sdk.ad.nativ.APNative;
-import com.appicplay.sdk.core.utils.LogUtils;
+import com.ap.android.atom.sdk.ad.APBaseAD;
+import com.ap.android.atom.sdk.ad.listener.APNativeADListener;
+import com.ap.android.atom.sdk.ad.nativ.APNative;
+import com.ap.android.atom.sdk.core.utils.LogUtils;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -56,7 +57,7 @@ public class NativActivity extends Activity {
         }
 
         //
-        APNative x = new APNative(this, "PJyeKVAv", new APNativeADListener() {
+        APNative x = new APNative(this, Config.NATIVE_SLOT_ID, new APNativeADListener() {
             @Override
             public void success(APBaseAD ad, String slotID) {
                 NativActivity.this.ad = (APNative) ad;
@@ -89,6 +90,23 @@ public class NativActivity extends Activity {
             public void gotoDownload(APBaseAD apBaseAD) {
 
             }
+            @Override
+            public void videoShowFailed(APBaseAD apBaseAD, String s) {
+                Log.i(TAG, "videoShowFailed: " + s);
+
+            }
+
+            @Override
+            public void videoShowCompleted(APBaseAD apBaseAD) {
+                Log.i(TAG, "videoShowCompleted: ");
+
+            }
+
+            @Override
+            public void videoShowCountDown(APBaseAD apBaseAD, int i) {
+                Log.i(TAG, "videoShowCountDown: " + i);
+
+            }
         });
         x.setPreferImageSize(640, 960);
         x.loadNative();
@@ -104,8 +122,9 @@ public class NativActivity extends Activity {
         String desc = ad.getDesc();
 
         String action = ad.getActionText();
+        boolean isVideoAD = ad.isVideoTypeAD();
 
-        LogUtils.v(TAG, "icon:" + iconUrl + ",imageUrl:" + imgUrl + ",title:" + title + ",desc:" + desc + ",action:" + action);
+        LogUtils.v(TAG, "icon:" + iconUrl + ",imageUrl:" + imgUrl + ",title:" + title + ",desc:" + desc + ",action:" + action +",isVideoAD:"+isVideoAD);
 
         ViewGroup viewContainer = findViewById(R.id.viewContainer);
         viewContainer.removeAllViews();

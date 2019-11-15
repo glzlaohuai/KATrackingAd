@@ -6,21 +6,22 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
 
-import com.appicplay.sdk.ad.listener.APVideoADListener;
-import com.appicplay.sdk.ad.video.APVideo;
-
-public class VideoActivity extends Activity {
+import com.ap.android.atom.sdk.ad.listener.APIncentivizedADListener;
+import com.ap.android.atom.sdk.ad.video.APIncentivized;
 
 
-    private static final String TAG = "VideoActivity";
+public class IncentivizedActivity extends Activity {
+
+
+    private static final String TAG = "IncentivizedActivity";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.video);
 
-        APVideo.setActivity(this);
-        APVideo.setListener(new APVideoADListener() {
+        APIncentivized.setActivity(this);
+        APIncentivized.setListener(new APIncentivizedADListener() {
             @Override
             public void loadFailed(String s) {
                 Log.i(TAG, "loadFailed: " + s);
@@ -67,8 +68,8 @@ public class VideoActivity extends Activity {
     }
 
     private void show() {
-        if (APVideo.isReady()) {
-            APVideo.showVideoAD(this);
+        if (APIncentivized.isReady()) {
+            APIncentivized.showVideoAD(this);
         } else {
             Log.i(TAG, "show: video is not ready, show failed.");
         }

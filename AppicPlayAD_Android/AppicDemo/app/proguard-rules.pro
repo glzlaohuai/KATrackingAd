@@ -59,14 +59,16 @@
 #############################基本配置#############################
 
 #gdt
--keep class com.qq.e.** {
-    public protected *;
-}
+-keep class com.qq.e.** { public protected *; }
+-keep class android.support.v4.**{ public *; }
+-keep class android.support.v7.**{ public *; }
 
 #头条
 -keep class com.bytedance.sdk.openadsdk.** { *; }
 -keep class com.androidquery.callback.** {*;}
 -keep class com.bytedance.sdk.openadsdk.service.TTDownloadProvider
+-keep public interface com.bytedance.sdk.openadsdk.downloadnew.** {*;}
+-keep class com.ss.sys.ces.* {*;}
 
 #vungle
 -keep class com.vungle.warren.** { *; }
@@ -114,8 +116,10 @@ public *;  } 
 -dontwarn com.facebook.ads.**
 
 #appicsdk
--keep class * implements com.appicplay.sdk.core.APApplicationInvoker
--keepnames class com.appicplay.sdk.extra.APExtra
+-keep class * extends com.ap.android.atom.sdk.core.base.ad.Ad
+-keep class * extends com.ap.android.atom.sdk.core.base.ad.AdSDK
+-keep class * implements com.ap.android.atom.sdk.core.base.lifecycle.IApplicationLifecycle
+
 
 
 #rqsdk
@@ -153,9 +157,3 @@ public *;  } 
 
 # adsdk
 -keep class com.main.** {*;}
-
-#toutiao
-#头条
--keep class com.bytedance.sdk.openadsdk.** { *; }
--keep class com.androidquery.callback.** {*;}
--keep class com.bytedance.sdk.openadsdk.service.TTDownloadProvider
