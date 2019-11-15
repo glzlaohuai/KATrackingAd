@@ -141,6 +141,9 @@ A reference to all third-party sdk dependent libraries has been configured in De
 * libresolv.tbd
 * ImageIO.framework
 
+### 接入admob注意事项
+![deployment target](https://github.com/KATracking/KATrackingAd/blob/master/README_Res/google_tips_en.png)
+
 ### info.plist Set whitelist
 ```XML
 	<key>LSApplicationQueriesSchemes</key>
