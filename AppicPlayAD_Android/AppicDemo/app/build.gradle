@@ -47,7 +47,7 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:27.1.1'
 
     implementation 'com.android.support:multidex:1.0.0'
-    implementation(name: 'APSDK_v3.7.0', ext: 'aar')
+    implementation(name: 'APSDK_v3.7.1', ext: 'aar')
     implementation 'com.android.volley:volley:1.1.0'
     implementation 'com.liulishuo.filedownloader:library:1.7.4'
 

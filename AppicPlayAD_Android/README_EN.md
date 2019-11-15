@@ -17,7 +17,7 @@
 
 ## <a name="Download">Download</a>
 
-* Download [AppicAd SDK](http://sayhey.oss-cn-shanghai.aliyuncs.com/sdk/android/APSDK_v3.7.aar)
+* Download [AppicAd SDK](http://sayhey.oss-cn-shanghai.aliyuncs.com/sdk/android/APSDK_v3.7.1.aar)
 
 ## <a name="Preparation">Preparation</a>
 
