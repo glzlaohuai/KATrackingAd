@@ -1,5 +1,5 @@
 > [English Doc](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS_new/README_EN.md)
-# 当前版本 Ver.3.10
+# 当前版本 Ver.3.10.2
 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS_new/ReleaseNote.md)
 # 接入说明
 
@@ -73,15 +73,15 @@ Demo中已经配置了对所有第三方sdk的依赖库的引用，请按照上�
 * 如果使用手工集成，请通过以下链接下载对应版本的sdk
   
 #### 广告SDK依赖库
-* AppicSDK [下载链接](https://img.atomhike.com/sdk/Mediation/KASDK/APSDK.v3.10.1.zip)
+* AppicSDK [下载链接](https://img.atomhike.com/sdk/Mediation/KASDK/APSDK.v3.10.2.zip)
 
 #### 广告平台依赖库
 * AppicInMobiSDK [下载链接](https://img.atomhike.com/sdk/Mediation/InMobiSDK/InMobiSDK.v7.3.0.zip)
-* AppicGoogleMobileAds [下载链接](https://img.atomhike.com/sdk/Mediation/GoogleMobileAds/GoogleMobileAds.v0.0.4.zip)
+* AppicGoogleMobileAds [下载链接](https://img.atomhike.com/sdk/Mediation/GoogleMobileAds/GoogleMobileAds.v7.52.0.zip)
 * AppicUnityAds [下载链接](https://img.atomhike.com/sdk/Mediation/UnityAds/UnityAds.v0.0.4.zip)
 * AppicVungleSDK [下载链接](https://img.atomhike.com/sdk/Mediation/VungleSDK/VungleSDK.v0.0.4.zip)
 * AppicAppLovinSDK [下载链接](https://img.atomhike.com/sdk/Mediation/AppLovinSDK/AppLovinSDK.v0.0.4.zip)
-* AppicIronSource [下载链接](https://img.atomhike.com/sdk/Mediation/IronSource/IronSource.v0.0.4.zip)
+* AppicIronSource [下载链接](https://img.atomhike.com/sdk/Mediation/IronSource/IronSource.v6.10.0.0.zip)
 * Appictoutiao [下载链接](https://img.atomhike.com/sdk/Mediation/toutiao/toutiao.v2.4.6.3.999.zip)
   * BUAdSDK.framework
   * BUAdSDK.bundle

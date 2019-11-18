@@ -1,5 +1,5 @@
 > [中文文档](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS_new/README.md)
-# Current Ver.3.10 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS_new/ReleaseNote.md)
+# Current Ver.3.10.2 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS_new/ReleaseNote.md)
 # Integration Guideline
 
 SDK can be obtained in two ways as mentioned below.
@@ -72,18 +72,18 @@ A reference to all third-party sdk dependent libraries has been configured in De
 * If integrate manually, please download the corresponding version of sdk via the link below.
   
 #### Advertising SDK dependency library
-* AppicSDK [download path](https://img.atomhike.com/sdk/Mediation/KASDK/KASDK.v3.10.1.zip)
+* AppicSDK [download path](https://img.atomhike.com/sdk/Mediation/KASDK/KASDK.v3.10.2.zip)
 
 #### Advertising platform dependency library
 * AppicInMobiSDK [download path](https://img.atomhike.com/sdk/Mediation/InMobiSDK/InMobiSDK.v7.3.0.zip)
-* AppicGoogleMobileAds [download path](https://img.atomhike.com/sdk/Mediation/GoogleMobileAds/GoogleMobileAds.v0.0.4.zip)
+* AppicGoogleMobileAds [download path](https://img.atomhike.com/sdk/Mediation/GoogleMobileAds/GoogleMobileAds.v7.52.0.zip)
 * AppicUnityAds [download path](https://img.atomhike.com/sdk/Mediation/UnityAds/UnityAds.v0.0.4.zip)
 * AppicVungleSDK [download path](https://img.atomhike.com/sdk/Mediation/VungleSDK/VungleSDK.v0.0.4.zip)
 * AppicAppLovinSDK [download path](https://img.atomhike.com/sdk/Mediation/AppLovinSDK/AppLovinSDK.v0.0.4.zip)
-* AppicIronSource [download path](https://img.atomhike.com/sdk/Mediation/IronSource/IronSource.v0.0.4.zip)
+* AppicIronSource [download path](https://img.atomhike.com/sdk/Mediation/IronSource/IronSource.v6.10.0.0.zip)
 * Appictoutiao [download path](https://img.atomhike.com/sdk/Mediation/toutiao/toutiao.v2.4.6.3.999.zip)
-  * WMAdSDK.framework
-  * WMAdSDK.bundle
+  * BUAdSDK.framework
+  * BUAdSDK.bundle
 * AppicGDT [download path](https://img.atomhike.com/sdk/Mediation/GDT/GDT.v4.10.13.zip)
   * libGDTMobSDK.a
 * AppicTalkingData (Optional, if you need KASDK to dock TD as a statistical framework）[download path](https://img.atomhike.com/sdk/Mediation/TalkingData/TalkingData.v0.0.4.zip)
