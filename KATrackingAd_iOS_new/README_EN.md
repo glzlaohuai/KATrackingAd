@@ -77,7 +77,7 @@ A reference to all third-party sdk dependent libraries has been configured in De
 #### Advertising platform dependency library
 * AppicInMobiSDK [download path](https://img.atomhike.com/sdk/Mediation/InMobiSDK/InMobiSDK.v7.3.0.zip)
 * AppicGoogleMobileAds [download path](https://img.atomhike.com/sdk/Mediation/GoogleMobileAds/GoogleMobileAds.v7.52.0.zip)
-* AppicUnityAds [download path](https://img.atomhike.com/sdk/Mediation/UnityAds/UnityAds.v0.0.4.zip)
+* AppicUnityAds [download path](https://img.atomhike.com/sdk/Mediation/UnityAds/UnityAds.v3.3.0.zip)
 * AppicVungleSDK [download path](https://img.atomhike.com/sdk/Mediation/VungleSDK/VungleSDK.v0.0.4.zip)
 * AppicAppLovinSDK [download path](https://img.atomhike.com/sdk/Mediation/AppLovinSDK/AppLovinSDK.v0.0.4.zip)
 * AppicIronSource [download path](https://img.atomhike.com/sdk/Mediation/IronSource/IronSource.v6.10.0.0.zip)

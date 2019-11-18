@@ -78,7 +78,7 @@ Demo中已经配置了对所有第三方sdk的依赖库的引用，请按照上�
 #### 广告平台依赖库
 * AppicInMobiSDK [下载链接](https://img.atomhike.com/sdk/Mediation/InMobiSDK/InMobiSDK.v7.3.0.zip)
 * AppicGoogleMobileAds [下载链接](https://img.atomhike.com/sdk/Mediation/GoogleMobileAds/GoogleMobileAds.v7.52.0.zip)
-* AppicUnityAds [下载链接](https://img.atomhike.com/sdk/Mediation/UnityAds/UnityAds.v0.0.4.zip)
+* AppicUnityAds [下载链接](https://img.atomhike.com/sdk/Mediation/UnityAds/UnityAds.v3.3.0.zip)
 * AppicVungleSDK [下载链接](https://img.atomhike.com/sdk/Mediation/VungleSDK/VungleSDK.v0.0.4.zip)
 * AppicAppLovinSDK [下载链接](https://img.atomhike.com/sdk/Mediation/AppLovinSDK/AppLovinSDK.v0.0.4.zip)
 * AppicIronSource [下载链接](https://img.atomhike.com/sdk/Mediation/IronSource/IronSource.v6.10.0.0.zip)

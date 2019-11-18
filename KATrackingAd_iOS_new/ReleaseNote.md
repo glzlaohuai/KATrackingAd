@@ -3,7 +3,7 @@
 ## Ver3.10.2
 ## Release Date: 2019-11-18
 * 修复bug
-* 更新IronSource、AdmobSDK（适配iOS13）
+* 更新IronSource、Admob、Unity SDK（适配iOS13）
 
 ## Ver3.10
 ## Release Date: 2019-11-12
