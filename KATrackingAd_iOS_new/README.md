@@ -112,6 +112,12 @@ Demo中已经配置了对所有第三方sdk的依赖库的引用，请按照上�
 * BaiduSDK [下载链接](https://img.atomhike.com/sdk/Mediation/BaiduSDK/BaiduSDK.v4.64.zip)
    
 ### 接入admob注意事项
+
+```XML
+	<key>GADApplicationIdentifier</key>
+	<string>appId</string>
+```
+
 ![deployment target](https://github.com/KATracking/KATrackingAd/blob/master/README_Res/google_tips.png)
 
 ### 加入其它依赖库
