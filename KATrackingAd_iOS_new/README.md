@@ -33,8 +33,7 @@ SDK可以通过下文提到的两种方式获取
 `  pod 'AppicSDK'`  
 `  pod 'AppicAppLovinSDK'`  
 `  pod 'AppicAppsFlyerLib'`  
-`  pod 'AppicGDT'`  
-`  pod 'AppicGoogleMobileAds'`  
+`  pod 'AppicGDT'`   
 `  pod 'AppicInMobiSDK'`  
 `  pod 'AppicIronSource'`  
 `  pod 'AppicTalkingData'`  
@@ -45,6 +44,10 @@ SDK可以通过下文提到的两种方式获取
 `  pod 'AppicVungleSDK'`  
 `  pod 'AppicFBAudienceNetwork'`  
 `  pod 'AppicAdjustSdk'` 
+
+如果需要集成AdMob广告SDK，请查阅下文中的[注意事项](#admob_note)
+`  pod 'AppicGoogleMobileAds'` 
+
 
 * 在命令行窗口执行cocoapods安装命令  
 
@@ -111,7 +114,7 @@ Demo中已经配置了对所有第三方sdk的依赖库的引用，请按照上�
 * AppicAdjustSdk [下载链接](https://img.atomhike.com/sdk/Mediation/AdjustSdk/AdjustSdk.v4.17.1.zip)
 * BaiduSDK [下载链接](https://img.atomhike.com/sdk/Mediation/BaiduSDK/BaiduSDK.v4.64.zip)
    
-### 接入admob注意事项
+### <a name="admob_note">接入admob注意事项</a>
 
 ```XML
 <key>GADApplicationIdentifier</key>
