@@ -46,6 +46,7 @@ SDK可以通过下文提到的两种方式获取
 `  pod 'AppicAdjustSdk'` 
 
 如果需要集成AdMob广告SDK，请查阅下文中的[注意事项](#admob_note)
+
 `  pod 'AppicGoogleMobileAds'` 
 
 
