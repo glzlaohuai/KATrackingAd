@@ -35,7 +35,7 @@
 * To initialize SDK, please add the follow line to onCreate delegate of your main activity or Application.
 
 	```
-	APAD.init(this, "appID");
+	APSDK.init(this, "appID");
 	```
 	**Note**: `appID` is provided by our operator.
 
