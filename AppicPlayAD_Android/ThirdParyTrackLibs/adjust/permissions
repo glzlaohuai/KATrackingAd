@@ -1,0 +1,4 @@
+<uses-permission android:name="android.permission.INTERNET"/>
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+<!-- 发布目标非Google Play商店，请添加以下权限 -->
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>

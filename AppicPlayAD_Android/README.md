@@ -5,6 +5,7 @@
 * [关于](#about)
 * [基础SDK接入](#essential)
 * [加入第三方平台SDK](#thirdPartySDK)
+* [加入第三方归因平台SDK](#thirdPartyTrackSDK)
 * [接入原生广告（模板模式）](#nativeAD)
 * [接入原生广告（非模板模式）](#nativeADRaw)
 * [接入开屏广告](#splashAD)
@@ -56,6 +57,11 @@
 * 第三方广告平台所需要的配置可能包含有：`jar、aar`依赖项（在`libs`文件夹内）、`build.gradle`文件中的依赖项（在`dependicies`文件夹内）、需要配置的权限（在`permissions`文件内）、`AndroidMnifest.xml`中需要添加的组件（`activity`、`service`、`receiver`、`provider`等内容）（在`components`文件内）、混淆配置项（在`proguard`文件内）、res资源文件项（在`res`文件夹内）
 * 将需要支持的广告平台的所有内容加入到待接入工程中即可
 
+## <a name="thirdPartyTrackSDK">加入第三方归因平台SDK</a>
+* 受支持的第三方平台归因sdk在[这里](https://github.com/KATracking/KATrackingAd/tree/master/AppicPlayAD_Android/ThirdParyTrackLibs)查看
+* 例如：`adjust` 文件夹内包含接入该平台需要的配置，目前有：`Adjust`、`AppsFlyer`、`TalkingData`、`toutiao(头条巨量引擎)`、`umeng(友盟)`
+* 第三方归因平台所需要的配置可能包含有：`jar、aar`依赖项（在`libs`文件夹内）、`build.gradle`文件中的依赖项（在`dependicies`文件夹内）、需要配置的权限（在`permissions`文件内）、`AndroidMnifest.xml`中需要添加的组件（`activity`、`service`、`receiver`、`provider`等内容）（在`components`文件内）、混淆配置项（在`proguard`文件内）、res资源文件项（在`res`文件夹内）
+* 将需要支持的归因平台的所有内容加入到待接入工程中即可
 
 ## <a name="nativeAD">接入原生广告(模板方式)</a>
 

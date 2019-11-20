@@ -1,0 +1,5 @@
+
+#appsflyer
+-keep class com.appsflyer.** { *; }
+# 正在使用 ProGuard 并希望使用 Google 的新 referrer API 的开发者必须设置下列 ProGuard 规则
+-dontwarn com.android.installreferrer
