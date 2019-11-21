@@ -1,5 +1,9 @@
 # 版本发布记录
 
+## Ver.3.7.2
+## Release Date: 2019-11-21
+* sdk性能优化
+
 ## Ver.3.7.1
 ## Release Date: 2019-11-15
 * 已知bug修复
