@@ -7,12 +7,10 @@ import android.view.View;
 
 import com.ap.android.atom.sdk.ad.APAD;
 import com.ap.android.atom.sdk.core.APSDK;
-import com.ap.android.atom.sdk.core.utils.LogUtils;
 
 public class LauncherActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final String TAG = "LauncherActivity";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +23,6 @@ public class LauncherActivity extends AppCompatActivity implements View.OnClickL
         findViewById(R.id.incentivized).setOnClickListener(this);
         findViewById(R.id.nativ_raw).setOnClickListener(this);
         findViewById(R.id.nativ_list).setOnClickListener(this);
-        LogUtils.logSwitch(true);
         APSDK.init(this, Config.APP_INFO_ID);
         APAD.setIsMobileNetworkDirectlyDownload(true);
         APAD.useDefaultConfigForSplashIfNoConfigExist(this, "zKyjJJyM");
