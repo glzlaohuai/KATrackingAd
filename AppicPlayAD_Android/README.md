@@ -6,8 +6,7 @@
 * [基础SDK接入](#essential)
 * [加入第三方平台SDK](#thirdPartySDK)
 * [加入第三方归因平台SDK](#thirdPartyTrackSDK)
-* [接入原生广告（模板模式）](#nativeAD)
-* [接入原生广告（非模板模式）](#nativeADRaw)
+* [接入原生广告](#nativeAD)
 * [接入开屏广告](#splashAD)
 * [接入插屏广告](#interstitialAD)
 * [接入横幅广告](#bannerAD)
@@ -63,7 +62,7 @@
 * 第三方归因平台所需要的配置可能包含有：`jar、aar`依赖项（在`libs`文件夹内）、`build.gradle`文件中的依赖项（在`dependicies`文件夹内）、需要配置的权限（在`permissions`文件内）、`AndroidMnifest.xml`中需要添加的组件（`activity`、`service`、`receiver`、`provider`等内容）（在`components`文件内）、混淆配置项（在`proguard`文件内）、res资源文件项（在`res`文件夹内）
 * 将需要支持的归因平台的所有内容加入到待接入工程中即可
 
-## <a name="nativeAD">接入原生广告(模板方式)</a>
+## <a name="nativeAD">接入原生广告</a>
 
 **注**：原生广告有两种接入方式：`模板方式`、`非模板模式`，在`模板模式`下，原生广告会提供方法来很方便的获取一个`view`，同时该view会处理相应的touch事件，方便开发者接入。而在`非模板模式`下，需要开发者自行处理原生广告的布局，同时sdk会提供相应方法来处理开发者自行进行的广告布局的touch事件。
 
@@ -133,72 +132,7 @@
 	```
 	**注**：广告展示时必须将`getExposureView `返回的view添加到容器中，其他内容（如`adTitle`、`adDesc`、`adIcon`，返回内容可能为`null`）由开发者自行决定是否展示以及如何展示。
 	
-	
-## <a name="nativeADRaw">接入原生广告(非模板方式)</a>
 
-
-1. **创建原生广告实例：**
-
-	```
-	APNative apNative = new APNative(activity, "slotID", listener);
-	```
-	参数	|	说明
-	---	|	---
-	activity	|	创建该实例所处的activity
-	slotID	|	广告位id
-	listener	|	原生广告加载结果回调
-	
-1. **设置接入方式：**
-
-	```
-	apNative.setPattern(APNativePattern.RAW);
-	```
-	
-	
-1. **设置期望返回广告大图尺寸：**
-
-	```
-	apNative.setPreferImageSize(int,int)
-	```
-	**注**：实际返回图片尺寸可能与期望尺寸不同
-1. **广告load：**
-
-	```
-	apNative.loadNative();
-	```
-1. **加载成功后（收到加载成功的回调），从APNative实例中获取广告相关内容：**
-
-	说明	|	获取方法
-	---	|	---
-	icon地址	|	`getIconUrl`
-	image地址	|	`getImageUrl`
-	描述文字	|	`getDesc`
-	标题文字	|	`getTitle`
-	响应按钮的文字（可能包含的值：“查看详情”、“下载”等）	|	`getActionText`
-	
-1. **将广告内容添加到容器中：**
-
-	根据自己应用的需求自行将需要展示的广告物料内容添加到布局中。
-	
-1. **对自行布局之后的广告容器进行事件注册：**
-
-	使用方法：`apNative.registerViewForInteraction(viewContainer)`来进行touch/click的事件注册。
-	
-1. **当原生广告由adContainer展示出来之后（可以被用户看到）：**
-
-	调用方法：`apNative.show();`
-	
-1. **在创建广告实例的activity的以下回调方法中分别执行`APNative`实例的相应方法：**
-
-	* `onPause`回调方法中执行：`apNative.onPause();`
-	* `onResume`回调方法中执行：`apNative.onResume();`
-	* `onDestroy`回调方法中执行：`apNative.onDestroy();`
-1. **当不再需要APNative实例时执行：**
-
-	```
-	apNative.destroy();
-	```
-	
 ## <a name="splashAD">接入开屏广告</a>
 1. **创建开屏广告实例**：
 
