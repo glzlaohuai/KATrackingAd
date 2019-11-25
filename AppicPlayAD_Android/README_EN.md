@@ -285,7 +285,6 @@ Apart from other ad types, rewarded video uses singleton to automatically load a
 * SDK will request for these following permissions
 	* `android.permission.READ_PHONE_STATE`
 	* `android.permission.WRITE_EXTERNAL_STORAGE`
-	* `android.permission.ACCESS_FINE_LOCATION`
 * SDK initialization (`APSDK.init(context,appID,channelID)`) triggers requesting for permissions as part of init process, call this `APCore.setAutoRequestPermission(false)` to stop SDK doing so automatically, please make sure that your code will request for the same permissions at later stage, otherwise SDK may not function properly
 
 
