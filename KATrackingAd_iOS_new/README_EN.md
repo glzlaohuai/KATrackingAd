@@ -216,7 +216,7 @@ Please initialize SDK as early into app lifecycle as possible, as once SDK initi
 `AppDelegate : application:didFinishLaunchingWithOptions:`
 
 ```Objective-c
-[[APTracking sharedInstance] initWithAppId:@"<AppId>"];
+[[APSDK sharedInstance] initWithAppId:@"<AppId>"];
 ```
 Provided by operator
 
@@ -421,6 +421,9 @@ withError:(nonnull NSError *) interstitialAdStatus;
 
 // Interstitial Ad has been clicked
 - (void) interstitialAdDidClick:(nonnull APAdInterstitial *) splashAd;
+
+// Interstitial Ad has been dismissed
+- (void) interstitialAdDidDismiss:(nonnull APAdInterstitial *) interstitial;
 
 // Interstitial Ad has been dismissed from screen
 ```
