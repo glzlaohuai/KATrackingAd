@@ -251,7 +251,7 @@
 
 ## <a name="permissions">关于权限申请</a>
 
-* sdk需要动态申请的权限：`android.permission.READ_PHONE_STATE`、`android.permission.WRITE_EXTERNAL_STORAGE`、`android.permission.ACCESS_FINE_LOCATION`
+* sdk需要动态申请的权限：`android.permission.READ_PHONE_STATE`、`android.permission.WRITE_EXTERNAL_STORAGE`
 
 * sdk在初始化（执行方法：`APAD.init(context,appID,channelID)`）时默认会申请所需要的权限（要保证传递的`context`参数为`Activity`类型）
 
