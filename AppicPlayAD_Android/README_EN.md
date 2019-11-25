@@ -60,7 +60,7 @@
 
 	**Note**: If you do not want to mediate the SDKs above, simply ignore this secion.
 
-## <a name="nativeAD">Native Ad (Template)</a>
+## <a name="nativeAD">Native Ad</a>
 
 There are two available modes to choose from for Native Ad integration: `Template` and `RAW`, select a suitable mode accordingly, Template provides a pre-set view containing main ad asset and attached touch event detection, where RAW offers assets in their original states for you to process and requires to call `registerViewForInteraction` method to inform SDK to add touch event detection.
 
@@ -158,26 +158,7 @@ Native Ad is set to be using Template mode by default, or call `apNativeInstance
 	```
 	apNative.destroy();
 	```
-	
-	
-## <a name="nativeADRaw">Native Ad (RAW)</a>
 
-Working with Native Ad under RAW mode has two things different from with Template mode
-
-1. **getExposureView**
-
-	There is no need to call this method to access ad view, that leaves the room for you 	to use assets accordingly
-	
-2. **Register interation view**
-
-	Once you have prepared a view contains ad asset, please call this method to register touch 	detection, so that SDK can capture and report click event
-	
-	```
-	apNative.registerViewForInteraction(ViewGroup viewContainer)
-	```
-	
-	viewContainer - the view group for which ad is being displayed within
-	
 ## <a name="splashAD">Splash Ad</a>
 
 1. **Instantiation**：
