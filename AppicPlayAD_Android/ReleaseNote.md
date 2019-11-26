@@ -10,12 +10,12 @@
 
 ## Ver.3.7.1
 ## Release Date: 2019-11-15
-* 已知bug修复
+* sdk性能优化
 
 
 ## Ver.3.7.0
 ## Release Date: 2019-11-14
-* 已知bug修复
+* 增加广告归因追踪
 
 ## Ver.3.6.5
 ## Release Date: 2019-10-22
