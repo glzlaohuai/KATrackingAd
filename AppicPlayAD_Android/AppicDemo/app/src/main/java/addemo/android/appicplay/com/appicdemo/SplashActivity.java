@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 
 import com.ap.android.atom.sdk.ad.APBaseAD;
@@ -17,11 +18,15 @@ public class SplashActivity extends Activity implements View.OnClickListener {
 
     APSplash splash;
 
+    Button loadBtn;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash);
         findViewById(R.id.load).setOnClickListener(this);
+
+        loadBtn = findViewById(R.id.load);
     }
 
     @Override
@@ -39,12 +44,15 @@ public class SplashActivity extends Activity implements View.OnClickListener {
             splash.onDestroy();
         }
 
+        loadBtn.setEnabled(false);
 
         splash = new APSplash(this, Config.SPLASH_SLOT_ID, new APSplashADListener() {
             @Override
             public void dismiss(APBaseAD apBaseAD, String s) {
                 Log.i(TAG, "dismiss: ");
-                ((LinearLayout)findViewById(R.id.splashContainer)).removeAllViews();
+                ((LinearLayout) findViewById(R.id.splashContainer)).removeAllViews();
+
+                loadBtn.setEnabled(true);
             }
 
             @Override
@@ -60,15 +68,12 @@ public class SplashActivity extends Activity implements View.OnClickListener {
             @Override
             public void failed(APBaseAD apBaseAD, String s, String s1) {
                 Log.i(TAG, "failed: " + s1);
+                loadBtn.setEnabled(true);
             }
-        });
+        }); 
 
         splash.loadAndPresent((LinearLayout) findViewById(R.id.splashContainer), R.layout.splash_bottom);
     }
-
-
-
-
 
 
     @Override

@@ -39,6 +39,9 @@ public class InterstitialActivity extends Activity implements View.OnClickListen
 
     private void load() {
 
+        loadBtn.setEnabled(false);
+        showBtn.setEnabled(false);
+
         if (apInterstitial != null) {
             apInterstitial.onDestroy();
         }
@@ -47,7 +50,6 @@ public class InterstitialActivity extends Activity implements View.OnClickListen
             @Override
             public void success(APBaseAD apBaseAD, String s) {
                 Log.i(TAG, "success: ");
-                loadBtn.setEnabled(true);
                 showBtn.setEnabled(true);
             }
 
@@ -60,6 +62,8 @@ public class InterstitialActivity extends Activity implements View.OnClickListen
             @Override
             public void close(APBaseAD apBaseAD, String s) {
                 Log.i(TAG, "close: ");
+                loadBtn.setEnabled(true);
+                showBtn.setEnabled(false);
             }
 
             @Override
@@ -90,8 +94,10 @@ public class InterstitialActivity extends Activity implements View.OnClickListen
                 break;
             case R.id.show:
 
+                showBtn.setEnabled(false);
                 if (apInterstitial != null) {
                     apInterstitial.show();
+                    loadBtn.setEnabled(true);
                 }
                 break;
         }
