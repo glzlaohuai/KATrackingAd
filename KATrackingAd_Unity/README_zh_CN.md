@@ -310,7 +310,8 @@
 
 *  根据你的需要添加需要支持的第三方sdk（你可以将第三方sdk添加到文件夹：`Assets/Plugins/iOS/APSDK/libs`下，或者文件夹`Assets/Plugins/iOS/`下的任意你觉得合适的其他位置）
 *  导出xcode工程
-*  根据[这里](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README.md)的说明来配置导出的ios工程（插件在导出iOS工程时已经进行了一部分的设置，包括：[添加依赖库](https://github.com/KATracking/KATrackingAd/tree/master/KATrackingAd_iOS#%E5%8A%A0%E5%85%A5%E5%85%B6%E5%AE%83%E4%BE%9D%E8%B5%96%E5%BA%93)、[设置白名单](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README.md#infoplist%E8%AE%BE%E7%BD%AE%E7%99%BD%E5%90%8D%E5%8D%95)、[添加-ObjC linker flag](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README.md#infoplist%E8%AE%BE%E7%BD%AE%E7%99%BD%E5%90%8D%E5%8D%95)、`Enable Bitcode`设置为No）
+*  根据[这里](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS_new/README.md)的说明来配置导出的ios工程（插件在导出iOS工程时已经进行了一部分的设置，包括：[添加依赖库](https://github.com/KATracking/KATrackingAd/tree/master/KATrackingAd_iOS#%E5%8A%A0%E5%85%A5%E5%85%B6%E5%AE%83%E4%BE%9D%E8%B5%96%E5%BA%93)、[设置白名单](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README.md#infoplist%E8%AE%BE%E7%BD%AE%E7%99%BD%E5%90%8D%E5%8D%95)、[添加-ObjC linker flag](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS/README.md#infoplist%E8%AE%BE%E7%BD%AE%E7%99%BD%E5%90%8D%E5%8D%95)、`Enable Bitcode`设置为No）
+*  如果要接入admob，需要在info.plist文件中添加admob相关配置，参见[这里](https://github.com/KATracking/KATrackingAd/blob/master/KATrackingAd_iOS_new/README.md#%E6%8E%A5%E5%85%A5admob%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9)
 
 ## <a name="step3">Android工程配置</a>
 *  在`Unity Editor`的`Player Settings`中勾选`Custom Gradle Template`
