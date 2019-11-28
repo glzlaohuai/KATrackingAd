@@ -295,6 +295,10 @@ Use these delegates to receive events of request native ad complete or fail
 
 Ad click
 - (void) nativeExpressAdDidClicked:(nonnull APAdNativeExpress *)native;
+
+- (void) nativeExpressAdDidPresentScreen:(nonnull APAdNativeExpress *)nativeAd;
+
+- (void) nativeExpressAdDidDismissScreen:(nonnull APAdNativeExpress *)nativeAd;
 ```
 
 
@@ -364,6 +368,9 @@ withError:(nonnull NSError *)error;
 
 // Ad view has been dismissed from screen
 - (void) splashAdDidDismiss:(APAdSplash *)splashAd;
+
+// Splash ad will dismissed
+- (void) splashAdWillDismiss:(nonnull APAdSplash *)splashAd;
 ```
 
 # Interstitial Ad
@@ -426,6 +433,7 @@ withError:(nonnull NSError *) interstitialAdStatus;
 - (void) interstitialAdDidDismiss:(nonnull APAdInterstitial *) interstitial;
 
 // Interstitial Ad has been dismissed from screen
+- (void) interstitialAdDidDismiss:(nonnull APAdInterstitial *) interstitial;
 ```
 
 # Incentivized Video Ad
@@ -536,6 +544,8 @@ Receive events that load ads using the following callbacks
  * Notifies the delegate that the banner has dismissed the presented screen.
  */
 - (void) bannerDidDismissScreen:(nonnull APAdBanner *)bannerAd;
+
+- (void) bannerDidClick:(nonnull APAdBanner *)bannerAd
 ```
 
 ### Redemption code

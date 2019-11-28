@@ -320,6 +320,13 @@ APAdSplash *splash = [[APAdSplash alloc] initWithSlot:<AdSlot> delegate:<Delegat
 * **AdSlot** - 广告位SlotId，用于请求广告
 * **Delegate** - id<APAdSplashDelegate> 实例，用于接收广告事件回调
 
+### 设置加载时间
+调用下面方法设置广告加载时间
+
+```Objective-c
+[aplash setTolerateTimeout:<NSTimeInterval>];
+```
+
 ### 设置显示时长
 调用下面方法设置广告显示时长
 
@@ -383,6 +390,9 @@ withError:(nonnull NSError *)error;
 
 // Ad view has been dismissed from screen
 - (void) splashAdDidDismiss:(APAdSplash *)splashAd;
+
+// Splash ad will dismissed
+- (void) splashAdWillDismiss:(nonnull APAdSplash *)splashAd;
 ```
 
 # 插屏广告 - Interstitial
@@ -441,6 +451,7 @@ withError:(nonnull NSError *) interstitialAdStatus;
 - (void) interstitialAdDidClick:(nonnull APAdInterstitial *) splashAd;
 
 // Interstitial Ad has been dismissed from screen
+- (void) interstitialAdDidDismiss:(nonnull APAdInterstitial *) interstitial;
 ```
 
 # 激励视频广告 - Incentivized
@@ -554,6 +565,8 @@ APAdBanner * banner = [[APAdBanner alloc] initWithSlot:<adSlot> withSize:<size> 
  * Notifies the delegate that the banner has dismissed the presented screen.
  */
 - (void) bannerDidDismissScreen:(nonnull APAdBanner *)bannerAd;
+
+- (void) bannerDidClick:(nonnull APAdBanner *)bannerAd
 ```
 
 ### 兑换码
