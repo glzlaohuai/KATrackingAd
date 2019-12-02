@@ -1,5 +1,5 @@
 > [English Doc](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/README_EN.md)
-# 当前版本Ver.3.7.2.2 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/ReleaseNote.md)
+# 当前版本Ver.3.7.2.4 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/ReleaseNote.md)
 # AppicAd SDK接入说明
 
 * [关于](#about)
@@ -34,13 +34,21 @@
 	```
 	点击下载：[android-gif-drawable-1.2.6.aar](https://github.com/KATracking/KATrackingAd/tree/master/AppicPlayAD_Android/android-gif-drawable-1.2.6.aar)、[com.liulishuo.filedownload-v1.7.4.aar](https://github.com/KATracking/KATrackingAd/tree/master/AppicPlayAD_Android/com.liulishuo.filedownload-v1.7.4.aar)
 		
-* applicaton或入口activity 的`onCreate`回调方法中执行初始化
+* `applicaton `或入口activity 的`onCreate`回调方法中执行初始化
 
 	```
 	APSDK.init(context, "appID");
 	```
 	**注**:`appID`的值将在您接入sdk时由我方相关对接人员提供。
 	
+* `applicaton`的`getBaseContext`方法修改：
+
+	```
+	@Override
+    public Context getBaseContext() {
+        return APApplication.getBaseContext(super.getBaseContext());
+    }
+	```
 
 * `proguard`配置：
 

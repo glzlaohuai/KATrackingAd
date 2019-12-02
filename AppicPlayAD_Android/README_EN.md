@@ -1,5 +1,5 @@
 > [Chinese Doc](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/README.md)
-# Current Ver.3.7.2.2 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/ReleaseNote.md)
+# Current Ver.3.7.2.4 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/ReleaseNote.md)
 # AppicAd SDK Integration guide
 
 * [Download](#Download)
@@ -22,7 +22,7 @@
 ## <a name="Preparation">Preparation</a>
 
 * Unzip downloaded file, import aar bundle to your project
-* Add the following `app module` to your project `build.gradle` dependencies:
+* Add the following dependencies to your project `build.gradle`:
 
 	```
 	implementation 'com.android.volley:volley:1.1.0'
@@ -30,7 +30,7 @@
 	implementation(name: 'com.liulishuo.filedownload-v1.7.4', ext: 'aar')
 	implementation(name: 'android-gif-drawable-1.2.6', ext: 'aar')
 	```
-	If your App has already integrated android-gif-drawable-1.2.6, you can ignore this, or please download at: [android-gif-drawable-1.2.6.aar](https://github.com/KATracking/KATrackingAd/tree/master/AppicPlayAD_Android/android-gif-drawable-1.2.6.aar)
+	If your App has already integrated android-gif-drawable-1.2.6, you can ignore this, or please download at: [android-gif-drawable-1.2.6.aar](https://github.com/KATracking/KATrackingAd/tree/master/AppicPlayAD_Android/android-gif-drawable-1.2.6.aar), and download `com.liulishuo.filedownload-v1.7.4.aar`from [here](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/com.liulishuo.filedownload-v1.7.4.aar)
 		
 * To initialize SDK, please add the follow line to onCreate delegate of your main activity or Application.
 
@@ -38,6 +38,15 @@
 	APSDK.init(this, "appID");
 	```
 	**Note**: `appID` is provided by our operator.
+	
+* Override the `getBaseContext` method of your app's `application`:
+
+	```
+	@Override
+    public Context getBaseContext() {
+        return APApplication.getBaseContext(super.getBaseContext());
+    }
+	```
 
 * `proguard` configuration：
 

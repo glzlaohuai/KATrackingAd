@@ -1,4 +1,8 @@
 # 版本发布记录
+## Ver.3.7.2.4
+## Release Date: 2019-12-02
+* 对`application `的`getBaseContext `方法做处理。
+
 ## Ver.3.7.2.2
 ## Release Date: 2019-11-27
 * 依赖的FileDownloader库修改以防跟接入应用冲突
