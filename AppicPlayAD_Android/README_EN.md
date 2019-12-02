@@ -1,5 +1,5 @@
 > [Chinese Doc](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/README.md)
-# Current Ver.3.7.2.1 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/ReleaseNote.md)
+# Current Ver.3.7.2.2 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/ReleaseNote.md)
 # AppicAd SDK Integration guide
 
 * [Download](#Download)
@@ -16,7 +16,8 @@
 
 ## <a name="Download">Download</a>
 
-* Download [AppicAd SDK](http://sayhey.oss-cn-shanghai.aliyuncs.com/sdk/android/APSDK_v3.7.2.1.aar)
+* Download [AppicAd SDK](http://sayhey.oss-cn-shanghai.aliyuncs.com/sdk/android/APSDK_v3.7.2.2.aar)
+* Download [com.liulishuo.filedownload-v1.7.4.aar](https://github.com/KATracking/KATrackingAd/tree/master/AppicPlayAD_Android/com.liulishuo.filedownload-v1.7.4.aar)
 
 ## <a name="Preparation">Preparation</a>
 
@@ -26,7 +27,7 @@
 	```
 	implementation 'com.android.volley:volley:1.1.0'
 	implementation 'com.android.support:support-v4:26.1.0'
-	implementation 'com.liulishuo.filedownloader:library:1.7.4'
+	implementation(name: 'com.liulishuo.filedownload-v1.7.4', ext: 'aar')
 	implementation(name: 'android-gif-drawable-1.2.6', ext: 'aar')
 	```
 	If your App has already integrated android-gif-drawable-1.2.6, you can ignore this, or please download at: [android-gif-drawable-1.2.6.aar](https://github.com/KATracking/KATrackingAd/tree/master/AppicPlayAD_Android/android-gif-drawable-1.2.6.aar)

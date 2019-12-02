@@ -203,6 +203,21 @@ A reference to all third-party sdk dependent libraries has been configured in De
 ### Setup ATS
 ![linker flag](https://github.com/KATracking/KATrackingAd/blob/master/README_Res/ats.png)
 
+| ATS 设定  	   						| 使用的组件  | iOS 9 HTTP | iOS 10 HTTP | 备注 |
+|:-------------------------------|:---------------:|:-------------:|:-------------:|-------------:|
+| NSAllowsArbitraryLoads: NO      | WebView |         ❌ | ❌ | 默认行为 |
+|       |    URLSession    |      ❌     | ❌ |  |
+| NSAllowsArbitraryLoads: YES     |    WebView    |      ✅      | ✅ | 彻底禁用 ATS |
+|       |   URLSession     |           ✅ | ✅ | 审核时需要说明理由 |
+| NSAllowsArbitraryLoads: NO & NSAllowsArbitraryLoadsInWebContent: YES | WebView |  ❌ | ✅ | 只对网页内容禁用 ATS |
+|       |   URLSession |  ❌ | ❌ | 保证 API 的安全性 |
+| NSAllowsArbitraryLoads: NO & NSAllowsArbitraryLoadsInWebContent: NO | WebView | ❌ | ❌ |  |
+|       | URLSession | ❌ | ❌ |  |
+| NSAllowsArbitraryLoads: YES & NSAllowsArbitraryLoadsInWebContent: NO | WebView | ✅ | ❌ | 对于 iOS 10，NSAllowsArbitraryLoadsInWebContent 存在时忽略 NSAllowsArbitraryLoads 的设置 |
+|  | URLSession | ✅ | ❌ | iOS 9 将继续使用 NSAllowsArbitraryLoads |
+| NSAllowsArbitraryLoads: YES & NSAllowsArbitraryLoadsInWebContent: YES | WebView | ✅ | ✅ | 对于 iOS 10，NSAllowsArbitraryLoadsInWebContent 存在时忽略 NSAllowsArbitraryLoads 的设置 |
+|  | URLSession | ✅ | ❌ | iOS 9 将继续使用 NSAllowsArbitraryLoads |
+
 ## Let's code!
 
 ### SDK initialization
@@ -295,6 +310,10 @@ Use these delegates to receive events of request native ad complete or fail
 
 Ad click
 - (void) nativeExpressAdDidClicked:(nonnull APAdNativeExpress *)native;
+
+- (void) nativeExpressAdDidPresentScreen:(nonnull APAdNativeExpress *)nativeAd;
+
+- (void) nativeExpressAdDidDismissScreen:(nonnull APAdNativeExpress *)nativeAd;
 ```
 
 
@@ -364,6 +383,9 @@ withError:(nonnull NSError *)error;
 
 // Ad view has been dismissed from screen
 - (void) splashAdDidDismiss:(APAdSplash *)splashAd;
+
+// Splash ad will dismissed
+- (void) splashAdWillDismiss:(nonnull APAdSplash *)splashAd;
 ```
 
 # Interstitial Ad
@@ -426,6 +448,7 @@ withError:(nonnull NSError *) interstitialAdStatus;
 - (void) interstitialAdDidDismiss:(nonnull APAdInterstitial *) interstitial;
 
 // Interstitial Ad has been dismissed from screen
+- (void) interstitialAdDidDismiss:(nonnull APAdInterstitial *) interstitial;
 ```
 
 # Incentivized Video Ad
@@ -536,6 +559,8 @@ Receive events that load ads using the following callbacks
  * Notifies the delegate that the banner has dismissed the presented screen.
  */
 - (void) bannerDidDismissScreen:(nonnull APAdBanner *)bannerAd;
+
+- (void) bannerDidClick:(nonnull APAdBanner *)bannerAd
 ```
 
 ### Redemption code

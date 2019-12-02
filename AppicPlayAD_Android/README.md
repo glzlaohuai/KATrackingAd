@@ -1,5 +1,5 @@
 > [English Doc](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/README_EN.md)
-# 当前版本Ver.3.7.2.1 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/ReleaseNote.md)
+# 当前版本Ver.3.7.2.2 [ReleaseNote](https://github.com/KATracking/KATrackingAd/blob/master/AppicPlayAD_Android/ReleaseNote.md)
 # AppicAd SDK接入说明
 
 * [关于](#about)
@@ -19,7 +19,7 @@
 ## <a name="about">关于</a>
 
 * 支持广告类型：**原生**、**开屏**、**插屏**、**横幅**、**激励视频**
-* 下载[AppicAd SDK](http://sayhey.oss-cn-shanghai.aliyuncs.com/sdk/android/APSDK_v3.7.2.1.aar)
+* 下载[AppicAd SDK](http://sayhey.oss-cn-shanghai.aliyuncs.com/sdk/android/APSDK_v3.7.2.2.aar)
 
 ## <a name="essential">基础SDK接入</a>
 
@@ -28,11 +28,11 @@
 	```
 	implementation 'com.android.volley:volley:1.1.0'
     implementation 'com.android.support:support-v4:26.1.0'
-    implementation 'com.liulishuo.filedownloader:library:1.7.4'
+    implementation(name: 'com.liulishuo.filedownload-v1.7.4', ext: 'aar')
     implementation(name: 'android-gif-drawable-1.2.6', ext: 'aar')
     
 	```
-	点击下载：[android-gif-drawable-1.2.6.aar](https://github.com/KATracking/KATrackingAd/tree/master/AppicPlayAD_Android/android-gif-drawable-1.2.6.aar)
+	点击下载：[android-gif-drawable-1.2.6.aar](https://github.com/KATracking/KATrackingAd/tree/master/AppicPlayAD_Android/android-gif-drawable-1.2.6.aar)、[com.liulishuo.filedownload-v1.7.4.aar](https://github.com/KATracking/KATrackingAd/tree/master/AppicPlayAD_Android/com.liulishuo.filedownload-v1.7.4.aar)
 		
 * applicaton或入口activity 的`onCreate`回调方法中执行初始化
 

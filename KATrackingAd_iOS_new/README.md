@@ -206,6 +206,21 @@ Demo中已经配置了对所有第三方sdk的依赖库的引用，请按照上�
 ### 设置 ATS
 ![linker flag](https://github.com/KATracking/KATrackingAd/blob/master/README_Res/ats.png)
 
+| ATS 设定  	   						| 使用的组件  | iOS 9 HTTP | iOS 10 HTTP | 备注 |
+|:-------------------------------|:---------------:|:-------------:|:-------------:|-------------:|
+| NSAllowsArbitraryLoads: NO      | WebView |         ❌ | ❌ | 默认行为 |
+|       |    URLSession    |      ❌     | ❌ |  |
+| NSAllowsArbitraryLoads: YES     |    WebView    |      ✅      | ✅ | 彻底禁用 ATS |
+|       |   URLSession     |           ✅ | ✅ | 审核时需要说明理由 |
+| NSAllowsArbitraryLoads: NO & NSAllowsArbitraryLoadsInWebContent: YES | WebView |  ❌ | ✅ | 只对网页内容禁用 ATS |
+|       |   URLSession |  ❌ | ❌ | 保证 API 的安全性 |
+| NSAllowsArbitraryLoads: NO & NSAllowsArbitraryLoadsInWebContent: NO | WebView | ❌ | ❌ |  |
+|       | URLSession | ❌ | ❌ |  |
+| NSAllowsArbitraryLoads: YES & NSAllowsArbitraryLoadsInWebContent: NO | WebView | ✅ | ❌ | 对于 iOS 10，NSAllowsArbitraryLoadsInWebContent 存在时忽略 NSAllowsArbitraryLoads 的设置 |
+|  | URLSession | ✅ | ❌ | iOS 9 将继续使用 NSAllowsArbitraryLoads |
+| NSAllowsArbitraryLoads: YES & NSAllowsArbitraryLoadsInWebContent: YES | WebView | ✅ | ✅ | 对于 iOS 10，NSAllowsArbitraryLoadsInWebContent 存在时忽略 NSAllowsArbitraryLoads 的设置 |
+|  | URLSession | ✅ | ❌ | iOS 9 将继续使用 NSAllowsArbitraryLoads |
+
 ## 开始接入
 
 ### SDK 初始化
@@ -320,6 +335,13 @@ APAdSplash *splash = [[APAdSplash alloc] initWithSlot:<AdSlot> delegate:<Delegat
 * **AdSlot** - 广告位SlotId，用于请求广告
 * **Delegate** - id<APAdSplashDelegate> 实例，用于接收广告事件回调
 
+### 设置加载时间
+调用下面方法设置广告加载时间
+
+```Objective-c
+[aplash setTolerateTimeout:<NSTimeInterval>];
+```
+
 ### 设置显示时长
 调用下面方法设置广告显示时长
 
@@ -383,6 +405,9 @@ withError:(nonnull NSError *)error;
 
 // Ad view has been dismissed from screen
 - (void) splashAdDidDismiss:(APAdSplash *)splashAd;
+
+// Splash ad will dismissed
+- (void) splashAdWillDismiss:(nonnull APAdSplash *)splashAd;
 ```
 
 # 插屏广告 - Interstitial
@@ -441,6 +466,7 @@ withError:(nonnull NSError *) interstitialAdStatus;
 - (void) interstitialAdDidClick:(nonnull APAdInterstitial *) splashAd;
 
 // Interstitial Ad has been dismissed from screen
+- (void) interstitialAdDidDismiss:(nonnull APAdInterstitial *) interstitial;
 ```
 
 # 激励视频广告 - Incentivized
@@ -554,6 +580,8 @@ APAdBanner * banner = [[APAdBanner alloc] initWithSlot:<adSlot> withSize:<size> 
  * Notifies the delegate that the banner has dismissed the presented screen.
  */
 - (void) bannerDidDismissScreen:(nonnull APAdBanner *)bannerAd;
+
+- (void) bannerDidClick:(nonnull APAdBanner *)bannerAd
 ```
 
 ### 兑换码
