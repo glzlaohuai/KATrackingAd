@@ -94,7 +94,7 @@ Native Ad is set to be using Template mode by default, or call `apNativeInstance
 	Set prefered asset size
 	
 	```
-	apNative.setPreferImageSize(int,int)
+	apNative.setPreferImageSize(width,height)
 	```
 	**Note**：Asset may not always be adjusted to preferred size
 	
