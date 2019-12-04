@@ -89,7 +89,7 @@
 1. **设置期望返回广告大图尺寸：**
 
 	```
-	apNative.setPreferImageSize(int,int)
+	apNative.setPreferImageSize(width,height)
 	```
 	**注**：实际返回图片尺寸可能与期望尺寸不同
 1. **广告load：**
